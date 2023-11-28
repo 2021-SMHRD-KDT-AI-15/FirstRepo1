@@ -32,13 +32,13 @@ public class JoinService extends HttpServlet {
 	      String phone = request.getParameter("phone");
 	      String address = request.getParameter("address");
 	      int age =  Integer.parseInt(request.getParameter("age"));
-	      String gender = String.valueOf(request.getParameter("gender"));
+	      int gender = Integer.parseInt(request.getParameter("gender"));
  
 	      // 3. DAO 클래스 객체 생성 -> DB에 대한 작업을 진행할 수 있다
 	      MemberDAO dao = new MemberDAO();
 
 	      // 4. DAO의 회원가입 기능(메소드) 호출
-	      MemberDTO dto = new MemberDTO();
+	      MemberDTO dto = new MemberDTO(id, pw, nickname, email, phone, address, age, gender);
 	      int result = dao.join(dto);
 	      
 	      // 5. 호출된 기능의 결과에 따라 화면 결과 출력
