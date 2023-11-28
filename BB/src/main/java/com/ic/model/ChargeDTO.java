@@ -38,5 +38,4 @@ public class ChargeDTO {
 	public ChargeDTO() {
 	}
 	
-	
 }

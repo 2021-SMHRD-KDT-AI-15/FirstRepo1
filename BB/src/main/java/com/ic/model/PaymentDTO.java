@@ -45,7 +45,4 @@ public class PaymentDTO {
 	public PaymentDTO() {
 	}
 	
-	
-	
-	
 }
