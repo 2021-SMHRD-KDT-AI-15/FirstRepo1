@@ -26,6 +26,7 @@
 </head>
 
 <body>
+	
     <header>
         <div id="logo">
             <img id="logo" src="./부릉부름_logo.png" alt="">
@@ -33,8 +34,8 @@
 
         <div>
             <nav class="button">
-                <button id="login">로그인</button>
-                <button id="join">회원가입</button>
+                <a href="Login.jsp"><button id="login">로그인</button></a>
+                <a href="Join.jsp"><button id="join">회원가입</button></a>
             </nav>
         </div>
         <hr>
@@ -48,11 +49,6 @@
             </section>
             웹사이트 내용 설명
         </main>
-
-
-        
-
-
     </header>
 
 
