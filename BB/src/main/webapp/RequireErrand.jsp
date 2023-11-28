@@ -41,7 +41,7 @@
 		<input type="text" name="req_location">
 		
 		<p>내용</p>
-		<textarea name="content" style="width:300px; height:200px"></textarea>
+		<textarea name="content" style="width:300px; height:200px"></textarea><br>
 		
 		<input type="submit" value="요청하기">
 		

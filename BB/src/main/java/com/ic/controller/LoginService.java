@@ -36,11 +36,11 @@ public class LoginService extends HttpServlet {
 		if (result != null) {
 			// 회원가입에 성공했을 때 -> Main.jsp 이동 -> email
 			HttpSession session = request.getSession();
-			session.setAttribute("info", result);
+			session.setAttribute("clientInfo", result);
 			response.sendRedirect("Main.jsp");
 		} else {
 			// 실패했을때 -> Main.jsp
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect("Login.jsp");
 		}
 
 	}
