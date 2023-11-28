@@ -24,9 +24,12 @@ public class JoinService extends HttpServlet {
 	      request.setCharacterEncoding("utf-8");
 
 	      // 2. 요청값이 보내주는 데이터 꺼내오기
-	      String getMember = request.getParameter("email");
-	      String pw = request.getParameter("pw");
-	      String tel = request.getParameter("tel");
+	      String id = request.getParameter("id");
+	      String nick = request.getParameter("pw");
+	      String nick = request.getParameter("tel");
+	      String phone = request.getParameter("address");
+	      String address = request.getParameter("address");
+	      int age = request.getParameter("age");
 	      String address = request.getParameter("address");
 
 	      // 3. DAO 클래스 객체 생성 -> DB에 대한 작업을 진행할 수 있다
