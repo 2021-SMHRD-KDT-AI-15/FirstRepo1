@@ -10,7 +10,7 @@ public class MemberDTO {
 	private String pw;
 	private String address;
 	private int age;
-	private int gender;
+	private char gender;
 	private int money;
 
 	public int getMember_id() {
@@ -77,7 +77,7 @@ public class MemberDTO {
 		this.age = age;
 	}
 
-	public int getGender() {
+	public char getGender() {
 		return gender;
 	}
 
@@ -97,7 +97,7 @@ public class MemberDTO {
 	public MemberDTO() {
 	}
 
-	public MemberDTO(String id, String pw, String nickname, String email, String phone, String address, int age, int gender) {
+	public MemberDTO(String id, String pw, String nickname, String email, String phone, String address, int age, char gender) {
 		this.id = id;
 		this.pw = pw;
 		this.nickname = nickname;

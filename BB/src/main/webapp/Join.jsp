@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,7 +29,7 @@
 		</select></td>
 		
 		<p>연령대</p>
-		<td><select name="age">
+		<td><select name="age">	
 				<option value="10">10대</option>
 				<option value="20">20대</option>
 				<option value="30">30대</option>
