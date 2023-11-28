@@ -1,3 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ic.db.MemberMapper"></mapper>
+<mapper namespace="com.smhrd.db.MemberMaper">
+
+
+	<!-- 실행하고자 하는 sql문장을 태그를 사용하여 정리해야 한다! -->
+	<!-- sql문장 입력이후; 생략한다! -->
+	
+	<!-- 회원가입을 위한 insert sql문장 작성 -->
+	<!-- id : 여러개의 태그중 어떤 태그를 사용할 것인지 구분할 수 있는 고유적인 이름!
+		 parameterType: 해당하는 sql문장을 실행할때 연결할 사용자의 데이터 타입을 지정하는 속성!
+	 -->
+	<insert id="join" parameterType="com.ic.model.MemberDTO">
+		insert into web_member values(#{id}, #{pw}, #{nickname}, #{email}, #{phone}, #{address}, #{gender}, #{age})	
+	</insert>
+	
+	<!-- 로그인을 수행할 수 있는 sql 문장 작성 -->
+	<!-- select의 경우 돌아오는 결과값이 int형이 아니라 데이터 형태 이므로
+		 어디에 결과타입을 담을 것인지 내용이 필요하다 -> resultType 속성
+	-->
+	<select id="login" parameterType="com.ic.model.MemberDTO"
+			resultType="com.ic.model.MemberDTO">
+		select * from web_member where id=#{id} and pw=#{pw}
+	</select>
+	
+
+
+</mapper>

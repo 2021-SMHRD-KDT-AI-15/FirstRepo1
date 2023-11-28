@@ -26,10 +26,10 @@ public class JoinService extends HttpServlet {
 
 	      // 2. 요청값이 보내주는 데이터 꺼내오기
 	      String id = request.getParameter("id");
+	      String pw = request.getParameter("pw");
 	      String nickname = request.getParameter("nickname");
 	      String email = request.getParameter("email");
 	      String phone = request.getParameter("phone");
-	      String pw = request.getParameter("pw");
 	      String address = request.getParameter("address");
 	      int age =  Integer.parseInt(request.getParameter("age"));
 	      String gender = String.valueOf(request.getParameter("gender"));
