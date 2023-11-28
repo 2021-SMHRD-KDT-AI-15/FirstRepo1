@@ -12,9 +12,6 @@ import javax.servlet.http.HttpSession;
 import com.ic.model.MemberDAO;
 import com.ic.model.MemberDTO;
 
-/**
- * Servlet implementation class LoginService
- */
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +22,7 @@ public class LoginService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		// 2. 요청값이 보내주는 데이터 꺼내오기
-		String email = request.getParameter("email");
+		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 	
 		// 3. MemberDAO 객체 생성
@@ -35,7 +32,7 @@ public class LoginService extends HttpServlet {
 		// 		- login() 생성후 호출해서 사용!
 		// 		- 꺼내온 데이터 email. pw 한 묶음으로 묶어서 전달! -> MemberDTO 활용!
 		MemberDTO dto = new MemberDTO();
-		dto.setEmail(email);
+		dto.setId(id);
 		dto.setPw(pw);
 		
 		MemberDTO result = dao.login(dto);
