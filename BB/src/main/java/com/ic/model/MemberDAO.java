@@ -38,7 +38,7 @@ public class MemberDAO {
 		MemberDTO result = sqlSession.selectOne("login" , dto);
 		
 		// 3. sqlSession 반납 -> 종료
-		sqlSession.close();
+		sqlSession.close();	
 		
 		// 4. 결과에 대한 처리!
 		return result;

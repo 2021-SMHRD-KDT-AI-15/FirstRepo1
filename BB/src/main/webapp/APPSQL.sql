@@ -1,0 +1,10 @@
+SELECT * FROM MEMBER TABLE;
+
+CREATE TABLE MEMBER(
+	
+	
+	
+	
+	
+	
+)

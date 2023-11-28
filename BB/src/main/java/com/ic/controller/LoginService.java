@@ -30,7 +30,7 @@ public class LoginService extends HttpServlet {
 		
 		// 4. MemberDAO -> login 호출
 		// 		- login() 생성후 호출해서 사용!
-		// 		- 꺼내온 데이터 email. pw 한 묶음으로 묶어서 전달! -> MemberDTO 활용!
+		// 		- 꺼내온 데이터 id, pw 한 묶음으로 묶어서 전달! -> MemberDTO 활용!
 		MemberDTO dto = new MemberDTO();
 		dto.setId(id);
 		dto.setPw(pw);
