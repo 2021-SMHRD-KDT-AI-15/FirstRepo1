@@ -15,18 +15,18 @@
 		<p>닉네임</p>
 		<input type="text" placeholder="닉네임은 중복 불가입니다." name="nickname">
 		<p>이메일</p>
-		<input type="text" placeholder="이메일은 중복 불가입니다." name="Field">
-		<select name="Field">
+		<input type="text" placeholder="이메일은 중복 불가입니다." name="email">
+		<!--  <select name="Field">
                     <option>naver.com</option>
                     <option>daum.net</option>
                     <option>google.com</option>
                     <option>nate.com</option>
-                </select>
+                </select>-->
 		<p>연락처</p>
-		<input type="text" name="id"><input type="text" name="id"><input type="text" name="id">
+		<input type="text" name="id">
 		<p>주소 검색</p>
 		<input type="text" placeholder="주소를 입력해주세요." name="address"> 
-		<input type="submit" value="주소 검색"><br>
+		<!--  <input type="submit" value="주소 검색"><br>-->
 
 		<p>성별</p>
 		<td><select name="gender">
