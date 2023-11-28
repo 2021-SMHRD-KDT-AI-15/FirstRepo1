@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ic.model.MemberDAO;
 import com.ic.model.MemberDTO;
 
 
@@ -25,13 +26,14 @@ public class JoinService extends HttpServlet {
 
 	      // 2. 요청값이 보내주는 데이터 꺼내오기
 	      String id = request.getParameter("id");
-	      String nick = request.getParameter("pw");
-	      String nick = request.getParameter("tel");
-	      String phone = request.getParameter("address");
+	      String nickname = request.getParameter("nickname");
+	      String email = request.getParameter("email");
+	      String phone = request.getParameter("phone");
+	      String pw = request.getParameter("pw");
 	      String address = request.getParameter("address");
-	      int age = request.getParameter("age");
-	      String address = request.getParameter("address");
-
+	      int age =  Integer.parseInt(request.getParameter("age"));
+	      String gender = String.valueOf(request.getParameter("gender"));
+ 
 	      // 3. DAO 클래스 객체 생성 -> DB에 대한 작업을 진행할 수 있다
 	      MemberDAO dao = new MemberDAO();
 
@@ -42,7 +44,7 @@ public class JoinService extends HttpServlet {
 	      // 5. 호출된 기능의 결과에 따라 화면 결과 출력
 	      if (result > 0) {
 	         // 회원가입 성공 -> JoinSuccess.jsp 이동 -> email 공유
-	         request.setAttribute("email", email);
+	         request.setAttribute("id", id);
 	         RequestDispatcher rd = 
 	               request.getRequestDispatcher("JoinSuccess.jsp");
 	         rd.forward(request, response);
@@ -51,7 +53,7 @@ public class JoinService extends HttpServlet {
 	         response.sendRedirect("Main.jsp");
 	      }
 	   }
-	}
+	
 	}
 
-}
+
