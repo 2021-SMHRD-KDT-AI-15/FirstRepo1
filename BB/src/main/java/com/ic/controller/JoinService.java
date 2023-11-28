@@ -46,11 +46,11 @@ public class JoinService extends HttpServlet {
 	         // 회원가입 성공 -> JoinSuccess.jsp 이동 -> email 공유
 	         request.setAttribute("id", id);
 	         RequestDispatcher rd = 
-	               request.getRequestDispatcher("JoinSuccess.jsp");
+	               request.getRequestDispatcher("Login.jsp");
 	         rd.forward(request, response);
 	      } else {
 	         // 실패 -> Main.jsp
-	         response.sendRedirect("Main.jsp");
+	         response.sendRedirect("SubMain.jsp");
 	      }
 	   }
 	

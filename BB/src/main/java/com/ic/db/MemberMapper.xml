@@ -11,7 +11,7 @@
 		 parameterType: 해당하는 sql문장을 실행할때 연결할 사용자의 데이터 타입을 지정하는 속성!
 	 -->
 	<insert id="join" parameterType="com.ic.model.MemberDTO">
-		insert into web_member values(MEMBER_SEQ.NEXTVAL ,#{id}, #{email}, #{phone}, #{nickname}, #{pw}, #{address}, #{age}, #{gender}, 0)	
+		insert into MEMBER values(MEMBER_SEQ.NEXTVAL ,#{id}, #{email}, #{phone}, #{nickname}, #{pw}, #{address}, #{age}, #{gender}, 0)	
 	</insert>
 	
 	<!-- 로그인을 수행할 수 있는 sql 문장 작성 -->
@@ -20,7 +20,7 @@
 	-->
 	<select id="login" parameterType="com.ic.model.MemberDTO"
 			resultType="com.ic.model.MemberDTO">
-		select * from web_member where id=#{id} and pw=#{pw}
+		select * from MEMBER where id=#{id} and pw=#{pw}
 	</select>
 	
 
