@@ -55,7 +55,14 @@
 
 
 
+<<<<<<< HEAD
     <a class="box1" id="ErrandList" href="ErrandList.jsp">심부름 목록</a>
+=======
+
+
+
+    <a class="box1" id="ErrandList" href="ErrandListService">심부름 목록</a>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/BB
     <a class="box1" id="RequireErrand" href="RequireErrand.jsp">심부름 요청</a>
     <a class="box2" id="Charge" href="Charge.jsp">충전하기</a>
     <a class="box3"id="MyInfo" href="MyInfo.jsp">마이 페이지</a>
