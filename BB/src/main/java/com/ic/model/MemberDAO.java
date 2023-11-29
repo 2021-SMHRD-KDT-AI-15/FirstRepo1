@@ -45,7 +45,7 @@ public class MemberDAO {
 		
 	}
 
-	// 회원정보 변경을 위한 비밀번호 체크
+	// 회원정보 변경을 위한 비밀번호 체크 메소드
 	public MemberDTO check(MemberDTO dto) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -56,6 +56,18 @@ public class MemberDAO {
 		
 		return result;
 	}
+	
+	// 회원정보 변경을 위한 메소드
+	public MemberDTO update(MemberDTO dto) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		MemberDTO result = sqlSession.selectOne("update" , dto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
 
 
 }

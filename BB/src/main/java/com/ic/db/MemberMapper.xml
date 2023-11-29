@@ -11,7 +11,14 @@
 	</select>
 	
 	<select id="check" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
-		select count(*) from MEMBER where id=#{id} and pw=#{pw}
+		select * from MEMBER where id=#{id} and pw=#{pw}
 	</select>
 	
+	<select id="update" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
+		update MEMBER set nikname=${nickname},
+				   phone=${phone},
+				   pw=${pw},
+				   address=${address} 
+		where id=#{id}  
+	</select>
 </mapper>
