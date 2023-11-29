@@ -17,6 +17,12 @@ public class ErrandDTO {
 	private String want_date;
 	
 	
+	public int getMember_id() {
+		return member_id;
+	}
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
+	}
 	public int getErrand_id() {
 		return errand_id;
 	}
