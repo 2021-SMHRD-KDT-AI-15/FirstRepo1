@@ -18,6 +18,7 @@
   <!-- mapper 연결 부분 -->
   <mappers>
     <mapper resource="com/ic/db/MemberMapper.xml"/>
-	<mapper resource="com/ic/db/ChargeMapper.xml"/>   
+	<mapper resource="com/ic/db/ChargeMapper.xml"/>
+	<mapper resource="com/ic/db/ErrandMapper.xml"/>
   </mappers>
 </configuration>

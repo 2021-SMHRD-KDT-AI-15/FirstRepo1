@@ -2,6 +2,7 @@ package com.ic.model;
 
 public class ErrandDTO {
 
+	private int member_id;
 	private int errand_id;
 	private String title;
 	private String content;
@@ -9,7 +10,7 @@ public class ErrandDTO {
 	private int price;
 	private String created_date;
 	private String location_ctgr;
-	private String req_lotation;
+	private String req_location;
 	private String req_date;
 	private char status;
 	private String completed_date;
@@ -58,11 +59,11 @@ public class ErrandDTO {
 	public void setLocation_ctgr(String location_ctgr) {
 		this.location_ctgr = location_ctgr;
 	}
-	public String getReq_lotation() {
-		return req_lotation;
+	public String getReq_location() {
+		return req_location;
 	}
-	public void setReq_lotation(String req_lotation) {
-		this.req_lotation = req_lotation;
+	public void setReq_location(String req_lotation) {
+		this.req_location = req_lotation;
 	}
 	public String getReq_date() {
 		return req_date;
@@ -92,6 +93,20 @@ public class ErrandDTO {
 	
 	// 기본 생성자
 	public ErrandDTO() {
+	}
+	
+	
+	// 심부름 요청 생성자
+	public ErrandDTO(int member_id, String title, String location_ctgr, String errand_ctgr, String req_date, String want_date, int price, String req_location, String content) {
+		this.member_id = member_id;
+		this.title = title;
+		this.location_ctgr = location_ctgr;
+		this.errand_ctgr = errand_ctgr;
+		this.req_date = req_date;
+		this.want_date = want_date;
+		this.price = price;
+		this.req_location = req_location;
+		this.content = content;
 	}
 	
 }

@@ -1,49 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="False"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<form>
+	<form action="RequireErrandService" method="post">
 	
-		<p>½ÉºÎ¸§ Á¦¸ñ ÀÔ·Â</p>
+		<p>ì‹¬ë¶€ë¦„ ì œëª© ìž…ë ¥</p>
 		<input type="text" name="title">
 		
-		<p>ÇàÁ¤±¸ ¼±ÅÃ</p>
+		<p>í–‰ì •êµ¬ ì„ íƒ</p>
 		<select name="location_ctgr">
-			<option value="±¤»ê±¸">±¤»ê±¸</option>
-			<option value="µ¿±¸">µ¿±¸</option>
-			<option value="¼­±¸">¼­±¸</option>
-			<option value="³²±¸">³²±¸</option>
-			<option value="ºÏ±¸">ºÏ±¸</option>
+			<option value="ê´‘ì‚°êµ¬">ê´‘ì‚°êµ¬</option>
+			<option value="ë™êµ¬">ë™êµ¬</option>
+			<option value="ì„œêµ¬">ì„œêµ¬</option>
+			<option value="ë‚¨êµ¬">ë‚¨êµ¬</option>
+			<option value="ë¶êµ¬">ë¶êµ¬</option>
 		</select>
 		
-		<p>½ÉºÎ¸§ ºÐ·ù</p>
+		<p>ì‹¬ë¶€ë¦„ ë¶„ë¥˜</p>
 		<select name="errand_ctgr">
-			<option value="°¡»ç">°¡»ç</option>
-			<option value="´ëÇà">´ëÇà</option>
-			<option value="ÆÖ½ÃÅÍ">ÆÖ½ÃÅÍ</option>
+			<option value="ê°€ì‚¬">ê°€ì‚¬</option>
+			<option value="ëŒ€í–‰">ëŒ€í–‰</option>
+			<option value="íŒ»ì‹œí„°">íŒ»ì‹œí„°</option>
 		</select>
 		
-		<p>¿ä±¸ ½ÃÀÛ ½ÃÇÑ</p>
-		<input type="text" name="req_date">
+		<p>ìš”êµ¬ ì‹œìž‘ ì‹œí•œ</p>
+		<input type="date" name="req_date">
 		
-		<p>¿ä±¸ ¸¶°¨ ½ÃÇÑ</p>
-		<input type="text" name="want_date">
+		<p>ìš”êµ¬ ë§ˆê° ì‹œí•œ</p>
+		<input type="date" name="want_date">
 		
-		<p>º¸»óÇÒ ±Ý¾×</p>
+		<p>ë³´ìƒí•  ê¸ˆì•¡</p>
 		<input type="text" name="price">
 		
-		<p>¿äÃ»À§Ä¡</p>
+		<p>ìš”ì²­ìœ„ì¹˜</p>
 		<input type="text" name="req_location">
 		
-		<p>³»¿ë</p>
+		<p>ë‚´ìš©</p>
 		<textarea name="content" style="width:300px; height:200px"></textarea><br>
 		
-		<input type="submit" value="¿äÃ»ÇÏ±â">
+		<input type="submit" value="ìš”ì²­í•˜ê¸°">
 		
 		
 	</form>
