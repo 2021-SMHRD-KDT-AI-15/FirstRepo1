@@ -43,7 +43,9 @@ public class MemberDAO {
 		// 4. 결과에 대한 처리!
 		return result;
 		
+		
 	}
+	
 	
 
 }
