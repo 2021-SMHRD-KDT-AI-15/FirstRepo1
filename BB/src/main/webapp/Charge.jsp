@@ -25,7 +25,7 @@
 						style="display: block;">심부름 요청</a></li>
 					<li><a href="" target="_blank" id="gnb_li"
 						style="display: block;">심부름 목록</a></li>
-					<li><a href="" target="_blank" id="gnb_li"
+					<li><a href="Rangking.jsp" target="_blank" id="gnb _li"
 						style="display: block;">랭킹</a></li>
 					<li><a href="Charge.jsp" target="_blank" id="gnb_li"
 						style="display: block;">충전</a></li>
