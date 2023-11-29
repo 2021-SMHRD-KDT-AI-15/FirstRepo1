@@ -12,7 +12,7 @@
             width: 100px;
             height: 100px;
         }
-
+ 
         #logo{
             width: 100px;
             height: 100px;

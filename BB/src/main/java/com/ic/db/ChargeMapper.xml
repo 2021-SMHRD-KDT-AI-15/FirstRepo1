@@ -3,8 +3,8 @@
 <mapper namespace="com.ic.db.ChargeMapper">
 
 
-	<insert id="charge" parameterType="com.ic.model.MemberDTO">
-		insert into CHARGE values(CHARGE_SEQ.NEXTVAL, #{id}, sysdata, #{money})
+	<insert id="charge" parameterType="com.ic.model.ChargeDTO">
+		insert into CHARGE values(CHARGE_SEQ.NEXTVAL, #{member_id}, sysdate, #{charge_money})
 	</insert>
 
 

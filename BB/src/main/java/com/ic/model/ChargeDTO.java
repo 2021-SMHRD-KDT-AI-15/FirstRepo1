@@ -36,6 +36,12 @@ public class ChargeDTO {
 	
 	// 기본 생성자
 	public ChargeDTO() {
+	
+	}
+	public ChargeDTO(int member_id, int charge_money) {
+		
+		this.member_id = member_id;
+		this.charge_money = charge_money;
 	}
 	
 }
