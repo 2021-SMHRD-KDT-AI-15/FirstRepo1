@@ -6,7 +6,8 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
-<body><form action="Myinfo" method="post">
+<body>
+	<form action="Myinfo" method="post">
 
 		<input type="submit" value="심부름 요청">
 		<input type="submit" value="심부름 목록">
