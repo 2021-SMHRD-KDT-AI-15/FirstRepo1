@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,12 @@
 		width: 300px;
 		height: 300px;
 		text-align: center;
+		positino: static;
+		float: left;
+	}
+	span{
+		background-color: black;
+		color: white;
 	}
 </style>
 </head>
@@ -27,10 +34,18 @@
 				${errand.req_date}<br>
 				  ~   ${errand.want_date}<br><br>
 				${errand.price} 원<br>
-				${errand.status}
-				<c:if test="${errand.status eq 0}">
-					<span>매칭대기중</span>
-				</c:if>
+				<c:choose>
+					<c:when test='${fn:contains(errand.status, "0")}'>
+						<span>매칭대기중</span>
+					</c:when>
+					<c:when test='${fn:contains(errand.status, "1")}'>
+						<span>매칭완료</span>
+					</c:when>
+					<c:when test='${fn:contains(errand.status, "3")}'>
+						<span>종료</span>
+					</c:when>
+				</c:choose>
+				
 			</div>
 	</c:forEach>
 </body>
