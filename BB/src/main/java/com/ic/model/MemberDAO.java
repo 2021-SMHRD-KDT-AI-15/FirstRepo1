@@ -44,9 +44,7 @@ public class MemberDAO {
 		
 		
 	}
-	
-<<<<<<< HEAD
-=======
+
 	// 회원정보 변경을 위한 비밀번호 체크
 	public MemberDTO check(MemberDTO dto) {
 		
@@ -58,7 +56,6 @@ public class MemberDAO {
 		
 		return result;
 	}
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/BB.git
-	
+
 
 }
