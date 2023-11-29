@@ -29,7 +29,6 @@ public class MemberDAO {
 	}
 	
 	// 로그인 메소드 생성
-	
 	public MemberDTO login(MemberDTO dto) {
 		// 1. SqlSession 생성! -> sqlSessionFactory를 사용하여 생성
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -43,6 +42,18 @@ public class MemberDAO {
 		// 4. 결과에 대한 처리!
 		return result;
 		
+	}
+	
+	// 회원정보 변경 메소드 생성
+	public MemberDTO change(MemberDTO dto) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		MemberDTO result = sqlSession.selectOne("change" , dto);
+		
+		sqlSession.close();	
+		
+		return result;
 	}
 	
 

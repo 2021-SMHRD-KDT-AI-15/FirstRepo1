@@ -10,4 +10,8 @@
 		select * from MEMBER where id=#{id} and pw=#{pw}
 	</select>
 	
+	<select id="change" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
+		select pw from MEMBER where id=#{id}
+	</select>
+	
 </mapper>
