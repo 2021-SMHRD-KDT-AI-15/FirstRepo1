@@ -25,7 +25,7 @@ public class InfoChange1 extends HttpServlet {
 		
 		dto.setPw(pw);
 		
-		MemberDTO result = dao.change(dto);
+		MemberDTO result = dao.check(dto);
 		
 		if (result != null) {
 			// 비밀번호 확인에 성공했을 때 -> InfoChange2.jsp 이동

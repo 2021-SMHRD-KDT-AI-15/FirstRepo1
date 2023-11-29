@@ -44,12 +44,12 @@ public class MemberDAO {
 		
 	}
 	
-	// 회원정보 변경 메소드 생성
-	public MemberDTO change(MemberDTO dto) {
+	// 회원정보 변경을 위한 비밀번호 체크
+	public MemberDTO check(MemberDTO dto) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		MemberDTO result = sqlSession.selectOne("change" , dto);
+		MemberDTO result = sqlSession.selectOne("check" , dto);
 		
 		sqlSession.close();	
 		
