@@ -9,6 +9,8 @@ public class ErrandDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
+	
+///////////////////////////////////////////// 심부름 요청 /////////////////////////////////////////////
 	public int requireErrand(ErrandDTO dto) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -18,6 +20,18 @@ public class ErrandDAO {
 		sqlSession.close();
 		
 		return result;
+	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+///////////////////////////////////////////// 심부름 목록 /////////////////////////////////////////////
+	public void errandList() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		sqlSession.selectList("errandList");
+		
 	}
 	
 }
