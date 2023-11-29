@@ -29,7 +29,6 @@ public class MemberDAO {
 	}
 	
 	// 로그인 메소드 생성
-	
 	public MemberDTO login(MemberDTO dto) {
 		// 1. SqlSession 생성! -> sqlSessionFactory를 사용하여 생성
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -46,6 +45,20 @@ public class MemberDAO {
 		
 	}
 	
+<<<<<<< HEAD
+=======
+	// 회원정보 변경을 위한 비밀번호 체크
+	public MemberDTO check(MemberDTO dto) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		MemberDTO result = sqlSession.selectOne("check" , dto);
+		
+		sqlSession.close();	
+		
+		return result;
+	}
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/BB.git
 	
 
 }
