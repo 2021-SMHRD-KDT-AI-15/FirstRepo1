@@ -25,8 +25,8 @@ public class LoginService extends HttpServlet {
 		String pw = request.getParameter("pw");
 
 		MemberDAO dao = new MemberDAO();
-
 		MemberDTO dto = new MemberDTO();
+		
 		dto.setId(id);
 		dto.setPw(pw);
 

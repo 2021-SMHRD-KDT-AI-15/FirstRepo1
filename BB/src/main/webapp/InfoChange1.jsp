@@ -35,14 +35,18 @@
         <button>확인</button>
     </section>
 
-
+	<!--  
     <script>
+    	// 비밀번호가 일치할때 성공
         if (pw != input.value) {
             alert("비밀번호가 일치하지 않습니다.")
+        } else {
+        	
         }
 
     </script>
-
+	-->
+	
 </body>
 
 </html>

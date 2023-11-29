@@ -41,8 +41,6 @@ public class MemberDAO {
 		
 		// 4. 결과에 대한 처리!
 		return result;
-		
-		
 	}
 
 	// 회원정보 변경을 위한 비밀번호 체크 메소드
@@ -58,10 +56,10 @@ public class MemberDAO {
 	}
 	
 	// 회원정보 변경을 위한 메소드
-	public MemberDTO update(MemberDTO dto) {
+	public int change(MemberDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		MemberDTO result = sqlSession.selectOne("update" , dto);
+		int result = sqlSession.update("change" , dto);
 		
 		sqlSession.close();
 		
