@@ -27,11 +27,6 @@ public class InfoChangeService2 extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO();
-
-		dto.setNickname(nickname);
-		dto.setPhone(phone);
-		dto.setPw(pw);
-		dto.setAddress(address);
 		
 		int result = dao.change(dto);
 		
@@ -39,7 +34,7 @@ public class InfoChangeService2 extends HttpServlet {
 			// 회원정보 변경에 성공했을 때 -> Myinfo.jsp 이동
 			HttpSession session = request.getSession();
 			session.setAttribute("clientInfo", result);
-			response.sendRedirect("Myinfo.jsp");
+			response.sendRedirect("MyInfo.jsp");
 		} else {
 			// 실패했을때 -> InfoChange2.jsp
 			response.sendRedirect("InfoChange2.jsp");

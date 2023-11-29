@@ -32,7 +32,6 @@ public class LoginService extends HttpServlet {
 
 		MemberDTO result = dao.login(dto);
 
-
 		if (result != null) {
 			// 회원가입에 성공했을 때 -> Main.jsp 이동 
 			HttpSession session = request.getSession();

@@ -59,11 +59,11 @@ public class MemberDAO {
 	public int change(MemberDTO dto) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		int result = sqlSession.update("change" , dto);
+		int rst = sqlSession.update("change" , dto);
 		
 		sqlSession.close();
 		
-		return result;
+		return rst;
 	}
 
 
