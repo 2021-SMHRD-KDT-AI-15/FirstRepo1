@@ -37,7 +37,7 @@ public class InfoChange2 extends HttpServlet {
 			// 비밀번호 확인에 성공했을 때 -> InfoChange2.jsp 이동
 			HttpSession session = request.getSession();
 			session.setAttribute("clientInfo", result);
-			response.sendRedirect("Myinfo.jsp.jsp");
+			response.sendRedirect("Myinfo.jsp");
 		} else {
 			// 실패했을때 -> Main.jsp
 			response.sendRedirect("InfoChange2.jsp");
