@@ -27,18 +27,25 @@ public class InfoChange2 extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO();
-		int result = dao.join(dto);
 
-		// 5. 호출된 기능의 결과에 따라 화면 결과 출력
+		dto.setNickname(nickname);
+		dto.setPhone(phone);
+		dto.setPw(pw);
+		dto.setAddress(address);
+		
+		int result = dao.change(dto);
+		
 		if (result > 0) {
-			// 회원정보 변경 성공 -> Myinfo.jsp 이동
+			// 회원정보 변경에 성공했을 때 -> Myinfo.jsp 이동
 			HttpSession session = request.getSession();
 			session.setAttribute("clientInfo", result);
 			response.sendRedirect("Myinfo.jsp");
 		} else {
-			// 실패 -> InfoChange2.jsp
+			// 실패했을때 -> InfoChange2.jsp
 			response.sendRedirect("InfoChange2.jsp");
 		}
+		
+	
 	}
 
 }
