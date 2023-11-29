@@ -7,5 +7,10 @@
 		INSERT INTO ERRAND VALUES(ERRAND_SEQ.NEXTVAL, #{member_id}, #{title}, #{content}, #{errand_ctgr}, #{price}, SYSDATE, #{location_ctgr}, #{req_location}, #{req_date}, 0, NULL, #{want_date})
 	</insert>
 	
+	<!--  심부름 목록 -->
+	<select id="errandList" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND
+	</select>
+	
 
 </mapper>

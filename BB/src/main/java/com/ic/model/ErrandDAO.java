@@ -1,5 +1,7 @@
 package com.ic.model;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -9,8 +11,10 @@ public class ErrandDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
+	ArrayList <ErrandDTO> errandList = new ArrayList<>();
 	
-///////////////////////////////////////////// 심부름 요청 /////////////////////////////////////////////
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 요청 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public int requireErrand(ErrandDTO dto) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -21,17 +25,21 @@ public class ErrandDAO {
 		
 		return result;
 	}
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 	
 	
-///////////////////////////////////////////// 심부름 목록 /////////////////////////////////////////////
-	public void errandList() {
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public ArrayList<ErrandDTO> errandList() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		sqlSession.selectList("errandList");
+		errandList = (ArrayList)sqlSession.selectList("errandList");
+		
+		sqlSession.close();
+		
+		return errandList;
 		
 	}
-	
 }
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
