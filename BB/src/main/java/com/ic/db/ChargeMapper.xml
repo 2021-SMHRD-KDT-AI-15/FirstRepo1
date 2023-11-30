@@ -5,7 +5,10 @@
 	<insert id="charge" parameterType="com.ic.model.ChargeDTO">
 		insert into CHARGE values(CHARGE_SEQ.NEXTVAL, #{member_id}, sysdate, #{charge_money})
 	</insert>
-
+	
+	<select id="ChargeHistory" resultType="com.ic.model.ChargeDTO">
+		SELECT * FROM CHARGE WHERE MEMBER_ID = #{member_id}
+	</select>
 
 </mapper>
 

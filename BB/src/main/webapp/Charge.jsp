@@ -21,17 +21,17 @@
 			<img id="logo" src="./부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
 			<nav id="gnb">
 				<ul>
-					<li><a href="" target="_blank" id="gnb_li"
+					<li><a href="ErrandList.jsp" target="_blank" id="gnb_li"
 						style="display: block;">심부름 요청</a></li>
-					<li><a href="" target="_blank" id="gnb_li"
+					<li><a href="RequireErrand.jsp" target="_blank" id="gnb_li"
 						style="display: block;">심부름 목록</a></li>
 					<li><a href="Rangking.jsp" target="_blank" id="gnb _li"
 						style="display: block;">랭킹</a></li>
 					<li><a href="Charge.jsp" target="_blank" id="gnb_li"
 						style="display: block;">충전</a></li>
-					<li><a href="" target="_blank" id="gnb_li"
+					<li><a href="ChatList.jsp" target="_blank" id="gnb_li"
 						style="display: block;">채팅</a></li>
-					<li><a href="" target="_blank" id="gnb_li"
+					<li><a href="Myinfo.jsp" target="_blank" id="gnb_li"
 						style="display: block;">마이페이지</a></li>
 				</ul>
 			</nav>

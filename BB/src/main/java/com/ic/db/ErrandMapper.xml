@@ -12,5 +12,14 @@
 		SELECT * FROM ERRAND
 	</select>
 	
+	<!-- 심부름 상세정보 -->
+	<select id="errandInfo" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE ERRAND_ID = #{errand_id}
+	</select>
+	
+	<!-- 닉네임 호출 -->
+	<select id="getNickname" resultType="String">
+		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{member_id}
+	</select>
 
 </mapper>

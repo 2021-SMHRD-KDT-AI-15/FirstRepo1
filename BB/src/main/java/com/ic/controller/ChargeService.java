@@ -38,7 +38,8 @@ public class ChargeService extends HttpServlet {
 		ChargeDTO dto2 = new ChargeDTO(member_id, charge_money);
 
 		dao.charge(dto2);
-
+		
+		
 		
 		response.sendRedirect("MyInfo.jsp");
 		

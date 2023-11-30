@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -28,6 +28,12 @@
         <button>지원한 심부름</button>
         <button>충전내역</button>
         <button>결제 내역</button>
+    </div>
+    	<c:forEach var="chargeHistory" items="${chargeHistory}">
+    		${chargeHistory.charge_money}
+    	</c:forEach>
+    <div>
+    	
     </div>
 
     <script>
