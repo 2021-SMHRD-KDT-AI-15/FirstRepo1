@@ -21,5 +21,10 @@
 	<select id="getNickname" resultType="String">
 		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{member_id}
 	</select>
+	
+	<!-- 심부름 지원 체크 -->
+	<select id="checkApply" parameterType="com.ic.model.ApplyCheckDTO" resultType="com.ic.model.ApplyDTO">
+		SELECT * FROM APPLY WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
+	</select>
 
 </mapper>

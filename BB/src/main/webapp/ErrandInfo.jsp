@@ -50,8 +50,19 @@
 				<legend>내용</legend>
 				${ErrandInfo.content}
 			</fieldset>
-			
 		</div>
+		<c:choose>
+			<c:when test="${fn:contains(clientInfo.member_id, ErrandInfo.member_id)}">
+				본인이 요청한 심부름입니다.
+			</c:when>
+			<c:when test="${not empty applyCheck}">
+				이미 지원한 심부름입니다.
+			</c:when>
+			<c:otherwise>
+				<a href="ApplyErrandService?errand_id=${ErrandInfo.errand_id}"><button>지원하기</button></a>
+			</c:otherwise>
+		</c:choose>
+		
 	</div>
 </body>
 </html>

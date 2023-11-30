@@ -27,8 +27,6 @@ public class ErrandDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
-	
-	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<ErrandDTO> errandList() {
 		
@@ -63,9 +61,27 @@ public class ErrandDAO {
 		
 		String nickname = sqlSession.selectOne("getNickname", member_id);
 		
+		sqlSession.close();
+		
 		return nickname;
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 지원한 심부름에 또 지원못하게 체크 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public ApplyDTO checkApply(ApplyCheckDTO checkdto) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		ApplyDTO result = sqlSession.selectOne("checkApply", checkdto);
+		
+		sqlSession.close();
+		
+		return result;
+		
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
 }
 
 
