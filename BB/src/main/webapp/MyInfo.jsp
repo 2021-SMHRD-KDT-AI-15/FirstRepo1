@@ -69,7 +69,7 @@
                         <a href="InfoChange1.jsp"><button>회원정보 변경</button></a>
                         <a href="RequiredErrand.jsp"><button>요청한 심부름</button></a>
                         <a href="ApplyErrand.jsp"><button>지원한 심부름</button></a>
-                        <a href="ChargeHistory.jsp"><button>충전내역</button></a>
+                        <a href="ChargeHistoryService"><button>충전내역</button></a>
                         <a href="PaymentHistory.jsp"><button>결제 내역</button></a>
                     </section>
                 </div>
