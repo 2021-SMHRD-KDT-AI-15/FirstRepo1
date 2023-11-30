@@ -43,17 +43,6 @@ public class MemberDAO {
 		return result;
 	}
 
-	// 회원정보 변경을 위한 메소드
-	public int change(MemberDTO dto) {
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		int rst = sqlSession.update("change" , dto);
-		
-		sqlSession.close();
-		
-		return rst;
-	}
-
 	// 비밀번호 체크
 	public MemberDTO check(MemberDTO dto) {
 		
@@ -66,6 +55,16 @@ public class MemberDAO {
 		return result;
 	}
 
-
+	// 회원정보 변경을 위한 메소드
+	public int change(MemberDTO dto) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.update("change" , dto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
 
 }

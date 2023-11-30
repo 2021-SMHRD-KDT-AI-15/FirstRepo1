@@ -33,7 +33,6 @@ public class InfoChangeService1 extends HttpServlet {
 		MemberDAO memberdao = new MemberDAO();
 		
 		MemberDTO result = memberdao.check(dto);
-		System.out.println(id);
 		
 		if (result != null) {
 			// 비밀번호 확인에 성공했을 때 -> InfoChange2.jsp 이동

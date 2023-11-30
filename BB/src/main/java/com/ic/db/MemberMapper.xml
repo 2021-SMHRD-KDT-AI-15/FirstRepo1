@@ -14,11 +14,11 @@
 		select * from Member where id=#{id} and pw=#{pw}
 	</select>
 	
-	<select id="change" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
-		update MEMBER set nikname=${nickname},	
-				   		  phone=${phone},
-				   		  pw=${pw},
-				   		  address=${address} 
+	<select id="change" parameterType="com.ic.model.MemberDTO">
+		update MEMBER set nikname=#{nickname},	
+				   		  phone=#{phone},
+				   		  pw=#{pw},
+				   		  address=#{address} 
 		where id=#{id}  
 	</select>
 </mapper>
