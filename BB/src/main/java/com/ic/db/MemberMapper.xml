@@ -15,7 +15,7 @@
 	</select>
 	
 	<select id="change" parameterType="com.ic.model.MemberDTO">
-		update MEMBER set nikname=#{nickname},	
+		update MEMBER set nickname=#{nickname},	
 				   		  phone=#{phone},
 				   		  pw=#{pw},
 				   		  address=#{address} 

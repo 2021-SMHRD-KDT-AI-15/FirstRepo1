@@ -1,40 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<form action="InfoChangeService2" method="post">
 
-		<input type="submit" value="½ÉºÎ¸§ ¿äÃ»">
-		<input type="submit" value="½ÉºÎ¸§ ¸ñ·Ï">
-		<input type="submit" value="·©Å·">
-		<input type="submit" value="ÃæÀü">
-		<input type="submit" value="Ã¤ÆÃ">
-		<input type="submit" value="¸¶ÀÌÆäÀÌÁö">
+		<input type="submit" value="ì‹¬ë¶€ë¦„ ìš”ì²­">
+		<input type="submit" value="ì‹¬ë¶€ë¦„ ëª©ë¡">
+		<input type="submit" value="ëž­í‚¹">
+		<input type="submit" value="ì¶©ì „">
+		<input type="submit" value="ì±„íŒ…">
+		<input type="submit" value="ë§ˆì´íŽ˜ì´ì§€">
 		<br>
 
-		<input type="submit" value="³»Á¤º¸">
-		<input type="submit" value="È¸¿øÁ¤º¸º¯°æ">
-		<input type="submit" value="¿äÃ»ÇÑ½ÉºÎ¸§">
-		<input type="submit" value="Áö¿øÇÑ½ÉºÎ¸§">
-		<input type="submit" value="ÃæÀü³»¿ª">
-		<input type="submit" value="°áÁ¦³»¿ª">
+		<input type="submit" value="ë‚´ì •ë³´">
+		<input type="submit" value="íšŒì›ì •ë³´ë³€ê²½">
+		<input type="submit" value="ìš”ì²­í•œì‹¬ë¶€ë¦„">
+		<input type="submit" value="ì§€ì›í•œì‹¬ë¶€ë¦„">
+		<input type="submit" value="ì¶©ì „ë‚´ì—­">
+		<input type="submit" value="ê²°ì œë‚´ì—­">
 		<br>
 		
-		<p>º¯°æÇÒ´Ð³×ÀÓ</p>
-		<input type="text" placeholder="º¯°æÇÒ ´Ð³×ÀÓÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä." name="nickname">
-		<p>¿¬¶ôÃ³</p>
-		<input type="text" placeholder="º¯°æÇÒ ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." name="phone">
-		<p>º¯°æÇÒºñ¹Ð¹øÈ£</p>
-		<input type="text" placeholder="º¯°æÇÒ ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." name="pw">
-		<p>º¯°æÇÒÁÖ¼Ò°Ë»ö</p>
-		<input type="text" placeholder="ÁÖ¼Ò¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." name="address">
+		<p>ë³€ê²½í• ë‹‰ë„¤ìž„</p>
+		<input type="text" placeholder="ë³€ê²½í•  ë‹‰ë„¤ìž„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”." name="nickname">
+		<p>ì—°ë½ì²˜</p>
+		<input type="text" placeholder="ë³€ê²½í•  ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." name="phone">
+		<p>ë³€ê²½í• ë¹„ë°€ë²ˆí˜¸</p>
+		<input type="text" placeholder="ë³€ê²½í•  ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." name="pw">
+		<p>ë³€ê²½í• ì£¼ì†Œê²€ìƒ‰</p>
+		<input type="text" placeholder="ì£¼ì†Œë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." name="address">
 		<br><br>
-		<input type="submit" value="º¯°æ">
+		<input type="submit" value="ë³€ê²½">
 	</form>
 </body>
 </html>
