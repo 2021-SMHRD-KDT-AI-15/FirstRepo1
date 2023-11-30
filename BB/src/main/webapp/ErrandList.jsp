@@ -26,7 +26,7 @@
 </head>
 <body>
 	<c:forEach var="errand" items="${errandList}">
-			<a href="ErrandInfoService?member_id=${errand.member_id}">
+			<a href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
 			<div>
 				No. ${errand.errand_id}<br><br>
 				${errand.location_ctgr}  ${errand.errand_ctgr}<br>

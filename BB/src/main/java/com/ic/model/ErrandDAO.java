@@ -41,5 +41,31 @@ public class ErrandDAO {
 		return errandList;
 		
 	}
-}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 상세정보 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public ErrandDTO errandInfo(int errand_id) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		ErrandDTO dto = sqlSession.selectOne("errandInfo", errand_id);
+		
+		sqlSession.close();
+		
+		return dto;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 닉네임 호출 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public String getNickname(int member_id) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		String nickname = sqlSession.selectOne("getNickname", member_id);
+		
+		return nickname;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+}
+
+
