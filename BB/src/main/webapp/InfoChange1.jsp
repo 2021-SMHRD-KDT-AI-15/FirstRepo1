@@ -19,7 +19,7 @@
     <div>
         <img id="logo" src="./부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
     </div>
-    <form action="InfoChange2" method="post">
+    <form action="InfoChangeService1" method="post">
 		<input type="submit" value="심부름 요청">
 		<input type="submit" value="심부름 목록">
 		<input type="submit" value="랭킹">
@@ -37,7 +37,7 @@
 		<br>
 
 	    <section>
-	        <input type="text" placeholder="비밀번호를 입력해주세요.">
+	        <input type="text" placeholder="비밀번호를 입력해주세요." name="pw">
 	        <input type="submit" value="확인">
 	    </section>
 	</form>

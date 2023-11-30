@@ -108,4 +108,10 @@ public class MemberDTO {
 		this.gender = gender;
 		
 	}
+
+	public MemberDTO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+	
 }

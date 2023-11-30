@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="Myinfo" method="post">
+	<form action="InfoChangeService2" method="post">
 
 		<input type="submit" value="심부름 요청">
 		<input type="submit" value="심부름 목록">
@@ -27,6 +27,8 @@
 		
 		<p>변경할닉네임</p>
 		<input type="text" placeholder="변경할 닉네임을 입력해주세요." name="nickname">
+		<p>연락처</p>
+		<input type="text" placeholder="변경할 전화번호를 입력해주세요." name="phone">
 		<p>변경할비밀번호</p>
 		<input type="text" placeholder="변경할 비밀번호를 입력해주세요." name="pw">
 		<p>변경할주소검색</p>

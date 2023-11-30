@@ -11,7 +11,7 @@
 	</select>
 	
 	<select id="check" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
-		select * from MEMBER where id=#{id} and pw=#{pw}
+		select * from Member where id=#{id} and pw=#{pw}
 	</select>
 	
 	<select id="change" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">

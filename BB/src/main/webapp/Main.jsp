@@ -54,7 +54,7 @@
     </div>
 
 
-    <a class="box1" id="ErrandList" href="ErrandListService">심부름 목록</a>
+    <a class="box1" id="ErrandList" href="ErrandListService.jsp">심부름 목록</a>
     <a class="box1" id="RequireErrand" href="RequireErrand.jsp">심부름 요청</a>
     <a class="box2" id="Charge" href="Charge.jsp">충전하기</a>
     <a class="box3"id="MyInfo" href="MyInfo.jsp">마이 페이지</a>
