@@ -25,7 +25,7 @@
 
 	<header>
 		<div id="logo">
-			<img id="logo" src="./부릉부름_logo.png" alt="">
+			<img id="logo" src="asset/img/부릉부름_logo.png" alt="">
 		</div>
 
 		<div>
