@@ -40,42 +40,43 @@ td {
 </style>
 </head>
 <body>
-	<c:if test="${fn:contains(param.applyCheck, 0)}">
-		<div>
-			<table>
-				<tr>
-					<td>지원한 심부름이 없습니다.</td>
-				</tr>
-			</table>
-		</div>
-	</c:if>
-	<c:forEach var="ErrandTitle" items="${ErrandTitleList}">
-		<div>
-			<table>
-				<tr>
-					<td id="title">${ErrandTitle.title}</td>
-					<c:choose>
-						<c:when test="${fn:contains(ErrandTitle.status, 0)}">
-							<td id="status">수락대기
-							<td>
-						</c:when>
 
-						<c:when test="${fn:contains(ErrandTitle.status, 1)}">
-							<td id="status">매칭완료
-							<td>
-						</c:when>
+	<c:choose>
+		<c:when test="${fn:contains(param.applyCheck, 0)}">
+			<div>
+				<table>
+					<tr>
+						<td>지원한 심부름이 없습니다.</td>
+					</tr>
+				</table>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<c:forEach var="ErrandTitle" items="${ErrandTitleList}">
+				<div>
+					<table>
+						<tr>
+							<td id="title">${ErrandTitle.title}</td>
+							<c:choose>
+								<c:when test="${fn:contains(ErrandTitle.status, 0)}">
+									<td id="status">수락대기</td>
+								</c:when>
 
-						<c:when test="${fn:contains(ErrandTitle.status, 2)}">
-							<td id="status">심부름 종료
-							<td>
-						</c:when>
-					</c:choose>
+								<c:when test="${fn:contains(ErrandTitle.status, 1)}">
+									<td id="status">매칭완료</td>
+								</c:when>
 
-					<a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a>
-				</tr>
-			</table>
-		</div>
-	</c:forEach>
+								<c:when test="${fn:contains(ErrandTitle.status, 2)}">
+									<td id="status">심부름 종료</td>
+								</c:when>
+							</c:choose>
+							<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
+						</tr>
+					</table>
+				</div>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
 
 </body>
 </html>
