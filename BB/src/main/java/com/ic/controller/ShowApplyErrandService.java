@@ -43,6 +43,7 @@ public class ShowApplyErrandService extends HttpServlet {
 			
 			// 지원한 목록에서 ERRAND_ID만 빼와서 후처리 //
 			ArrayList Errand_id_list = new ArrayList<>(); 
+			
 			for(ApplyDTO n : applyList) {
 				Errand_id_list.add(n.getErrand_id());
 			}

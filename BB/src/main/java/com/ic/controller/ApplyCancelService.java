@@ -1,7 +1,6 @@
 package com.ic.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,30 +9,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ic.model.ApplyCheckDTO;
 import com.ic.model.ApplyDAO;
 import com.ic.model.MemberDTO;
 
-@WebServlet("/ApplyErrandService")
-public class ApplyErrandService extends HttpServlet {
+@WebServlet("/ApplyCancelService")
+public class ApplyCancelService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int errand_id = Integer.parseInt(request.getParameter("errand_id")); // 심부름 번호
-		
 		HttpSession session = request.getSession();
-		MemberDTO memberdto= (MemberDTO)session.getAttribute("clientInfo");
 		
-		int apply_member_id = memberdto.getMember_id();  // 지원자 회원번호
+		MemberDTO clientDTO = new MemberDTO();
+		clientDTO = (MemberDTO)session.getAttribute("clientInfo");
+		int client_member_id = clientDTO.getMember_id();
 		
-		ArrayList list = new ArrayList<>();
-		list.add(errand_id);
-		list.add(apply_member_id);
-	
+		int errand_id = Integer.parseInt(request.getParameter("errand_id"));
+		
 		ApplyDAO applydao = new ApplyDAO();
-		int result = applydao.ApplyErrand(list);
 		
-		response.sendRedirect("ShowApplyErrandService");
+		ApplyCheckDTO checkdto = new ApplyCheckDTO(errand_id, client_member_id);
+		
+		int result = applydao.ApplyCancel(checkdto);
+		
+		if(result > 0) {
+			response.sendRedirect("ShowApplyErrandService");
+		}else {
+			response.sendRedirect("Main.jsp");
+		}
 		
 	}
 

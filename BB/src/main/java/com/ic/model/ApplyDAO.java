@@ -57,6 +57,18 @@ public class ApplyDAO {
 		
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+	public int ApplyCancel(ApplyCheckDTO checkdto) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.delete("ApplyCancel", checkdto);
+		
+		sqlSession.close();
+		
+		return result;
+		
+	}
 	
 	
 }

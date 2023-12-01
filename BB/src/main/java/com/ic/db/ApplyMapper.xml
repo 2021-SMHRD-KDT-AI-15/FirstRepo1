@@ -16,9 +16,14 @@
 		SELECT * FROM APPLY WHERE MEMBER_ID = #{member_id}
 	</select>
 	
-	<!--  심부름 번호로 심부름 제목 불러오기 -->
+	<!--  심부름 번호로 심부름 제목 불러오기 (해당 정보 전부)-->
 	<select id="GetErrandTitle" parameterType="java.util.List" resultType="com.ic.model.ErrandDTO">
 		SELECT * FROM ERRAND WHERE ERRAND_ID IN (<foreach item="errand_id_list" collection="list" separator=","> #{errand_id_list} </foreach>)
 	</select>
+	
+	<!-- 지원한 심부름 취소 -->
+	<delete id="ApplyCancel" parameterType="com.ic.model.ApplyCheckDTO">
+		DELETE FROM APPLY WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
+	</delete>
 
 </mapper>
