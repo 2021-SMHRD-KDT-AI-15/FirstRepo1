@@ -1,42 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="False"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+	div{
+		background-color: whitesmoke;
+		width: 900px;
+		height: 60px;
+		border: 1px solid;
+	}
+	table{
+		width: 900px;
+		margin: 10px;
+	}
+	#title{
+		width: 600px;
+		height: 35px;
+		background-color: #c4c4c4;
+		border-radius: 10px;
+	}
+	td{
+		text-align: center;
+	}
+	#status{
+		background-color: black;
+		color: white;
+	}
+</style>
 </head>
 <body><form action="Myinfo" method="post">
 
-		<input type="submit" value="½ÉºÎ¸§ ¿äÃ»">
-		<input type="submit" value="½ÉºÎ¸§ ¸ñ·Ï">
-		<input type="submit" value="·©Å·">
-		<input type="submit" value="ÃæÀü">
-		<input type="submit" value="Ã¤ÆÃ">
-		<input type="submit" value="¸¶ÀÌÆäÀÌÁö">
+		<input type="submit" value="ì‹¬ë¶€ë¦„ ìš”ì²­">
+		<input type="submit" value="ì‹¬ë¶€ë¦„ ëª©ë¡">
+		<input type="submit" value="ë­í‚¹">
+		<input type="submit" value="ì¶©ì „">
+		<input type="submit" value="ì±„íŒ…">
+		<input type="submit" value="ë§ˆì´í˜ì´ì§€">
 		<br>
 
-		<input type="submit" value="³»Á¤º¸">
-		<input type="submit" value="È¸¿øÁ¤º¸º¯°æ">
-		<input type="submit" value="¿äÃ»ÇÑ½ÉºÎ¸§">
-		<input type="submit" value="Áö¿øÇÑ½ÉºÎ¸§">
-		<input type="submit" value="ÃæÀü³»¿ª">
-		<input type="submit" value="°áÁ¦³»¿ª">
+		<input type="submit" value="ë‚´ì •ë³´">
+		<input type="submit" value="íšŒì›ì •ë³´ë³€ê²½">
+		<input type="submit" value="ìš”ì²­í•œì‹¬ë¶€ë¦„">
+		<input type="submit" value="ì§€ì›í•œì‹¬ë¶€ë¦„">
+		<input type="submit" value="ì¶©ì „ë‚´ì—­">
+		<input type="submit" value="ê²°ì œë‚´ì—­">
 		<br>
 		
-		
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="nickname">
-		<input type="submit" value="Áö¿øÃë¼Ò"><br>
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="pw">
-		<input type="submit" value="È®ÀÎ"><br>
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="address">
-		<input type="submit" value="Áö¿øÃë¼Ò">
-		<input type="submit" value="Ã¤ÆÃ"><br>
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="nickname">
-		<input type="submit" value="ÈÄ±âÀÛ¼º">
-		
-		
-		
+		<c:if test="${fn:contains(param.applyCheck, 0)}">
+			ì§€ì›í•œ ì‹¬ë¶€ë¦„ì´ ì—†ìŠµë‹ˆë‹¤.
+		</c:if>
+		<c:forEach var="ErrandTitle" items="${ErrandTitleList}">
+			<div>
+				<table>
+					<tr>
+						<td id="title">${ErrandTitle.title}</td>
+						<td id="status">ìˆ˜ë½ëŒ€ê¸°<td>
+						<button>ì§€ì›ì·¨ì†Œ</button>
+					</tr>
+				</table>
+			</div>
+		</c:forEach>
 		
 		
 	</form>

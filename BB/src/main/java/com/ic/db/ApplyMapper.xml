@@ -10,5 +10,15 @@
 								 'TEST',
 								 0)
 	</insert>
+	
+	<!-- 지원한 심부름 불러오기 -->
+	<select id="ShowApplyErrand" resultType="com.ic.model.ApplyDTO">
+		SELECT * FROM APPLY WHERE MEMBER_ID = #{member_id}
+	</select>
+	
+	<!--  심부름 번호로 심부름 제목 불러오기 -->
+	<select id="GetErrandTitle" parameterType="java.util.List" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE ERRAND_ID IN (<foreach item="errand_id_list" collection="list" separator=","> #{errand_id_list} </foreach>)
+	</select>
 
 </mapper>
