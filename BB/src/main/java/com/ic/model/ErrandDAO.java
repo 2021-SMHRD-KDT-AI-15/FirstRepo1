@@ -1,7 +1,6 @@
 package com.ic.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,6 +12,7 @@ public class ErrandDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
 	ArrayList <ErrandDTO> errandList = new ArrayList<>();
+	
 	
 	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 요청 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -84,17 +84,18 @@ public class ErrandDAO {
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 //■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록서 본인이 요청한 심부름 목록 불러오게 하기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public List<ErrandDTO> loadMemberErrands(int member_id) {
+	public ArrayList<ErrandDTO> loadMemberErrands(int member_id) {
 		
 	    SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-	    List<ErrandDTO> errandList = sqlSession.selectList("loadMemberErrands", member_id);
+	    errandList = (ArrayList)sqlSession.selectList("loadMemberErrands", member_id);
 
 	    sqlSession.close();
 	     
 	    return errandList;
 
 	}
+
 
 	
 }

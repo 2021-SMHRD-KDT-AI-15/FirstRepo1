@@ -1,6 +1,7 @@
 package com.ic.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ import com.ic.model.MemberDTO;
 @WebServlet("/RequiredErrandService")
 public class RequiredErrandService extends HttpServlet {
     private static final long serialVersionUID = 1L;
+
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -25,19 +27,15 @@ public class RequiredErrandService extends HttpServlet {
         HttpSession session = request.getSession();
         MemberDTO memberdto = (MemberDTO) session.getAttribute("clientinfo");
 
-        String member_id = memberdto.getId();
         int errand_id = Integer.parseInt(request.getParameter("errand_id"));
 
         ErrandDAO erranddao = new ErrandDAO();
-        ErrandDTO erranddto = erranddao.errandInfo(errand_id);
 
-        if (erranddto != null) {
-            String title = erranddto.getTitle();
-            System.out.println("Title: " + title);
-            request.setAttribute("errandTitle", title);
+        ArrayList<ErrandDTO> errandList = erranddao.loadMemberErrands(errand_id);
 
-            String redirectURL = "ErrandInfo.jsp?errand_id=" + errand_id + "&member_id=" + member_id;
-            RequestDispatcher rd = request.getRequestDispatcher(redirectURL);
+        if (errandList != null && !errandList.isEmpty()) {
+            request.setAttribute("loadMemberErrands", errandList);
+            RequestDispatcher rd = request.getRequestDispatcher("ErrandInfo.jsp");
             rd.forward(request, response);
         } else {
             response.sendRedirect("RequiredErrand.jsp");
