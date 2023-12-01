@@ -10,8 +10,15 @@
 		select * from MEMBER where id=#{id} and pw=#{pw}
 	</select>
 	
-	<select id="change" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
-		select pw from MEMBER where id=#{id}
+	<select id="check" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
+		select * from Member where id=#{id} and pw=#{pw}
 	</select>
 	
+	<select id="change" parameterType="com.ic.model.MemberDTO">
+		update MEMBER set nickname=#{nickname},	
+				   		  phone=#{phone},
+				   		  pw=#{pw},
+				   		  address=#{address} 
+		where id=#{id}  
+	</select>
 </mapper>

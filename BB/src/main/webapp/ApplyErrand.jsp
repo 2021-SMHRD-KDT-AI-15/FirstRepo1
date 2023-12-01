@@ -1,44 +1,82 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="False"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+div {
+	background-color: whitesmoke;
+	width: 900px;
+	height: 60px;
+	border: 1px solid;
+}
+
+table {
+	width: 900px;
+	margin: 10px;
+}
+
+#title {
+	width: 600px;
+	height: 35px;
+	background-color: #c4c4c4;
+	border-radius: 10px;
+}
+
+td {
+	text-align: center;
+}
+
+#status {
+	background-color: black;
+	color: white;
+}
+</style>
 </head>
-<body><form action="Myinfo" method="post">
+<body>
 
-		<input type="submit" value="½ÉºÎ¸§ ¿äÃ»">
-		<input type="submit" value="½ÉºÎ¸§ ¸ñ·Ï">
-		<input type="submit" value="·©Å·">
-		<input type="submit" value="ÃæÀü">
-		<input type="submit" value="Ã¤ÆÃ">
-		<input type="submit" value="¸¶ÀÌÆäÀÌÁö">
-		<br>
+	<c:choose>
+		<c:when test="${fn:contains(param.applyCheck, 0)}">
+			<div>
+				<table>
+					<tr>
+						<td>ì§€ì›í•œ ì‹¬ë¶€ë¦„ì´ ì—†ìŠµë‹ˆë‹¤.</td>
+					</tr>
+				</table>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<c:forEach var="ErrandTitle" items="${ErrandTitleList}">
+				<div>
+					<table>
+						<tr>
+							<td id="title">${ErrandTitle.title}</td>
+							<c:choose>
+								<c:when test="${fn:contains(ErrandTitle.status, 0)}">
+									<td id="status">ìˆ˜ë½ëŒ€ê¸°</td>
+								</c:when>
 
-		<input type="submit" value="³»Á¤º¸">
-		<input type="submit" value="È¸¿øÁ¤º¸º¯°æ">
-		<input type="submit" value="¿äÃ»ÇÑ½ÉºÎ¸§">
-		<input type="submit" value="Áö¿øÇÑ½ÉºÎ¸§">
-		<input type="submit" value="ÃæÀü³»¿ª">
-		<input type="submit" value="°áÁ¦³»¿ª">
-		<br>
-		
-		
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="nickname">
-		<input type="submit" value="Áö¿øÃë¼Ò"><br>
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="pw">
-		<input type="submit" value="È®ÀÎ"><br>
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="address">
-		<input type="submit" value="Áö¿øÃë¼Ò">
-		<input type="submit" value="Ã¤ÆÃ"><br>
-		<input type="text" placeholder="½ÉºÎ¸§ Á¦¸ñ" name="nickname">
-		<input type="submit" value="ÈÄ±âÀÛ¼º">
-		
-		
-		
-		
-		
-	</form>
+								<c:when test="${fn:contains(ErrandTitle.status, 1)}">
+									<td id="status">ë§¤ì¹­ì™„ë£Œ</td>
+								</c:when>
+
+								<c:when test="${fn:contains(ErrandTitle.status, 2)}">
+									<td id="status">ì‹¬ë¶€ë¦„ ì¢…ë£Œ</td>
+								</c:when>
+							</c:choose>
+							<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>ì§€ì›ì·¨ì†Œ</button></a></td>
+						</tr>
+					</table>
+				</div>
+			</c:forEach>
+		</c:otherwise>
+	</c:choose>
+
 </body>
 </html>

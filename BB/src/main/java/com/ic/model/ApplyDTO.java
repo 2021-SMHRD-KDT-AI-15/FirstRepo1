@@ -42,6 +42,15 @@ public class ApplyDTO {
 	
 	// 기본 생성자
 	public ApplyDTO() {
+		
+	}
+	public ApplyDTO(int apply_id, int errand_id, int member_id, String message, char match_status) {
+		super();
+		this.apply_id = apply_id;
+		this.errand_id = errand_id;
+		this.member_id = member_id;
+		this.message = message;
+		this.match_status = match_status;
 	}
 	
 }

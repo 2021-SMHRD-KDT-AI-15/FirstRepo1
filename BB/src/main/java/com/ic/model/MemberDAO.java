@@ -41,20 +41,30 @@ public class MemberDAO {
 		
 		// 4. 결과에 대한 처리!
 		return result;
-		
 	}
-	
-	// 회원정보 변경 메소드 생성
-	public MemberDTO change(MemberDTO dto) {
+
+	// 비밀번호 체크
+	public MemberDTO check(MemberDTO dto) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		MemberDTO result = sqlSession.selectOne("change" , dto);
+		MemberDTO result = sqlSession.selectOne("check", dto);
 		
-		sqlSession.close();	
+		sqlSession.close();
 		
 		return result;
 	}
-	
+
+	// 회원정보 변경을 위한 메소드
+	public int change(MemberDTO dto) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.update("change" , dto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
 
 }

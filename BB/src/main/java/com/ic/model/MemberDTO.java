@@ -95,8 +95,9 @@ public class MemberDTO {
 
 	// 기본 생성자
 	public MemberDTO() {
+		
 	}
-
+	
 	public MemberDTO(String id, String pw, String nickname, String email, String phone, String address, int age, char gender) {
 		this.id = id;
 		this.pw = pw;
@@ -108,4 +109,10 @@ public class MemberDTO {
 		this.gender = gender;
 		
 	}
+
+	public MemberDTO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+	
 }

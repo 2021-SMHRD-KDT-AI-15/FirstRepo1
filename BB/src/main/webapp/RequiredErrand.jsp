@@ -30,6 +30,7 @@
     </div>
 
     <main>
+    	
         <a href="ErrandInfo.jsp"><button>심부름제목</button></a><button>요청 취소</button>
         <section>
             <table border="solid" width="700px">

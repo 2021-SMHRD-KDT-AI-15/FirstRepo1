@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ic.db.ChargeMapper">
+
+	<insert id="charge" parameterType="com.ic.model.ChargeDTO">
+		insert into CHARGE values(CHARGE_SEQ.NEXTVAL, #{member_id}, sysdate, #{charge_money})
+	</insert>
+	
+	<select id="ChargeHistory" resultType="com.ic.model.ChargeDTO">
+		SELECT * FROM CHARGE WHERE MEMBER_ID = #{member_id} ORDER BY charge_date DESC
+	</select>
+
+</mapper>
+
+
+

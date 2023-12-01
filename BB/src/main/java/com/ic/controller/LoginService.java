@@ -15,7 +15,6 @@ import com.ic.model.MemberDTO;
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -25,13 +24,12 @@ public class LoginService extends HttpServlet {
 		String pw = request.getParameter("pw");
 
 		MemberDAO dao = new MemberDAO();
-
 		MemberDTO dto = new MemberDTO();
+		
 		dto.setId(id);
 		dto.setPw(pw);
 
 		MemberDTO result = dao.login(dto);
-
 
 		if (result != null) {
 			// 회원가입에 성공했을 때 -> Main.jsp 이동 
