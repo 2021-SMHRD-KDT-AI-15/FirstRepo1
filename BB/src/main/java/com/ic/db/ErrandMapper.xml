@@ -28,8 +28,8 @@
 	</select>
 	
 	<!-- 심부름 목록서 요청한 심부름 선택 -->
-	<select id="loadErrand" resultType="com.ic.model.ErrandDTO">
-		SELECT * FROM ERRAND WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{member_id}
+	<select id="loadMemberErrands" parameterType="int" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE MEMBER_ID = #{member_id}
 	</select>
 
 

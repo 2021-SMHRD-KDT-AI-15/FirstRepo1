@@ -28,9 +28,6 @@ public class LoginService extends HttpServlet {
 		
 		dto.setId(id);
 		dto.setPw(pw);
-		
-		System.out.println(id);
-		System.out.println(pw);
 
 		MemberDTO result = dao.login(dto);
 

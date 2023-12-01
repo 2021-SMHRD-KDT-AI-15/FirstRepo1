@@ -84,19 +84,18 @@ public class ErrandDAO {
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 //■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록서 본인이 요청한 심부름 목록 불러오게 하기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public ArrayList<ErrandDTO> loadErrand(int member_id, int errand_id) {
+	public List<ErrandDTO> loadMemberErrands(int member_id) {
 		
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		ArrayList<ErrandDTO> loadlist = (ArrayList)sqlSession.selectList("loadErrand",member_id);
-				
-		sqlSession.close();
-		
-		return loadlist;
-		
+	    SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+	    List<ErrandDTO> errandList = sqlSession.selectList("loadMemberErrands", member_id);
+
+	    sqlSession.close();
+	     
+	    return errandList;
+
 	}
 
-	
 	
 }
 
