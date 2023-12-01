@@ -41,7 +41,7 @@
 			<c:when test='${fn:contains(ErrandInfo.status, "1")}'>
 				<span class="status">매칭완료</span>
 			</c:when>
-			<c:when test='${fn:contains(ErrandInfo.status, "3")}'>
+			<c:when test='${fn:contains(ErrandInfo.status, "2")}'>
 				<span class="status">종료</span>
 			</c:when>
 		</c:choose>

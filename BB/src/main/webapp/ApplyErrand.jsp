@@ -60,17 +60,18 @@ td {
 							<c:choose>
 								<c:when test="${fn:contains(ErrandTitle.status, 0)}">
 									<td id="status">수락대기</td>
+									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
 								</c:when>
 
 								<c:when test="${fn:contains(ErrandTitle.status, 1)}">
 									<td id="status">매칭완료</td>
+									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
 								</c:when>
-
 								<c:when test="${fn:contains(ErrandTitle.status, 2)}">
 									<td id="status">심부름 종료</td>
+									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>후기작성</button></a></td>
 								</c:when>
 							</c:choose>
-							<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
 						</tr>
 					</table>
 				</div>
