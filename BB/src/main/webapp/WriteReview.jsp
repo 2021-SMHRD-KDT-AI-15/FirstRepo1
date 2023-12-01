@@ -114,7 +114,7 @@
         .image {
             width: 50px;
             height: 50px;
-            background-image: url('./부릉부름\ 배경화면\ 이미지.jpg');
+            background-image: url('asset/img/부릉부름_logo.png');
             background-size: cover;
         }
 
@@ -140,7 +140,7 @@
         <header>
             <div class="dot.wrapper">
                 <div class="dot">
-                    <img class="dot" id="logo" src="./부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
+                    <img class="dot" id="logo" src="asset/img/부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
                     <nav id="gnb">
                         <ul class="dot">
                             <li><a href="ErrandList.jsp" id="gnb_li">심부름 요청</a></li>
