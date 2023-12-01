@@ -58,6 +58,7 @@ public class ApplyDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 취소 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public int ApplyCancel(ApplyCheckDTO checkdto) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -69,6 +70,6 @@ public class ApplyDAO {
 		return result;
 		
 	}
-	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 }
