@@ -30,9 +30,8 @@
     </div>
 
     <main>
-    	<form action="RequiredErrandService" method="post">심부름제목</form>
-<!--     	주석 처리 -->
-<!--         <a href="ErrandInfo.jsp"><button>심부름제목</button></a><button>요청 취소</button> -->
+    	
+        <a href="ErrandInfo.jsp"><button>심부름제목</button></a><button>요청 취소</button>
         <section>
             <table border="solid" width="700px">
                 <tr>
