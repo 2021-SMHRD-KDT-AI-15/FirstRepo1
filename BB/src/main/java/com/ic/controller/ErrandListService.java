@@ -28,6 +28,8 @@ public class ErrandListService extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ErrandList.jsp");
 		dispatcher.forward(request, response);
+		
+		
 	}
 
 }

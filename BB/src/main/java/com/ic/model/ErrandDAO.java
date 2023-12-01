@@ -81,10 +81,10 @@ public class ErrandDAO {
 		return result;
 		
 	}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 //■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록서 본인이 요청한 심부름 목록 불러오게 하기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public ArrayList<ErrandDTO> loadErrand(int member_id) {
+	public ArrayList<ErrandDTO> loadErrand(int member_id, int errand_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
@@ -95,6 +95,8 @@ public class ErrandDAO {
 		return loadlist;
 		
 	}
+
+	
 	
 }
 

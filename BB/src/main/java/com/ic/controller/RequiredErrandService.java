@@ -3,6 +3,7 @@ package com.ic.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,13 +33,14 @@ public class RequiredErrandService extends HttpServlet {
 		ErrandDTO erranddto = new ErrandDTO();
 		
 		erranddto = erranddao.errandInfo(errand_id);
-		String title = request.getParameter("title");
+		String title = erranddao.getNickname(errand_id);
 		
-		
-		
-		
-		
-		
+		if(erranddto != null) {
+			request.setAttribute("title", title);
+			RequestDispatcher rd = request.getRequestDispatcher("ErrandInfo.jsp=?+member_id=?+&+errand_id=?");
+			rd.forward(request, response);
+		} else {
+			response.sendRedirect("RequiredErrand.jsp");
+		}
 	}
-
 }
