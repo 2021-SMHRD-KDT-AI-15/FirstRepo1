@@ -22,15 +22,17 @@
 		background-color: black;
 		color: white;
 	}
+	
 </style>
 </head>
 <body>
-	<c:forEach var="errand" items="${errandList}">
+	<c:forEach var="errand" items="${errandList}" varStatus="status">     <!-- 속성으로 errandList랑 nicknameList 가져오기 -->
 			<a href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
 			<div>
 				No. ${errand.errand_id}<br><br>
 				${errand.location_ctgr}  ${errand.errand_ctgr}<br>
 				<h1>${errand.title}</h1>
+				닉네임 : ${nicknameList[status.index]}<br>
 				${errand.req_location}<br>
 				${errand.req_date}<br>
 				  ~   ${errand.want_date}<br><br>
@@ -49,6 +51,9 @@
 				
 			</div>
 			</a>
+	</c:forEach>
+	<c:forEach var="nickname" items="${nicknameList}">
+		${nickname}
 	</c:forEach>
 </body>
 </html>

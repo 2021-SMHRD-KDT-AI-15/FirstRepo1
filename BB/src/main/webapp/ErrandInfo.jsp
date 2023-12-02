@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
 <style>
@@ -26,43 +26,49 @@
 <body>
 	<div id="main">
 		<br>
-		<h1>Á¦¸ñ : ${ErrandInfo.title}</h1>
-		<span>´Ğ³×ÀÓ : ${nickname}¡¡¡¡¡¡</span>
-		<span>ÇàÁ¤±¸ : ${ErrandInfo.location_ctgr}¡¡¡¡¡¡</span>
-		<span>½ÉºÎ¸§ ºĞ·ù :${ErrandInfo.errand_ctgr}¡¡¡¡¡¡</span>
-		<span>º¸»ó±İ¾× : ${ErrandInfo.price}</span><br>
-		<span>¿äÃ»ÀÏ½Ã : ${ErrandInfo.req_date}¡¡¡¡¡¡</span>
-		<span>¸¶°¨ÀÏ½Ã : ${ErrandInfo.want_date}¡¡¡¡¡¡</span>
-		<span>¿äÃ»À§Ä¡ : ${ErrandInfo.req_location}</span><br>
+		<h1>ì œëª© : ${ErrandInfo.title}</h1>
+		<span>ë‹‰ë„¤ì„ : ${nickname}ã€€ã€€ã€€</span>
+		<span>í–‰ì •êµ¬ : ${ErrandInfo.location_ctgr}ã€€ã€€ã€€</span>
+		<span>ì‹¬ë¶€ë¦„ ë¶„ë¥˜ :${ErrandInfo.errand_ctgr}ã€€ã€€ã€€</span>
+		<span>ë³´ìƒê¸ˆì•¡ : ${ErrandInfo.price}</span><br>
+		<span>ìš”ì²­ì¼ì‹œ : ${ErrandInfo.req_date}ã€€ã€€ã€€</span>
+		<span>ë§ˆê°ì¼ì‹œ : ${ErrandInfo.want_date}ã€€ã€€ã€€</span>
+		<span>ìš”ì²­ìœ„ì¹˜ : ${ErrandInfo.req_location}</span><br>
 		<c:choose>
 			<c:when test='${fn:contains(ErrandInfo.status, "0")}'>
-				<span class="status">¸ÅÄª´ë±âÁß</span>
+				<span class="status">ë§¤ì¹­ëŒ€ê¸°ì¤‘</span>
 			</c:when>
 			<c:when test='${fn:contains(ErrandInfo.status, "1")}'>
-				<span class="status">¸ÅÄª¿Ï·á</span>
+				<span class="status">ë§¤ì¹­ì™„ë£Œ</span>
 			</c:when>
 			<c:when test='${fn:contains(ErrandInfo.status, "2")}'>
-				<span class="status">Á¾·á</span>
+				<span class="status">ì¢…ë£Œ</span>
 			</c:when>
 		</c:choose>
 		<div>
 			<fieldset>
-				<legend>³»¿ë</legend>
+				<legend>ë‚´ìš©</legend>
 				${ErrandInfo.content}
 			</fieldset>
 		</div>
 		<c:choose>
 			<c:when test="${fn:contains(clientInfo.member_id, ErrandInfo.member_id)}">
-				º»ÀÎÀÌ ¿äÃ»ÇÑ ½ÉºÎ¸§ÀÔ´Ï´Ù.
+				ë³¸ì¸ì´ ìš”ì²­í•œ ì‹¬ë¶€ë¦„ì…ë‹ˆë‹¤.
 			</c:when>
 			<c:when test="${not empty applyCheck}">
-				ÀÌ¹Ì Áö¿øÇÑ ½ÉºÎ¸§ÀÔ´Ï´Ù.
+				ì´ë¯¸ ì§€ì›í•œ ì‹¬ë¶€ë¦„ì…ë‹ˆë‹¤.
 			</c:when>
 			<c:otherwise>
-				<a href="ApplyErrandService?errand_id=${ErrandInfo.errand_id}"><button>Áö¿øÇÏ±â</button></a>
+				<form action="ApplyErrandService">
+				<input type="hidden" name="message" id="message"> <!-- ìŠ¤í¬ë¦½íŠ¸ ì—°ê²° -->
+				<input type="hidden" name="errand_id" value="${ErrandInfo.errand_id}">
+				<input type="submit" value="ì§€ì›í•˜ê¸°" id="applyButton">
+				</form>
 			</c:otherwise>
 		</c:choose>
 		
 	</div>
+	
+	<script src="asset/js/ApplyErrand.js"></script>
 </body>
 </html>

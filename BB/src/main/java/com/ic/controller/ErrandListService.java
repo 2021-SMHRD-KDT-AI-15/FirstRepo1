@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ic.model.ErrandDAO;
 import com.ic.model.ErrandDTO;
+import com.ic.model.MemberDTO;
 
 @WebServlet("/ErrandListService")
 public class ErrandListService extends HttpServlet {
@@ -24,7 +25,16 @@ public class ErrandListService extends HttpServlet {
 		ArrayList <ErrandDTO> errandList = new ArrayList<>();
 		errandList = erranddao.errandList();
 		
+		ArrayList member_id_list = new ArrayList<>();  // member_id만 따로 담아오는 리스트 생성
+		for(ErrandDTO errand : errandList) {
+			member_id_list.add(errand.getMember_id());
+		}
+		
+		ArrayList nickname_list = new ArrayList<>();
+		nickname_list = erranddao.getNicknames(member_id_list);
+		
 		request.setAttribute("errandList", errandList);
+		request.setAttribute("nicknameList", nickname_list);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ErrandList.jsp");
 		dispatcher.forward(request, response);
