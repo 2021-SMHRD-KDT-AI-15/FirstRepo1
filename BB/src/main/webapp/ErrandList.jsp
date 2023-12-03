@@ -52,8 +52,5 @@
 			</div>
 			</a>
 	</c:forEach>
-	<c:forEach var="nickname" items="${nicknameList}">
-		${nickname}
-	</c:forEach>
 </body>
 </html>

@@ -14,7 +14,7 @@
 }
 
 #logo {
-	width: 100px;	
+	width: 100px;
 	height: 100px;
 }
 </style>
