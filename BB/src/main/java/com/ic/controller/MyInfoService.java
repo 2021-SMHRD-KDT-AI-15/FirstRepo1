@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ic.model.ChargeDTO;
 import com.ic.model.MemberDAO;
 import com.ic.model.MemberDTO;
 import com.ic.model.ReviewDAO;
@@ -24,7 +25,8 @@ public class MyInfoService extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-
+		
+		// member_id를 가져오는 세션
 		HttpSession session = request.getSession();
 
 		MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
@@ -41,9 +43,8 @@ public class MyInfoService extends HttpServlet {
 		
 		ReviewDAO reviewdao = new ReviewDAO();
 	
-		ReviewDTO getreview = reviewdao.getReview(member_id);
-		
-		System.out.println("ㅎㅇ"+getreview);
+		ArrayList<ReviewDTO> getreview = reviewdao.getReview(member_id);
+		System.out.println("응애"+getreview);
 		
 		request.setAttribute("getreview", getreview);
 		

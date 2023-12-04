@@ -37,6 +37,7 @@ public class ChargeHistoryService extends HttpServlet {
 		ArrayList <ChargeDTO> chargeHistory = new ArrayList<>();
 		chargeHistory = chargedao.ChargeHistory(member_id);
 		
+		
 		if(chargeHistory != null) {
 			request.setAttribute("chargeHistory", chargeHistory);
 			
