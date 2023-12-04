@@ -30,13 +30,8 @@ public class RequiredErrandService extends HttpServlet {
         
         int member_id = memberdto.getMember_id();
         
-        System.out.println("errandList");
-        System.out.println(member_id);
-        
         ErrandDAO dao =  new ErrandDAO();
         List<ErrandDTO> errandList = dao.Loadlist(member_id);
-
-        System.out.println(errandList);
         
         ////////////////////////////////////////////////////////
         for(int i=0;i<errandList.size();i++) {

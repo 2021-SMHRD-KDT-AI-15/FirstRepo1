@@ -98,8 +98,8 @@
                 </nav><br>
                 <div>
                     <section>
-                        <a href="MyInfo.jsp"><button>내 정보</button></a>
-                        <a href="InfoChange1.jsp"><button>회원정보 변경</button></a>
+                        <a href="MyInfoService"><button>내 정보</button></a>
+                        <a href="InfoChangeService1"><button>회원정보 변경</button></a>
                         <a href="RequiredErrandService"><button>요청한 심부름</button></a>
                         <a href="ShowApplyErrandService"><button>지원한 심부름</button></a>
                         <a href="ChargeHistoryService"><button>충전내역</button></a>

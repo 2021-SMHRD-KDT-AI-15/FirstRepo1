@@ -72,4 +72,13 @@ public class ApplyDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름의 지원내역 출력 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+	public void ErrandAppliancedMember() {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		// ApplyErrandMember = sqlSession.selectList("",)
+	}
+	
 }
