@@ -76,7 +76,7 @@
     <a class="box3" id="Charge" href="Charge.jsp">충전하기</a>
     <a class="box4"id="MyInfo" href="MyInfo.jsp">마이 페이지</a>
     <a class="box5"id="Ranking" href="Ranking.jsp">랭킹 페이지</a>
-    <a class="box6"id="ChatList" href="ChatList">채팅</a>
+    <a class="box6"id="ChatList" href="ChatListService">채팅</a>
     <a class="box1" id="ErrandList" href="ErrandListService">심부름 목록</a>
     <a class="box1" id="RequireErrand" href="RequireErrand.jsp">심부름 요청</a>
     
