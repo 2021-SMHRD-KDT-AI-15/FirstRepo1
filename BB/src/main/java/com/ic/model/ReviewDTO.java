@@ -9,8 +9,15 @@ public class ReviewDTO {
 	private int u_like;
 	private int u_dislike;
 	private String errand_review_ctgr;
+	private String nickname;
 	
 	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	public int getReview_no() {
 		return review_no;
 	}
