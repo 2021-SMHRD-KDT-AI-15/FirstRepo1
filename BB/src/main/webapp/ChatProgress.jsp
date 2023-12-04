@@ -1,101 +1,108 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatProgress</title>
-    <style>
-        #logo {
-            width: 200px;
-            height: 200px;
-        }
-
-        .dot.wrapper {
-            width: 600px;
-            margin: 0 auto;
-            
-        }
-
-        .dot {
-            display: flex;
-            float: left;
-            list-style: none;
-        }
-
-        #gnb_li {
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            color: grey;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 0 30px;
-        }
-
-        #ChatList_btn{
-            width: 600px;
-            height: 150px;
-            font-size: 50px;
-            border-radius: 30px;
-            text-align: left;
-            
-            
-        }
-    </style>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
+
 <body>
-    <fieldset>
-        <div class="dot.wrapper">
-            <div class="dot">
-                <img class="dot" id="logo" src="./부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
-                <nav id="gnb">
-                    <ul class="dot">
-                        <li><a href="ErrandList.jsp" target="_blank" id="gnb_li" style="display: block;">심부름 요청</a></li>
-                        <li><a href="RequireErrand.jsp" target="_blank" id="gnb_li" style="display: block;">심부름 목록</a>
-                        </li>
-                        <li><a href="Ranking.jsp" target="_blank" id="gnb_li" style="display: block;">랭킹</a></li>
-                        <li><a href="Charge.jsp" target="_blank" id="gnb_li" style="display: block;">충전</a></li>
-                        <li><a href="ChatList.jsp" target="_blank" id="gnb_li" style="display: block;">채팅</a></li>
-                        <li><a href="Myinfo.jsp" target="_blank" id="gnb_li" style="display: block;">마이페이지</a></li>
-                    </ul>
-                </nav>
-                
-            </div>
-        </div>
-        <table class="dot">
-            <tr align="center">
-                <td>
-                    <a href="ChatList.jsp" onClick="history.back();">
-                        <img src="https://w7.pngwing.com/pngs/895/794/png-transparent-back-button-arrow-icon-the-direction-of-the-thumbnail.png" width="50px">
-                    </a> 
-                </td>
-                <td><h2 style="width: 700px;">상대방 닉네임</h2></td>
-            </tr>
-            <tr style="height: 200px;">
-                <td rowspan="2"></td>
-                <td></td>
-            </tr>
-            
 
-            
-        </table>
-        <script>
-            
-            
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid alert-success">
+			<div class="container">
+				<p> 사업명 </p>
+				<h1> 과정명 </h1>
+				<!-- EL을 이용해 쿼리스트링에 담긴 데이터 집어넣기 -->
+				<h1 id="room">${param.room}</h1>
+			</div>
+		</div>
 
+		<div class="row">  
+			<div class="col-lg-2"></div>   
+			<div class="col-lg-8">
+				<div class="card" style="height:600px;">
+					<!-- chat body -->
+					<div class="card-body" style="overflow-y:scroll;" id="chatBody">
+						<div id="msgArea" style="height : 100%">
+						
+						<!-- 메세지가 작성되는 영역 -->
+							
+							<!-- 내가 보낸 메세지 예시 -->
+							<div class='row'>
+								<div class='col-sm-6'></div>
+								<div class='col-sm-6'>
+									<div class='alert alert-secondary'>
+										<b>메세지 내용</b>
+									</div>
+								</div>
+							</div>
+							
+							<!-- 남이 보낸 메세지 예시 -->
+							<div class='row'>
+								<div class='col-6'>
+									<div class='alert alert-warning'>
+										<b>보낸 사람 : 메세지 내용</b>
+									</div>
+								</div>
+							</div>
+						
+						
+						</div>
+					</div>
+					<!-- chat body end -->
+					<!-- chat input -->
+					<div style="text-align: center;">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="input-group col-lg-10">
+								
+								<!-- username  -->
+								<input id="userId" class="form-control" placeholder="아이디를 입력해야 채팅 사용가능">
+								
+								<button id="idSelect" class="btn btn-sm btn-success">아이디 결정</button>
+							
+							</div>
+						</div>
+						<br>
+						<div class="row">
+						<div class="col-lg-1"></div>
+						<div class="input-group col-lg-10">
+							
+							<!-- 메세지 전송 버튼 -->
+							<input type="text" id="msg" class="form-control"
+								aria-label="Recipient's username"
+								aria-describedby="button-addon2">
+							
+							<div class="input-group-append">
+								<button class="btn btn-sm btn-info" type="button"
+									id="button-send" disabled>전송</button>
+							</div>
+							
+						</div>
+						</div>
+					</div>
+					<!-- chat input end -->
+				</div>
+			</div>
+		</div>
 
-
-
-
-
-
-        </script>
-
-
-
-    </fieldset>
+		<div class="col-lg-2"></div>
+	</div>
+	
+	<script src="assets/js/chat.js"></script>
 </body>
 </html>
