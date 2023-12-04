@@ -32,5 +32,9 @@
 		SELECT * FROM ERRAND WHERE MEMBER_ID=#{member_id}	
 	</select>
 	
+	<select id="getNicknames" resultType="String">
+		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{member_id}
+	</select>
+
 
 </mapper>

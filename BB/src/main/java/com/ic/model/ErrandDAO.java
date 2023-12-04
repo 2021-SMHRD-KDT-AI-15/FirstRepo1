@@ -99,6 +99,20 @@ public class ErrandDAO {
 
 
 
+	public ArrayList getNicknames(ArrayList member_id_list) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		ArrayList nicknames = new ArrayList();
+		
+		for(Object member_id : member_id_list) {
+			nicknames.add(sqlSession.selectOne("getNicknames", member_id));
+		}
+		
+		sqlSession.close();
+		
+		return nicknames;
+	}
 
 }
 

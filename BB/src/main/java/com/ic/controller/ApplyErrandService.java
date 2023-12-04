@@ -26,12 +26,17 @@ public class ApplyErrandService extends HttpServlet {
 		
 		int apply_member_id = memberdto.getMember_id();  // 지원자 회원번호
 		
+		String msg = request.getParameter("message"); // 지원메시지
+		
 		ArrayList list = new ArrayList<>();
 		list.add(errand_id);
 		list.add(apply_member_id);
+		list.add(msg);
 	
 		ApplyDAO applydao = new ApplyDAO();
 		int result = applydao.ApplyErrand(list);
+		
+		
 		
 		response.sendRedirect("ShowApplyErrandService");
 		
