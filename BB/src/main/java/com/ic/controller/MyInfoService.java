@@ -44,8 +44,8 @@ public class MyInfoService extends HttpServlet {
 		ReviewDAO reviewdao = new ReviewDAO();
 	
 		ArrayList<ReviewDTO> getreview = reviewdao.getReview(member_id);
-		System.out.println("응애"+getreview);
 		
+
 		request.setAttribute("getreview", getreview);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("MyInfo.jsp");
