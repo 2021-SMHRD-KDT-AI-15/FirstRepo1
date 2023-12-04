@@ -34,16 +34,11 @@
             M.NICKNAME
         FROM
            ERRAND E, APPLY A, MEMBER M
-        JOIN
-            APPLY A ON E.ERRAND_ID = A.ERRAND_ID
-        JOIN
-            MEMBER M ON A.MEMBER_ID = M.MEMBER_ID
         WHERE
             E.ERRAND_ID = #{errand_id}
 			A.APPLY_ID=#{apply_id}
 			A.MESSAGE=#{message}
 			M.NICKNAME=#{nickname}
-		
 	</select>
 
 </mapper>
