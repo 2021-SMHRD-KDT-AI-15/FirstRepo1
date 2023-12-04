@@ -27,10 +27,10 @@
 		SELECT * FROM APPLY WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
 	</select>
 	
-	<!-- 심부름 목록서 요청한 심부름 선택 -->
-	<select id="loadMemberErrands" parameterType="int" resultType="com.ic.model.ErrandDTO">
-		SELECT * FROM ERRAND WHERE MEMBER_ID = #{member_id}
+	<!-- 요청심부름 목록 불러오기 -->
+	<select id="Loadlist" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE MEMBER_ID=#{member_id}	
 	</select>
-
+	
 
 </mapper>

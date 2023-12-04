@@ -25,20 +25,26 @@ public class RequiredErrandService extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         HttpSession session = request.getSession();
-        MemberDTO memberdto = (MemberDTO) session.getAttribute("clientinfo");
-
-        int errand_id = Integer.parseInt(request.getParameter("errand_id"));
-
-        ErrandDAO erranddao = new ErrandDAO();
-
-        ArrayList<ErrandDTO> errandList = erranddao.loadMemberErrands(errand_id);
-
-        if (errandList != null && !errandList.isEmpty()) {
-            request.setAttribute("loadMemberErrands", errandList);
-            RequestDispatcher rd = request.getRequestDispatcher("ErrandInfo.jsp");
-            rd.forward(request, response);
-        } else {
-            response.sendRedirect("RequiredErrand.jsp");
+        MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
+        
+        int member_id = memberdto.getMember_id();
+        
+        ErrandDAO dao =  new ErrandDAO();
+        ArrayList<ErrandDTO> errandList = new ArrayList<>();
+        errandList = dao.Loadlist(member_id);
+        
+        ////////////////////////////////////////////////////////
+        for(int i=0;i<errandList.size();i++) {
+        	errandList.get(i).getErrand_id();
         }
+        ////////////////////////////////////////////////////////
+        if(errandList != null) {
+        	request.setAttribute("errandList", errandList);
+        	RequestDispatcher rd = request.getRequestDispatcher("RequiredErrand.jsp");
+        	rd.forward(request, response);
+        } else {
+        	response.sendRedirect("Main.jsp");
+        }
+        
     }
 }
