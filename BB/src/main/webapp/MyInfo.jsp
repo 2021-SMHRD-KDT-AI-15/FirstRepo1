@@ -47,6 +47,7 @@
 </head>
 
 <body>
+
 	<fieldset>
 		<div class="dot.wrapper">
 			<div class="dot">
@@ -79,6 +80,33 @@
 							href="PaymentHistory.jsp"><button>결제 내역</button></a>
 					</section>
 				</div>
+
+    <fieldset>
+        <div class="dot.wrapper">
+            <div class="dot">
+                <img class="dot" id="logo" src="./부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
+                <nav id="gnb">
+                    <ul class="dot">
+                        <li><a href="ErrandList.jsp" target="_blank" id="gnb_li" style="display: block;">심부름 요청</a></li>
+                        <li><a href="RequireErrand.jsp" target="_blank" id="gnb_li" style="display: block;">심부름 목록</a>
+                        </li>
+                        <li><a href="Ranking.jsp" target="_blank" id="gnb_li" style="display: block;">랭킹</a></li>
+                        <li><a href="Charge.jsp" target="_blank" id="gnb_li" style="display: block;">충전</a></li>
+                        <li><a href="ChatList.jsp" target="_blank" id="gnb_li" style="display: block;">채팅</a></li>
+                        <li><a href="Myinfo.jsp" target="_blank" id="gnb_li" style="display: block;">마이페이지</a></li>
+                    </ul>
+                </nav><br>
+                <div>
+                    <section>
+                        <a href="MyInfo.jsp"><button>내 정보</button></a>
+                        <a href="InfoChange1.jsp"><button>회원정보 변경</button></a>
+                        <a href="RequiredErrandService"><button>요청한 심부름</button></a>
+                        <a href="ShowApplyErrandService"><button>지원한 심부름</button></a>
+                        <a href="ChargeHistoryService"><button>충전내역</button></a>
+                        <a href="PaymentHistory.jsp"><button>결제 내역</button></a>
+                    </section>
+                </div>
+
 
 			</div>
 			<fieldset>
