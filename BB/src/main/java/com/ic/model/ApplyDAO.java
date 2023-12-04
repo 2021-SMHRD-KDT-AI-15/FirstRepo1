@@ -42,7 +42,7 @@ public class ApplyDAO {
 		return applyErrandList;
 		
 	}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 //■■■■■■■■■■■■■■■■■■■■■■■■■■ 지원한 심부름 중에서 심부름 제목 주출 ■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<ErrandDTO> getErrandTitle(ArrayList errand_id_list) {
@@ -71,5 +71,18 @@ public class ApplyDAO {
 		
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름의 지원내역 출력 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+	public ArrayList<ApplyDTO> ErrandAppliancedMember(ArrayList apply_id_list) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		applyErrandList = (ArrayList)sqlSession.selectList("ErrandAppliancedMember",apply_id_list);
+				
+		sqlSession.close();
+		
+		return applyErrandList;
+	}
 	
 }

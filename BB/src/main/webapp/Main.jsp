@@ -250,6 +250,7 @@
 	</section>
 
 
+
 	<!-- footer 영역 각 p태그 안의 a태그는 해주세요 사이트로 접속하게 됨 -->
 	<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
 		id="sec-755f">
@@ -320,6 +321,26 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path>
 			</div>
 		</div>
 	</footer>
+
+
+
+
+    <a class="box3" id="Charge" href="Charge.jsp">�����ϱ�</a>
+    <a class="box4"id="MyInfo" href="MyInfo.jsp">���� ������</a>
+    <a class="box5"id="Ranking" href="Ranking.jsp">��ŷ ������</a>
+    <a class="box6"id="ChatList" href="ChatListService">ä��</a>
+    <a class="box1" id="ErrandList" href="ErrandListService">�ɺθ� ���</a>
+    <a class="box1" id="RequireErrand" href="RequireErrand.jsp">�ɺθ� ��û</a>
+    
+    <script>
+        let ErrandList = document.getElementsByClassName("ErrandList")
+        let RequireErrand = document.getElementsByClassName("RequireErrand")
+        let Charge = document.getElementsByClassName("Charge")
+        let MyInfo = document.getElementsByClassName("MyInfo")
+        let Ranking = document.getElementsByClassName("Ranking")
+        let ChatList = document.getElementsByClassName("ChatList")
+    </script>
+
 
 </body>
 

@@ -24,6 +24,7 @@
 	<mapper resource="com/ic/db/ErrandMapper.xml"/>
 	<mapper resource="com/ic/db/ApplyMapper.xml"/>
 	<mapper resource="com/ic/db/ReviewMapper.xml"/>
+	<mapper resource="com/ic/db/ChatMapper.xml"/>
   </mappers>
 </configuration>
 

@@ -1,6 +1,7 @@
 package com.ic.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,19 +12,21 @@ public class ReviewDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
+	ArrayList<ReviewDTO> getReview = new ArrayList<>();
+	
 	// 좋아요와 싫어요 갯수를 가져오는 dao
-	public ReviewDTO getReview(int member_id) {
+	public ArrayList<ReviewDTO> getReview(int member_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		ReviewDTO getReview = (ReviewDTO)sqlSession.selectOne("getReview", member_id);
+		getReview = (ArrayList)sqlSession.selectList("getReview", member_id);
 		
 		sqlSession.close();
 		
 		return getReview;
-		
 	}
-
+	
+	
 	
 	
 	

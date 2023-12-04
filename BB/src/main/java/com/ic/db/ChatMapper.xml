@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ic.db.ChatMapper">
+
+	<!-- 요청한 심부름 번호 호출 -->
+	<select id="getReqErrand" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE MEMBER_ID = #{member_id} AND STATUS = 1
+	</select>
+
+	<!-- 지원한 심부름 번호 호출 -->
+	<select id="getApplyErrand" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM APPLY WHERE MEMBER_ID = #{member_id} AND MATCH_STATUS = 1
+	</select>
+
+	<!-- 지원한 심부름 번호로 닉네임 호출 -->
+	<select id="getMember_id" resultType="int">
+		SELECT MEMBER_ID FROM ERRAND WHERE ERRAND_ID = #{n}
+	</select>
+
+	<!-- 요청한 심부름에 지원한 지원자들 member_id 추출 -->
+	<select id="reqErrand_to_memberId" resultType="int">
+		SELECT MEMBER_ID FROM APPLY WHERE ERRAND_ID = #{n} AND MATCH_STATUS = 1
+	</select>
+	
+	<!-- 추출한 member_id로 지원자 닉네임 추출 -->
+	<select id="memberId_to_nickname" resultType="com.ic.model.MemberDTO">
+		SELECT * FROM MEMBER WHERE MEMBER_ID = #{n}
+	</select>
+	
+	<!-- 추출한 errand_id로 요청자 member_id 추출 -->
+	<select id="errandId_to_memberId" resultType="int">
+		SELECT MEMBER_ID FROM ERRAND WHERE ERRAND_ID = #{n}
+	</select>
+	
+	<!-- 위에서 추출한 member_id로 요청자의 닉네임 추출 -->
+	<select id="getReqNickname" resultType="com.ic.model.MemberDTO">
+		SELECT * FROM MEMBER WHERE MEMBER_ID = #{n}
+	</select>
+	
+</mapper>

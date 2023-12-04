@@ -24,5 +24,21 @@
 	<delete id="ApplyCancel" parameterType="com.ic.model.ApplyCheckDTO">
 		DELETE FROM APPLY WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
 	</delete>
+	
+	<!-- 요청한 심부름 당 지원내역 -->
+	<select id="ErrandAppliancedMember" resultType="com.ic.model.ErrandDTO">
+        SELECT
+            E.ERRAND_ID,
+            A.APPLY_ID,
+            A.MESSAGE,
+            M.NICKNAME
+        FROM
+           ERRAND E, APPLY A, MEMBER M
+        WHERE
+            E.ERRAND_ID = #{errand_id}
+			A.APPLY_ID=#{apply_id}
+			A.MESSAGE=#{message}
+			M.NICKNAME=#{nickname}
+	</select>
 
 </mapper>

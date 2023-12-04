@@ -1,95 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="False"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatList</title>
-    <style>
-        #logo {
-            width: 200px;
-            height: 200px;
-        }
-
-        .dot.wrapper {
-            width: 600px;
-            margin: 0 auto;
-        }
-
-        .dot {
-            display: flex;
-            float: left;
-            list-style: none;
-        }
-
-        #gnb_li {
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            color: grey;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 0 30px;
-        }
-
-        #ChatList_btn{
-            width: 600px;
-            height: 150px;
-            font-size: 50px;
-            border-radius: 30px;
-            text-align: left;
-            
-            
-        }
-    </style>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
 <body>
-    <fieldset>
-        <div class="dot.wrapper">
-            <div class="dot">
-                <img class="dot" id="logo" src="./부릉부름_logo.png" alt="요청한 이미지를 찾을 수 없습니다.">
-                <nav id="gnb">
-                    <ul class="dot">
-                        <li><a href="ErrandList.jsp" target="_blank" id="gnb_li" style="display: block;">심부름 요청</a></li>
-                        <li><a href="RequireErrand.jsp" target="_blank" id="gnb_li" style="display: block;">심부름 목록</a>
-                        </li>
-                        <li><a href="Ranking.jsp" target="_blank" id="gnb_li" style="display: block;">랭킹</a></li>
-                        <li><a href="Charge.jsp" target="_blank" id="gnb_li" style="display: block;">충전</a></li>
-                        <li><a href="ChatList.jsp" target="_blank" id="gnb_li" style="display: block;">채팅</a></li>
-                        <li><a href="Myinfo.jsp" target="_blank" id="gnb_li" style="display: block;">마이페이지</a></li>
-                    </ul>
-                </nav>
-                
-            </div>
-            <button id="ChatList_btn">상대방 닉네임</button>
-        </div>
-        <script>
-            
-            
-            // 채팅 리스트로 이동하는 버튼과 변수 선언
-            let btn = document.getElementById("ChatList_btn");
 
-            btn.addEventListener("click", clickHandler);
+	<div class="container">
+		<div class="card-body" style="overflow-y: scroll; height: 500px" id="chatBody">
+			<c:forEach var="c" items="${chatList}" varStatus="status">
+			
+				<div class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
+					<div class="card-body">${nicknameList[status.index].nickname} 님과의 대화</div>
+				</div><br>
 
-            function clickHandler() {
-                    window.location.href = "ChatProgress.jsp";
-            }
+			</c:forEach>
+		</div>
+	</div>
 
-
-
-
-
-
-
-        </script>
-
-
-
-    </fieldset>
 </body>
-
 </html>
