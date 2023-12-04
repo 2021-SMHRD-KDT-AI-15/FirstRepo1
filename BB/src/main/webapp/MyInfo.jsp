@@ -113,13 +113,13 @@
 			<fieldset>
 				<legend>내가 받은 좋아요</legend>
 				<c:forEach var="review" items="${getreview}">
-				<p>${review.u_like}</p>
+					<p>${review.u_like}</p>
 				</c:forEach>
 			</fieldset>
 			<fieldset>
 				<legend>내가 받은 싫어요</legend>
 				<c:forEach var="review" items="${getreview}">
-				<p>${review.u_dislike}</p>
+					<p>${review.u_dislike}</p>
 				</c:forEach>
 			</fieldset>
 
@@ -133,15 +133,19 @@
 					<th width="100"><b>후기내용</b></th>
 					<th width="100"><b>닉네임</b></th>
 				</tr>
-					<td align="center"></td>
+				<tr>
+					<td></td>
 					<td align="center" width="300" height="50">
 					<c:forEach var="review" items="${getreview}">
-					<p>${review.review_ctnt}</p>
-				</c:forEach></td>
-					<td align="center" width="200" height="50">
-					</td>
-					</tr>
-				
+						<p>${review.review_ctnt}</p>
+					</c:forEach></td>
+					<c:forEach var="review" items="${getreview}">
+						<td>${review.nickname}</td>
+					</c:forEach>
+					
+
+				</tr>
+
 			</table>
 </body>
 

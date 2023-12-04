@@ -27,8 +27,8 @@
 		<div class="card-body" style="overflow-y: scroll; height: 500px" id="chatBody">
 			<c:forEach var="c" items="${chatList}" varStatus="status">
 			
-				<div class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}'">
-					<div class="card-body">${nicknameList[status.index]} 님과의 대화</div>
+				<div class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
+					<div class="card-body">${nicknameList[status.index].nickname} 님과의 대화</div>
 				</div><br>
 
 			</c:forEach>

@@ -44,5 +44,8 @@ public class ChatDTO {
 	// 기본 생성자
 	public ChatDTO() {
 	}
+	public void setRoom(String room) {
+		
+	}
 	
 }

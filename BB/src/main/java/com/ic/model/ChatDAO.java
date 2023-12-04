@@ -57,14 +57,14 @@ public class ChatDAO {
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 추출한 member_id로 지원자 닉네임 추출 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■	
-	public ArrayList <String> memberId_to_nickname(ArrayList<Integer> applyErrand_id) {
+	public ArrayList <MemberDTO> memberId_to_nickname(ArrayList<Integer> applyErrand_id) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		ArrayList <String> nickname_list = new ArrayList();
+		ArrayList <MemberDTO> nickname_list = new ArrayList();
 		
 		for(int n : applyErrand_id) {
-			nickname_list.add((String) sqlSession.selectOne("memberId_to_nickname", n));
+			nickname_list.add((MemberDTO) sqlSession.selectOne("memberId_to_nickname", n));
 		}
 		// 리스트에 추가
 		sqlSession.close();
@@ -94,14 +94,14 @@ public class ChatDAO {
 	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ member_id로 요청자의 닉네임 추출 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-	public ArrayList<String> getReqNickname(ArrayList<Integer> reqErrand_memberId) {
+	public ArrayList<MemberDTO> getReqNickname(ArrayList<Integer> reqErrand_memberId) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		ArrayList <String> nickname_lst = new ArrayList();
+		ArrayList <MemberDTO> nickname_lst = new ArrayList();
 		
 		for(int n : reqErrand_memberId) {
-			nickname_lst.add((String) sqlSession.selectOne("getReqNickname", n));
+			nickname_lst.add((MemberDTO) sqlSession.selectOne("getReqNickname", n));
 		}
 		
 		sqlSession.close();

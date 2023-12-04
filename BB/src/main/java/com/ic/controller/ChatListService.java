@@ -22,7 +22,7 @@ public class ChatListService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList <String> nickname_List = new ArrayList(); // 닉네임 리스트
+		ArrayList <MemberDTO> nickname_List = new ArrayList(); // 닉네임 리스트 (정보까지 다 저장)
 		
 		HttpSession session = request.getSession();
 		
