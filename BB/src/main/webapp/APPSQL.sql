@@ -1,9 +1,3 @@
-SELECT * FROM MEMBER;
+select * from errand;
 
-
-	
-	
-	
-	
-	
-)
+SELECT TITLE FROM ERRAND WHERE MEMBER_ID;

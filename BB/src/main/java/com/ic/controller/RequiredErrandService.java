@@ -2,6 +2,7 @@ package com.ic.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,14 +30,19 @@ public class RequiredErrandService extends HttpServlet {
         
         int member_id = memberdto.getMember_id();
         
+        System.out.println("errandList");
+        System.out.println(member_id);
+        
         ErrandDAO dao =  new ErrandDAO();
-        ArrayList<ErrandDTO> errandList = new ArrayList<>();
-        errandList = dao.Loadlist(member_id);
+        List<ErrandDTO> errandList = dao.Loadlist(member_id);
+
+        System.out.println(errandList);
         
         ////////////////////////////////////////////////////////
         for(int i=0;i<errandList.size();i++) {
         	errandList.get(i).getErrand_id();
         }
+
         ////////////////////////////////////////////////////////
         if(errandList != null) {
         	request.setAttribute("errandList", errandList);
