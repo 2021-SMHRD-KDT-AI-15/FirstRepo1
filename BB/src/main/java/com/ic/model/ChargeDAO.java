@@ -24,7 +24,7 @@ public class ChargeDAO {
 		return result;
 	}
 
-
+	// 충전내역 조회를 위한 메소드
 	public ArrayList<ChargeDTO> ChargeHistory(int member_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);

@@ -31,12 +31,11 @@ public class ChargeHistoryService extends HttpServlet {
 
 		MemberDTO memberdto = (MemberDTO)session.getAttribute("clientInfo");
 		int member_id = memberdto.getMember_id();
-		
+
 		ChargeDAO chargedao = new ChargeDAO();
 		
 		ArrayList <ChargeDTO> chargeHistory = new ArrayList<>();
 		chargeHistory = chargedao.ChargeHistory(member_id);
-		System.out.println("안녕");
 		
 		if(chargeHistory != null) {
 			request.setAttribute("chargeHistory", chargeHistory);

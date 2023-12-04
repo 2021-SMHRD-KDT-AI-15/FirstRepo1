@@ -2,6 +2,8 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+
 <configuration>
   <environments default="development">
     <environment id="development">
@@ -21,5 +23,7 @@
 	<mapper resource="com/ic/db/ChargeMapper.xml"/>
 	<mapper resource="com/ic/db/ErrandMapper.xml"/>
 	<mapper resource="com/ic/db/ApplyMapper.xml"/>
+	<mapper resource="com/ic/db/ReviewMapper.xml"/>
   </mappers>
 </configuration>
+
