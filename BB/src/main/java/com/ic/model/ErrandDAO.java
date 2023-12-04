@@ -1,6 +1,7 @@
 package com.ic.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -85,18 +86,15 @@ public class ErrandDAO {
 
 //■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록서 본인이 요청한 심부름 목록 불러오게 하기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-	public ArrayList<ErrandDTO> Loadlist(int member_id) {
+	public List<ErrandDTO> Loadlist(int member_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		errandList = (ArrayList)sqlSession.selectList("Loadlist",member_id);
-		
+		List<ErrandDTO> errandList = sqlSession.selectList("Loadlist",member_id);		
 		sqlSession.close();
 		
 		return errandList;
 	}
-
-
 
 
 	public ArrayList getNicknames(ArrayList member_id_list) {
@@ -114,6 +112,13 @@ public class ErrandDAO {
 		return nicknames;
 	}
 
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 목록 취소 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+	
+	
+	
 }
 
 
