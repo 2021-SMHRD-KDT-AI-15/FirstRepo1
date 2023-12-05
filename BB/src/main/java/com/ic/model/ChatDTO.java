@@ -44,8 +44,13 @@ public class ChatDTO {
 	// 기본 생성자
 	public ChatDTO() {
 	}
-	public void setRoom(String room) {
-		
+	
+	
+	public ChatDTO(int errand_id, int member_id, String chatting) {
+		this.errand_id = errand_id;
+		this.member_id = member_id;
+		this.chat = chatting;
 	}
+	
 	
 }

@@ -1,3 +1,5 @@
 select * from errand;
 
 SELECT TITLE FROM ERRAND WHERE MEMBER_ID;
+
+SELECT * FROM ERRAND;

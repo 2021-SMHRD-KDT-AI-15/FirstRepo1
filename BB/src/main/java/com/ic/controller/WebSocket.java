@@ -14,6 +14,7 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 import com.google.gson.Gson;
+import com.ic.model.ChatDAO;
 import com.ic.model.ChatDTO;
 
 // PathVariable : URL 경로에 데이터를 포함해서 보내는 방법
@@ -60,6 +61,8 @@ public class WebSocket {
 		// 사용자 정보를 해당 방 목록에서 삭제
 		userMap.get(room).remove(session);
 		
+		System.out.println("사용자 접속 종료됨");
+		
 	}
 	
 	// 메세지를 받았을 때
@@ -72,9 +75,16 @@ public class WebSocket {
 		// Gson 객체를 이용해 받아온 json 데이터를 Java 객체로 변환
 		Gson gson = new Gson();
 		ChatDTO chat = gson.fromJson(payload, ChatDTO.class);
-		chat.setRoom(room);
 
 		// DB 저장(직접해보기)
+		int errand_id =chat.getErrand_id();
+		int member_id = chat.getMember_id();
+		String chatting = chat.getChat();
+		
+		ChatDTO chatdto = new ChatDTO(errand_id, member_id, chatting);
+		
+		ChatDAO chatdao = new ChatDAO();
+		int saveResult = chatdao.SaveChat(chatdto);
 		
 		// 해당 방 안의 모든 사용자에서 메세지 전달하기
 		for( Session sess : userMap.get(room) ) {

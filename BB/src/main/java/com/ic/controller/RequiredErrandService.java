@@ -52,7 +52,11 @@ public class RequiredErrandService extends HttpServlet {
 		        messagelist.add(message(j));
 		    }
 		}
-
+		
+		System.out.println(errandList);
+		System.out.println(applyErrandList);
+		
+		
         request.setAttribute("errandList", errandList);
         request.setAttribute("applyErrandList", applyErrandList);
 
