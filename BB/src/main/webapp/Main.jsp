@@ -11,16 +11,16 @@
 	content="사는게 존나게 힘들어도, 대충 소개하는 느낌 영상, 대충 심부름 카테고리 보여주는 부분">
 <meta name="description" content="">
 <title>Main</title>
-<link rel="stylesheet" href="asset/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="asset/css/Main.css" media="screen">
-<script class="u-script" type="text/javascript" src="asset/js/jquery.js"
+<link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="assets/css/Main.css" media="screen">
+<script class="u-script" type="text/javascript" src="assets/js/jquery.js"
 	defer=""></script>
 <script class="u-script" type="text/javascript"
-	src="asset/js/nicepage.js" defer=""></script>
+	src="assets/js/nicepage.js" defer=""></script>
 <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
 
 <link id="u-theme-google-font" rel="stylesheet"
-	href="asset/fonts/dee54b52-8edb-4e73-bd5e-6e28168b3259.ttf">
+	href="assets/fonts/dee54b52-8edb-4e73-bd5e-6e28168b3259.ttf">
 
 <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -52,9 +52,9 @@
 		<div class="u-clearfix u-sheet u-sheet-1">
 				<img
 				class="u-image u-image-contain u-image-default u-image-1"
-				src="asset/img/222.png" data-image-width="464"
+				src="assets/img/222.png" data-image-width="464"
 				data-image-height="390" data-href="Main.jsp">
-			<a href="ErrandList.jsp"
+			<a href="ErrandListService"
 				class="u-active-white u-btn u-button-style u-custom-font u-hover-custom-color-1 u-hover-feature u-white u-btn-1"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
@@ -70,7 +70,7 @@
 				class="u-active-white u-btn u-button-style u-custom-font u-hover-custom-color-1 u-hover-feature u-white u-btn-4"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
-			<a href="ChatList.jsp"
+			<a href="ChatListService"
 				class="u-active-white u-btn u-button-style u-custom-font u-hover-custom-color-1 u-hover-feature u-white u-btn-5"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">채팅</a> <a
@@ -85,7 +85,7 @@
 	<section class="u-clearfix u-white u-section-1" id="sec-4887">
 		<div class="u-clearfix u-sheet u-sheet-1">
 			<img class="u-image u-image-contain u-image-default u-image-1"
-				src="asset/img/e3c05146-906a-f738-b5bd-6986416803db.png"
+				src="assets/img/e3c05146-906a-f738-b5bd-6986416803db.png"
 				data-image-width="468" data-image-height="515"
 				data-animation-name="customAnimationIn"
 				data-animation-duration="1000" data-animation-delay="2250">

@@ -1,5 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="False"%>
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
@@ -17,10 +19,15 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<style>
+	.alert{
+		margin: 0px;	
+	}
+</style>
 </head>
 
 <body>
-
+	
 	<div class="container">
 		<div class="jumbotron jumbotron-fluid alert-success">
 			<div class="container">
@@ -31,7 +38,7 @@
 			</div>
 		</div>
 
-		<button id="select">테스트</button>
+		<button id="test">테스트</button>
 
 		<div class="row">
 			<div class="col-lg-2"></div>
@@ -68,7 +75,7 @@
 					<!-- chat body end -->
 					<!-- chat input -->
 					<div style="text-align: center;">
-					
+
 						<div class="row">
 							<div class="col-lg-1"></div>
 							<div class="input-group col-lg-10">
@@ -82,7 +89,6 @@
 									<button class="btn btn-sm btn-info" type="button"
 										id="button-send">전송</button>
 								</div>
-
 							</div>
 						</div>
 					</div>
