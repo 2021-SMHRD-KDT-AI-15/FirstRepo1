@@ -105,8 +105,45 @@
 </li></ul>
                       <div class="u-tab-content">
                         <div class="u-container-style u-tab-active u-tab-pane" id="tab-3d4a" role="tabpanel" aria-labelledby="link-tab-3d4a">
-                          <div class="u-container-layout u-container-layout-12"></div>
+                          <div class="u-container-layout u-container-layout-12">
+                         <table border="1">
+                         <tr>
+                         <td>
+                         <div>
+                       <c:forEach var="errand" items="${errandList}" varStatus="status">     <!-- 속성으로 errandList랑 nicknameList 가져오기 -->
+         					<a href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+         						
+            			No. ${errand.errand_id}<br><br>
+            				${errand.location_ctgr}  ${errand.errand_ctgr}<br>
+            		<h1>${errand.title}</h1>
+            닉네임 : ${nicknameList[status.index]}<br>
+            ${errand.req_location}<br>
+            ${errand.req_date}<br>
+              ~   ${errand.want_date}<br><br>
+            ${errand.price} 원<br>
+            <c:choose>
+               <c:when test='${fn:contains(errand.status, "0")}'>
+                  <span>매칭대기중</span>
+               </c:when>
+               <c:when test='${fn:contains(errand.status, "1")}'>
+                  <span>매칭완료</span>
+               </c:when>
+               <c:when test='${fn:contains(errand.status, "3")}'>
+                  <span>종료</span>
+               </c:when>
+            </c:choose>
+             </c:forEach>
+         </div>
+         </a>
+  
+                         
+                         </td>
+                         </tr>
+                         
+                         
+                         </table>
                           
+                          </div>
                         </div>
                         <div class="u-container-style u-tab-pane" id="tab-8868" role="tabpanel" aria-labelledby="link-tab-8868">
                           <div class="u-container-layout u-container-layout-13"></div>
