@@ -12,7 +12,7 @@ let chat = {
 let socket;
 
 // 3. user id 받아오기
-$('#test').on('click', function(){
+window.onload= function(){
 	
 	chat.member_id = $('#client').val();
 	
@@ -27,7 +27,11 @@ $('#test').on('click', function(){
 		// 채팅창 초기화
 	loadChat();
 	
-});
+	$('#chatBody').animate({
+         scrollTop: $('#chatBody').scrollHeight
+     });
+	
+};
 
 $('#button-send').on("click", function(){
 	
@@ -78,7 +82,7 @@ function loadChat(){
     type: "get",
     dataType: "json",
     success: function (data) {
-			alert("성공");
+			// alert("성공");
 			
 			let resultJson = data;
 			
@@ -89,6 +93,7 @@ function loadChat(){
 				let c_chat = data[i].chat;
 				let c_timestamp = data[i].timestamp;
 				let c_member_id = data[i].memberId;
+				
 				
 				var chatDiv_subject = `
 					<div class='row'>
