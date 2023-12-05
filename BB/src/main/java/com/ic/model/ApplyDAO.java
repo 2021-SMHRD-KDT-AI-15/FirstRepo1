@@ -1,8 +1,11 @@
 package com.ic.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -13,7 +16,7 @@ public class ApplyDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
 	ArrayList <ApplyDTO> applyErrandList = new ArrayList<>();
-	
+
 	ArrayList<ErrandDTO> ErrandTitleList = new ArrayList<>();
 	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -72,17 +75,19 @@ public class ApplyDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
-//■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름의 지원내역 출력 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	
-	public ArrayList<ApplyDTO> ErrandAppliancedMember(ArrayList apply_id_list) {
-		
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		applyErrandList = (ArrayList)sqlSession.selectList("ErrandAppliancedMember",apply_id_list);
-				
-		sqlSession.close();
-		
-		return applyErrandList;
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 지원메시지 출력 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public ArrayList<ApplyDTO> ErrandAppliancedMember(ArrayList<ApplyDTO> messagelist) {
+	    SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+	    Map<String, Object> parameter = new HashMap<>();
+	    parameter.put("messagelist", messagelist);
+
+	    applyErrandList = (ArrayList)sqlSession.selectList("ErrandAppliancedMember", parameter);
+
+	    sqlSession.close();
+
+	    return applyErrandList;
 	}
+
 	
 }

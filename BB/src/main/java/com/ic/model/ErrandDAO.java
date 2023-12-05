@@ -90,7 +90,8 @@ public class ErrandDAO {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		List<ErrandDTO> errandList = sqlSession.selectList("Loadlist",member_id);		
+		List<ErrandDTO> errandList = sqlSession.selectList("Loadlist",member_id);
+		
 		sqlSession.close();
 		
 		return errandList;

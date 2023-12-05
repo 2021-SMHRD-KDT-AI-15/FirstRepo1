@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ic.model.ApplyDAO;
+import com.ic.model.ApplyDTO;
 import com.ic.model.ErrandDAO;
 import com.ic.model.ErrandDTO;
 import com.ic.model.MemberDTO;
@@ -27,25 +29,38 @@ public class RequiredErrandService extends HttpServlet {
 
         HttpSession session = request.getSession();
         MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
-        
+
         int member_id = memberdto.getMember_id();
         
-        ErrandDAO dao =  new ErrandDAO();
-        List<ErrandDTO> errandList = dao.Loadlist(member_id);
-        
-        ////////////////////////////////////////////////////////
-        for(int i=0;i<errandList.size();i++) {
-        	errandList.get(i).getErrand_id();
-        }
+        ErrandDAO errandDAO = new ErrandDAO();
+        List<ErrandDTO> errandList = errandDAO.Loadlist(member_id);
 
-        ////////////////////////////////////////////////////////
-        if(errandList != null) {
-        	request.setAttribute("errandList", errandList);
-        	RequestDispatcher rd = request.getRequestDispatcher("RequiredErrand.jsp");
-        	rd.forward(request, response);
-        } else {
-        	response.sendRedirect("Main.jsp");
-        }
-        
+		ArrayList<ApplyDTO> messagelist = new ArrayList<>();
+		
+		ApplyDAO applyDAO = new ApplyDAO();
+		ArrayList<ApplyDTO> applyErrandList = applyDAO.ErrandAppliancedMember(messagelist);
+		
+		for(int i=0;i<errandList.size();i++) {
+			errandList.get(i).getMember_id();
+		}
+		
+		for (int i = 0; i < applyErrandList.size(); i++) {
+		    ApplyDTO applyDTO = applyErrandList.get(i);
+
+		    for (int j = 0; j < messagelist.size(); j++) {
+		    	String message = applyDTO.getMessage();
+		        messagelist.add(message(j));
+		    }
+		}
+
+        request.setAttribute("errandList", errandList);
+        request.setAttribute("applyErrandList", applyErrandList);
+
+        RequestDispatcher rd = request.getRequestDispatcher("RequiredErrand.jsp");
+        rd.forward(request, response);
     }
+
+	private ApplyDTO message(int j) {
+		return null;
+	}
 }

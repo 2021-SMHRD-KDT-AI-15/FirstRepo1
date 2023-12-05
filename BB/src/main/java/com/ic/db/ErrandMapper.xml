@@ -28,7 +28,7 @@
 	</select>
 	
 	<!-- 요청심부름 목록 불러오기 -->
-	<select id="Loadlist" resultType="com.ic.model.ErrandDTO">
+	<select id="Loadlist" parameterType="int" resultType="com.ic.model.ErrandDTO">
 		SELECT * FROM ERRAND WHERE MEMBER_ID=#{member_id}	
 	</select>
 	

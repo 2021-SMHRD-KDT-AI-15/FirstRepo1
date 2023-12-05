@@ -37,10 +37,9 @@
 		<hr>
 		<main>
 			<section>배너페이지</section>
-			<section id="imgsection">
+			<section id=	"imgsection">
 				<img src="./스크린샷 2023-11-27 123226.png"
 					style="width: 100px; height: 100px;">
-
 			</section>
 			웹사이트 내용 설명
 		</main>

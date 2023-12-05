@@ -19,7 +19,16 @@
 		                <td><a href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">제목 : ${errand.title}</a></td>
 		                <button>요청취소</button>
 		                <br>
-		            </tr>
+		                <c:when test="${not empty applyErrandList}">
+		                	<c:forEach var="apply" items="${applyErrandList}" varStatus="applystatus">
+		                		<c:if test="${apply.errand_id eq errand.errand_id}">
+			                		<div>
+			                			<span>${applystatus.count}</span>
+			                			<span>지원자 메시지 : ${apply.message}</span>
+			                		</div>
+		                		</c:if>
+		                	</c:forEach>
+		                </c:when>
 		        </c:forEach>
 		    </c:when>
 		    <c:otherwise>
