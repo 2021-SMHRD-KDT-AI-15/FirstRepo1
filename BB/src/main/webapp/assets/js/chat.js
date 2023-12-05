@@ -65,7 +65,9 @@ $('#button-send').on("click", function(){
 	// 3) WebSocket으로 메세지 전송
 	// socket.send("보내고 싶은 문자열");
 	send();
+	loadChat();
 });
+
 
 // 채팅 내용 불러오기
 function loadChat(){
@@ -168,7 +170,7 @@ function onMessage(msg){
          scrollTop: $('#chatBody')[0].scrollHeight
      }, 400);
 	
-	
+	loadChat();
 }
 
 // 메세지를 보내는 함수
