@@ -68,6 +68,7 @@ $('#button-send').on("click", function(){
 	loadChat();
 });
 
+loadChat();
 
 // 채팅 내용 불러오기
 function loadChat(){
