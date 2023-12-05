@@ -18,11 +18,10 @@
 	height: 100px;
 }
 </style>
-	
+
 </head>
 
 <body>
-
 	<header>
 		<div id="logo">
 			<img id="logo" src="asset/img/부릉부름_logo.png" alt="">

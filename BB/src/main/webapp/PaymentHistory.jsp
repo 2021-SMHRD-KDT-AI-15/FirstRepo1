@@ -6,7 +6,7 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
-<body><form action="Myinfo" method="post">
+<body><form action="MyInfo.jsp" method="post">
 		<input type="submit" value="내정보">
 		<input type="submit" value="회원정보변경">
 		<input type="submit" value="요청한심부름">

@@ -50,11 +50,10 @@
 		data-animation-name="" data-animation-duration="0"
 		data-animation-delay="0" data-animation-direction="">
 		<div class="u-clearfix u-sheet u-sheet-1">
-				<img
-				class="u-image u-image-contain u-image-default u-image-1"
+			<img class="u-image u-image-contain u-image-default u-image-1"
 				src="asset/img/222.png" data-image-width="464"
-				data-image-height="390" data-href="Main.jsp">
-			<a href="ErrandList.jsp"
+				data-image-height="390" data-href="Main.jsp"> <a
+				href="ErrandList.jsp"
 				class="u-active-white u-btn u-button-style u-custom-font u-hover-custom-color-1 u-hover-feature u-white u-btn-1"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
@@ -77,7 +76,7 @@
 				href="Charge.jsp"
 				class="u-active-white u-btn u-button-style u-custom-font u-hover-custom-color-1 u-hover-feature u-white u-btn-6"
 				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">충전</a> 
+				data-animation-delay="0" data-animation-direction="">충전</a>
 		</div>
 	</header>
 
@@ -325,21 +324,22 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path>
 
 
 
-    <a class="box3" id="Charge" href="Charge.jsp">�����ϱ�</a>
-    <a class="box4"id="MyInfo" href="MyInfo.jsp">���� ������</a>
-    <a class="box5"id="Ranking" href="Ranking.jsp">��ŷ ������</a>
-    <a class="box6"id="ChatList" href="ChatListService">ä��</a>
-    <a class="box1" id="ErrandList" href="ErrandListService">�ɺθ� ���</a>
-    <a class="box1" id="RequireErrand" href="RequireErrand.jsp">�ɺθ� ��û</a>
-    
-    <script>
-        let ErrandList = document.getElementsByClassName("ErrandList")
-        let RequireErrand = document.getElementsByClassName("RequireErrand")
-        let Charge = document.getElementsByClassName("Charge")
-        let MyInfo = document.getElementsByClassName("MyInfo")
-        let Ranking = document.getElementsByClassName("Ranking")
-        let ChatList = document.getElementsByClassName("ChatList")
-    </script>
+	<a class="box3" id="Charge" href="Charge.jsp">�����ϱ�</a>
+	<a class="box4" id="MyInfo" href="MyInfo.jsp">���� ������</a>
+	<a class="box5" id="Ranking" href="Ranking.jsp">��ŷ ������</a>
+	<a class="box6" id="ChatList" href="ChatListService">ä��</a>
+	<a class="box1" id="ErrandList" href="ErrandListService">�ɺθ� ���</a>
+	<a class="box1" id="RequireErrand" href="RequireErrand.jsp">�ɺθ�
+		��û</a>
+
+	<script>
+		let ErrandList = document.getElementsByClassName("ErrandList")
+		let RequireErrand = document.getElementsByClassName("RequireErrand")
+		let Charge = document.getElementsByClassName("Charge")
+		let MyInfo = document.getElementsByClassName("MyInfo")
+		let Ranking = document.getElementsByClassName("Ranking")
+		let ChatList = document.getElementsByClassName("ChatList")
+	</script>
 
 
 </body>
