@@ -37,4 +37,13 @@
 		SELECT * FROM MEMBER WHERE MEMBER_ID = #{n}
 	</select>
 	
+	<!-- 채팅 저장 -->
+	<insert id="SaveChat" parameterType="com.ic.model.ChatDTO">
+		INSERT INTO CHAT VALUES(CHAT_SEQ.NEXTVAL, #{errand_id}, #{member_id}, #{chat}, SYSDATE)
+	</insert>
+	
+	<!-- 채팅 불러오기 -->
+	<select id="LoadChat" resultType="com.ic.model.ChatDTO" parameterType="int">
+		SELECT * FROM CHAT WHERE ERRAND_ID = #{room} ORDER BY TIMESTAMP
+	</select>
 </mapper>

@@ -69,6 +69,6 @@
 		
 	</div>
 	
-	<script src="asset/js/ApplyErrand.js"></script>
+	<script src="assets/js/ApplyErrand.js"></script>
 </body>
 </html>
