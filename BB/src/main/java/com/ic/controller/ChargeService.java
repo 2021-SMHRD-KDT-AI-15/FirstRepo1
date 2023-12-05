@@ -33,14 +33,11 @@ public class ChargeService extends HttpServlet {
 		dto = (MemberDTO) session.getAttribute("clientInfo");
 		int member_id = dto.getMember_id();
 		
-
 		ChargeDAO dao = new ChargeDAO();
 
 		ChargeDTO dto2 = new ChargeDTO(member_id, charge_money);
 
 		dao.charge(dto2);
-		
-		
 		
 		response.sendRedirect("MyInfo.jsp");
 		

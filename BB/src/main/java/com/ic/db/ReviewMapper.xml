@@ -2,10 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ic.db.ReviewMapper">
 	
-	<!-- 자신의 좋아요 갯수를 조회하는 구문 -->
-	<select id="getReview" resultType="com.ic.model.ReviewDTO">
-		select * from review where member_id=#{member_id} AND REVIEW_CTGR = 1 AND NICKNAME IS NOT NULL
+	<!-- 자신의 좋아요를 가져오는 메퍼 -->
+	<select id="getLike" resultType="int">
+		select sum(u_like) from review where member_id=#{member_id} and review_ctgr=1
 	</select>
 	
+	<!-- 자신의 싫어요를 가져오는 메퍼 -->
+	<select id="getDisLike" resultType="int">
+		select sum(u_dislike) from review where member_id=#{member_id} and review_ctgr=1
+	</select>
+	
+	<!-- 나에 대한 후기 내용을 가져오는 메퍼 -->
+	<select id="getReview1" resultType="com.ic.model.ReviewDTO">
+		select * from review where member_id=#{member_id} and review_ctgr=1
+	</select>
+	
+	<!-- 내가 쓴 후기 내용을 가져오는 메퍼 -->
+	<select id="getReview0" resultType="com.ic.model.ReviewDTO">
+		select * from review where member_id=#{member_id} and review_ctgr=0
+	</select>
 
 </mapper>

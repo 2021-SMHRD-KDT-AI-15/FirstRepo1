@@ -26,7 +26,7 @@ public class MyInfoService extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		// member_id를 가져오는 세션
+		// 사용자의 member_id를 가져오는 로직
 		HttpSession session = request.getSession();
 
 		MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
@@ -39,21 +39,29 @@ public class MyInfoService extends HttpServlet {
 	
 		request.setAttribute("MyInfo", MyInfo);
 		
+		
+		// MyInfo.jsp에 필요한 내용을 가져오는 로직
 		ReviewDTO reviewdto = new ReviewDTO();
-		
 		ReviewDAO reviewdao = new ReviewDAO();
-	
-		ArrayList<ReviewDTO> getreview = reviewdao.getReview(member_id);
 		
-
-		request.setAttribute("getreview", getreview);
+		// 좋아요 갯수
+		ArrayList<ReviewDTO> getlike = reviewdao.getLike(member_id);
+		request.setAttribute("getlike", getlike);
+		// 싫어요 갯수
+		ArrayList<ReviewDTO> getdislike = reviewdao.getDisLike(member_id);
+		request.setAttribute("getdislike", getdislike);
+		// 나에게 쓴 리뷰 불러오기
+		ArrayList<ReviewDTO> getreview1 = reviewdao.getReview1(member_id);
+		request.setAttribute("getreview1", getreview1);
+		// 내가 쓴 리뷰 불러오기
+		ArrayList<ReviewDTO> getreview0 = reviewdao.getReview0(member_id);
+		request.setAttribute("getreview0", getreview0);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("MyInfo.jsp");
 		dispatcher.forward(request, response);
-
-		// 1. 쿼리 스트링으로 보내기
+		
+		// 쿼리 스트링으로 보내기(다른 방법)
 		// response.sendRedirect("MyInfo.jsp?myInfo="+MyInfo);
-
 	}
 
 }

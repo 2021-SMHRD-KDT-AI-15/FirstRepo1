@@ -11,28 +11,55 @@ import com.ic.db.SqlSessionManager;
 public class ReviewDAO {
 
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
-	
-	ArrayList<ReviewDTO> getReview = new ArrayList<>();
-	
-	// 좋아요와 싫어요 갯수를 가져오는 dao
-	public ArrayList<ReviewDTO> getReview(int member_id) {
+
+	ArrayList<ReviewDTO> getLike = new ArrayList<>();
+	ArrayList<ReviewDTO> getDisLike = new ArrayList<>();
+	ArrayList<ReviewDTO> getReview1 = new ArrayList<>();
+	ArrayList<ReviewDTO> getReview0 = new ArrayList<>();
+
+	// 좋아요 갯수를 가져오는 메소드
+	public ArrayList<ReviewDTO> getLike(int member_id) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		getLike = (ArrayList) sqlSession.selectList("getLike", member_id);
+		
+		sqlSession.close();
+
+		return getLike;
+	}
+	// 싫어요 갯수를 가져오는 메소드
+	public ArrayList<ReviewDTO> getDisLike(int member_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		getReview = (ArrayList)sqlSession.selectList("getReview", member_id);
+		getDisLike = (ArrayList) sqlSession.selectList("getDisLike", member_id);
 		
 		sqlSession.close();
 		
-		return getReview;
+		return getDisLike;
+	}
+	// 나에게 작성한 후기를 가져오는 메소드
+	public ArrayList<ReviewDTO> getReview1(int member_id) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		getReview1 = (ArrayList) sqlSession.selectList("getReview1", member_id);
+		
+		sqlSession.close();
+
+		return getReview1;
+	}
+	// 내가 작성한 후기를 가져오는 메소드
+	public ArrayList<ReviewDTO> getReview0(int member_id) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		getReview0 = (ArrayList) sqlSession.selectList("getReview0", member_id);
+
+		sqlSession.close();
+
+		return getReview0;
 	}
 	
-	
-	
-	
-	
-		
 }
-	
-	
-
-
