@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -171,7 +171,8 @@
                     <textarea name="WriteReview" id="WriteReview" cols="30" rows="10"
                         style="background-color: rgb(255, 255, 255); height: 400px; border-radius: 5px;"  ></textarea>
                 </form>
-
+				
+				${param.ErrandTitle.member_id}
                 <button id="bottombtn" class="btn1" onclick="location.href='Main.jsp'" style="margin-left: 750px;">후기작성완료</button>
 
             </fieldset>
