@@ -24,6 +24,13 @@
 			<th width="100"><b>충전일시</b></th>
 			<th width="100"><b>충전금액</b></th>
 		</tr>
+		<tr>
+		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
+		<td align="center">${status.index}</td>
+		<td align="center" width="300" height="50">${chargeHistory.charge_date}</td>
+		<td align="center" width="200" height="50">${chargeHistory.charge_money}</td>
+		</tr>
+		</c:forEach>
 		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
 		<td align="center">${status.index}</td>
 		<td align="center" width="300" height="50">${chargeHistory.charge_date}</td>
