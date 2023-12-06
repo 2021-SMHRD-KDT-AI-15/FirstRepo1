@@ -76,13 +76,11 @@ public class ApplyDAO {
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 지원메시지 출력 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public ArrayList<ApplyDTO> ErrandAppliancedMember(ArrayList<ApplyDTO> messagelist) {
-	    SqlSession sqlSession = sqlSessionFactory.openSession(true);
+	public ArrayList<ApplyDTO> ErrandAppliancedMember(ArrayList<ApplyDTO> title) {
+	    
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-	    Map<String, Object> parameter = new HashMap<>();
-	    parameter.put("messagelist", messagelist);
-
-	    applyErrandList = (ArrayList)sqlSession.selectList("ErrandAppliancedMember", parameter);
+	    applyErrandList = (ArrayList)sqlSession.selectList("ErrandAppliancedMember", title);
 
 	    sqlSession.close();
 

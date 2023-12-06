@@ -84,7 +84,7 @@ public class ErrandDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-//■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록서 본인이 요청한 심부름 목록 불러오게 하기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록서 본인이 요청한 심부름 제목 불러오게 하기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 	public List<ErrandDTO> Loadlist(int member_id) {
 		
@@ -111,6 +111,13 @@ public class ErrandDAO {
 		sqlSession.close();
 		
 		return nicknames;
+	}
+
+	public void appliancedErrandMember(ArrayList<ErrandDTO> errandInfo) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		 sqlSession.selectList("appliancedErrandMember", errandInfo);
 	}
 	
 }

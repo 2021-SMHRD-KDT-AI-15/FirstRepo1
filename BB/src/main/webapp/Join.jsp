@@ -106,6 +106,9 @@
             <div class="u-container-style u-expanded-width u-group u-radius u-shape-round u-white u-group-2">
               <div class="u-container-layout u-valign-bottom u-container-layout-2">
                 <a href="SubMain.jsp" class="u-active-white u-btn u-button-style u-custom-color-1 u-hover-white u-text-active-custom-color-1 u-text-hover-custom-color-1 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">돌아가기</a>
+               <div id="map" style="width: 100%; height: 400px;">
+               </div>
+              
               </div>
             </div>
           </div>
@@ -113,7 +116,18 @@
       </div>
     </section>
     
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=832d05251c742bc3b05f5d04b7eaebf1"></script>
     
+    <script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };
+		
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+	</script>
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">개인정보처리방침</a>

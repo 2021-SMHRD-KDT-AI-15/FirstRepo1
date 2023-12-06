@@ -35,6 +35,10 @@
 	<select id="getNicknames" resultType="String">
 		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{member_id}
 	</select>
+	
+	<select id="appliancedErrandMember" parameterType="com.ic.model.ErrandDTO" resultType="com.ic.model.ApplyDTO">
+		SELECT * FROM APPLY WHERE ERRAND_ID=#{errand_id}
+	</select>
 
 
 </mapper>

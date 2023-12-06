@@ -26,45 +26,30 @@ public class RequiredErrandService extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-
+        
         HttpSession session = request.getSession();
         MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
-
+        
         int member_id = memberdto.getMember_id();
         
-        ErrandDAO errandDAO = new ErrandDAO();
-        List<ErrandDTO> errandList = errandDAO.Loadlist(member_id);
-
-		ArrayList<ApplyDTO> messagelist = new ArrayList<>();
-		
-		ApplyDAO applyDAO = new ApplyDAO();
-		ArrayList<ApplyDTO> applyErrandList = applyDAO.ErrandAppliancedMember(messagelist);
-		
+        ErrandDAO erranddao = new ErrandDAO();
+        ErrandDTO erranddto = new ErrandDTO();
+        
+        List<ErrandDTO> errandList = erranddao.Loadlist(member_id);
+        ArrayList<ErrandDTO> errandInfo = new ArrayList<>();
+                
 		for(int i=0;i<errandList.size();i++) {
-			errandList.get(i).getMember_id();
+			String title = errandList.get(i).getTitle();
+			int number = errandList.get(i).getErrand_id();
+			erranddto.setTitle(title);
+			erranddto.setErrand_id(number);
+			errandInfo.add(erranddto);
+			
+			
 		}
 		
-		for (int i = 0; i < applyErrandList.size(); i++) {
-		    ApplyDTO applyDTO = applyErrandList.get(i);
-
-		    for (int j = 0; j < messagelist.size(); j++) {
-		    	String message = applyDTO.getMessage();
-		        messagelist.add(message(j));
-		    }
-		}
+		erranddao.appliancedErrandMember(errandInfo);
 		
-		System.out.println(errandList);
-		System.out.println(applyErrandList);
-		
-		
-        request.setAttribute("errandList", errandList);
-        request.setAttribute("applyErrandList", applyErrandList);
-
-        RequestDispatcher rd = request.getRequestDispatcher("RequiredErrand.jsp");
-        rd.forward(request, response);
     }
 
-	private ApplyDTO message(int j) {
-		return null;
-	}
 }

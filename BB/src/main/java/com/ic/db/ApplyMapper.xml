@@ -26,15 +26,12 @@
 	</delete>
 	
 	<!-- 요청한 심부름 지원메세지 내역 -->
-	<select id="ErrandAppliancedMember" parameterType="java.util.ArrayList" resultType="com.ic.model.ApplyDTO">
-	    SELECT A.MEMBER_ID, B.ERRAND_ID, C.APPLY_ID, C.MESSAGE
+	<select id="ErrandAppliancedMember" resultType="com.ic.model.ApplyDTO">
+	    SELECT MESSAGE, NICKNAME
 	    FROM MEMBER A, ERRAND B, APPLY C
-	    WHERE A.MEMBER_ID = B.MEMBER_ID
-	    AND B.ERRAND_ID = C.ERRAND_ID
- 	    AND C.MESSAGE IN
-	    <foreach item="apply" index="index" collection="messagelist" open="(" separator="," close=")">
-	        #{apply.message}
-	    </foreach>	
+	    WHERE A.MEMBER_ID = C.MEMBER_ID
+	    AND C.ERRAND_ID = B.ERRAND_ID
+	    AND B.TITLE=#{title}
 	</select>
 
 </mapper>
