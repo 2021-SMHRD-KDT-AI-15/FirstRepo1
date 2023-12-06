@@ -62,4 +62,83 @@ public class ReviewDAO {
 		return getReview0;
 	}
 	
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 후기 작성시 대상자 닉네임 호출 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public String getNickname_r(int subject_id) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		String nickname = sqlSession.selectOne("GetNickname_r", subject_id);
+		
+		sqlSession.close();
+		
+		return nickname;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 상대에 대한 좋은 리뷰 작성 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int WriteLikeReview_s(ReviewDTO reviewdto) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.insert("WriteLikeReview_s", reviewdto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 상대에 대한 좋지 않은 리뷰 작성 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int WriteDislikeReview_s(ReviewDTO reviewdto) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.insert("WriteDislikeReview_s", reviewdto);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 내가 작성한 좋은 리뷰 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int WriteLikeReview_c(ReviewDTO reviewdto_c) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.insert("WriteLikeReview_c", reviewdto_c);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 내가 작성한 좋지 않은 리뷰 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int WriteDislikeReview_c(ReviewDTO reviewdto_c) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.insert("WriteDislikeReview_c", reviewdto_c);
+		
+		sqlSession.close();
+		
+		return result;
+		
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■ 지원한 테이블에서 후기 작성시 매칭상태 4로■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int DeleteApply(ApplyCheckDTO applycheck) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result =  sqlSession.update("DeleteApply", applycheck);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 }

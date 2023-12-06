@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -37,10 +37,10 @@
             text-align: center;
             color: grey;
             text-decoration: none;
-            /* aÅÂ±×ÀÇ ¹ØÁÙ ¾ø¾Ö´Â ¸í·Á¾î */
+            /* aíƒœê·¸ì˜ ë°‘ì¤„ ì—†ì• ëŠ” ëª…ë ¤ì–´ */
             font-size: 30px;
             margin: 50px 30px 30px 30px;
-            /* À§ ¾Æ·¡ ÁÂ ¿ì °£°İ */
+            /* ìœ„ ì•„ë˜ ì¢Œ ìš° ê°„ê²© */
             display: inline-block;
 
         }
@@ -85,7 +85,7 @@
             line-height: 70px;
         }
 
-        /* btn1 ½ÉºÎ¸§ Á¦¸ñ ´ë»ó È¸¿ø ´Ğ³×ÀÓ °¡¿îµ¥ Á¤·Ä */
+        /* btn1 ì‹¬ë¶€ë¦„ ì œëª© ëŒ€ìƒ íšŒì› ë‹‰ë„¤ì„ ê°€ìš´ë° ì •ë ¬ */
         .btn1 {
             text-align: center;
             display: inline-block
@@ -97,14 +97,6 @@
             margin-left: 400px;
         }
 
-        input {
-            width: 700px;
-            height: 400px;
-            vertical-align: top;
-            text-align: left;
-            background-color: rgb(200, 196, 196);
-            display: inline-block
-        }
 
         #WriteReview {
             border-radius: 5px;
@@ -114,7 +106,7 @@
         .image {
             width: 50px;
             height: 50px;
-            background-image: url('asset/img/ºÎ¸ªºÎ¸§_logo.png');
+            background-image: url('asset/img/ë¶€ë¦‰ë¶€ë¦„_logo.png');
             background-size: cover;
         }
 
@@ -122,8 +114,8 @@
             height: 1000px;
             width: 700px;
             resize: none;
-            /* resize: vertical; ÀÔ·Â¾ç½Ä °¡·Î Å©±â °íÁ¤ Áï! ¼¼·Î Å©±â¸¸ Á¶Á¤ °¡´É
-            resize: horizontal; °¡·ÎÅ©±â¸¸ Á¶Àı°¡´É */
+            /* resize: vertical; ì…ë ¥ì–‘ì‹ ê°€ë¡œ í¬ê¸° ê³ ì • ì¦‰! ì„¸ë¡œ í¬ê¸°ë§Œ ì¡°ì • ê°€ëŠ¥
+            resize: horizontal; ê°€ë¡œí¬ê¸°ë§Œ ì¡°ì ˆê°€ëŠ¥ */
         }
 
         #bottombtn{
@@ -136,49 +128,64 @@
 
 <body>
     <fieldset>
-        <!-- header¿µ¿ª -->
+        <!-- headerì˜ì—­ -->
         <header>
             <div class="dot.wrapper">
                 <div class="dot">
-                    <img class="dot" id="logo" src="asset/img/ºÎ¸ªºÎ¸§_logo.png" alt="¿äÃ»ÇÑ ÀÌ¹ÌÁö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.">
+                    <img class="dot" id="logo" src="asset/img/ë¶€ë¦‰ë¶€ë¦„_logo.png" alt="ìš”ì²­í•œ ì´ë¯¸ì§€ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.">
                     <nav id="gnb">
                         <ul class="dot">
-                            <li><a href="ErrandList.jsp" id="gnb_li">½ÉºÎ¸§ ¿äÃ»</a></li>
-                            <li><a href="RequireErrand.jsp" id="gnb_li">½ÉºÎ¸§ ¸ñ·Ï</a></li>
-                            <li><a href="Ranking.jsp" id="gnb_li">·©Å·</a></li>
-                            <li><a href="Charge.jsp" id="gnb_li">ÃæÀü</a></li>
-                            <li><a href="ChatList.jsp" id="gnb_li">Ã¤ÆÃ</a></li>
-                            <li><a href="Myinfo.jsp" id="gnb_li">¸¶ÀÌÆäÀÌÁö</a></li>
+                            <li><a href="ErrandList.jsp" id="gnb_li">ì‹¬ë¶€ë¦„ ìš”ì²­</a></li>
+                            <li><a href="RequireErrand.jsp" id="gnb_li">ì‹¬ë¶€ë¦„ ëª©ë¡</a></li>
+                            <li><a href="Ranking.jsp" id="gnb_li">ë­í‚¹</a></li>
+                            <li><a href="Charge.jsp" id="gnb_li">ì¶©ì „</a></li>
+                            <li><a href="ChatList.jsp" id="gnb_li">ì±„íŒ…</a></li>
+                            <li><a href="Myinfo.jsp" id="gnb_li">ë§ˆì´í˜ì´ì§€</a></li>
                         </ul>
                     </nav>
 
                 </div>
             </div>
         </header>
-        <!-- main¿µ¿ª -->
+        <!-- mainì˜ì—­ -->
 
         <main>
             <fieldset id="fieldset">
                 <legend>
-                    <p id="legend_p">ÈÄ±âÀÛ¼º</p>
+                    <p id="legend_p">í›„ê¸°ì‘ì„±</p>
                 </legend>
                 <section class="btn1">
-                    <div id="Errand_title">½ÉºÎ¸§ Á¦¸ñ</div>
-                    <div id="Nick_Name">´ë»ó È¸¿ø ´Ğ³×ÀÓ</div>
+                    <div id="Errand_title">${title}</div>
+                    <div id="Nick_Name">"${nickname}" ë‹˜ì— ëŒ€í•œ í‰ê°€</div>
                 </section>
                 <hr>
-                <form id="form" action="Main.jsp" method="post">
-                    <textarea name="WriteReview" id="WriteReview" cols="30" rows="10"
-                        style="background-color: rgb(255, 255, 255); height: 400px; border-radius: 5px;"  ></textarea>
+                <form action="WriteReviewService" method="post">
+                	<input type="hidden" name="subject_nickname" value="${nickname}"> <!-- ì§€ìš°ë©´ ì•ˆë¨ -->
+                	<input type="hidden" name="subject_id" value="${subject_id}"> <!-- ì§€ìš°ë©´ ì•ˆë¨ -->
+                	<input type="hidden" name="errand_ctgr" value="${errand_ctgr}"> <!-- ì§€ìš°ë©´ ì•ˆë¨ -->
+                	<input type="hidden" name="errand_id" value="${errand_id}"> <!-- ì§€ìš°ë©´ ì•ˆë¨ -->
+                	
+                    <textarea name="content" id="WriteReview" cols="30" rows="10" style="background-color: rgb(255, 255, 255); height: 400px; border-radius: 5px;">
+                    </textarea>
+                    <div>
+                        <div style="height: 100px; width: 200px; background-color: #ddd; border: 1px solid; border-radius: 10px; text-align:center; float: left;">
+                        	ì¢‹ì•„ìš” <input type="radio" name="like" value="0">
+                        </div>
+                        <div style="height: 100px; width: 200px; background-color: #ddd; border: 1px solid; border-radius: 10px; text-align:center; float: left;">
+                        	ì‹«ì–´ìš” <input type="radio" name="like" value="1">
+                        </div>
+                        <div>
+                        	<input type="submit" value="í›„ê¸° ì‘ì„± ì™„ë£Œ" style="clear: both; display: block; margin: 0 auto">
+                		</div>
+                    </div>
                 </form>
 				
-				${param.ErrandTitle.member_id}
-                <button id="bottombtn" class="btn1" onclick="location.href='Main.jsp'" style="margin-left: 750px;">ÈÄ±âÀÛ¼º¿Ï·á</button>
+				
 
             </fieldset>
         </main>
 
-        <!-- footer ¿µ¿ª -->
+        <!-- footer ì˜ì—­ -->
         <footer></footer>
 
     </fieldset>

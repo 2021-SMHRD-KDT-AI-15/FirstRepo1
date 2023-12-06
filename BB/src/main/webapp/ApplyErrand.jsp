@@ -70,7 +70,11 @@ td {
 								</c:when>
 								<c:when test="${fn:contains(ErrandTitle.status, 2)}">
 									<td id="status">심부름 종료</td>
-									<td><a href="WriteReview.jsp?subject_id=${ErrandTitle.member_id}"><button>후기작성</button></a></td>
+									<td><a href="GetNickname_WriteReviewService?subject_id=${ErrandTitle.member_id}&title=${ErrandTitle.title}&errand_ctgr=${ErrandTitle.errand_ctgr}&errand_id=${ErrandTitle.errand_id}"><button>후기작성</button></a></td>
+								</c:when>
+								<c:when test="${fn:contains(ErrandTitle.status, 4)}">
+									<td id="status">후기작성완료</td>
+									<td></td>
 								</c:when>
 							</c:choose>
 						</tr>
