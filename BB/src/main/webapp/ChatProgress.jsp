@@ -29,16 +29,10 @@
 <body>
 	
 	<div class="container">
-		<div class="jumbotron jumbotron-fluid alert-success">
-			<div class="container">
 				<!-- EL을 이용해 쿼리스트링에 담긴 데이터 집어넣기 -->
-				<h1 id="room">${param.room}</h1>
-				<p id="client">${param.client_no}</p>
-				<p id="subject">${param.subject_no}</p>
-			</div>
-		</div>
-
-		<button id="test">테스트</button>
+				<h1 id="room" style="display: none;">${param.room}</h1>
+				<p id="client" style="display: none;">${param.client_no}</p>
+				<p id="subject" style="display: none;">${param.subject_no}</p>
 
 		<div class="row">
 			<div class="col-lg-2"></div>

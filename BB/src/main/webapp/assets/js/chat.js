@@ -17,7 +17,7 @@ window.onload= function(){
 	chat.member_id = $('#client').val();
 	
 	// Socket 연결
-	socket = new WebSocket('ws://localhost:8081/BB/chat/' + room);
+	socket = new WebSocket('ws://59.3.58.51:8081/BB/chat/' + room);
 	// Socket의 콜백함수 지정
 	socket.onopen = onOpen;
 	socket.onclose = onClose;
@@ -68,7 +68,6 @@ $('#button-send').on("click", function(){
 	loadChat();
 });
 
-loadChat();
 
 // 채팅 내용 불러오기
 function loadChat(){
@@ -78,7 +77,7 @@ function loadChat(){
 	
 	// 비동기 통신을 이용해서 채팅 내용 가져와 출력하기(직접해보기)
 	 $.ajax({
-    url: "Test",
+    url: "LoadChatService",
     data: {
 		room : room
 	},

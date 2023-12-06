@@ -18,8 +18,8 @@ import org.json.simple.JSONObject;
 import com.ic.db.SqlSessionManager;
 import com.ic.model.ChatDTO;
 
-@WebServlet("/Test")
-public class Test extends HttpServlet {
+@WebServlet("/LoadChatService")
+public class LoadChatService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
