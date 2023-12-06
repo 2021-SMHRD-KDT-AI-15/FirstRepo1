@@ -21,5 +21,35 @@
 	<select id="getReview0" resultType="com.ic.model.ReviewDTO">
 		select * from review where member_id=#{member_id} and review_ctgr=0
 	</select>
+	
+	<!-- 후기 작성할 때 대상자 닉네임 호출 -->
+	<select id="GetNickname_r" resultType="String">
+		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{subject_id}
+	</select>
+	
+	<!-- 상대에 대한 좋은 리뷰 작성 -->
+	<insert id="WriteLikeReview_s" parameterType="com.ic.model.ReviewDTO">
+		INSERT INTO REVIEW VALUES (REVIEW_SEQ.NEXTVAL, #{member_id}, #{review_ctnt}, 1, 1, 0, #{errand_review_ctgr}, #{nickname})
+	</insert>
+	
+	<!-- 상대에 대한 좋지 않은 리뷰 작성 -->
+	<insert id="WriteDislikeReview_s" parameterType="com.ic.model.ReviewDTO">
+		INSERT INTO REVIEW VALUES (REVIEW_SEQ.NEXTVAL, #{member_id}, #{review_ctnt}, 1, 0, 1, #{errand_review_ctgr}, #{nickname})
+	</insert>
+	
+	<!-- 내가 작성한 좋은 리뷰 -->
+	<insert id="WriteLikeReview_c" parameterType="com.ic.model.ReviewDTO">
+		INSERT INTO REVIEW VALUES (REVIEW_SEQ.NEXTVAL, #{member_id}, #{review_ctnt}, 0, 1, 0, #{errand_review_ctgr}, #{nickname})
+	</insert>
+	
+	<!-- 내가 작성한 좋지 않은 리뷰 -->
+	<insert id="WriteDislikeReview_c" parameterType="com.ic.model.ReviewDTO">
+		INSERT INTO REVIEW VALUES (REVIEW_SEQ.NEXTVAL, #{member_id}, #{review_ctnt}, 0, 0, 1, #{errand_review_ctgr}, #{nickname})
+	</insert>
+	
+	<!-- 지원테이블에 매칭상태 4로 -->
+	<update id="DeleteApply" parameterType="com.ic.model.ApplyCheckDTO">
+		UPDATE APPLY SET MATCH_STATUS=4 WHERE MEMBER_ID = #{client_member_id} AND ERRAND_ID = #{errand_id} 
+	</update>
 
 </mapper>

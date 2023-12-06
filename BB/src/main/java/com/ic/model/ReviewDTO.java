@@ -66,4 +66,30 @@ public class ReviewDTO {
 	public ReviewDTO() {
 	}
 	
+	// 상대에 대한 좋은 리뷰 생성자
+	public ReviewDTO(int subject_id, String content, int likeCheck, String errand_ctgr, String subject_nickname) {
+		this.member_id = subject_id;
+		this.review_ctnt = content;
+		this.u_like = likeCheck;
+		this.errand_review_ctgr = errand_ctgr;
+		this.nickname = subject_nickname;
+	}
+	
+	// 상대에 대한 좋지 않은 리뷰 생성자
+	public ReviewDTO(int subject_id, String content, String errand_ctgr, int likeCheck, String subject_nickname) {
+		this.member_id = subject_id;
+		this.review_ctnt = content;
+		this.u_dislike = likeCheck;
+		this.errand_review_ctgr = errand_ctgr;
+		this.nickname = subject_nickname;
+	}
+	
+	// 내가 작성한 리뷰 생성자
+	public ReviewDTO(int client_id, String content, String errand_ctgr, String client_nickname) {
+		this.member_id = client_id;
+		this.review_ctnt = content;
+		this.errand_review_ctgr = errand_ctgr;
+		this.nickname = client_nickname;
+	}
+	
 }
