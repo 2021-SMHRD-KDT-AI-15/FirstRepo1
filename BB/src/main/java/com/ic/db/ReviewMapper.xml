@@ -4,12 +4,12 @@
 	
 	<!-- 자신의 좋아요를 가져오는 메퍼 -->
 	<select id="getLike" resultType="int">
-		select sum(u_like) from review where member_id=#{member_id} and review_ctgr=1
+		select u_like from review where member_id=#{member_id} and review_ctgr=1
 	</select>
 	
 	<!-- 자신의 싫어요를 가져오는 메퍼 -->
 	<select id="getDisLike" resultType="int">
-		select sum(u_dislike) from review where member_id=#{member_id} and review_ctgr=1
+		select u_dislike from review where member_id=#{member_id} and review_ctgr=1
 	</select>
 	
 	<!-- 나에 대한 후기 내용을 가져오는 메퍼 -->

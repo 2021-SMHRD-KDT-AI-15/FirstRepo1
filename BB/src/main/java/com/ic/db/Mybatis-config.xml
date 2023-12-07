@@ -25,6 +25,7 @@
 	<mapper resource="com/ic/db/ApplyMapper.xml"/>
 	<mapper resource="com/ic/db/ReviewMapper.xml"/>
 	<mapper resource="com/ic/db/ChatMapper.xml"/>
+	<mapper resource="com/ic/db/PaymentMapper.xml"/>
   </mappers>
 </configuration>
 

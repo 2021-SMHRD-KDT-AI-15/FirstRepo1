@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,29 +9,6 @@
 <title>PaymentHistory</title>
 </head>
 <body>
-	<header>
-		<div>
-			<button>
-				<a href="MyInfo.jsp">내정보</a>
-			</button>
-			<button>
-				<a href="InfoChange1.jsp">회원정보변경</a>
-			</button>
-			<button>
-				<a href="RequiredErrand.jsp">요청한심부름</a>
-			</button>
-			<button>
-				<a href="ApplyErrand.jsp">지원한심부름</a>
-			</button>
-			<button>
-				<a href="ChargeHistory.jsp">충전내역</a>
-			</button>
-			<button>
-				<a href="PaymentHistory.jsp">결제내역</a>
-			</button>
-		</div>
-	</header>
-
 	<fieldset>
 	<table border="1">
 		<tr bgcolor="gray">
@@ -39,15 +18,29 @@
 			<th width="100px"><strong>결제 내역</strong></th>
 		</tr>
 		<tr>
-			<c:forEach var="review1" items="${payment}" begin="0" end="9999"
-				step="1" varStatus="status">
-				<td align="center" width="300" height="50">${payment.no}</td>
-				<td align="center" width="300" height="50">${payment.date}</td>
-				<td align="center" width="200" height="50">${payment.money}</td>
-				<td align="center" width="200" heifht="50">${payment.ctgr}</td>
+			<c:forEach var="paymentHistory" items="${paymentHistory}" begin="0" end="9999" step="1" varStatus="status">
+				<td align="center" width="300" height="50">${status.count}</td>
+				<td align="center" width="300" height="50">${paymentHistory.payment_date}</td>
+				<td align="center" width="300" height="50">${paymentHistory.payment_money}</td>
+				<c:choose>
+				<c:when test='${fn:contains(paymentHistory.payment_ctgr, "0")}'>
+					<td align="center" width="200" height="50">심부름 요청</td>
+				</c:when>
+				<c:when test='${fn:contains(paymentHistory.payment_ctgr, "1")}'>
+					<td align="center" width="200" height="50">심부름 완수</td>
+				</c:when>
+				<c:when test='${fn:contains(paymentHistory.payment_ctgr, "2")}'>
+					<td align="center" width="200" height="50">심부름 지원비용</td>
+				</c:when>
+				<c:when test='${fn:contains(paymentHistory.payment_ctgr, "3")}'>
+					<td align="center" width="200" height="50">심부름 지원비용 반환</td>
+				</c:when>
+				<c:when test='${fn:contains(paymentHistory.payment_ctgr, "4")}'>
+					<td align="center" width="200" height="50">심부름 요청 취소 수수료</td>
+				</c:when>
+			</c:choose>
 		</tr>
-		</c:forEach>
-
+	</c:forEach>
 	</table>
 	</fieldset>
 	

@@ -19,49 +19,54 @@ import com.ic.model.ReviewDTO;
 
 @WebServlet("/MyInfoService")
 public class MyInfoService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+   protected void service(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
-		
-		// 사용자의 member_id를 가져오는 로직
-		HttpSession session = request.getSession();
+      request.setCharacterEncoding("UTF-8");
 
-		MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
+      // 사용자의 member_id를 가져오는 로직
+      HttpSession session = request.getSession();
 
-		int member_id = memberdto.getMember_id();
-		
-		MemberDAO memberdao = new MemberDAO();
+      MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
 
-		MemberDTO MyInfo = memberdao.MyInfo(member_id);
-	
-		request.setAttribute("MyInfo", MyInfo);
-		
-		
-		// MyInfo.jsp에 필요한 내용을 가져오는 로직
-		ReviewDTO reviewdto = new ReviewDTO();
-		ReviewDAO reviewdao = new ReviewDAO();
-		
-		// 좋아요 갯수
-		ArrayList<ReviewDTO> getlike = reviewdao.getLike(member_id);
-		request.setAttribute("getlike", getlike);
-		// 싫어요 갯수
-		ArrayList<ReviewDTO> getdislike = reviewdao.getDisLike(member_id);
-		request.setAttribute("getdislike", getdislike);
-		// 나에게 쓴 리뷰 불러오기
-		ArrayList<ReviewDTO> getreview1 = reviewdao.getReview1(member_id);
-		request.setAttribute("getreview1", getreview1);
-		// 내가 쓴 리뷰 불러오기
-		ArrayList<ReviewDTO> getreview0 = reviewdao.getReview0(member_id);
-		request.setAttribute("getreview0", getreview0);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("MyInfo.jsp");
-		dispatcher.forward(request, response);
-		
-		// 쿼리 스트링으로 보내기(다른 방법)
-		// response.sendRedirect("MyInfo.jsp?myInfo="+MyInfo);
-	}
+      int member_id = memberdto.getMember_id();
+
+      MemberDAO memberdao = new MemberDAO();
+
+      MemberDTO MyInfo = memberdao.MyInfo(member_id);
+
+      request.setAttribute("MyInfo", MyInfo);
+
+      // MyInfo.jsp에 필요한 내용을 가져오는 로직
+      ReviewDTO reviewdto = new ReviewDTO();
+      ReviewDAO reviewdao = new ReviewDAO();
+
+      // 좋아요 갯수
+      ArrayList<ReviewDTO> getlike = reviewdao.getLike(member_id);
+      int like = getlike.size();
+      
+      // 싫어요 갯수g
+      ArrayList<ReviewDTO> getdislike = reviewdao.getDisLike(member_id);
+      int dislike = getdislike.size();
+      
+      request.setAttribute("getlike", like);
+      request.setAttribute("getdislike", dislike);
+      
+      // 나에게 쓴 리뷰 불러오기
+      ArrayList<ReviewDTO> getreview1 = reviewdao.getReview1(member_id);
+      request.setAttribute("getreview1", getreview1);
+      // 내가 쓴 리뷰 불러오기
+      ArrayList<ReviewDTO> getreview0 = reviewdao.getReview0(member_id);
+      request.setAttribute("getreview0", getreview0);
+
+      RequestDispatcher dispatcher = request.getRequestDispatcher("MyInfo.jsp");
+      
+      dispatcher.forward(request, response);
+
+      // 쿼리 스트링으로 보내기(다른 방법)
+      // response.sendRedirect("MyInfo.jsp?myInfo="+MyInfo);
+   }
 
 }
