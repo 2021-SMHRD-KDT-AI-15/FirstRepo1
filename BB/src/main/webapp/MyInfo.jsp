@@ -83,18 +83,14 @@
 			<br>
 			<fieldset>
 				<legend>내가 받은 좋아요</legend>
-				<c:forEach var="getlike" items="${getlike}">
 					<p>${getlike}</p>
-				</c:forEach>
 			</fieldset>
 			<fieldset>
 				<legend>내가 받은 싫어요</legend>
-				<c:forEach var="getdislike" items="${getdislike}">
 					<p>${getdislike}</p>
-				</c:forEach>
 			</fieldset>
 
-			<p>${MyInfo.nickname}(${MyInfo.id})님환영합니다!</p>
+			<p>${MyInfo.nickname}(${MyInfo.id})님 환영합니다!</p>
 			<br>
 			<p>보유 금액 : ${MyInfo.money}원</p>
 
@@ -108,7 +104,7 @@
 				<tr>
 					<c:forEach var="review1" items="${getreview1}" begin="0" end="9999"
 						step="1" varStatus="status">
-						<td align="center" width="300" height="50">${status.index}</td>
+						<td align="center" width="300" height="50">${status.count}</td>
 						<td align="center" width="300" height="50">${review1.review_ctnt}</td>
 						<td align="center" width="200" height="50">${review1.nickname}</td>
 				</tr>
@@ -125,7 +121,7 @@
 				<tr>
 					<c:forEach var="review0" items="${getreview0}" begin="0" end="9999"
 						step="1" varStatus="status">
-						<td align="center" width="300" height="50">${status.index}</td>
+						<td align="center" width="300" height="50">${status.count}</td>
 						<td align="center" width="300" height="50">${review0.review_ctnt}</td>
 						<td align="center" width="200" height="50">${review0.nickname}</td>
 				</tr>

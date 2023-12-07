@@ -1,6 +1,9 @@
 package com.ic.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.ic.model.ChargeDTO;
 import com.ic.model.MemberDTO;
 import com.ic.model.PaymentDAO;
+import com.ic.model.PaymentDTO;
 
 
 @WebServlet("/PaymentHistoryService")
@@ -27,14 +31,16 @@ public class PaymentHistoryService extends HttpServlet {
 		MemberDTO memberdto = (MemberDTO)session.getAttribute("clientInfo");
 		
 		int member_id = memberdto.getMember_id();
-		System.out.println(member_id);
-		
 		PaymentDAO paymentdao = new PaymentDAO();
 		
-	
+		ArrayList<PaymentDTO>paymentHistory = new ArrayList<>();
 		
+		paymentHistory = paymentdao.PaymentHistory(member_id);
 		
+		request.setAttribute("paymentHistory", paymentHistory);
 		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("PaymentHistory.jsp");
+		dispatcher.forward(request, response);
 		
 	}
 
