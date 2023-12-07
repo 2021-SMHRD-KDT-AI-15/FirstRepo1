@@ -240,7 +240,6 @@
 																		<!-- 속성으로 errandList랑 nicknameList 가져오기 -->
 																		<a
 																			href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-
 																			No. ${errand.errand_id}<br> <br>
 																			${errand.location_ctgr} ${errand.errand_ctgr}<br>
 																			<h1>${errand.title}</h1> 닉네임 :

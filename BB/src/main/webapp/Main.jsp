@@ -43,7 +43,7 @@
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
-				href="RequireErrandService"
+				href="RequireErrand.jsp"
 				class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 요청</a> <a
