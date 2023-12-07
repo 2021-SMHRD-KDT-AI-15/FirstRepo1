@@ -45,9 +45,7 @@ public class RequiredErrandService extends HttpServlet {
 			erranddto.setErrand_id(number);
 			errandInfo.add(erranddto);
 			
-			
 		}
-		
 		erranddao.appliancedErrandMember(errandInfo);
 		
     }

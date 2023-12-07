@@ -32,7 +32,7 @@
 		<p>변경할비밀번호</p>
 		<input type="text" placeholder="변경할 비밀번호를 입력해주세요." name="pw">
 		<p>변경할주소검색</p>
-		<input type="text" placeholder="주소를 입력해주세요." name="address">
+		<input type="text" placeholder="주소를 입력해주세요." name="address1">
 		<br><br>
 		<input type="submit" value="변경">
 	</form>

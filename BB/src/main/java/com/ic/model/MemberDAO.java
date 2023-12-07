@@ -12,7 +12,7 @@ public class MemberDAO {
 
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
-
+	
 	
 	// 회원가입 메소드 생성!
 	public int join(MemberDTO dto) {
