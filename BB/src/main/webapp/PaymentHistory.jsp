@@ -48,41 +48,44 @@
         <a href="ShowApplyErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">지원한 심부름</a>
       </div>
     </section>
-    
+    <body style="text-align: center; padding-top : 30px">
+
     <fieldset>
-   <table border="1">
-      <tr bgcolor="gray">
-         <th width="50px "><strong>NO</strong></th>
-         <th width="100px"><strong>결제 일시</strong></th>
-         <th width="100px"><strong>결제 금액</strong></th>
-         <th width="100px"><strong>결제 내역</strong></th>
-      </tr>
-      <tr>
-         <c:forEach var="paymentHistory" items="${paymentHistory}" begin="0" end="9999" step="1" varStatus="status">
-            <td align="center" width="300" height="50">${status.count}</td>
-            <td align="center" width="300" height="50">${paymentHistory.payment_date}</td>
-            <td align="center" width="300" height="50">${paymentHistory.payment_money}</td>
-            <c:choose>
-            <c:when test='${fn:contains(paymentHistory.payment_ctgr, "0")}'>
-               <td align="center" width="200" height="50">심부름 요청</td>
-            </c:when>
-            <c:when test='${fn:contains(paymentHistory.payment_ctgr, "1")}'>
-               <td align="center" width="200" height="50">심부름 완수</td>
-            </c:when>
-            <c:when test='${fn:contains(paymentHistory.payment_ctgr, "2")}'>
-               <td align="center" width="200" height="50">심부름 지원비용</td>
-            </c:when>
-            <c:when test='${fn:contains(paymentHistory.payment_ctgr, "3")}'>
-               <td align="center" width="200" height="50">심부름 지원비용 반환</td>
-            </c:when>
-            <c:when test='${fn:contains(paymentHistory.payment_ctgr, "4")}'>
-               <td align="center" width="200" height="50">심부름 요청 취소 수수료</td>
-            </c:when>
-         </c:choose>
-      </tr>
-   </c:forEach>
-   </table>
-   </fieldset>
+        <table border="1" style="margin: 20px auto; border-collapse: collapse; width: 70%; text-align: center;">
+            <tr bgcolor="#ff9b65">
+                <th width="50px" style="color: white; font-size: 2em;"><strong>NO</strong></th>
+                <th width="100px" style="color: white; font-size: 2em;"><strong>결제 일시</strong></th>
+                <th width="100px" style="color: white; font-size: 2em;"><strong>결제 금액</strong></th>
+                <th width="200px" style="color: white; font-size: 2em;"><strong>결제 내역</strong></th>
+            </tr>
+            <c:forEach var="paymentHistory" items="${paymentHistory}" begin="0" end="9999" step="1" varStatus="status">
+                <tr>
+                    <td height="50">${status.count}</td>
+                    <td height="50">${paymentHistory.payment_date}</td>
+                    <td height="50">${paymentHistory.payment_money}</td>
+                    <c:choose>
+                        <c:when test='${fn:contains(paymentHistory.payment_ctgr, "0")}'>
+                            <td>심부름 요청</td>
+                        </c:when>
+                        <c:when test='${fn:contains(paymentHistory.payment_ctgr, "1")}'>
+                            <td>심부름 완수</td>
+                        </c:when>
+                        <c:when test='${fn:contains(paymentHistory.payment_ctgr, "2")}'>
+                            <td>심부름 지원비용</td>
+                        </c:when>
+                        <c:when test='${fn:contains(paymentHistory.payment_ctgr, "3")}'>
+                            <td>심부름 지원비용 반환</td>
+                        </c:when>
+                        <c:when test='${fn:contains(paymentHistory.payment_ctgr, "4")}'>
+                            <td>심부름 요청 취소 수수료</td>
+                        </c:when>
+                    </c:choose>
+                </tr>
+            </c:forEach>
+        </table>
+    </fieldset>
+
+</body>
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">개인정보처리방침</a>
