@@ -141,4 +141,31 @@ public class ReviewDAO {
 		return result;
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+////////////////////////////////////////////■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 페이지에서 지원자에 대한 리뷰 작성 부분 ■■■■■■■■■■■■■■■■■■■■■■■■■■////////////////////////////////////////////////////////////
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 선택한 지원자 닉네임 호출 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public String GetApplyMemberNickname(int applyMemberId) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		String applyMemberNickname = sqlSession.selectOne("GetApplyMemberNickname", applyMemberId);
+		
+		sqlSession.close();
+		
+		return applyMemberNickname;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+	public int ChgAppMatchStatus(ApplyCheckDTO applycheck) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.update("ChgAppMatchStatus", applycheck);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
 }

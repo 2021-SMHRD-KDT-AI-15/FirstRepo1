@@ -36,9 +36,49 @@
 		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{member_id}
 	</select>
 	
-	<select id="appliancedErrandMember" parameterType="com.ic.model.ErrandDTO" resultType="com.ic.model.ApplyDTO">
-		SELECT * FROM APPLY WHERE ERRAND_ID=#{errand_id}
+	<!-- RequiredErrandService에서 client_id로 요청된 심부름 리스트화 -->
+	<select id="GetErrandInfo" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE MEMBER_ID = #{member_id}
+	</select>
+	
+	<!-- 위에서 얻어온 errand데이터 중 errand_id로 Apply테이블에 해당 심부름번호로 지원한 지원자들 리스트화 -->
+	<select id="GetApplyMember" parameterType="com.ic.model.ErrandDTO" resultType="com.ic.model.ApplyDTO">
+		SELECT * FROM APPLY WHERE ERRAND_ID = #{errand_id}
 	</select>
 
+	<!-- 위에서 얻어온 지원자들 닉네임 리스트화 -->
+	<select id="GetApplyMembersNickname" resultType="String">
+		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{appMemberId}
+	</select>
+	
+	<!-- 지원자 선택시 심부름 상태 1로 변경 -->
+	<update id="ChangeErrStatus">
+		UPDATE ERRAND SET STATUS = 1 WHERE ERRAND_ID = #{errand_id}
+	</update>
 
+	<!-- 지원자 선택시 지원테이블 매칭 상태 1로 변경 -->
+	<update id="ChangeAppStatus" parameterType="com.ic.model.ApplyCheckDTO">
+		UPDATE APPLY SET MATCH_STATUS = 1 WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
+	</update>
+	
+	<!-- 지원자 선택시 다른 지원자들 매칭 상태 2로 변경 -->
+	<update id="DeleteOtherApply" parameterType="com.ic.model.ApplyCheckDTO">
+		UPDATE APPLY SET MATCH_STATUS = 2 WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID NOT IN (#{client_member_id})
+	</update>
+	
+	<!-- 선택한 지원자 옆 완료버튼을 누르면 심부름테이블 상태 2로 변경 -->
+	<update id="CompleteErrand">
+		UPDATE ERRAND SET STATUS = 2 WHERE ERRAND_ID = #{errand_id}
+	</update>
+	
+	<!-- 요청자가 지원자 옆 완료버튼을 누르면 해당 지원자 매칭상태 4로 변경 -->
+	<update id="CompleteErrandApply">
+		UPDATE APPLY SET MATCH_STATUS = 4 WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
+	</update>
+	
+	<!-- 요청자가 후기 작성 시 심부름 상태 3으로 변경 -->
+	<update id="ChgErrStatus">
+		UPDATE ERRAND SET STATUS = 3 WHERE ERRAND_ID = #{errand_id}
+	</update>
+	
 </mapper>

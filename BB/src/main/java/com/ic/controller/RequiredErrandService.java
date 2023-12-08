@@ -22,8 +22,7 @@ import com.ic.model.MemberDTO;
 public class RequiredErrandService extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void service(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
         
@@ -33,7 +32,6 @@ public class RequiredErrandService extends HttpServlet {
         int member_id = memberdto.getMember_id();
         
         ErrandDAO erranddao = new ErrandDAO();
-        ErrandDTO erranddto = new ErrandDTO();
         
         List<ErrandDTO> errandList = erranddao.Loadlist(member_id);
         ArrayList<ErrandDTO> errandInfo = new ArrayList<>();
@@ -45,6 +43,24 @@ public class RequiredErrandService extends HttpServlet {
 			erranddto.setErrand_id(number);
 			errandInfo.add(erranddto);
 			
+        ArrayList <ErrandDTO> clientErrandAll = erranddao.getErrandInfo(member_id);
+		
+		ArrayList <ArrayList<ApplyDTO>> applyMembers = erranddao.GetApplyMember(clientErrandAll);
+		
+		ArrayList <ArrayList<String>> applyMembersNickname = erranddao.GetApplyMembersNickname(applyMembers);
+		
+		// System.out.println(clientErrandAll);
+		// System.out.println(applyMembers);
+		
+		request.setAttribute("clientErrandAll", clientErrandAll);
+		request.setAttribute("applyMembers", applyMembers);
+		request.setAttribute("applyMembersNickname", applyMembersNickname);
+		
+		if(clientErrandAll.isEmpty()) {
+			response.sendRedirect("RequiredErrand.jsp?reqCheck=0");
+		} else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("RequiredErrand.jsp");
+			dispatcher.forward(request, response);
 		}
 		erranddao.appliancedErrandMember(errandInfo);
 		

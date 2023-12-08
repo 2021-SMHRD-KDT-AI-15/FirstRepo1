@@ -51,5 +51,18 @@
 	<update id="DeleteApply" parameterType="com.ic.model.ApplyCheckDTO">
 		UPDATE APPLY SET MATCH_STATUS=4 WHERE MEMBER_ID = #{client_member_id} AND ERRAND_ID = #{errand_id} 
 	</update>
+	
+	
+	<!-- ////////////////////// 요청한 심부름 페이지에서 선택한 지원자에 대한 리뷰 작성 부분 //////////////////////////// -->
+	
+	
+	<!-- 선택한 지원자 닉네임 호출 -->
+	<select id="GetApplyMemberNickname" resultType="String">
+		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{applyMemberId}
+	</select>
+	
+	<update id="ChgAppMatchStatus" parameterType="com.ic.model.ApplyCheckDTO">
+		UPDATE APPLY SET MATCH_STATUS = 5 WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
+	</update>
 
 </mapper>
