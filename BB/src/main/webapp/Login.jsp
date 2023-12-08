@@ -40,7 +40,7 @@
                 </div>
                 <div class="u-form-group u-label-top">
                   <label for="password-a30d" class="u-custom-font u-label u-text-custom-color-1 u-label-2">PW</label>
-                  <input type="text" placeholder="비밀번호를 입력해주세요" id="password-a30d" name="pw" class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-input-2" required="">
+                  <input type="password" placeholder="비밀번호를 입력해주세요" id="password-a30d" name="pw" class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-input-2" required="">
                 </div>
                
                 <div class="u-form-group u-form-submit u-label-top">
@@ -69,16 +69,4 @@
           <br>(주)ICㅣ대표 윤수민ㅣ대표 번호: 010-9918-0000<br>대표 메일: vroong@naver.com<br>사업자등록번호:123-456-789<br>통신판매번호: 2023-4777<br>서울특별시 강남구 강남대로 364<br>Copyright ⓒ 2023 부릉부름. All rights reserved.
         </p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-design" target="_blank">
-        <span>Best Website Design</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Offline Website Builder Software</span>
-      </a>. 
-    </section>
-  
 </body></html>

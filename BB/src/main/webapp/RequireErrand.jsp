@@ -227,6 +227,7 @@
 			</p>
 		</div>
 	</footer>
+<<<<<<< HEAD
 	<section class="u-backlink u-clearfix u-grey-80">
 		<a class="u-link" href="https://nicepage.com/website-templates"
 			target="_blank"> <span>Web Templates</span>
@@ -242,6 +243,5 @@
 	<script type="text/javascript"
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a69423df911a689eb5f9a2b94bf4f50&libraries=services,clusterer,drawing"></script>
     <script src="assets/js/RequireErrandAddress.js"></script>
-
 </body>
 </html>
