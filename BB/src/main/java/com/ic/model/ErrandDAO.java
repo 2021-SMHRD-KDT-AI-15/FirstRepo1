@@ -267,6 +267,33 @@ public class ErrandDAO {
 			return result;
 		}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 요청 취소 ==> 지원자 모두 삭제 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■	
+		public int ApplyCancelService(int errand_id) {
+			
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			
+			int result = sqlSession.delete("ApplyCancelService", errand_id);
+			
+			sqlSession.close();
+			
+			return result;
+		}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름번호로 등록된 채팅 모두 삭제 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+		public int DeleteChat(int errand_id) {
+
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			
+			int result = sqlSession.delete("DeleteChat", errand_id);
+			
+			sqlSession.close();
+			
+			return result;
+			
+		}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 }
 

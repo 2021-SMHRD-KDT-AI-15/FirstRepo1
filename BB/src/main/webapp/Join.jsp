@@ -11,11 +11,13 @@
 <link rel="stylesheet" href="assets/css/Join.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    
     <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
-    
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="assets/js/address.js"></script>
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -68,12 +70,11 @@
                 </div>
                 <div class="u-form-group u-label-top u-form-group-7">
                   <label for="text-413d" class="u-custom-font u-label u-text-custom-color-1 u-label-7">주소</label><br>
-                  <input type="text" id="postcode" placeholder="우편번호">
+                  <input type="text" id="postcode" name="postcode" placeholder="우편번호">
 				  <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-				  <input type="text" id="roadAddress" placeholder="도로명주소" name="address1">
-				  <input type="text" id="jibunAddress" placeholder="지번주소" name="address2">
-				  <input type="text" id="detailAddress" placeholder="상세주소" name="address3">
-				  <input type="text" id="extraAddress" placeholder="참고항목" name="address4">
+				  <input type="text" name="address" id="address" placeholder="주소"><br>
+				  <input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소">
+				  <input type="text" name="extraAddress" id="extraAddress" placeholder="참고항목">
                 </div>
                 <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-8">
                   <label for="select-e794" class="u-custom-font u-label u-text-custom-color-1 u-label-8">성별</label>
@@ -119,10 +120,6 @@
       </div>
     </section>
     
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="assets/js/address.js"></script>
-    
-    
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">개인정보처리방침</a>
           <br>&nbsp;<a href="https://pleasehelp.co.kr/O010102.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">서비스 이용약관</a>
@@ -144,5 +141,6 @@
         <span>HTML Website Builder</span>
       </a>. 
     </section>
+
   
 </body></html>

@@ -26,17 +26,18 @@ public class JoinService extends HttpServlet {
 		String nickname = request.getParameter("nickname");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
-		String address1 = request.getParameter("address1");
-		String address2 = request.getParameter("address2");
-		String address3 = request.getParameter("address3");
-		String address4 = request.getParameter("address4");
-		String address = (address1+address2+address3+address4);
+		
+		String address = request.getParameter("address");
+		String detailAddress = request.getParameter("detailAddress");
+		String extraAddress = request.getParameter("extraAddress");
+		String sumAddress = address + " " + detailAddress + " " + extraAddress;
+		
 		int age = Integer.parseInt(request.getParameter("age"));
 		char gender = Character.forDigit(Integer.parseInt(request.getParameter("gender")), 10);
 		
 		MemberDAO dao = new MemberDAO();
 
-		MemberDTO dto = new MemberDTO(id, pw, nickname, email, phone, address, age, gender);
+		MemberDTO dto = new MemberDTO(id, pw, nickname, email, phone, sumAddress, age, gender);
 		int result = dao.join(dto);
 
 		// 5. 호출된 기능의 결과에 따라 화면 결과 출력

@@ -86,4 +86,14 @@
 		DELETE FROM ERRAND WHERE ERRAND_ID = #{errand_id}
 	</delete>
 	
+	<!-- 요청한 심부름 요청 취소 ==> 지원자 모두 삭제 -->
+	<delete id="ApplyCancelService">
+		DELETE FROM APPLY WHERE ERRAND_ID = #{errand_id}
+	</delete>
+	
+	<!-- 요청한 심부름번호로 등록된 채팅 모두 삭제 -->
+	<delete id="DeleteChat">
+		DELETE FROM CHAT WHERE ERRAND_ID = #{errand_id}
+	</delete>
+	
 </mapper>
