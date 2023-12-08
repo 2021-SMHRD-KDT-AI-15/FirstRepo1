@@ -81,4 +81,9 @@
 		UPDATE ERRAND SET STATUS = 3 WHERE ERRAND_ID = #{errand_id}
 	</update>
 	
+	<!-- 요청한 심부름 요청 취소 -->
+	<delete id="RequireCancelService">
+		DELETE FROM ERRAND WHERE ERRAND_ID = #{errand_id}
+	</delete>
+	
 </mapper>
