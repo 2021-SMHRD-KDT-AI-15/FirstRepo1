@@ -1293,3 +1293,96 @@
   font-weight: 400;
   src: url("../fonts/JalnanGothicTTF.ttf");
 }
+
+/*.wrap-table{*/
+/*	width: 1700px;*/
+/*	border: 1;*/
+/*}*/
+
+/*.wrap-table2{*/
+/*	width: 500px;*/
+/*	border: 1;*/
+/*}*/
+
+/*.innerWrap-table{*/
+/*	width: 1800px;*/
+/*}*/
+
+/*#number{*/
+/*	width: 300px;*/
+/*}*/
+#th{
+	text-align: center;
+}
+
+#number{
+	text-align: center;
+}
+
+#location{
+	text-align: center;
+	width: 150px;
+}
+
+#work_type{
+	text-align: center;
+}
+
+#nickname{
+	text-align: center;	
+}
+
+#price{
+	text-align: center;
+}
+
+
+#date{
+	text-align: center;
+}
+
+.wrap-table{
+	text-align: center;
+}
+
+
+#wrap__table2{
+	border-radius: 8px;
+	border-color:  #ff9962;
+	
+}
+
+#wrap__h1{
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
