@@ -46,4 +46,10 @@
 	<select id="LoadChat" resultType="com.ic.model.ChatDTO" parameterType="int">
 		SELECT * FROM CHAT WHERE ERRAND_ID = #{room} ORDER BY TIMESTAMP
 	</select>
+	
+	
+	
+	
+	
+	
 </mapper>

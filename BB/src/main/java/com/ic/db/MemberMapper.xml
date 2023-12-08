@@ -21,10 +21,8 @@
 				   		  address=#{address} 
 		where id=#{id}  
 	</select>
-	
 	<select id="MyInfo" resultType="com.ic.model.MemberDTO">
 		select * from MEMBER where member_id=#{member_id}
 	</select>
-	
 	
 </mapper>

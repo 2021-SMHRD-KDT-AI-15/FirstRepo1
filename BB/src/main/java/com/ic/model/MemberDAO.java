@@ -10,9 +10,7 @@ import com.ic.db.SqlSessionManager;
 
 public class MemberDAO {
 
-	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
-
 	
 	// 회원가입 메소드 생성!
 	public int join(MemberDTO dto) {
@@ -68,7 +66,7 @@ public class MemberDAO {
 
 		return result;
 	}
-	
+
 	// 회원정보를 담아오는 메소드
 	public MemberDTO MyInfo(int member_id) {
 
@@ -79,9 +77,12 @@ public class MemberDAO {
 		sqlSession.close();
 
 		return MyInfo;
-
+		
+		
 	}
-
-
+	
+	
+	
+	
 
 }
