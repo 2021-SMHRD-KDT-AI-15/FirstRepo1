@@ -1493,6 +1493,7 @@
 																<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
+<<<<<<< HEAD
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '설치/조립/운반'&& errand.location_ctgr eq '동구'}">
@@ -3590,3 +3591,78 @@
 	</footer>
 </body>
 </html>
+=======
+                        <table class="wrap-table">
+                          <tr>
+                            <td>
+                              <div class="innerWrap-table">
+                                <c:forEach var="errand" items="${errandList}" varStatus="status">
+                                  <!-- 속성으로 errandList랑 nicknameList 가져오기 -->
+                                  <c:if test="${errand.errand_ctgr eq '과외/알바'&& errand.location_ctgr eq '북구'}">
+                                    <a
+                                      href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+                                      No. ${errand.errand_id}<br><br>
+                                      ${errand.location_ctgr} ${errand.errand_ctgr}<br>
+                                      <h1>${errand.title}</h1>
+                                      닉네임 : ${nicknameList[status.index]}<br>
+                                      ${errand.req_location}<br>
+                                      ${errand.req_date}<br>
+                                      ~ ${errand.want_date}<br><br>
+                                      ${errand.price} 원<br>
+                                      <c:choose>
+                                        <c:when test='${fn:contains(errand.status, "0")}'>
+                                          <span>매칭대기중</span>
+                                        </c:when>
+                                        <c:when test='${fn:contains(errand.status, "1")}'>
+                                          <span>매칭완료</span>
+                                        </c:when>
+                                        <c:when test='${fn:contains(errand.status, "3")}'>
+                                          <span>종료</span>
+                                        </c:when>
+                                      </c:choose>
+                                    </a>
+                                  </c:if>
+                                </c:forEach>
+                              </div>
+                            </td>
+                          </tr>
+                        </table></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">개인정보처리방침</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010102.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">서비스 이용약관</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010103.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">위치기반서비스 이용약관</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010104.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4">업무위수탁약관</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010105.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">주식분할 공고문</a>
+          <br>&nbsp;<a href="PoliceInquiryService" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6" style="font-size:30px">경찰서 조회</a>
+          <br>
+          <br>(주)ICㅣ대표 윤수민ㅣ대표 번호: 010-9918-0000<br>대표 메일: vroong@naver.com<br>사업자등록번호:123-456-789<br>통신판매번호: 2023-4777<br>서울특별시 강남구 강남대로 364<br>Copyright ⓒ 2023 부릉부름. All rights reserved.
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/website-builder" target="_blank">
+        <span>Free Website Builder</span>
+      </a>. 
+    </section>
+  
+</body></html>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/BB.git
