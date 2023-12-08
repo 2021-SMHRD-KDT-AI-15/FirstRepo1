@@ -37,6 +37,7 @@
         <a href="ChatListService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">채팅</a>
         <a href="Charge.jsp" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">충전</a>
         <a href="MyInfoService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">마이 페이지</a>
+        <a href="PoliceInquiryService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-7" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">경찰서 조회</a>
       </div></header>
     <section class="u-clearfix u-white u-section-1" id="sec-4887">
       <div class="u-clearfix u-sheet u-sheet-1">

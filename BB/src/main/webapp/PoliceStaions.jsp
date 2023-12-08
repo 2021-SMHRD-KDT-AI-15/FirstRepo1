@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +12,12 @@
         <thead>
             <tr>
             	<th>순서</th>
-                <th>경찰서 이름</th>
+                <th>이름</th>
                 <th>위치</th>
                 <th>연락처</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Iterate over the policeList and display each police station -->
             <c:forEach var="police" items="${policeList}" varStatus="status">
                 <tr>
                 	<td>${status.count}</td>

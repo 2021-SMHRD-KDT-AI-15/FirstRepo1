@@ -3,8 +3,8 @@
 <mapper namespace="com.ic.db.PoliceMapper">
 
 	<!-- 경찰서 목록 조회 -->
-    <select id="getAllPoliceStations" parameterType="com.ic.model.PoliceDTO">
-        SELECT * FROM POLICE;
+    <select id="PoliceStations" resultType="com.ic.model.PoliceDTO">
+        SELECT * FROM POLICE
     </select>
 
 

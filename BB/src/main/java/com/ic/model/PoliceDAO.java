@@ -13,12 +13,12 @@ public class PoliceDAO {
 	
 	ArrayList<PoliceDTO> policeList = new ArrayList<>();
 	
-	// 경찰서 등록
-	public ArrayList<PoliceDTO> getAllPoliceStations() {
+	// 경찰서 목록 조회
+	public ArrayList<PoliceDTO> PoliceStations() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		policeList = (ArrayList)sqlSession.selectList("getAllPoliceStations");
+		policeList = (ArrayList)sqlSession.selectList("PoliceStations");
 	    
 	    sqlSession.close();
 	    

@@ -40,7 +40,6 @@ public class RequiredErrandService extends HttpServlet {
 		ArrayList <ArrayList<String>> applyMembersNickname = erranddao.GetApplyMembersNickname(applyMembers);
 		
 		
-		
 		request.setAttribute("clientErrandAll", clientErrandAll);
 		request.setAttribute("applyMembers", applyMembers);
 		request.setAttribute("applyMembersNickname", applyMembersNickname);

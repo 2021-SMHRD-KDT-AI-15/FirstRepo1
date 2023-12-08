@@ -26,6 +26,7 @@
 	<mapper resource="com/ic/db/ReviewMapper.xml"/>
 	<mapper resource="com/ic/db/ChatMapper.xml"/>
 	<mapper resource="com/ic/db/PaymentMapper.xml"/>
+	<mapper resource="com/ic/db/PoliceMapper.xml"/>
   </mappers>
 </configuration>
 
