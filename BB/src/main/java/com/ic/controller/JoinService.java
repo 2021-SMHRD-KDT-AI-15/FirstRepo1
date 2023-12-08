@@ -26,12 +26,18 @@ public class JoinService extends HttpServlet {
 		String nickname = request.getParameter("nickname");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
-		String address = request.getParameter("address");
+		String address1 = request.getParameter("address1");
+		String address2 = request.getParameter("address2");
+		String address3 = request.getParameter("address3");
+		String address = (address1 + " " + address2 + " " + address3); 
 		int age = Integer.parseInt(request.getParameter("age"));
 		char gender = Character.forDigit(Integer.parseInt(request.getParameter("gender")), 10);
 		
+		System.out.println(address);
+		
 		MemberDAO dao = new MemberDAO();
 
+		
 		MemberDTO dto = new MemberDTO(id, pw, nickname, email, phone, address, age, gender);
 		int result = dao.join(dto);
 
