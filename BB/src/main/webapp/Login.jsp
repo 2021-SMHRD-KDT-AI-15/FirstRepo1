@@ -40,7 +40,7 @@
                 </div>
                 <div class="u-form-group u-label-top">
                   <label for="password-a30d" class="u-custom-font u-label u-text-custom-color-1 u-label-2">PW</label>
-                  <input type="text" placeholder="비밀번호를 입력해주세요" id="password-a30d" name="pw" class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-input-2" required="">
+                  <input type="password" placeholder="비밀번호를 입력해주세요" id="password-a30d" name="pw" class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-input-2" required="">
                 </div>
                
                 <div class="u-form-group u-form-submit u-label-top">
