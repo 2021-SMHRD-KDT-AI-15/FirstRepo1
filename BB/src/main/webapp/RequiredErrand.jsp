@@ -62,6 +62,9 @@
          <c:if test="${not fn:contains(clientErrand.status, 3)}">
             <!-- 후기까지 작성한 경우 목록에서 안보임 -->
             <div style="padding: 5px 5px;">${clientErrand.title}</div>
+            <div>
+            	<a href="RequireCancelService?errand_id=${clientErrand.errand_id}"><button>요청취소</button></a>
+            </div>
             <table style="border: 1px solid; width: 1100px;">
                <tr>
                   <td style="border: 1px solid; width: 700px;">지원메시지</td>

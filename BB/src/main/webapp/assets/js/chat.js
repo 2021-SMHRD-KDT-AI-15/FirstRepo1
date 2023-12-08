@@ -65,7 +65,6 @@ $('#button-send').on("click", function(){
 	// 3) WebSocket으로 메세지 전송
 	// socket.send("보내고 싶은 문자열");
 	send();
-	loadChat();
 });
 
 
