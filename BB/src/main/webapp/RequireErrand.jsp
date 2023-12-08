@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
 <head>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<meta name="keywords" content="​Join Our Newsletter">
@@ -25,15 +26,13 @@
 		"name": "이거 지우면 좆댄다 복사해서 써라"
 	}</script>
 	
-	<script type="text/javascript"
-			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a69423df911a689eb5f9a2b94bf4f50"></script>
-    <script src="assets/js/RequireErrandAddress.js"></script>
-	
 	<meta name="theme-color" content="#478ac9">
 	<meta property="og:title" content="RequireErrand">
 	<meta property="og:description" content="">
 	<meta property="og:type" content="website">
 	<meta data-intl-tel-input-cdn-path="intlTelInput/">
+	
+
 
 </head>
 <body data-path-to-root="./" data-include-products="false"
@@ -116,8 +115,9 @@
 									위치</label> <input type="text" placeholder="주소 입력" id="text-2d79"
 									name="req_location"
 									class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font  u-input u-input-rectangle u-input-5">
+									<button id="searchBtn" type="button">검색</button>
 									
-							<div id="map" style="width:300px;height:350px;"></div>
+							<div id="map" style="width:500px;height:350px;"></div>
 							
 							</div>
 							<div class="u-form-group u-label-top u-form-group-6">
@@ -239,6 +239,9 @@
 		</a>.
 	</section>
 
+	<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a69423df911a689eb5f9a2b94bf4f50&libraries=services,clusterer,drawing"></script>
+    <script src="assets/js/RequireErrandAddress.js"></script>
 
 </body>
 </html>
