@@ -24,8 +24,6 @@ public class LoadChatService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
-		
 		SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);

@@ -1,34 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="utf-8">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SubMain.jsp</title>
-<style>
-#imgsection {
-	width: 100px;
-	height: 100px;
-}
-
-#logo {
-	width: 100px;
-	height: 100px;
-}
-</style>
-	
-</head>
-</html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="​Get more out of your travel, ​Popular Travel Destinations&amp;amp; Types, ​Next-level travel powered by tech and the human touch, Active Tours, ​Designed for every type of traveler, ​Destinations near and far, we do it all, ​Connecting with nature as you travel">
     <meta name="description" content="">
     <title>SubMain</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="SubMain.css" media="screen">
+    <link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="assets/css/SubMain.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
@@ -36,18 +16,23 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
+    
+    
+    
+    
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
-		"name": ""
+		"name": "리뷰 랭킹 기타 등등 제외 최종"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="SubMain">
+    <meta property="og:description" content="">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"> 
     <section class="u-clearfix u-gradient u-section-1" id="sec-ff3b">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <a href="Login.jsp" class="u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-radius u-text-body-alt-color u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">로그인</a>
         <a href="Join.jsp" class="u-btn u-button-style u-custom-font u-hover-custom-color-2 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">회원가입</a>
         <img class="u-image u-image-contain u-image-default u-image-1" src="images/222.png" alt="" data-image-width="464" data-image-height="390">
@@ -57,7 +42,7 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-container-style u-custom-color-2 u-expanded-width u-group u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <h1 class="u-align-center u-custom-font u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="0">당신이 도움이 필요할 때&nbsp;<br>언제 어디서든
+            <h1 class="u-align-center u-custom-font u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="0">당신이 도움이 <span style="font-weight: 700;"></span>필요할 때&nbsp;<br>언제 어디서든
             </h1>
             <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-26 u-layout-wrap u-layout-wrap-1">
               <div class="u-layout">
@@ -66,7 +51,7 @@
                     <div class="u-layout-col">
                       <div class="u-container-align-center u-container-align-center-xxl u-container-style u-layout-cell u-size-40 u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                          <img class="u-image u-image-round u-radius-50 u-image-1" src="images/ac19ecb7-dc5d-0050-9976-5609c812ca86.jpg" data-image-width="620" data-image-height="658">
+                          <img class="u-image u-image-round u-radius-50 u-image-1" src="images/904eea4e-5cba-e3e4-1261-ef592c32759f.jpg" data-image-width="620" data-image-height="658">
                         </div>
                       </div>
                       <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
@@ -81,7 +66,7 @@
                       </div>
                       <div class="u-container-style u-layout-cell u-size-40 u-layout-cell-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
                         <div class="u-container-layout u-valign-middle u-container-layout-5">
-                          <img class="u-image u-image-round u-radius-50 u-image-2" src="images/cjdth.jpg" data-image-width="512" data-image-height="512">
+                          <img class="u-image u-image-round u-radius-50 u-image-2" src="images/cjdth1.jpg" data-image-width="512" data-image-height="512">
                         </div>
                       </div>
                     </div>
@@ -90,7 +75,7 @@
                     <div class="u-layout-col">
                       <div class="u-container-align-center u-container-style u-layout-cell u-size-40 u-layout-cell-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
                         <div class="u-container-layout u-valign-middle u-container-layout-6">
-                          <img class="u-image u-image-round u-radius-50 u-image-3" src="images/qodn.jpg" data-image-width="522" data-image-height="551">
+                          <img class="u-image u-image-round u-radius-50 u-image-3" src="images/1231312321314.png" data-image-width="460" data-image-height="532">
                         </div>
                       </div>
                       <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-6">
@@ -105,7 +90,7 @@
                       </div>
                       <div class="u-container-align-center u-container-style u-layout-cell u-size-40 u-layout-cell-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
                         <div class="u-container-layout u-valign-middle u-container-layout-9">
-                          <img class="u-image u-image-round u-radius-50 u-image-4" src="images/qoekf.jpg" data-image-width="512" data-image-height="512">
+                          <img class="u-image u-image-round u-radius-50 u-image-4" src="images/qoekf1.jpg" data-image-width="512" data-image-height="512">
                         </div>
                       </div>
                     </div>
@@ -117,15 +102,17 @@
         </div>
       </div>
     </section>
-    <section class="u-carousel u-slide u-block-99bf-1" id="carousel-6f1f" data-interval="5000" data-u-ride="carousel">
+    <section class="u-carousel u-slide u-block-99bf-1" id="carousel-eb13" data-interval="5000" data-u-ride="carousel">
       <ol class="u-absolute-hcenter u-carousel-indicators u-block-99bf-2">
-        <li data-u-target="#carousel-6f1f" class="u-active u-grey-30" data-u-slide-to="0"></li>
-        <li data-u-target="#carousel-6f1f" class="u-grey-30" data-u-slide-to="1"></li>
-        <li data-u-target="#carousel-6f1f" class="u-grey-30" data-u-slide-to="2"></li>
+        <li data-u-target="#carousel-eb13" class="u-active u-grey-30" data-u-slide-to="0"></li>
+        <li data-u-target="#carousel-eb13" class="u-grey-30" data-u-slide-to="1"></li>
+        <li data-u-target="#carousel-eb13" class="u-grey-30" data-u-slide-to="2"></li>
       </ol>
       <div class="u-carousel-inner" role="listbox">
         <div class="skrollable skrollable-between u-active u-align-center u-carousel-item u-clearfix u-custom-color-3 u-section-3-1">
-          <div class="u-clearfix u-image u-sheet u-image-1" data-image-width="1281" data-image-height="763"></div>
+          <div class="u-clearfix u-sheet u-sheet-1">
+            <img class="custom-expanded u-image u-image-1" src="images/image1.png" data-image-width="1281" data-image-height="763">
+          </div>
         </div>
         <div class="skrollable skrollable-between u-align-center u-carousel-item u-clearfix u-custom-color-3 u-section-3-2">
           <div class="u-clearfix u-sheet u-sheet-1">
@@ -138,14 +125,14 @@
           </div>
         </div>
       </div>
-      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-99bf-3" href="#carousel-6f1f" role="button" data-u-slide="prev">
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-99bf-3" href="#carousel-eb13" role="button" data-u-slide="prev">
         <span aria-hidden="true">
           <svg class="u-svg-link" viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
                     c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg>
         </span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-99bf-4" href="#carousel-6f1f" role="button" data-u-slide="next">
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-99bf-4" href="#carousel-eb13" role="button" data-u-slide="next">
         <span aria-hidden="true">
           <svg class="u-svg-link" viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
                     c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg>
@@ -213,4 +200,3 @@
     </section>
   
 </body></html>
-

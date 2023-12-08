@@ -39,7 +39,7 @@ public class ChargeService extends HttpServlet {
 
 		dao.charge(dto2);
 		
-		response.sendRedirect("MyInfo.jsp");
+		response.sendRedirect("MyInfoService");
 		
 	}
 

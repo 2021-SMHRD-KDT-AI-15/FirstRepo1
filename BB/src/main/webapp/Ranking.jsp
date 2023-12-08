@@ -1,124 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ranking</title>
-<style>
-#logo {
-	width: 200px;
-	height: 200px;
-}
-
-.dot.wrapper {
-	width: 600px;
-	margin: 0 auto;
-}
-
-.dot {
-	display: flex;
-	float: left;
-	list-style: none;
-}
-
-#gnb_li {
-	width: 200px;
-	height: 500px;
-	line-height: 100px;
-	text-align: center;
-	color: grey;
-	text-decoration: none;
-	font-size: 18px;
-	margin: 0 30px;
-}
-
-#ChatList_btn {
-	width: 600px;
-	height: 250px;
-	font-size: 50px;
-	border-radius: 30px;
-	text-align: left;
-}
-
-.table {
-	text-align: center;
-	display: flex;
-	float: left;
-	margin-right: 50px;
-}
-</style>
-</head>
-
-<body>
-	<fieldset style="height: auto;">
-		<header class="dot.wrapper">
-			<div class="dot">
-				<img class="dot" id="logo" src="./부릉부름_logo.png"
-					alt="요청한 이미지를 찾을 수 없습니다.">
-				<nav id="gnb">
-					<ul class="dot">
-						<li><a href="ErrandList.jsp" target="_blank" id="gnb_li"
-							style="display: block;">심부름 요청</a></li>
-						<li><a href="RequireErrand.jsp" target="_blank" id="gnb_li"
-							style="display: block;">심부름 목록</a></li>
-						<li><a href="Ranking.jsp" target="_blank" id="gnb_li"
-							style="display: block;">랭킹</a></li>
-						<li><a href="Charge.jsp" target="_blank" id="gnb_li"
-							style="display: block;">충전</a></li>
-						<li><a href="ChatList.jsp" target="_blank" id="gnb_li"
-							style="display: block;">채팅</a></li>
-						<li><a href="Myinfo.jsp" target="_blank" id="gnb_li"
-							style="display: block;">마이페이지</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<!-- 테이블 가로로 배치 시켜야 함 -->
-		<main>
-			<div>
-				<table class="table" border="1">
-					<tr>
-						<td><strong>순위</strong></td>
-						<td><strong>이름</strong></td>
-						<td><strong>좋아요 개수</strong></td>
-					</tr>
-					<tr>
-						<td>순위 들어가는 부분</td>
-						<td>윤수민</td>
-						<td>좋아요 값이 들어가는 부분</td>
-					</tr>
-				</table>
-				<table class="table" border="1">
-					<tr>
-						<td><strong>순위</strong></td>
-						<td><strong>이름</strong></td>
-						<td><strong>좋아요 개수</strong></td>
-					</tr>
-					<tr>
-						<td>순위 들어가는 부분</td>
-						<td>윤수민</td>
-						<td>좋아요 값이 들어가는 부분</td>
-					</tr>
-				</table>
-				<table class="table" border="1">
-					<tr>
-						<td><strong>순위</strong></td>
-						<td><strong>이름</strong></td>
-						<td><strong>좋아요 개수</strong></td>
-					</tr>
-					<tr>
-						<td>순위 들어가는 부분</td>
-						<td>윤수민</td>
-						<td>좋아요 값이 들어가는 부분</td>
-					</tr>
-				</table>
-			</div>
-
-		</main>
-	</fieldset>
-</body>
-
-</html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="assets/css/Ranking.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "리뷰 랭킹 기타 등등 제외 최종"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Ranking">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header" id="sec-9269" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="RequireErrand.jsp" class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">심부름 요청</a>
+        <img class="u-image u-image-contain u-image-default u-image-1" src="images/222.png" alt="" data-image-width="464" data-image-height="390" data-href="Main.jsp">
+        <a href="ErrandListService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">심부름 목록</a>
+        <a href="RankingService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
+        <a href="ChatService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">채팅</a>
+        <a href="Charge.jsp" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">충전</a>
+        <a href="MyInfoService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">마이 페이지</a>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-49fd">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-default u-text-1">이곳은 랭킹이 나오는 자리</p>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">개인정보처리방침</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010102.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">서비스 이용약관</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010103.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">위치기반서비스 이용약관</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010104.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4">업무위수탁약관</a>
+          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010105.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">주식분할 공고문</a>
+          <br>
+          <br>(주)ICㅣ대표 윤수민ㅣ대표 번호: 010-9918-0000<br>대표 메일: vroong@naver.com<br>사업자등록번호:123-456-789<br>통신판매번호: 2023-4777<br>서울특별시 강남구 강남대로 364<br>Copyright ⓒ 2023 부릉부름. All rights reserved.
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/css-templates" target="_blank">
+        <span>CSS Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Designer</span>
+      </a>. 
+    </section>
+  
+</body></html>

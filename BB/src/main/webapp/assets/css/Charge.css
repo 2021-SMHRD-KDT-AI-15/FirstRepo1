@@ -1,0 +1,81 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 488px;
+}
+
+.u-section-1 .u-form-1 {
+  height: 371px;
+  width: 1030px;
+  margin: 24px auto 60px;
+}
+
+.u-section-1 .u-label-1 {
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  text-transform: none;
+  font-family: JalnanGothicTTF;
+}
+
+.u-section-1 .u-input-1 {
+  font-weight: normal;
+  font-family: JalnanGothicTTF;
+}
+
+.u-section-1 .u-label-2 {
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  text-transform: none;
+  font-family: JalnanGothicTTF;
+}
+
+.u-section-1 .u-input-2 {
+  font-weight: normal;
+  font-family: JalnanGothicTTF;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: none;
+  font-family: JalnanGothicTTF;
+  --radius: 15px;
+  font-weight: 400;
+  padding: 7px 57px 8px 56px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-form-1 {
+    width: 940px;
+  }
+
+  .u-section-1 .u-label-1 {
+    font-weight: normal;
+  }
+
+  .u-section-1 .u-label-2 {
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-form-1 {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-form-1 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-form-1 {
+    width: 340px;
+  }
+}@font-face {
+  font-family: 'JalnanGothicTTF';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/JalnanGothicTTF.ttf");
+}

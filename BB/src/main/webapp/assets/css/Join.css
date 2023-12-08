@@ -8,15 +8,14 @@
 
 .u-section-1 .u-text-1 {
   font-size: 4.5rem;
-  font-family: dee54b52-8edb-4e73-bd5e-6e28168b3259;
-  font-weight: normal;
+  font-family: JalnanGothicTTF;
   width: 294px;
   margin: 329px auto 0;
 }
 
 .u-section-1 .u-group-1 {
   width: 569px;
-  min-height: 920px;
+  min-height: 908px;
   box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
   height: auto;
   --radius: 50px;
@@ -38,20 +37,26 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-1 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-label-2 {
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-2 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-3 {
@@ -62,10 +67,13 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-3 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-4 {
@@ -76,10 +84,13 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-4 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-5 {
@@ -90,10 +101,13 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-5 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-6 {
@@ -104,10 +118,13 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-6 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-7 {
@@ -118,10 +135,13 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-7 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-8 {
@@ -132,10 +152,13 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-8 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-form-group-9 {
@@ -146,19 +169,23 @@
   font-size: 1rem;
   letter-spacing: normal;
   text-transform: none;
+  font-family: JalnanGothicTTF;
 }
 
 .u-section-1 .u-input-9 {
   font-weight: normal;
+  font-family: JalnanGothicTTF;
+  font-size: 0.875rem;
 }
 
 .u-section-1 .u-btn-1 {
   border-style: none;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   background-image: none;
   width: 100%;
+  font-family: JalnanGothicTTF;
+  font-weight: 400;
   padding: 19px 0 20px;
 }
 
@@ -176,15 +203,17 @@
 }
 
 .u-section-1 .u-btn-2 {
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 400;
+  font-family: JalnanGothicTTF;
   margin: 0 auto 0 0;
   padding: 23px 185px 23px 184px;
 }
 
 @media (max-width: 1199px) {
   .u-section-1 .u-text-1 {
+    font-weight: normal;
     font-size: 3.4375rem;
   }
 
@@ -241,8 +270,8 @@
     width: 340px;
   }
 }@font-face {
-  font-family: 'dee54b52-8edb-4e73-bd5e-6e28168b3259';
+  font-family: 'JalnanGothicTTF';
   font-style: normal;
   font-weight: 400;
-  src: url(fonts/dee54b52-8edb-4e73-bd5e-6e28168b3259.ttf);
+  src: url("../fonts/JalnanGothicTTF.ttf");
 }

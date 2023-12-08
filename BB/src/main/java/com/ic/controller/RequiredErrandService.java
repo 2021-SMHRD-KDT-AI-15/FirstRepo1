@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ic.model.ApplyDAO;
 import com.ic.model.ApplyDTO;
 import com.ic.model.ErrandDAO;
 import com.ic.model.ErrandDTO;
@@ -32,17 +33,13 @@ public class RequiredErrandService extends HttpServlet {
         
         ErrandDAO erranddao = new ErrandDAO();
         
-        List<ErrandDTO> errandList = erranddao.Loadlist(member_id);
-        ArrayList<ErrandDTO> errandInfo = new ArrayList<>();
-
         ArrayList <ErrandDTO> clientErrandAll = erranddao.getErrandInfo(member_id);
 		
 		ArrayList <ArrayList<ApplyDTO>> applyMembers = erranddao.GetApplyMember(clientErrandAll);
 		
 		ArrayList <ArrayList<String>> applyMembersNickname = erranddao.GetApplyMembersNickname(applyMembers);
 		
-		// System.out.println(clientErrandAll);
-		// System.out.println(applyMembers);
+		
 		
 		request.setAttribute("clientErrandAll", clientErrandAll);
 		request.setAttribute("applyMembers", applyMembers);
@@ -54,6 +51,6 @@ public class RequiredErrandService extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("RequiredErrand.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-  }
+    }
+
 }

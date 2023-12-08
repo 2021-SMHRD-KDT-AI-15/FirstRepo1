@@ -254,19 +254,6 @@ public class ErrandDAO {
 		
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 요청 취소 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public int RequireCancelService(int errand_id) {
-		
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		int result = sqlSession.delete("RequireCancelService", errand_id);
-		
-		sqlSession.close();
-		
-		return result;
-	}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 }
 

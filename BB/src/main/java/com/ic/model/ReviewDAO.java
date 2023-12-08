@@ -157,7 +157,6 @@ public class ReviewDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
-//■■■■■■■■■■■■■■■■■■■■ 요청자가 리뷰작성하면 지원자의 매칭상태 5로 변경 ■■■■■■■■■■■■■■■■■■■■■■■■
 	public int ChgAppMatchStatus(ApplyCheckDTO applycheck) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -168,6 +167,5 @@ public class ReviewDAO {
 		
 		return result;
 	}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 }

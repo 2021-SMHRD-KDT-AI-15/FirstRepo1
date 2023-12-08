@@ -32,7 +32,7 @@ public class InfoChangeService2 extends HttpServlet {
         String nickname = request.getParameter("nickname");
         String phone = request.getParameter("phone");
         String pw = request.getParameter("pw");
-        String address = request.getParameter("address1");
+        String address = request.getParameter("address");
 
         // 새 MemberDTO 개체를 만들고 해당 속성을 설정합니다.
         MemberDTO dto = new MemberDTO();

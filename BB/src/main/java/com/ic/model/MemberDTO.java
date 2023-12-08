@@ -114,5 +114,6 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
-
+	
+	
 }

@@ -13,8 +13,6 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-import org.apache.catalina.connector.Response;
-
 import com.google.gson.Gson;
 import com.ic.model.ChatDAO;
 import com.ic.model.ChatDTO;
@@ -37,6 +35,7 @@ public class WebSocket {
 	public void onOpen(Session session, @PathParam("room")String room) {
 		// Session : 접속한 사용자 정보를 저장하는 객체
 		// @PathParam("name") 변수 : PathVariable 중에서 "name"을 가지는 데이터를 변수에 집어넣겠다.
+		
 		// ex) url : ws://localhost:8081/chat/cat
 		// @PathParam("room") String room --> "cat"이 담김
 		System.out.println(room + "방에 연결");

@@ -3,7 +3,7 @@
 <mapper namespace="com.smhrd.db.MemberMaper">
 
 	<insert id="join" parameterType="com.ic.model.MemberDTO" >
-		insert into MEMBER values(MEMBER_SEQ.NEXTVAL, #{id}, #{email}, #{phone}, #{nickname}, #{pw}, #{address}, #{age}, #{gender}, 0)	
+		insert into MEMBER values(MEMBER_SEQ.NEXTVAL ,#{id}, #{email}, #{phone}, #{nickname}, #{pw}, #{address}, #{age}, #{gender}, 0)	
 	</insert>
 	
 	<select id="login" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
@@ -21,8 +21,10 @@
 				   		  address=#{address} 
 		where id=#{id}  
 	</select>
+	
 	<select id="MyInfo" resultType="com.ic.model.MemberDTO">
 		select * from MEMBER where member_id=#{member_id}
 	</select>
+	
 	
 </mapper>
