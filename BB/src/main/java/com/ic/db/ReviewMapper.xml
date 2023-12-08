@@ -61,6 +61,7 @@
 		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{applyMemberId}
 	</select>
 	
+	<!-- 요청자가 리뷰작성하면 지원자의 매칭상태 5로 변경 -->
 	<update id="ChgAppMatchStatus" parameterType="com.ic.model.ApplyCheckDTO">
 		UPDATE APPLY SET MATCH_STATUS = 5 WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
 	</update>
