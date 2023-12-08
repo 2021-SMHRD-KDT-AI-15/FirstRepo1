@@ -28,7 +28,7 @@ public class PoliceDTO {
 	public void setPolice_number(String police_number) {
 		this.police_number = police_number;
 	}
-
+	
 	public PoliceDTO() {
 		
 	}

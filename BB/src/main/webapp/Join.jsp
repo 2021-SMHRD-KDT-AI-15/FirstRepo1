@@ -67,8 +67,13 @@
                   <input type="text" placeholder="" id="text-2d79" name="phone" class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-6">
                 </div>
                 <div class="u-form-group u-label-top u-form-group-7">
-                  <label for="text-413d" class="u-custom-font u-label u-text-custom-color-1 u-label-7">주소</label>
-                  <input type="text" placeholder="" id="text-413d" name="address" class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-7">
+                  <label for="text-413d" class="u-custom-font u-label u-text-custom-color-1 u-label-7">주소</label><br>
+                  <input type="text" id="postcode" placeholder="우편번호">
+				  <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
+				  <input type="text" id="roadAddress" placeholder="도로명주소" name="address1">
+				  <input type="text" id="jibunAddress" placeholder="지번주소" name="address2">
+				  <input type="text" id="detailAddress" placeholder="상세주소" name="address3">
+				  <input type="text" id="extraAddress" placeholder="참고항목" name="address4">
                 </div>
                 <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-8">
                   <label for="select-e794" class="u-custom-font u-label u-text-custom-color-1 u-label-8">성별</label>
@@ -114,6 +119,8 @@
       </div>
     </section>
     
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="assets/js/address.js"></script>
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
