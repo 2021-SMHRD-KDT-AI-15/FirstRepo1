@@ -1,11 +1,17 @@
 package com.ic.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ic.model.PoliceDAO;
+import com.ic.model.PoliceDTO;
 
 @WebServlet("/PoliceInquiryService")
 public class PoliceInquiryService extends HttpServlet {
@@ -14,8 +20,15 @@ public class PoliceInquiryService extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
+		PoliceDAO policedao = new PoliceDAO();
 		
+		ArrayList<PoliceDTO> policeList = new ArrayList<>();
+		policeList = policedao.getAllPoliceStations();
 		
+		request.setAttribute("policeList", policeList);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("PoliceStations.jsp");
+		rd.forward(request, response);
 		
 		
 	}

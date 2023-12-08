@@ -47,28 +47,24 @@
         <a href="ShowApplyErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">지원한 심부름</a>
       </div>
     </section>
+    <br><br>
+    <body style="text-align: center; padding-top:10px;">
     
-    <body>
-	<table border="1"> 
-		<tr bgcolor="gray">
-			<th width="50px"><b>NO</b></th>
-			<th width="100"><b>충전일시</b></th>
-			<th width="100"><b>충전금액</b></th>
-		</tr>
-		<tr>
-		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
-		<td align="center">${status.index}</td>
-		<td align="center" width="300" height="50">${chargeHistory.charge_date}</td>
-		<td align="center" width="200" height="50">${chargeHistory.charge_money}</td>
-		</tr>
-		</c:forEach>
-		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
-		<td align="center">${status.index}</td>
-		<td align="center" width="300" height="50">${chargeHistory.charge_date}</td>
-		<td align="center" width="200" height="50">${chargeHistory.charge_money}</td>
-		</tr>
-		</c:forEach>
-	</table></body>
+	<table border="1" style="margin: auto; border-collapse: collapse; ">
+    <tr bgcolor="ff9962">
+        <th width="100" style="color: white; font-size: 2em;"><b>NO</b></th>
+        <th width="550" style="color: white; font-size: 2em;"><b>충전일시</b></th>
+        <th width="320" style="color: white; font-size: 2em;"><b>충전금액</b></th>
+    </tr>
+    <c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
+        <tr>
+            <td align="center">${status.index}</td>
+            <td align="center" height="50">${chargeHistory.charge_date}</td>
+            <td align="center" height="50">${chargeHistory.charge_money}원</td>
+        </tr>
+    </c:forEach>
+   
+</table></body>
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">개인정보처리방침</a>

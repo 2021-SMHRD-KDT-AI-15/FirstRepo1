@@ -50,22 +50,22 @@
       </div>
     </section>
     
-    <body>
+    <body style="text-align: center; padding-top: 30px;">
 
 	<c:choose>
 		<c:when test="${fn:contains(param.applyCheck, 0)}">
-			<div>
-				<table>
+			<div style="margin: 20px;">
+				<table style="border: 1px solid; background-color: #ff9b65; color: white; margin: 0 auto;">
 					<tr>
-						<td>지원한 심부름이 없습니다.</td>
+						<td>지원한 심부름이 없습니다</td>
 					</tr>
 				</table>
 			</div>
 		</c:when>
 		<c:otherwise>
 			<c:forEach var="ErrandTitle" items="${ErrandTitleList}" varStatus="status">
-				<div>
-					<table>
+				<div style="margin: 20px;">
+					<table style="border: 1px solid; background-color: #ff9b65; color: white; margin: 0 auto;">
 						<tr>
 							<td id="title">${ErrandTitle.title}</td>
 							<c:choose>
