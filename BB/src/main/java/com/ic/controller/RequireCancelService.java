@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ic.model.ErrandDAO;
+import com.ic.model.MemberDTO;
 
 @WebServlet("/RequireCancelService")
 public class RequireCancelService extends HttpServlet {
@@ -19,6 +20,9 @@ public class RequireCancelService extends HttpServlet {
 		int errand_id = Integer.parseInt(request.getParameter("errand_id"));
 		
 		ErrandDAO erranddao = new ErrandDAO();
+		MemberDTO memberdto = new MemberDTO();
+		
+
 		
 		int deleteApply = erranddao.ApplyCancelService(errand_id);
 		
@@ -26,13 +30,17 @@ public class RequireCancelService extends HttpServlet {
 		
 		int deleteChat = erranddao.DeleteChat(errand_id);
 		
+		int money = memberdto.getMoney();
+		
 		if(deleteApply == 1) {
+			erranddao.originalApplyAmount(money);
 			System.out.println("지원자 삭제 성공");
 		} else {
 			System.out.println("지원자 삭제 실패");
 		}
 		
 		if(deleteResult == 1) {
+			erranddao.originalApplyAmount(money);
 			System.out.println("요청취소 성공");
 		} else {
 			System.out.println("요청취소 실패");

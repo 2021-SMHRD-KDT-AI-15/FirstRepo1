@@ -33,5 +33,12 @@
 	    AND C.ERRAND_ID = B.ERRAND_ID
 	    AND B.TITLE=#{title}
 	</select>
+	
+	<!-- 심부름 지원시 보유금액에서 지원수수료 차감 -->
+	<update id="errandDeduceAmount">
+        UPDATE MEMBER 
+        SET MONEY = MONEY - 2000
+        WHERE member_id = #{member_id}
+    </update>
 
 </mapper>

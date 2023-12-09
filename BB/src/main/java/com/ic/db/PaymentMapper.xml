@@ -6,6 +6,6 @@
 		select * from payment where member_id=#{member_id} ORDER BY payment_date DESC
 	</select>
 
-
+	
 
 </mapper>

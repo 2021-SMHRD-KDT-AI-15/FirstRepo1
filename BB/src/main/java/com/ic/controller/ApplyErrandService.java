@@ -25,7 +25,8 @@ public class ApplyErrandService extends HttpServlet {
 		MemberDTO memberdto= (MemberDTO)session.getAttribute("clientInfo");
 		
 		int apply_member_id = memberdto.getMember_id();  // 지원자 회원번호
-		
+		int money = memberdto.getMoney();
+				
 		String msg = request.getParameter("message"); // 지원메시지
 		
 		ArrayList list = new ArrayList<>();
@@ -36,7 +37,7 @@ public class ApplyErrandService extends HttpServlet {
 		ApplyDAO applydao = new ApplyDAO();
 		int result = applydao.ApplyErrand(list);
 		
-		
+		int count = applydao.errandDeduceAmount(money);
 		
 		response.sendRedirect("ShowApplyErrandService");
 		

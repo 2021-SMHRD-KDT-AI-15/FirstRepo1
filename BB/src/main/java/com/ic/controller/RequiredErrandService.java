@@ -2,7 +2,6 @@ package com.ic.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ic.model.ApplyDAO;
 import com.ic.model.ApplyDTO;
 import com.ic.model.ErrandDAO;
 import com.ic.model.ErrandDTO;
+import com.ic.model.MemberDAO;
 import com.ic.model.MemberDTO;
 
 @WebServlet("/RequiredErrandService")
@@ -38,7 +37,6 @@ public class RequiredErrandService extends HttpServlet {
 		ArrayList <ArrayList<ApplyDTO>> applyMembers = erranddao.GetApplyMember(clientErrandAll);
 		
 		ArrayList <ArrayList<String>> applyMembersNickname = erranddao.GetApplyMembersNickname(applyMembers);
-		
 		
 		request.setAttribute("clientErrandAll", clientErrandAll);
 		request.setAttribute("applyMembers", applyMembers);

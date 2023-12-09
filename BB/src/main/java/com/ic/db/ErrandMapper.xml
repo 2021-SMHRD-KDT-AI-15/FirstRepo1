@@ -96,4 +96,32 @@
 		DELETE FROM CHAT WHERE ERRAND_ID = #{errand_id}
 	</delete>
 	
+	<!-- 심부름 확정 클릭시 요청자 보유금액 차감 -->
+	<update id="deduceRequireMoney">
+        UPDATE MEMBER
+        SET MONEY = MONEY - (SELECT PRICE FROM ERRAND WHERE MEMBER_ID = #{member_id})
+        WHERE member_id = #{member_id}
+    </update>
+    
+    <!-- 심부름 확정 클릭시 지원자 보유금액 증가 -->
+	<update id="reduceApplyMoney">
+        UPDATE MEMBER
+        SET MONEY = MONEY + (SELECT PRICE FROM ERRAND WHERE MEMBER_ID = #{member_id}) + 2000
+        WHERE member_id = #{member_id}
+    </update>
+    
+    <!-- 심부름 지원자 미선택시 지원자 보유금액 증가 -->
+	<update id="originalApplyAmount">
+        UPDATE MEMBER
+        SET MONEY = MONEY + 2000
+        WHERE member_id = #{member_id}
+    </update>
+    
+    <!-- 지원자 테이블서 -->
+    <select id="getApplyMemberIdByErrandId" resultType="int" parameterType="int">
+        SELECT MEMBER_ID
+        FROM APPLY
+        WHERE ERRAND_ID = #{errand_id}
+    </select>
+	
 </mapper>

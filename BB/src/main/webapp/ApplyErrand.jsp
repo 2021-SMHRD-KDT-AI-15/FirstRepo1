@@ -73,7 +73,9 @@
 									<td id="status">수락대기</td>
 									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
 								</c:when>
-								<c:when test="${fn:contains(ApplyErrandList[status.index].match_status, 1)}">
+								
+								<c:when test="${fn:contains
+								(ApplyErrandList[status.index].match_status, 1)}">
 									<td id="status">매칭완료</td>
 									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
 									<td><a href="ChatListService"><button>채팅</button></a></td>

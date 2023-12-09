@@ -86,6 +86,19 @@ public class ApplyDAO {
 
 	    return applyErrandList;
 	}
-
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원시 보유금액 일정비용 차감 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int errandDeduceAmount(int money) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int count = sqlSession.update("errandDeduceAmount",money);
+		
+		sqlSession.close();
+		
+		return count;
+	}
+ 
 	
 }
