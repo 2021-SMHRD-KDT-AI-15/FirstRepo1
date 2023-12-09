@@ -112,12 +112,12 @@
 							<div class="u-form-group u-label-top u-form-group-5">
 								<label for="text-2d79"
 									class="u-custom-font u-label u-text-custom-color-1 u-label-5">요청
-									위치</label> <input type="text" placeholder="주소 입력" id="text-2d79"
-									name="req_location"
+									위치</label> 
+								<input type="text" placeholder="주소 입력" id="text-2d79" name="req_location"
 									class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font  u-input u-input-rectangle u-input-5">
-									<button id="searchBtn" type="button">검색</button>
+								<button id="searchBtn" type="button">검색</button>
 									
-							<div id="map" style="width:500px;height:350px;"></div>
+							<div id="map"></div>
 							
 							</div>
 							<div class="u-form-group u-label-top u-form-group-6">
