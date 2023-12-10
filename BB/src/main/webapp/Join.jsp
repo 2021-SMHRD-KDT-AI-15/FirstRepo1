@@ -68,7 +68,7 @@
                      <div class="u-form-group u-label-top">
                         <label for="password-a30d"
                            class="u-custom-font u-label u-text-custom-color-1 u-label-2">PW</label>
-                        <input type="text" placeholder="비밀번호를 입력해주세요."
+                        <input type="password" placeholder="비밀번호를 입력해주세요."
                            id="password-a30d" name="pw"
                            class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-2"
                            required="">
@@ -178,7 +178,7 @@
                         class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-4">
                         <label for="text-76e2"
                            class="u-custom-font u-label u-text-custom-color-1 u-label-4">이메일</label>
-                        <input type="text" placeholder="이메일은 중복불가입니다." id="text-76e2"
+                        <input type="email" placeholder="이메일은 중복불가입니다." id="text-76e2"
                            name="email"
                            class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-4">
                      </div>
@@ -204,7 +204,7 @@
                      <div class="u-form-group u-label-top u-form-group-6">
                         <label for="text-2d79"
                            class="u-custom-font u-label u-text-custom-color-1 u-label-6">연락처</label>
-                        <input type="text" placeholder="" id="text-2d79" name="phone"
+                        <input type="tel" placeholder="010-0000-0000" id="text-2d79" name="phone"
                            class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-6">
                      </div>
                      <div class="u-form-group u-label-top u-form-group-7">
