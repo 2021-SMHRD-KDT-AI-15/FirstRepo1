@@ -5,10 +5,17 @@
 	<insert id="charge" parameterType="com.ic.model.ChargeDTO">
 		insert into CHARGE values(CHARGE_SEQ.NEXTVAL, #{member_id}, sysdate, #{charge_money})
 	</insert>
-	
+	<update id="update">
+        UPDATE member
+        SET money = money + (SELECT charge_money FROM charge WHERE MEMBER_ID = #{member_id})
+        WHERE member_id = #{member_id}
+    </update>
+    
 	<select id="ChargeHistory" resultType="com.ic.model.ChargeDTO">
 		SELECT * FROM CHARGE WHERE MEMBER_ID = #{member_id} ORDER BY charge_date DESC
 	</select>
+
+	
 
 </mapper>
 
