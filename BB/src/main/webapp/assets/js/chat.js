@@ -51,7 +51,6 @@ $('#button-send').on("click", function(){
 	
 	var hours = ('0' + today.getHours()).slice(-2); 
 	var minutes = ('0' + today.getMinutes()).slice(-2);
-	var seconds = ('0' + today.getSeconds()).slice(-2); 
 
 	var timeString = hours + ':' + minutes  + ':' + seconds;
 	
@@ -104,7 +103,7 @@ function loadChat(){
 							<div class='alert alert-warning'>
 								<b>${c_chat}</b>
 							</div>
-							<span>${c_timestamp}</span>
+							<span id="timestamp">${c_timestamp}</span>
 						</div>
 					</div>
 				`;
@@ -113,10 +112,10 @@ function loadChat(){
 					<div class='row'>
 						<div class='col-sm-6'></div>
 						<div class='col-sm-6'>
+							<span id="timestamp">${c_timestamp}</span>
 							<div class='alert alert-secondary'>
 								<b>${c_chat}</b>
 							</div>
-							<span>${c_timestamp}</span>
 						</div>
 					</div>
 				`;
@@ -160,7 +159,7 @@ function onMessage(msg){
 				<div class='alert alert-warning'>
 					<b>${message.chat}</b>
 				</div>
-				<span>${message.timestamp}</span>
+				<span id="timestamp">${message.timestamp}</span>
 			</div>
 		</div>
 	`;
@@ -188,10 +187,10 @@ function send(){
 		<div class='row'>
 			<div class='col-sm-6'></div>
 			<div class='col-sm-6'>
+				<span id="timestamp">${chat.timestamp}</span>
 				<div class='alert alert-secondary'>
 					<b>${chat.chat}</b>
 				</div>
-				<span>${chat.timestamp}</span>
 			</div>
 		</div>
 	`;
