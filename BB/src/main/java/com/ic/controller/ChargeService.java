@@ -28,19 +28,19 @@ public class ChargeService extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		MemberDTO dto = new MemberDTO();
+		MemberDTO memberdto = (MemberDTO) session.getAttribute("clientInfo");
 
-		dto = (MemberDTO) session.getAttribute("clientInfo");
-		int member_id = dto.getMember_id();
-		
+		int member_id = memberdto.getMember_id();
+		int money = memberdto.getMoney();
 		ChargeDAO dao = new ChargeDAO();
 
 		ChargeDTO dto2 = new ChargeDTO(member_id, charge_money);
 
-		dao.charge(dto2);
-		
-		response.sendRedirect("MyInfoService");
-		
+		int result = dao.charge(dto2);
+		int count = dao.update(money);
+
+		response.sendRedirect("MyInfo.jsp");
+
 	}
 
 }
