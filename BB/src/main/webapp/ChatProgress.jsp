@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+   href="assets/css/ChatProgress.css">
 <script
    src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
 <script
@@ -19,11 +19,6 @@
    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript"
    src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<style>
-   .alert{
-      margin: 0px;   
-   }
-</style>
 </head>
 
 <body>
@@ -40,7 +35,7 @@
             <div class="card" style="height: 600px;">
                <!-- chat body -->
                <div class="card-body" style="overflow-y: scroll;" id="chatBody">
-                  <div id="msgArea" style="height: 100%">
+                  <div id="msgArea">
 
                      <!-- 메세지가 작성되는 영역 -->
 

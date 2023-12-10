@@ -8,9 +8,55 @@
 
 .u-section-1 .u-btn-1 {
   margin: 164px auto 60px;
+  
 }@font-face {
   font-family: 'JalnanGothicTTF';
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/JalnanGothicTTF.ttf");
+}
+
+#msgArea{
+	width: 100%;
+}
+
+.card-body{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.alert{
+	border: 1px solid;
+	height: 10px;
+	width: auto;
+	display: inline-block;
+	padding: 20px 30px 32px 30px;
+	font-size: 20px;
+	font-family: SUITE-Regular;
+	border-radius: 20px;
+	margin: 1px 5px 13px 35px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+}
+
+.alert-warning{
+	background-color: #eee;
+	position: relative;
+		
+}
+
+.alert-secondary{
+	background-color: #ff9962;
+	left: 500px;
+}
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
 }

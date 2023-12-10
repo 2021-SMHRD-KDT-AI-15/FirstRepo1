@@ -18,6 +18,8 @@ window.onload= function(){
 	
 	// Socket 연결
 	socket = new WebSocket('ws://59.3.58.51:8081/BB/chat/' + room);
+	// 59.3.58.51:8081
+	
 	// Socket의 콜백함수 지정
 	socket.onopen = onOpen;
 	socket.onclose = onClose;

@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+   href="assets/css/ChatList.css">
 <script
    src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
 <script
@@ -25,13 +25,21 @@
 
    <div class="container">
       <div class="card-body" style="overflow-y: scroll; height: 500px" id="chatBody">
-         <c:forEach var="c" items="${chatList}" varStatus="status">
-         
-            <div class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
-               <div class="card-body">${nicknameList[status.index].nickname} 님과의 대화</div>
-            </div><br>
+      	 <c:choose>
+      	 	<c:when test="${not empty param.emptyCheck}">
+      	 		<p>채팅 가능한 상대가 없습니다.</p>
+      	 	</c:when>
+      	 	<c:otherwise>
+         		<c:forEach var="c" items="${chatList}" varStatus="status">
+            		<div class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
+               			<img src="assets/img/profile.png" width="60px" id="profile"/>
+               			<div class="card-body" id="subject">${nicknameList[status.index].nickname} 님과의 대화</div>
+            		</div>
+            		<br>
+		         </c:forEach>
+            </c:otherwise>
 
-         </c:forEach>
+         </c:choose>
       </div>
    </div>
 

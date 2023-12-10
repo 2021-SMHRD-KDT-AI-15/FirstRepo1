@@ -48,7 +48,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
         <a href="ShowApplyErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">지원한 심부름</a>
         <div class="u-border-1 u-border-custom-color-1 u-container-style u-group u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <p class="u-custom-font u-text u-text-custom-color-3 u-text-1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ${MyInfo.nickname}(${MyInfo.id}) &nbsp; &nbsp; 님 환영합니다!<br>
+            <p class="u-custom-font u-text u-text-custom-color-3 u-text-1">${MyInfo.nickname}(${MyInfo.id}) &nbsp;님 환영합니다!<br>
               <br>
               <br>
               <br>&nbsp; 보유 금액 :&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${MyInfo.money}</span>&nbsp; &nbsp; &nbsp;원
