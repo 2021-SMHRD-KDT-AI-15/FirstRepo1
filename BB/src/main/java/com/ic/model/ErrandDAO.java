@@ -295,59 +295,6 @@ public class ErrandDAO {
 			
 		}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 확정 버튼 클릭 시 요청자 보유금액 차감  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		public int deduceRequireMoney(int money) {
-			
-			SqlSession sqlSession = sqlSessionFactory.openSession(true);
-			
-			int result = sqlSession.update("deduceRequireMoney",money);
-			
-			sqlSession.close();
-			
-			return result;
-			
-		}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 확정 버튼 클릭 시 지원자 보유금액 증가 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		public int reduceApplyMoney(int money) {
-			
-			SqlSession sqlSession = sqlSessionFactory.openSession(true);
-			
-			int result = sqlSession.update("reduceApplyMoney",money);
-			
-			sqlSession.close();
-			
-			return result;
-		}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원자 미선택시 지원자 보유금액서 지원수수료 증가 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		public int originalApplyAmount(int money) {
-			
-			SqlSession sqlSession = sqlSessionFactory.openSession(true);
-			
-			int result = sqlSession.update("originalApplyAmount",money);
-			
-			sqlSession.close();
-			
-			return result;
-		}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원자 미선택시 지원자 보유금액서 지원수수료 증가 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		public int getApplyMemberIdByErrandId(int errand_id) {
-			
-			SqlSession sqlSession = sqlSessionFactory.openSession(true);
-			
-			int result = sqlSession.update("getApplyMemberIdByErrandId",errand_id);
-			
-			sqlSession.close();
-			
-			return result;
-			
-		}
 
 }
 
