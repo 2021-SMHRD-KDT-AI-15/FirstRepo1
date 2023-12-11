@@ -53,7 +53,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 
               <br>
               <br>
-              <br>&nbsp; 보유 금액 :&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${MyInfo.money}</span>&nbsp; 원
+              <br>&nbsp; 보유 금액 :&nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${MyInfo.money}</span>&nbsp; 원
             </p>
           </div>
         </div>
@@ -79,40 +79,38 @@ pageEncoding="UTF-8" isELIgnored="false"%>
       <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-align-center u-custom-font u-text u-text-1">나에 대한 후기</p>
       <table border="1">
-							<tr bgcolor="white">
-								<th width="50px"><b>NO</b></th>
-								<th width="100"><b>후기내용</b></th>
-								<th width="100"><b>from 닉네임</b></th>
+							<tr bgcolor="coral">
+								<th width="200" height="50"><b>NO.</b></th>
+								<th width="1000" height="50"><b>후기내용</b></th>
+								<th width="300" height="50"><b color="black">from 닉네임</b></th>
 							</tr>
 							<tr>
 								<c:forEach var="review1" items="${getreview1}" begin="0"
 									end="9999" step="1" varStatus="status">
-									<td align="center" width="600" height="50">${status.count}</td>
-									<td align="center" width="600" height="50">${review1.review_ctnt}</td>
-									<td align="center" width="200" height="50">${review1.nickname}</td>
+									<td bgcolor="white" align="center" width="200" height="50"><b color="black">${status.count}</b></td>
+									<td bgcolor="white" align="center" width="1000" height="50"><b color="black">${review1.review_ctnt}</b></td>
+									<td bgcolor="white" align="center" width="300" height="50"><b color="black">${review1.nickname}</b></td>
 							</tr>
 							</c:forEach>
 
 						</table>
       </div>
     </section>
-    
-    
     <section class="skrollable u-align-center u-clearfix u-custom-color-2 u-lightbox u-parallax u-shading u-section-3" id="sec-d201">
       <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-align-center u-custom-font u-text u-text-1">내가 작성한 후기</p>
       <table border="1">
-							<tr bgcolor="white">
-								<th width="50px"><b>NO</b></th>
-								<th width="100"><b>후기내용</b></th>
-								<th width="100"><b>to 닉네임</b></th>
+							<tr bgcolor="coral">
+								<th width="200" height="50"><b>NO.</b></th>
+								<th width="1000" height="50"><b>후기내용</b></th>
+								<th width="300" height="50"><b>to 닉네임</b></th>
 							</tr>
 							<tr>
 								<c:forEach var="review0" items="${getreview0}" begin="0"
 									end="9999" step="1" varStatus="status">
-									<td align="center" width="600" height="50">${status.count}</td>
-									<td align="center" width="600" height="50">${review0.review_ctnt}</td>
-									<td align="center" width="200" height="50">${review0.nickname}</td>
+									<td align="center" width="200" height="50"><b color="black">${status.count}</b></td>
+									<td align="center" width="1000" height="50"><b color="black">${review0.review_ctnt}</b></td>
+									<td align="center" width="300" height="50"><b color="black">${review0.nickname}</b></td>
 							</tr>
 							</c:forEach>
 

@@ -420,7 +420,7 @@ abbr[title] {
   text-decoration: underline;
 }
 b, strong {
-  color: black;
+  color: #175B74E0;
   font-weight: inherit;
   font-weight: bold;
 }
@@ -18279,6 +18279,7 @@ p {
 .u-text {
   word-wrap: break-word;
   position: relative;
+  color: #175B74E0;
 }
 .u-word-break {
   word-break: break-all;
@@ -43921,6 +43922,7 @@ a.u-link.u-text-hover-grey-90:hover {
         margin-top: 20px;
         margin-bottom: 20px;
         line-height: 1.6;
+        color: #175B74E0;
         }
         a
         {
