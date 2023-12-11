@@ -24,20 +24,6 @@ public class ChargeDAO {
 		return result;
 	}
 
-	// 충전하고 내 보유금액 업데이트
-	public int update(int money) {
-
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-
-		int count = sqlSession.update("update", money);
-
-		sqlSession.close();
-
-		return count;
-	}
-
-
-
 	// 충전내역 조회를 위한 메소드
 	public ArrayList<ChargeDTO> ChargeHistory(int member_id) {
 
@@ -49,5 +35,18 @@ public class ChargeDAO {
 
 		return ChargeHistory;
 
+	}
+
+	
+	// 금액 충전 메소드
+	public int UpdateMoney(MemberDTO user) {
+
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		int result = sqlSession.update("UpdateMoney", user);
+		
+		sqlSession.close();
+		
+		return result;
 	}
 }

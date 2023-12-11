@@ -56,9 +56,9 @@
         <th width="550" style="color: white; font-size: 2em;"><b>충전일시</b></th>
         <th width="320" style="color: white; font-size: 2em;"><b>충전금액</b></th>
     </tr>
-    <c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
+    <c:forEach var="chargeHistory" items="${chargeHistory}" begin="0" end="9999" step="1" varStatus="status">
         <tr>
-            <td align="center">${status.index}</td>
+            <td align="center">${status.count}</td>
             <td align="center" height="50">${chargeHistory.charge_date}</td>
             <td align="center" height="50">${chargeHistory.charge_money}원</td>
         </tr>

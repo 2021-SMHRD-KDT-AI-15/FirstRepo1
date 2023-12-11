@@ -35,6 +35,6 @@
 	<select id="check_mail" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE email=#{email}
    </select>
-	
+   
 	
 </mapper>
