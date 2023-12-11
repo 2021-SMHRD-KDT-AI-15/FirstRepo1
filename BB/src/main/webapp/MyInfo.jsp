@@ -148,7 +148,7 @@
 				</tr>
 				<c:if test="${empty getreview1}">
 					<tr>
-						<td style="text-align: center" colspan="3" align="center"><b
+						<td style="text-align: center" colspan="3"><b
 							style="font-size: 22px">해당 리뷰가 없습니다.</b></td>
 					</tr>
 				</c:if>
@@ -179,8 +179,8 @@
 				</tr>
 				<c:if test="${empty getreview0}">
 					<tr>
-						<td style="text-align: center;" colspan="3" align="center"
-							height="100"><b style="font-size: 22px">해당 리뷰가 없습니다.</b></td>
+						<td style="text-align: center" colspan="3"><b
+							style="font-size: 22px">해당 리뷰가 없습니다.</b></td>
 					</tr>
 				</c:if>
 				<c:forEach var="review0" items="${getreview0}" begin="0" end="9999"
