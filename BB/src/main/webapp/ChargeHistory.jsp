@@ -101,7 +101,7 @@
 			<th width="550" style="color: white; font-size: 2em;"><b>충전일시</b></th>
 			<th width="320" style="color: white; font-size: 2em; border-right:none;"><b>충전금액</b></th>
 		</tr>
-		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1"
+		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="0"
 			end="9999" step="1" varStatus="status">
 			<tr style="font-famaily:sans-serif">
 				<td align="center" style="border-left:none;">${status.index}</td>
