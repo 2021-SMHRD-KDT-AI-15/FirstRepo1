@@ -71,7 +71,6 @@
    </header>
    <section class="u-clearfix u-section-1" id="sec-b026">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-<<<<<<< HEAD
          <a href="PaymentHistoryService"
             class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1"
             data-animation-name="" data-animation-duration="0"
@@ -99,59 +98,6 @@
          <div
             class="u-border-1 u-border-custom-color-1 u-container-style u-group u-group-1">
             <div class="u-container-layout u-container-layout-1">
-=======
-        <a href="PaymentHistoryService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">결제내역</a>
-        <a href="ChargeHistoryService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">충전내역</a>
-        <a href="MyInfoService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-1 u-text-hover-custom-color-1 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">내 정보</a>
-        <a href="InfoChange1.jsp" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">회원정보 변경</a>
-        <a href="RequiredErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">요청한 심부름</a>
-        <a href="ShowApplyErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">지원한 심부름</a>
-        <div class="u-border-1 u-border-custom-color-1 u-container-style u-group u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-
-            <p class="u-custom-font u-text u-text-custom-color-3 u-text-1">${MyInfo.nickname}(${MyInfo.id}) &nbsp;님 환영합니다!<br>
-
-              <br>
-              <br>
-              <br>&nbsp; 보유 금액 :&nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${MyInfo.money}</span>&nbsp; 원
-            </p>
-          </div>
-        </div>
-        <div class="u-border-1 u-border-custom-color-1 u-container-style u-group u-group-2">
-          <div class="u-container-layout u-container-layout-2">
-            <p class="u-custom-font u-text u-text-custom-color-3 u-text-2">&nbsp; &nbsp; &nbsp;내가 받은 좋아요😍<br>
-              <br>
-              <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${getlike}</span>&nbsp; &nbsp;개
-            </p>
-          </div>
-        </div>
-        <div class="u-border-1 u-border-custom-color-1 u-container-style u-group u-group-3">
-          <div class="u-container-layout u-container-layout-3">
-            <p class="u-custom-font u-text u-text-custom-color-3 u-text-3">&nbsp; &nbsp; &nbsp;내가 받은 싫어요😢<br>
-              <br>
-              <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="font-size: 3rem;"> ${getdislike}</span>&nbsp; &nbsp;개
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="skrollable u-align-center u-clearfix u-custom-color-2 u-lightbox u-parallax u-shading u-section-2" id="sec-78e0">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-align-center u-custom-font u-text u-text-1">나에 대한 후기</p>
-      <table border="1">
-								<th width="200" height="50"><b>NO.</b></th>
-								<th width="1000" height="50"><b>후기내용</b></th>
-								<th width="300" height="50"><b color="black">from 닉네임</b></th>
-							</tr>
-							<tr>
-								<c:forEach var="review1" items="${getreview1}" begin="0"
-									end="9999" step="1" varStatus="status">
-									<td bgcolor="white" align="center" width="200" height="50"><b color="black">${status.count}</b></td>
-									<td bgcolor="white" align="center" width="1000" height="50"><b color="black">${review1.review_ctnt}</b></td>
-									<td bgcolor="white" align="center" width="300" height="50"><b color="black">${review1.nickname}</b></td>
-							</tr>
-							</c:forEach>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/BB.git
 
                <p class="u-custom-font u-text u-text-custom-color-3 u-text-1">${MyInfo.nickname}(${MyInfo.id})
                   &nbsp;님 환영합니다!<br> <br> <br> <br>&nbsp; 보유 금액
