@@ -115,9 +115,9 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
-	public MemberDTO(int member_id, int charge_money) {
+	public MemberDTO(int member_id, int money) {
 		this.member_id = member_id;
-		this.charge_money = charge_money;
+		this.money = money;
 	}
 	public MemberDTO() {
 		

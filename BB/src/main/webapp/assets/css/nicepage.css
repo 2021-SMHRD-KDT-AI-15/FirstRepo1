@@ -419,8 +419,8 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
 }
-b,
-strong {
+b, strong {
+  color: black;
   font-weight: inherit;
   font-weight: bold;
 }

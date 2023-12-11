@@ -35,9 +35,21 @@ public class ChargeService extends HttpServlet {
 		ChargeDAO dao = new ChargeDAO();
 
 		ChargeDTO dto2 = new ChargeDTO(member_id, charge_money);
+		
+		
 
+		// 충전내역
 		int result = dao.charge(dto2);
-		int count = dao.update(money);
+		
+		MemberDTO user = new MemberDTO(member_id, charge_money);
+		
+		int chargeResult = dao.UpdateMoney(user);
+		
+		if(chargeResult == 1) {
+			System.out.println("충전 완료");
+		} else {
+			System.out.println("충전 실패");
+		}
 
 		response.sendRedirect("MyInfo.jsp");
 
