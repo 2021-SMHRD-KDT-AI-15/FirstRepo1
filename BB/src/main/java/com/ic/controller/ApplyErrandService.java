@@ -37,8 +37,6 @@ public class ApplyErrandService extends HttpServlet {
 		ApplyDAO applydao = new ApplyDAO();
 		int result = applydao.ApplyErrand(list);
 		
-		int count = applydao.errandDeduceAmount(money);
-		
 		response.sendRedirect("ShowApplyErrandService");
 		
 	}

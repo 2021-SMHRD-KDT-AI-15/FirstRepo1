@@ -75,30 +75,5 @@ public class ApplyDAO {
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
-//■■■■■■■■■■■■■■■■■■■■■■■■■■ 요청한 심부름 지원메시지 출력 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public ArrayList<ApplyDTO> ErrandAppliancedMember(ArrayList<ApplyDTO> title) {
-	    
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
-	    applyErrandList = (ArrayList)sqlSession.selectList("ErrandAppliancedMember", title);
-
-	    sqlSession.close();
-
-	    return applyErrandList;
-	}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	
-//■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원시 보유금액 일정비용 차감 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	public int errandDeduceAmount(int money) {
-		
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		int count = sqlSession.update("errandDeduceAmount",money);
-		
-		sqlSession.close();
-		
-		return count;
-	}
- 
-	
 }

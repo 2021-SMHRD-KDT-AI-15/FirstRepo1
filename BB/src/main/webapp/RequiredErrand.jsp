@@ -86,7 +86,7 @@
                            </c:when>
                            <c:when test="${fn:contains(clientErrand.status, 1)}">
                               <td style="border: 1px solid; border-right:none">매칭완료<br> <a href="ChatListService"><button>채팅</button></a>
-                                 <a href="CompleteErrand?errand_id=${clientErrand.errand_id}&apply_member_id=${applyMember.member_id}"><button>완료</button></a>
+                                 <a href="CompleteErrand?errand_id=${clientErrand.errand_id}&apply_member_id=${applyMember.member_id}&member_id=${clientErrand.member_id}"><button>완료</button></a>
                               </td>
                            </c:when>
                            <c:when test="${fn:contains(clientErrand.status, 2)}">
