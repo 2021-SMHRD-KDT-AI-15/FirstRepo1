@@ -58,12 +58,16 @@ public class ChatListService extends HttpServlet {
 		nickname_List.addAll(chatdao.memberId_to_nickname(applyErrand_id));   // 지원자 닉네임 추가
 		nickname_List.addAll(chatdao.getReqNickname(reqErrand_memberId)); // 지원한 심부름의 요청자 닉네임 추가
 	
+		if(chatList.isEmpty()) {
+			response.sendRedirect("ChatList.jsp?emptyCheck=0");
+		} else {
+			request.setAttribute("nicknameList", nickname_List);
+			request.setAttribute("chatList", chatList);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ChatList.jsp");
+			dispatcher.forward(request, response);
+		}
 		
-		request.setAttribute("nicknameList", nickname_List);
-		request.setAttribute("chatList", chatList);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ChatList.jsp");
-		dispatcher.forward(request, response);
 	}
 
 }

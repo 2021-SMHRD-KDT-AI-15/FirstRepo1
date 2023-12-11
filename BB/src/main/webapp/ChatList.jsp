@@ -9,8 +9,6 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script
    src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
 <script
@@ -19,19 +17,26 @@
    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript"
    src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<link rel="stylesheet" href="assets/css/ChatList.css"/>
 </head>
 
 <body>
 
    <div class="container">
       <div class="card-body" style="overflow-y: scroll; height: 500px" id="chatBody">
-         <c:forEach var="c" items="${chatList}" varStatus="status">
-         
-            <div class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
-               <div class="card-body">${nicknameList[status.index].nickname} 님과의 대화</div>
-            </div><br>
-
-         </c:forEach>
+         	<c:choose>
+         		<c:when test="${not empty param.emptyCheck}">
+         			<p>채팅 가능한 상대가 없습니다.<p>
+         		</c:when>
+         		<c:otherwise>
+         			<c:forEach var="c" items="${chatList}" varStatus="status">
+         				<div id="chatBox" class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
+               				<div class="card-body">${nicknameList[status.index].nickname} 님과의 대화</div>
+            			</div>
+            			<br>
+         			</c:forEach>
+         		</c:otherwise>
+        	</c:choose>
       </div>
    </div>
 

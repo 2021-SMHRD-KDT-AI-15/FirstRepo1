@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+   href="assets/css/ChatProgress.css">
 <script
    src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
 <script
@@ -49,7 +49,6 @@
                         <div class='col-sm-6'></div>
                         <div class='col-sm-6'>
                            <div class='alert alert-secondary'>
-                              <b>메세지 내용</b>
                            </div>
                         </div>
                      </div>
@@ -58,7 +57,6 @@
                      <div class='row'>
                         <div class='col-6'>
                            <div class='alert alert-warning'>
-                              <b>보낸 사람 : 메세지 내용</b>
                            </div>
                         </div>
                      </div>
