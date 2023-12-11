@@ -101,14 +101,8 @@
 
 	<c:choose>
 		<c:when test="${fn:contains(param.applyCheck, 0)}">
-			<div style="margin: 20px;">
-				<table
-					style="border-collapse:collapse; background-color: #ff9b65; color: white; margin: 0 auto; width: 845px; text-align: center;">
-					<tr>
-						<td style="font-size: 24px;"><strong>지원한 심부름이 없습니다</strong></td>
-					</tr>
-				</table>
-			</div>
+			<img src="https://www.dailypop.kr/news/photo/202003/44171_85308_5241.jpg" id="defaultImg">
+			<p id="noReqText">지원한 심부름이 없어요~ 지원 먼저 해주세요!</p>
 		</c:when>
 		<c:otherwise>
 			<c:forEach var="ErrandTitle" items="${ErrandTitleList}"

@@ -52,11 +52,10 @@
     
     <body style="text-align: center;">
 
-   <c:if test="${fn:contains(param.reqCheck, 0)}">  <!-- 요청한 심부름이 없을 경우 -->
+   <c:if test="${empty param.reqCheck}">  <!-- 요청한 심부름이 없을 경우 -->
       <div style="width: 1100px; border: 1px solid; margin: 20px auto; background-color: #ff9b65;; color: white;">
          <strong>요청한 심부름이 없습니다.</strong>
       </div>
-     
    </c:if>
 
    <c:forEach var="clientErrand" items="${clientErrandAll}" varStatus="status">

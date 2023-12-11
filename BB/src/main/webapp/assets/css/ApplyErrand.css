@@ -130,3 +130,20 @@
   font-weight: 400;
   src: url("../fonts/JalnanGothicTTF.ttf");
 }
+
+#defaultImg{
+	margin-top: 40px;
+	margin-bottom: 5px;
+	border-radius: 50%;
+	width: 500px;
+}
+
+@font-face{
+font-family:'DNFBitBitv2';
+font-style:normal;font-weight:400;src:url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')}
+
+#noReqText{
+	font-family: DNFBitBitv2;
+	font-size: 30px;
+	color: #444;
+}
