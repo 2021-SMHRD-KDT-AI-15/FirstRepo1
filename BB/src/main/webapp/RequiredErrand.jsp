@@ -51,10 +51,9 @@
     
     <body style="text-align: center;">
 
-   <c:if test="${empty param.reqCheck}">  <!-- 요청한 심부름이 없을 경우 -->
-      <div style="width: 1100px; border: 1px solid; margin: 20px auto; background-color: #ff9b65;; color: white;">
-         <strong>요청한 심부름이 없습니다.</strong>
-      </div>
+   <c:if test="${not empty param.reqCheck}">  <!-- 요청한 심부름이 없을 경우 -->
+      <img src="https://www.dailypop.kr/news/photo/202003/44171_85308_5241.jpg" id="defaultImg">
+	  <p id="noReqText">요청한 심부름이 없어요~ 요청 먼저 해주세요!</p>
    </c:if>
 
    <c:forEach var="clientErrand" items="${clientErrandAll}" varStatus="status">

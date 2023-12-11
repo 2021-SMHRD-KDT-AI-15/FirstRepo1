@@ -26,6 +26,8 @@ public class JoinService extends HttpServlet {
 		String nickname = request.getParameter("nickname");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
+		String emailSelect = request.getParameter("select");
+		email += emailSelect;
 
 		String address = request.getParameter("address");
 		String detailAddress = request.getParameter("detailAddress");
