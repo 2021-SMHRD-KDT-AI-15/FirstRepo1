@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>ChargeHistory</title>
+    <title>PaymentHistory</title>
     <link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="assets/css/ChargeHistory.css" media="screen">
+<link rel="stylesheet" href="assets/css/PaymentHistory.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
@@ -21,61 +22,128 @@
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
-		"name": "¸®ºä ·©Å· ±âÅ¸ µîµî Á¦¿Ü ÃÖÁ¾"
+		"name": "ë¦¬ë·° ëž­í‚¹ ê¸°íƒ€ ë“±ë“± ì œì™¸ ìµœì¢…"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="ChargeHistory">
+    <meta property="og:title" content="PaymentHistory">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header" id="sec-9269" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="RequireErrand.jsp" class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">½ÉºÎ¸§ ¿äÃ»</a>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/222.png" alt="" data-image-width="464" data-image-height="390" data-href="Main.jsp">
-        <a href="ErrandListService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">½ÉºÎ¸§ ¸ñ·Ï</a>
-        <a href="RankingService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">&nbsp;·©Å·&nbsp;</a>
-        <a href="ChatService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Ã¤ÆÃ</a>
-        <a href="Charge.jsp" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ÃæÀü</a>
-        <a href="MyInfoService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">¸¶ÀÌ ÆäÀÌÁö</a>
-      </div></header>
-    <section class="u-clearfix u-gradient u-section-1" id="sec-6cbc">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="PaymentHistoryService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">°áÁ¦³»¿ª</a>
-        <a href="ChargeHistoryService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-1 u-text-hover-custom-color-1 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ÃæÀü³»¿ª</a>
-        <a href="MyInfoService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">³» Á¤º¸</a>
-        <a href="InfoChange1.jsp" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">È¸¿øÁ¤º¸ º¯°æ</a>
-        <a href="RequiredErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">¿äÃ»ÇÑ ½ÉºÎ¸§</a>
-        <a href="ShowApplyErrandService" class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Áö¿øÇÑ ½ÉºÎ¸§</a>
-      </div>
-    </section>
-    <br><br>
-    <body style="text-align: center; padding-top:10px;">
-    
-	<table border="1" style="margin: auto; border-collapse: collapse; ">
-    <tr bgcolor="ff9962">
-        <th width="100" style="color: white; font-size: 2em;"><b>NO</b></th>
-        <th width="550" style="color: white; font-size: 2em;"><b>ÃæÀüÀÏ½Ã</b></th>
-        <th width="320" style="color: white; font-size: 2em;"><b>ÃæÀü±Ý¾×</b></th>
-    </tr>
-    <c:forEach var="chargeHistory" items="${chargeHistory}" begin="1" end="9999" step="1" varStatus="status">
-        <tr>
-            <td align="center">${status.index}</td>
-            <td align="center" height="50">${chargeHistory.charge_date}</td>
-            <td align="center" height="50">${chargeHistory.charge_money}¿ø</td>
-        </tr>
-    </c:forEach>
-   
-</table></body>
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-755f"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1"> &nbsp;<a href="https://pleasehelp.co.kr/O010101.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a>
-          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010102.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">¼­ºñ½º ÀÌ¿ë¾à°ü</a>
-          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010103.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">À§Ä¡±â¹Ý¼­ºñ½º ÀÌ¿ë¾à°ü</a>
-          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010104.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4">¾÷¹«À§¼öÅ¹¾à°ü</a>
-          <br>&nbsp;<a href="https://pleasehelp.co.kr/O010105.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">ÁÖ½ÄºÐÇÒ °ø°í¹®</a>
-          <br>&nbsp;<a href="PoliceInquiryService" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6" style="font-size:30px">°æÂû¼­ Á¶È¸</a>
-          <br>
-          <br>(ÁÖ)IC¤Ó´ëÇ¥ À±¼ö¹Î¤Ó´ëÇ¥ ¹øÈ£: 010-9918-0000<br>´ëÇ¥ ¸ÞÀÏ: vroong@naver.com<br>»ç¾÷ÀÚµî·Ï¹øÈ£:123-456-789<br>Åë½ÅÆÇ¸Å¹øÈ£: 2023-4777<br>¼­¿ïÆ¯º°½Ã °­³²±¸ °­³²´ë·Î 364<br>Copyright ¨Ï 2023 ºÎ¸ªºÎ¸§. All rights reserved.
-        </p>
-      </div></footer>
-  
-</body></html>
+</head>
+<body data-path-to-root="./" data-include-products="false"
+	class="u-body u-xl-mode" data-lang="en">
+	<header class="u-clearfix u-header" id="sec-9269"
+		data-animation-name="" data-animation-duration="0"
+		data-animation-delay="0" data-animation-direction="">
+		<div class="u-clearfix u-sheet u-sheet-1">
+			<a href="RequireErrand.jsp"
+				class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ì‹¬ë¶€ë¦„ ìš”ì²­</a> <img
+				class="u-image u-image-contain u-image-default u-image-1"
+				src="images/222.png" alt="" data-image-width="464"
+				data-image-height="390" data-href="Main.jsp"> <a
+				href="ErrandListService"
+				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ì‹¬ë¶€ë¦„ ëª©ë¡</a> <a
+				href="RankingService"
+				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">&nbsp;ëž­í‚¹&nbsp;</a>
+			<a href="ChatService"
+				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ì±„íŒ…</a> <a
+				href="Charge.jsp"
+				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-5"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ì¶©ì „</a> <a
+				href="MyInfoService"
+				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-6"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ë§ˆì´ íŽ˜ì´ì§€</a>
+		</div>
+	</header>
+	<section class="u-clearfix u-gradient u-section-1" id="sec-6cbc">
+		<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+			<a href="PaymentHistoryService"
+				class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ê²°ì œë‚´ì—­</a> <a
+				href="ChargeHistoryService"
+				class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-1 u-text-hover-custom-color-1 u-btn-2"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ì¶©ì „ë‚´ì—­</a> <a
+				href="MyInfoService"
+				class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-3"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ë‚´ ì •ë³´</a> <a
+				href="InfoChange1.jsp"
+				class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-4"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">íšŒì›ì •ë³´ ë³€ê²½</a> <a
+				href="RequiredErrandService"
+				class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-5"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ìš”ì²­í•œ ì‹¬ë¶€ë¦„</a> <a
+				href="ShowApplyErrandService"
+				class="u-btn u-button-style u-custom-font u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-6"
+				data-animation-name="" data-animation-duration="0"
+				data-animation-delay="0" data-animation-direction="">ì§€ì›í•œ ì‹¬ë¶€ë¦„</a>
+		</div>
+	</section>
+<body >
+	<table border=1 style="margin: auto; border-collapse: collapse; padding-top: 30px; margin-top:30px; border-radius:15px; margin-bottom:30px">
+		<tr bgcolor="ff9962" style="border=1; font-famaily:sans-serif">
+			<th width="100" style="color: white; font-size: 2em; border-left:none;"><b>NO</b></th>
+			<th width="550" style="color: white; font-size: 2em;"><b>ì¶©ì „ì¼ì‹œ</b></th>
+			<th width="320" style="color: white; font-size: 2em; border-right:none;"><b>ì¶©ì „ê¸ˆì•¡</b></th>
+		</tr>
+		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1"
+			end="9999" step="1" varStatus="status">
+			<tr style="font-famaily:sans-serif">
+				<td align="center" style="border-left:none;">${status.index}</td>
+				<td align="center" height="50">${chargeHistory.charge_date}</td>
+				<td align="center" height="50" style="border:1; border-right:none;">${chargeHistory.charge_money}ì›</td>
+			</tr>
+		</c:forEach>
+
+	</table>
+</body>
+
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
+	id="sec-755f">
+	<div class="u-clearfix u-sheet u-sheet-1">
+		<p class="u-small-text u-text u-text-variant u-text-1">
+			&nbsp;<a href="https://pleasehelp.co.kr/O010101.html"
+				class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a>
+			<br>&nbsp;<a href="https://pleasehelp.co.kr/O010102.html"
+				class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">ì„œë¹„ìŠ¤
+				ì´ìš©ì•½ê´€</a> <br>&nbsp;<a href="https://pleasehelp.co.kr/O010103.html"
+				class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">ìœ„ì¹˜ê¸°ë°˜ì„œë¹„ìŠ¤
+				ì´ìš©ì•½ê´€</a> <br>&nbsp;<a href="https://pleasehelp.co.kr/O010104.html"
+				class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4">ì—…ë¬´ìœ„ìˆ˜íƒì•½ê´€</a>
+			<br>&nbsp;<a href="https://pleasehelp.co.kr/O010105.html"
+				class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">ì£¼ì‹ë¶„í• 
+				ê³µê³ ë¬¸</a> <br> <br>(ì£¼)ICã…£ëŒ€í‘œ ìœ¤ìˆ˜ë¯¼ã…£ëŒ€í‘œ ë²ˆí˜¸: 010-9918-0000<br>ëŒ€í‘œ
+			ë©”ì¼: vroong@naver.com<br>ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸:123-456-789<br>í†µì‹ íŒë§¤ë²ˆí˜¸:
+			2023-4777<br>ì„œìš¸íŠ¹ë³„ì‹œ ê°•ë‚¨êµ¬ ê°•ë‚¨ëŒ€ë¡œ 364<br>Copyright â“’ 2023 ë¶€ë¦‰ë¶€ë¦„.
+			All rights reserved.
+		</p>
+	</div>
+</footer>
+<section class="u-backlink u-clearfix u-grey-80">
+	<a class="u-link" href="https://nicepage.com/html-templates"
+		target="_blank"> <span>Free HTML Templates</span>
+	</a>
+	<p class="u-text">
+		<span>created with</span>
+	</p>
+	<a class="u-link" href="" target="_blank"> <span>Web Design
+			Software</span>
+	</a>.
+</section>
+
+</body>
+</html>

@@ -50,13 +50,13 @@
     </section>
     <body style="text-align: center; padding-top : 30px">
 
-    <fieldset>
-        <table border="1" style="margin: 20px auto; border-collapse: collapse; width: 70%; text-align: center;">
-            <tr bgcolor="#ff9b65">
-                <th width="50px" style="color: white; font-size: 2em;"><strong>NO</strong></th>
-                <th width="100px" style="color: white; font-size: 2em;"><strong>결제 일시</strong></th>
-                <th width="100px" style="color: white; font-size: 2em;"><strong>결제 금액</strong></th>
-                <th width="200px" style="color: white; font-size: 2em;"><strong>결제 내역</strong></th>
+   
+        <table  border=1 style="margin: 20px auto; border-collapse:collapse; text-align: center; border-radius: 8px;">
+            <tr style="border-radius:15px" bgcolor="#ff9b65">
+                <th style="width:100px; color: white; font-size: 2em; font-family: sans-serif;"><strong>NO</strong></th>
+                <th width="300px" style="color: white; font-size: 2em; font-family: sans-serif;"><strong>결제 일시</strong></th>
+                <th width="300px" style="color: white; font-size: 2em; font-family: sans-serif;"><strong>결제 금액</strong></th>
+                <th width="250px" style="color: white; font-size: 2em; font-family: sans-serif;"><strong>결제 내역</strong></th>
             </tr>
             <c:forEach var="paymentHistory" items="${paymentHistory}" begin="0" end="9999" step="1" varStatus="status">
                 <tr>
@@ -83,7 +83,7 @@
                 </tr>
             </c:forEach>
         </table>
-    </fieldset>
+    
 
 </body>
     
