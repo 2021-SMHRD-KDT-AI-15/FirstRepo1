@@ -1,37 +1,34 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 505px;
+	min-height: 505px;
 }
 
 .u-section-1 .u-text-1 {
-  margin: 147px auto 0;
+	margin: 147px auto 0;
 }
 
 .u-section-1 .u-btn-1 {
-  margin: 164px auto 60px;
-  
-}@font-face {
-  font-family: 'JalnanGothicTTF';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/JalnanGothicTTF.ttf");
+	margin: 164px auto 60px;
+
 }
 
-<<<<<<< HEAD
-.row{
-	background-color: red;
+@font-face {
+	font-family: 'JalnanGothicTTF';
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/JalnanGothicTTF.ttf");
 }
-=======
-#msgArea{
+
+#msgArea {
 	width: 100%;
 }
 
-.card-body{
-	width: 50%;
+.card-body {
+	width: 40%;
 	height: 60%;
 	margin: 0 auto;
 }
 
-.alert{
+.alert {
 	height: 10px;
 	width: auto;
 	display: inline-block;
@@ -53,8 +50,8 @@
 	transition: all 0.25s ease-in-out;
 }
 
-#timestamp{
-	font-family:SUITE-Regular;
+#timestamp {
+	font-family: SUITE-Regular;
 	font-size: 10px;
 	color: #777;
 	position: relative;
@@ -69,33 +66,113 @@
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.alert-warning{
+.alert-warning {
 	background-color: #eee;
 	text-align: left;
 	display: inline-block;
 }
 
-.alert-secondary{
+.alert-secondary {
 	background-color: #ff9962;
 	text-align: right;
 	display: inline-block;
 }
 
-.col-sm-6{
+.col-sm-6 {
 	text-align: right;
 }
 
-#msg{
-	width: 45%;
+#msg {
+	width: 38%;
 	height: 40px;
 	border-radius: 20px;
+	border-color: #ccc;
+	margin: 10px;
+	padding: 5px;
+	font-family: SUITE-Regular;
+	font-size: 15px;
+	text-align: center;
 }
 
 @font-face {
-    font-family: 'SUITE-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'SUITE-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
 }
 
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-15/BB.git
+button {
+	margin: 5px;
+	outline: none;
+}
+
+.custom-btn {
+	width: 130px;
+	height: 40px;
+	padding: 10px 25px;
+	border: 2px solid #ff9962;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	background: transparent;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	display: inline-block;
+	font-family: SUITE-Regular;
+	border-radius: 20px;
+	font-size: 15px;
+}
+
+#button-send {
+	background: #ff9962;
+	color: #fff;
+	z-index: 1;
+	border-radius: 20px;
+
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+}
+
+#button-send:after {
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 100%;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	background: #fff;
+	transition: all 0.3s ease;
+	border-radius: 20px;
+}
+
+#button-send:hover {
+	color: #000;
+	border-radius: 20px;
+}
+
+#button-send:hover:after {
+	left: 0;
+	width: 100%;
+	border-radius: 20px;
+}
+
+#button-send:active {
+	top: 2px;
+	border-radius: 20px;
+}
+
+body {
+	-ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}

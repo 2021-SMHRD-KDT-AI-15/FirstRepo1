@@ -73,7 +73,7 @@
                            aria-describedby="button-addon2">
 
                         <div class="input-group-append">
-                           <button class="btn btn-sm btn-info" type="button"
+                           <button class="btn btn-sm btn-info frame custom-btn" type="button"
                               id="button-send">전송</button>
                         </div>
                      </div>
