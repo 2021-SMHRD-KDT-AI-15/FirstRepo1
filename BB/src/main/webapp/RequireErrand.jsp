@@ -90,7 +90,7 @@
 							<div class="u-form-group u-label-top">
 								<label for="password-a30d"
 									class="u-custom-font u-label u-text-custom-color-1 u-label-2">요구
-									시작 시한</label> <input type="date" placeholder="시작 시간 입력"
+									시작 시한</label> <input type="datetime-local" placeholder="시작 시간 입력"
 									id="password-a30d" name="req_date"
 									class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-input-2"
 									required="">
@@ -98,7 +98,7 @@
 							<div class="u-form-group u-label-top u-form-group-3">
 								<label for="text-1ce3"
 									class="u-custom-font u-label u-text-custom-color-1 u-label-3">요구
-									마감 시한</label> <input type="date" id="text-1ce3" name="want_date"
+									마감 시한</label> <input type="datetime-local" id="text-1ce3" name="want_date"
 									class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-input-3"
 									placeholder="희망 마감 시한 입력">
 							</div>

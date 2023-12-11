@@ -9,6 +9,10 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+   href="assets/css/ChatList.css">
+
 <script
    src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
 <script
@@ -24,6 +28,7 @@
 
    <div class="container">
       <div class="card-body" style="overflow-y: scroll; height: 500px" id="chatBody">
+
          	<c:choose>
          		<c:when test="${not empty param.emptyCheck}">
          			<p>채팅 가능한 상대가 없습니다.<p>
@@ -37,6 +42,7 @@
          			</c:forEach>
          		</c:otherwise>
         	</c:choose>
+
       </div>
    </div>
 

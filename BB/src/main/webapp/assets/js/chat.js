@@ -18,6 +18,8 @@ window.onload= function(){
 	
 	// Socket 연결
 	socket = new WebSocket('ws://59.3.58.51:8081/BB/chat/' + room);
+	// 59.3.58.51:8081
+	
 	// Socket의 콜백함수 지정
 	socket.onopen = onOpen;
 	socket.onclose = onClose;
@@ -102,7 +104,7 @@ function loadChat(){
 							<div class='alert alert-warning'>
 								<b>${c_chat}</b>
 							</div>
-							<span>${c_timestamp}</span>
+							<span id="timestamp">${c_timestamp}</span>
 						</div>
 					</div>
 				`;
@@ -111,10 +113,10 @@ function loadChat(){
 					<div class='row'>
 						<div class='col-sm-6'></div>
 						<div class='col-sm-6'>
+							<span id="timestamp">${c_timestamp}</span>
 							<div class='alert alert-secondary'>
 								<b>${c_chat}</b>
 							</div>
-							<span>${c_timestamp}</span>
 						</div>
 					</div>
 				`;
@@ -158,7 +160,7 @@ function onMessage(msg){
 				<div class='alert alert-warning'>
 					<b>${message.chat}</b>
 				</div>
-				<span>${message.timestamp}</span>
+				<span id="timestamp">${message.timestamp}</span>
 			</div>
 		</div>
 	`;
@@ -186,10 +188,10 @@ function send(){
 		<div class='row'>
 			<div class='col-sm-6'></div>
 			<div class='col-sm-6'>
+				<span id="timestamp">${chat.timestamp}</span>
 				<div class='alert alert-secondary'>
 					<b>${chat.chat}</b>
 				</div>
-				<span>${chat.timestamp}</span>
 			</div>
 		</div>
 	`;

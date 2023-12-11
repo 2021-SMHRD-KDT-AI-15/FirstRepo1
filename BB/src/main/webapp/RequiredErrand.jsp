@@ -69,9 +69,9 @@
             <table style="border: 1px solid; width: 1100px;">
             <table style="border: 1px solid; width: 100%; color: black; background-color: white;">
                <tr>
-                  <td style="border: 1px solid; width: 60%;">지원메시지</td>
-                  <td style="border: 1px solid; width: 20%;">지원자 닉네임</td>
-                  <td style="border: 1px solid; width: 20%;">상태</td>
+                  <td style="border: 1px solid; width: 60%;"><strong>지원메시지</strong></td>
+                  <td style="border: 1px solid; width: 20%;"><strong>지원자 닉네임</strong></td>
+                  <td style="border: 1px solid; width: 20%;"><strong>상태</strong></td>
                </tr>
                <c:forEach var="applyMember" items="${applyMembers[status.index]}" varStatus="status2">
                   <c:if test="${not fn:contains(applyMember.match_status, 2)}">

@@ -26,5 +26,15 @@
 		select * from MEMBER where member_id=#{member_id}
 	</select>
 	
+	<select id="check_id" parameterType="com.ic.model.MemberDTO" resultType="int">
+      SELECT COUNT(*) FROM MEMBER WHERE id=#{id}
+   </select>
+	<select id="check_name" parameterType="com.ic.model.MemberDTO" resultType="int">
+      SELECT COUNT(*) FROM MEMBER WHERE nickname=#{nickname}
+   </select>
+	<select id="check_mail" parameterType="com.ic.model.MemberDTO" resultType="int">
+      SELECT COUNT(*) FROM MEMBER WHERE email=#{email}
+   </select>
+	
 	
 </mapper>

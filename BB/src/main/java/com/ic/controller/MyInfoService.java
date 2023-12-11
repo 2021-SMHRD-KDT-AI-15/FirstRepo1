@@ -47,7 +47,7 @@ public class MyInfoService extends HttpServlet {
       ArrayList<ReviewDTO> getlike = reviewdao.getLike(member_id);
       int like = getlike.size();
       
-      // 싫어요 갯수g
+      // 싫어요 갯수
       ArrayList<ReviewDTO> getdislike = reviewdao.getDisLike(member_id);
       int dislike = getdislike.size();
       

@@ -4,8 +4,21 @@
 
 	<!-- 심부름 요청 -->
 	<insert id="requireErrand" parameterType="com.ic.model.ErrandDTO">
-		INSERT INTO ERRAND VALUES(ERRAND_SEQ.NEXTVAL, #{member_id}, #{title}, #{content}, #{errand_ctgr}, #{price}, SYSDATE, #{location_ctgr}, #{req_location}, #{req_date}, 0, NULL, #{want_date})
-	</insert>
+    INSERT INTO ERRAND 
+    VALUES (ERRAND_SEQ.NEXTVAL, 
+            #{member_id}, 
+            #{title}, 
+            #{content}, 
+            #{errand_ctgr}, 
+            #{price}, 
+            SYSDATE, 
+            #{location_ctgr}, 
+            #{req_location}, 
+            TO_DATE(#{req_date}, 'YYYY-MM-DD"T"HH24:MI'), 
+            0, 
+            NULL, 
+            TO_DATE(#{want_date}, 'YYYY-MM-DD"T"HH24:MI'))
+</insert>
 	
 	<!--  심부름 목록 -->
 	<select id="errandList" resultType="com.ic.model.ErrandDTO">

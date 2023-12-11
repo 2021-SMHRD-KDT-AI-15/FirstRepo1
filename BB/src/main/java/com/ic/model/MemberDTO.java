@@ -94,9 +94,10 @@ public class MemberDTO {
 	}
 
 	// 기본 생성자
-	public MemberDTO() {
-		
+	public MemberDTO(String id) {
+		this.id = id;
 	}
+	
 	
 	public MemberDTO(String id, String pw, String nickname, String email, String phone, String address, int age, char gender) {
 		this.id = id;
@@ -114,6 +115,23 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
-	
+	public MemberDTO(int member_id, int charge_money) {
+		this.member_id = member_id;
+		this.charge_money = charge_money;
+	}
+	public MemberDTO() {
+		
+	}
+	private int charge_money;
+
+    
+
+    public int getCharge_money() {
+        return charge_money;
+    }
+
+    public void setCharge_money(int charge_money) {
+        this.charge_money = charge_money;
+    }
 	
 }

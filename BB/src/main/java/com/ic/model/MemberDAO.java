@@ -10,10 +10,8 @@ import com.ic.db.SqlSessionManager;
 
 public class MemberDAO {
 
-	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 
-	
 	// 회원가입 메소드 생성!
 	public int join(MemberDTO dto) {
 		// 1. sqlSession 객체 빌려오기! -> DB 접속할 수 있는 기능을 가지고 있다.
@@ -68,7 +66,7 @@ public class MemberDAO {
 
 		return result;
 	}
-	
+
 	// 회원정보를 담아오는 메소드
 	public MemberDTO MyInfo(int member_id) {
 
@@ -81,5 +79,25 @@ public class MemberDAO {
 		return MyInfo;
 
 	}
-
+	// 아이디 중복 체크 메소드
+	public int check_id(String id) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt1 = sqlSession.selectOne("check_id", id);
+		sqlSession.close();
+		return cnt1;
+	}
+	// 닉네임 중복 체크 메소드
+	public int check_name(String nickname) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt2 = sqlSession.selectOne("check_name", nickname);
+		sqlSession.close();
+		return cnt2;
+	} 
+	// 이메일 중복 체크 메소드
+	public int check_mail(String email) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt3 = sqlSession.selectOne("check_mail", email);
+		sqlSession.close();
+		return cnt3;
+	}
 }
