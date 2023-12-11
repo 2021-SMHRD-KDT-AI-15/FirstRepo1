@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +17,8 @@ pageEncoding="UTF-8" isELIgnored="false"%>
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
-    
-    
-    
-    
+
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -87,7 +87,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 							<tr>
 								<c:forEach var="review1" items="${getreview1}" begin="0"
 									end="9999" step="1" varStatus="status">
-									<td align="center" width="600" height="50">${status.index}</td>
+									<td align="center" width="600" height="50">${status.count}</td>
 									<td align="center" width="600" height="50">${review1.review_ctnt}</td>
 									<td align="center" width="200" height="50">${review1.nickname}</td>
 							</tr>
@@ -110,7 +110,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 							<tr>
 								<c:forEach var="review0" items="${getreview0}" begin="0"
 									end="9999" step="1" varStatus="status">
-									<td align="center" width="600" height="50">${status.index}</td>
+									<td align="center" width="600" height="50">${status.count}</td>
 									<td align="center" width="600" height="50">${review0.review_ctnt}</td>
 									<td align="center" width="200" height="50">${review0.nickname}</td>
 							</tr>
