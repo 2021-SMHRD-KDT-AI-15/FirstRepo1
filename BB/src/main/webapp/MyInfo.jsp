@@ -53,7 +53,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 
               <br>
               <br>
-              <br>&nbsp; 보유 금액 :&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${MyInfo.money}</span>&nbsp; &nbsp; &nbsp;원
+              <br>&nbsp; 보유 금액 :&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 3rem;">${MyInfo.money}</span>&nbsp; 원
             </p>
           </div>
         </div>
