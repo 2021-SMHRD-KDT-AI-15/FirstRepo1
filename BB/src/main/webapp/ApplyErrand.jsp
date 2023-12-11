@@ -102,7 +102,7 @@
 	<c:choose>
 		<c:when test="${fn:contains(param.applyCheck, 0)}">
 			<img src="https://www.dailypop.kr/news/photo/202003/44171_85308_5241.jpg" id="defaultImg">
-			<p id="noReqText">지원한 심부름이 없어요~ 지원 먼저 해주세요!</p>
+			<p id="noAppText">지원한 심부름이 없어요~ 지원 먼저 해주세요!</p>
 		</c:when>
 		<c:otherwise>
 			<c:forEach var="ErrandTitle" items="${ErrandTitleList}"
