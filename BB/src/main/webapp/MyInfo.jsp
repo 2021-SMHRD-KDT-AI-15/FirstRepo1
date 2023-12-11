@@ -80,7 +80,6 @@ pageEncoding="UTF-8" isELIgnored="false"%>
       <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-align-center u-custom-font u-text u-text-1">나에 대한 후기</p>
       <table border="1">
-							<tr bgcolor="coral">
 								<th width="200" height="50"><b>NO.</b></th>
 								<th width="1000" height="50"><b>후기내용</b></th>
 								<th width="300" height="50"><b color="black">from 닉네임</b></th>
