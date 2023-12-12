@@ -114,7 +114,12 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
+@font-face {
+ 	font-family: 'DNFBitBitv2';
+ 	font-style: normal;
+ 	font-weight: 400;
+ 	src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
+ }
 
 .card-body {
 	font-family: YEONGJUPunggiGinsengTTF;
@@ -131,5 +136,6 @@
 .name{
 	margin-bottom: 200px;
 	font-weight: bold;
-	font-family: 'SUITE-Regular';
+	font-family: 'DNFBitBitv2';
+	color: #444;;
 }
