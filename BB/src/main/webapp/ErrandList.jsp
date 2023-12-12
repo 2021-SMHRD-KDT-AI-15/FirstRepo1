@@ -165,7 +165,7 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h11" class="wrap_h1" >${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1" >${errand.title}</h1>
 																					</a></th>
 																					<th class="th" colspan="2">
 																					<c:choose>
