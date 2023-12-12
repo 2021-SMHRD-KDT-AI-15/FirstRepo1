@@ -1,7 +1,7 @@
 package com.ic.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -115,29 +115,20 @@ public class MemberDAO {
 		return result;
 	}
 	
-	// 요청자 보유금액 심부름액수만큼 차감
-	public int updateDeduceMoney(MemberDTO applymember) {
-		
+	// 요청자 보유금액 심부름액수만큼 차감 
+	public int updateMoney(int member_id, int money) {
+				
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		int result = sqlSession.update("updateDeduceMoney",applymember);
-		
+	    Map<String, Object> parameters = new HashMap<>();
+	    parameters.put("member_id", member_id);
+	    parameters.put("money", money);
+				
+		int result = sqlSession.update("updateMoney",parameters);
+				
 		sqlSession.close();
-		
+				
 		return result;
 
 	}
-	// 지원자 보유금액 심부름액수와 수수료만큼 증가
-	public int updateReduceMoney(MemberDTO applymember) {
-		
-		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		
-		int result = sqlSession.update("updateReduceMoney",applymember);
-		
-		sqlSession.close();
-		
-		return result;
-
-	}
-
+	
 }

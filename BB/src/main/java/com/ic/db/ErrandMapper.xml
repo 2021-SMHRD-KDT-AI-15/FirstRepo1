@@ -18,7 +18,7 @@
             0, 
             NULL, 
             TO_DATE(#{want_date}, 'YYYY-MM-DD"T"HH24:MI'))
-</insert>
+	</insert>
 	
 	<!--  심부름 목록 -->
 	<select id="errandList" resultType="com.ic.model.ErrandDTO">

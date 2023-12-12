@@ -37,12 +37,10 @@ public class RequireCancelService extends HttpServlet {
 		}
 		
 		if(deleteResult == 1) {
-			System.out.println("지원자 수수료 반환 완료");
 			System.out.println("지원자 삭제 성공");
 			System.out.println("요청취소 성공");
 		} else {
 			System.out.println("요청취소 실패");
-			System.out.println("지원자 수수료 반환 실패");
 		}
 		
 		if(deleteChat == 1) {

@@ -42,16 +42,12 @@
    		SELECT * FROM MEMBER WHERE MEMBER_ID=#{member_id}
    </select>
    
-   <update id="updateDeduceMoney" parameterType="com.ic.model.MemberDTO">
+   <!-- 회원 보유금액 업데이트 -->
+   <update id="updateMoney" parameterType="map">
    		UPDATE MEMBER
-		SET MONEY = MONEY - (SELECT PRICE FROM ERRAND WHERE ERRAND_ID = #{errand_id})
-		WHERE MEMBER_ID = #{member_id};
+		SET MONEY = #{money}
+		WHERE MEMBER_ID = #{member_id}
    </update>
-   
-   <update id="updateReduceMoney" parameterType="com.ic.model.MemberDTO">
-   		UPDATE MEMBER
-		SET MONEY = MONEY + (SELECT PRICE FROM ERRAND WHERE ERRAND_ID = #{errand_id}) + 2000
-		WHERE MEMBER_ID = #{member_id};
-   </update>
+
 	
 </mapper>

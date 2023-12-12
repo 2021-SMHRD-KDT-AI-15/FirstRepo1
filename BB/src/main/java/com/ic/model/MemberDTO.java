@@ -124,8 +124,7 @@ public class MemberDTO {
 	}
 	private int charge_money;
 
-    
-
+	
     public int getCharge_money() {
         return charge_money;
     }

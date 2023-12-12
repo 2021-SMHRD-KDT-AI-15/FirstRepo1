@@ -33,43 +33,41 @@ public class CompleteErrand extends HttpServlet {
 		MemberDTO applyMember = memberdao.getMemberDetails(apply_member_id);
 		ErrandDTO errandList = erranddao.getErrandList(errand_id);
 		
-		int requestMembermoney = requestMember.getMoney();
+		int requestMembermoney = requestMember.getMoney(); // 요청자 보유금액 정상출력
 		
-		int applyMembermoney = applyMember.getMoney();
+		int applyMembermoney = applyMember.getMoney(); // 지원자 보유금액 정상출력
 		
-		int errandPrice = errandList.getPrice();
+		int errandPrice = errandList.getPrice(); // 해당 심부름 보상금액 정상출력
 		
 		int completeErrandChk = erranddao.CompleteErrand(errand_id);
 		
-		MemberDTO requestmember = new MemberDTO(member_id,requestMembermoney);
-		
 		if(completeErrandChk == 1) {
-			if(requestMembermoney > errandPrice) {
-				int result = memberdao.updateDeduceMoney(requestmember);
+			if(requestMembermoney > errandPrice) { // 요청자 보유금액이 심부름 보상금액보다 클수 요청자 보유금액 차감
+				int updatemoney = requestMembermoney - errandPrice;
+				int result = memberdao.updateMoney(member_id, updatemoney);
 				System.out.println(result);
-				System.out.println(" 요청자 보유금액 차감 성공");
+				System.out.println("요청자 보유금액 차감 성공");
 				System.out.println("심부름 상태 2로 변경");
 			}
 		} else {  
 			System.out.println("심부름 상태 2로 변경 실패");
+			System.out.println("요청자 보유금액 차감 실패 : 요청자 보유금액 부족");
 		}
 		
 		// 지원자 관련(apply_member_id, money)
 		ApplyCheckDTO apply = new ApplyCheckDTO(errand_id, apply_member_id);
 		
-		MemberDTO applymember = new MemberDTO(apply_member_id,applyMembermoney);
-		
 		int completeErrandAppChk = erranddao.CompleteErrandApply(apply);
 		
-		if(completeErrandAppChk == 1) {
-			int result = memberdao.updateReduceMoney(applymember);
+		if(completeErrandAppChk == 1) { // 지원자 보유금액에 심부름 보상금액 증감과 수수료 반환
+			int updatemoney = applyMembermoney + errandPrice + 2000;
+			int result = memberdao.updateMoney(apply_member_id, updatemoney); 
 			System.out.println(result);
 			System.out.println("지원자한테 보상금액과 수수료 입금 성공");
 			System.out.println("지원자 매칭 상태 4로 변경");
 		} else {
 			System.out.println("지원자한테 보상금액과 수수료 입금 실패");
-			System.out.println("지원자 매칭 상태 4로"
-					+ "l 변경 실패");
+			System.out.println("지원자 매칭 상태 4로" + "l 변경 실패");
 		}
 		
 		response.sendRedirect("RequiredErrandService");
