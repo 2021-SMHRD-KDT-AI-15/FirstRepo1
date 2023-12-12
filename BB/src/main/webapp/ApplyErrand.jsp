@@ -105,43 +105,36 @@
 			<p id="noAppText">지원한 심부름이 없어요~ 지원 먼저 해주세요!</p>
 		</c:when>
 		<c:otherwise>
-			<c:forEach var="ErrandTitle" items="${ErrandTitleList}"
-				varStatus="status">
-				<div style="margin: 20px;">
-					<table border=1 style="border-collapse:collapse; background-color: #ff9b65; color: white; margin: 0 auto;">
+			<c:forEach var="ErrandTitle" items="${ErrandTitleList}" varStatus="status">
+				<div id="errandBox">
+					<table class="rwd-table">
 						<tr>
-							<td id="title"
-								style="text-align: center; width:600px; border: 1px solid; font-size: 24px;">${ErrandTitle.title}</td>
+							<td>${ErrandTitle.title}</td>
 							<c:choose>
-								<c:when
-									test="${fn:contains(ApplyErrandList[status.index].match_status, 0)}">
-									<td id="status" style="border: 1px solid; font-size: 24px; width:130px">수락대기</td>
-									<td><a
-										href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
+								<c:when test="${fn:contains(ApplyErrandList[status.index].match_status, 0)}">
+									<td>
+										<div id="wait">수락대기</div>
+									</td>
+									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button class="button--moema">지원취소</button></a></td>
 								</c:when>
 
-								<c:when
-									test="${fn:contains
-								(ApplyErrandList[status.index].match_status, 1)}">
-									<td id="status" style="border: 1px solid; font-size: 24px;">매칭완료</td>
-									<td><a
-										href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>지원취소</button></a></td>
-									<td style="border: 1px solid;"><a href="ChatListService"><button>채팅</button></a></td>
+								<c:when test="${fn:contains(ApplyErrandList[status.index].match_status, 1)}">
+									<td>
+										<div id="succ">매칭완료</div>
+									</td>
+									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button class="button--moema">지원취소</button></a>  <a href="ChatListService"><button class="button--moema">채팅</button></a>  </td>
 								</c:when>
-								<c:when
-									test="${fn:contains(ApplyErrandList[status.index].match_status, 2)}">
-									<td id="status" style="border: 1px solid; font-size: 24px;">선택받지
-										못함</td>
-									<td style="border: 1px solid;"><a
-										href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button>확인</button></a></td>
-									<td></td>
+								<c:when test="${fn:contains(ApplyErrandList[status.index].match_status, 2)}">
+									<td>
+										<div id="notChoice">선택받지 못함</div>
+									</td>
+									<td><a href="ApplyCancelService?errand_id=${ErrandTitle.errand_id}"><button class="button--moema">확인</button></a></td>
 								</c:when>
-								<c:when
-									test="${fn:contains(ApplyErrandList[status.index].match_status, 4)}">
-									<td id="status" style="border: 1px solid; font-size: 24px;">심부름
-										종료</td>
-									<td style="border: 1px solid;"><a
-										href="GetNickname_WriteReviewService?subject_id=${ErrandTitle.member_id}&title=${ErrandTitle.title}&errand_ctgr=${ErrandTitle.errand_ctgr}&errand_id=${ErrandTitle.errand_id}"><button>후기작성</button></a></td>
+								<c:when test="${fn:contains(ApplyErrandList[status.index].match_status, 4)}">
+									<td>
+										<div id="finish">심부름종료</div>
+									</td>
+									<td><a href="GetNickname_WriteReviewService?subject_id=${ErrandTitle.member_id}&title=${ErrandTitle.title}&errand_ctgr=${ErrandTitle.errand_ctgr}&errand_id=${ErrandTitle.errand_id}"><button class="button--moema">후기작성</button></a></td>
 								</c:when>
 							</c:choose>
 						</tr>

@@ -54,13 +54,13 @@
 }
 
 #chatBox {
-	background-color: white;
-	width: 500px;
-	height: 60px;
+	background-color: #fcb196;
+	width: 700px;
 	border-radius: 25px;
 	text-align: center;
 	margin: 10px auto;
-	padding-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
 		0 2px 2px rgba(0, 0, 0, 0.15),
 		0 4px 4px rgba(0, 0, 0, 0.15),
@@ -109,15 +109,28 @@
 }
 
 @font-face {
-    font-family: 'SUITE-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'SUITE-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
 }
 
 
-.card-body{
-	font-family: TAEBAEKmilkyway;
-	font-size: 25px;
+.card-body {
+	font-family: YEONGJUPunggiGinsengTTF;
+	font-size: 100px;
 	color: #444;
+}
+.nickname{
+	font-weight: bold;
+	font-family: 'SUITE-Regular';
+}
+.imges {
+	width: 800px;
+	height: 310px;
+}
+.name{
+	margin-bottom: 200px;
+	font-weight: bold;
+	font-family: 'SUITE-Regular';
 }

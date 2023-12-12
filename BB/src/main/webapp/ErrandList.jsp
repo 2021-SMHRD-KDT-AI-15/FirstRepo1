@@ -50,11 +50,11 @@
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
-				href="Ranking.jsp"
+				href="RankingService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
-			<a href="ChatListService"
+			<a href="ChatService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">채팅</a> <a
@@ -68,6 +68,7 @@
 				data-animation-delay="0" data-animation-direction="">마이 페이지</a>
 		</div>
 	</header>
+	<section class="u-section-2"></section>
 	<section class="u-align-center u-clearfix u-section-1" id="sec-d22e">
 		<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
 			<div class="u-expanded-width u-tab-links-align-left u-tabs u-tabs-1">
@@ -164,15 +165,18 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h11" class="wrap_h1" >${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2">
+																					<c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -184,17 +188,15 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																		</c:forEach>
 
 																		<!-- 10:49 수정 끝 -->
@@ -223,15 +225,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -243,18 +247,15 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																				
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
@@ -273,7 +274,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -283,15 +284,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -303,17 +306,15 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
@@ -332,7 +333,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -342,15 +343,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -362,17 +365,15 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
@@ -391,7 +392,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -401,15 +402,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -421,17 +424,15 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
@@ -450,7 +451,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -460,15 +461,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -480,23 +483,20 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
 																	</div>
 																</div>
-															</td>
 															</td>
 														</tr>
 													</table>
@@ -510,7 +510,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -520,15 +520,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -540,23 +542,20 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
 																	</div>
 																</div>
-															</td>
 															</td>
 														</tr>
 													</table>
@@ -571,7 +570,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -581,15 +580,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -601,23 +602,20 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
 																	</div>
 																</div>
-															</td>
 															</td>
 														</tr>
 													</table>
@@ -631,7 +629,7 @@
 													<table class="wrap-table">
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
@@ -641,15 +639,17 @@
 																				<tr>
 																					<th colspan="3"><a
 																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
+																							<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
+																					<th class="th" colspan="2"><c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
 																								<span>매칭대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
 																								<span>매칭완료</span>
+																							</c:when>
+																							<c:when test='${fn:contains(errand.status, "2")}'>
+																								<span>매칭종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
@@ -661,23 +661,20 @@
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
 																			</table>
-																			<br>
 																			</c:if>
 																		</c:forEach>
 
 																	</div>
 																</div>
-															</td>
 															</td>
 														</tr>
 													</table>
@@ -757,11 +754,9 @@
 																					<tr>
 																						<th colspan="3"><a
 																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																								<h1 id="wrap__h1" class="wrap_h1"
-																									style="width: 900px">${errand.title}</h1>
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
 																						</a></th>
-																						<th id="th" colspan="2" style="text-align: center"
-																							, width="300px"><c:choose>
+																						<th class="th" colspan="2"><c:choose>
 																								<c:when
 																									test='${fn:contains(errand.status, "0")}'>
 																									<span>매칭대기중</span>
@@ -770,6 +765,10 @@
 																									test='${fn:contains(errand.status, "1")}'>
 																									<span>매칭완료</span>
 																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
 																								<c:when
 																									test='${fn:contains(errand.status, "3")}'>
 																									<span>종료</span>
@@ -777,21 +776,17 @@
 																							</c:choose></th>
 																					</tr>
 																					<tr>
-																						<td id="number" style="text-align: center">No.
-																							${errand.errand_id}</td>
-																						<td id="location" style="text-align: center">${errand.location_ctgr}</td>
-																						<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																						<td id="price" rowspan="2"
-																							style="text-align: center">${errand.price}원</td>
-																					</tr>
-																					<tr>
-																						<td id="nickname" style="text-align: center">닉네임
-																							: ${nicknameList[status.index]}</td>
-																						<td id="location2" style="text-align: center">${errand.req_location}</td>
-																						<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
-																					</tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
+																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
+																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
+																				</tr>
+																				<tr>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
+																					<td id="location2" style="text-align: center">${errand.req_location}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																				</tr>
 																				</table>
-																				<br>
 																			</c:if>
 																		</c:forEach>
 
@@ -808,49 +803,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '배달/장보기'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -867,49 +869,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '청소/집안일'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -926,49 +935,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '설치/조립/운반'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -985,49 +1001,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '동행/돌봄'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1044,49 +1067,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '벌레/쥐잡기'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1103,49 +1133,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '역할대행'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1162,49 +1199,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '운전/카풀'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1221,49 +1265,56 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '과외/알바'&& errand.location_ctgr eq '광산구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
 																					<td id="number" style="text-align: center">No.
 																						${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1333,49 +1384,54 @@
 												<div class="u-container-layout u-container-layout-25"
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1392,49 +1448,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '배달/장보기'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1451,49 +1512,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '청소/집안일'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1510,48 +1576,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
+
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '설치/조립/운반'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1568,49 +1640,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '동행/돌봄'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1627,49 +1704,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '벌레/쥐잡기'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1686,49 +1768,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '역할대행'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1745,49 +1832,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '운전/카풀'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1804,49 +1896,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '과외/알바'&& errand.location_ctgr eq '동구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1916,49 +2013,54 @@
 												<div class="u-container-layout u-container-layout-36"
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -1975,49 +2077,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '배달/장보기'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2034,49 +2141,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '청소/집안일'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2093,49 +2205,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '설치/조립/운반'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2152,49 +2269,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '동행/돌봄'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2210,50 +2332,55 @@
 												<div class="u-container-layout u-container-layout-41"
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
-													<table class="wrap-table">
+												<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '벌레/쥐잡기'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2270,49 +2397,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '역할대행'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2329,54 +2461,60 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '운전/카풀'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
 																	</div>
 																</div>
+															</td>
 														</tr>
 													</table>
 												</div>
@@ -2387,50 +2525,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
-																			<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '과외/알바'&& errand.location_ctgr eq '서구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2500,49 +2642,54 @@
 												<div class="u-container-layout u-container-layout-47"
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2559,49 +2706,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '배달/장보기'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2618,49 +2770,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '청소/집안일'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2675,51 +2832,55 @@
 												role="tabpanel" aria-labelledby="link-tab-12d0">
 												<div class="u-container-layout u-container-layout-50"
 												style="padding: 50px; padding-top: 0px; width: 1300px">
+<table class="wrap-table">
 
-													<table class="wrap-table">
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '설치/조립/운반'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2736,49 +2897,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '동행/돌봄'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2795,49 +2961,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '벌레/쥐잡기'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2854,49 +3025,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '역할대행'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2913,49 +3089,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																		<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '운전/카풀'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -2972,49 +3153,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '과외/알바'&& errand.location_ctgr eq '남구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3084,49 +3270,54 @@
 												<div class="u-container-layout u-container-layout-58"
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3143,49 +3334,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '배달/장보기'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3202,49 +3398,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '청소/집안일'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3261,49 +3462,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '설치/조립/운반'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3320,49 +3526,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '동행/돌봄'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3379,49 +3590,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '벌레/쥐잡기'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3438,49 +3654,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '역할대행'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3497,49 +3718,54 @@
 												style="padding: 50px; padding-top: 0px; width: 1300px">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '운전/카풀'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 
@@ -3555,49 +3781,54 @@
 												<div class="u-container-layout u-container-layout-66">
 
 													<table class="wrap-table">
+
 														<tr>
 															<td>
-																<div class="innerWrap-table">
+															
+															<div class="innerWrap-table">
 																	<div style="width: 1030px">
 
 																		<c:forEach var="errand" items="${errandList}"
 																			varStatus="status">
 																			<c:if test="${errand.errand_ctgr eq '과외/알바'&& errand.location_ctgr eq '북구'}">
-																			<table id="wrap__table2" class="wrap-table2" border="solid">
-																				<tr>
-																					<th colspan="3"><a
-																						href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
-																							<h1 id="wrap__h1" class="wrap_h1" style="width: 900px">${errand.title}</h1>
-																					</a></th>
-																					<th id="th" colspan="2" style="text-align: center"
-																						, width="300px"><c:choose>
-																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
-																							</c:when>
-																							<c:when test='${fn:contains(errand.status, "3")}'>
-																								<span>종료</span>
-																							</c:when>
-																						</c:choose></th>
-																				</tr>
-																				<tr>
-																					<td id="number" style="text-align: center">No.
-																						${errand.errand_id}</td>
+																				<table id="wrap__table2" class="wrap-table2"
+																					border="solid">
+																					<tr>
+																						<th colspan="3"><a
+																							href="ErrandInfoService?errand_id=${errand.errand_id}&member_id=${errand.member_id}">
+																								<h1 id="wrap__h1" class="wrap_h1">${errand.title}</h1>
+																						</a></th>
+																						<th class="th" colspan="2"><c:choose>
+																								<c:when
+																									test='${fn:contains(errand.status, "0")}'>
+																									<span>매칭대기중</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "1")}'>
+																									<span>매칭완료</span>
+																								</c:when>
+																								<c:when 
+																									test='${fn:contains(errand.status, "2")}'>
+																									<span>매칭종료</span>
+																								</c:when>
+																								<c:when
+																									test='${fn:contains(errand.status, "3")}'>
+																									<span>종료</span>
+																								</c:when>
+																							</c:choose></th>
+																					</tr>
+																					<tr>
+																					<td id="number" style="text-align: center">No.${errand.errand_id}</td>
 																					<td id="location" style="text-align: center">${errand.location_ctgr}</td>
 																					<td id="work_type" style="text-align: center">${errand.errand_ctgr}</td>
-																					<td id="price" rowspan="2"
-																						style="text-align: center">${errand.price}원</td>
+																					<td id="price" style="text-align: center">${errand.price}원</td>
 																				</tr>
 																				<tr>
-																					<td id="nickname" style="text-align: center">닉네임
-																						: ${nicknameList[status.index]}</td>
+																					<td id="nickname" style="text-align: center">닉네임: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
 																				</tr>
-																			</table>
-																			<br>
+																				</table>
 																			</c:if>
 																		</c:forEach>
 

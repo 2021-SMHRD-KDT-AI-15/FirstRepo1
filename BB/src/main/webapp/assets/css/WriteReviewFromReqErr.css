@@ -1,4 +1,4 @@
-.u-section-1 {
+ .u-section-1 {
  	background-image: linear-gradient(white, #ff9962);
  }
 
@@ -396,3 +396,4 @@
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
+}
