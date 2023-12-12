@@ -104,7 +104,7 @@
 		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="0"
 			end="9999" step="1" varStatus="status">
 			<tr>
-				<td style="text-align: center;">${status.index}</td>
+				<td style="text-align: center;">${status.count}</td>
 				<td style="text-align: center;">${chargeHistory.charge_date}</td>
 				<td style="text-align: center;">${chargeHistory.charge_money}원</td>
 			</tr>
