@@ -22,7 +22,6 @@ public class CompleteErrand extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int errand_id = Integer.parseInt(request.getParameter("errand_id")); 
-		
 		int apply_member_id = Integer.parseInt(request.getParameter("apply_member_id")); 
 		int member_id = Integer.parseInt(request.getParameter("member_id"));
 		
@@ -40,16 +39,13 @@ public class CompleteErrand extends HttpServlet {
 		
 		int errandPrice = errandList.getPrice();
 		
-		System.out.println(requestMembermoney);
-		System.out.println(errandPrice);
-		
-		
 		int completeErrandChk = erranddao.CompleteErrand(errand_id);
+		
+		MemberDTO requestmember = new MemberDTO(member_id,requestMembermoney);
 		
 		if(completeErrandChk == 1) {
 			if(requestMembermoney > errandPrice) {
-				int updatedRequestMoney = requestMembermoney - errandPrice;
-				int result = memberdao.updateMoney(member_id);
+				int result = memberdao.updateDeduceMoney(requestmember);
 				System.out.println(result);
 				System.out.println(" 요청자 보유금액 차감 성공");
 				System.out.println("심부름 상태 2로 변경");
@@ -61,17 +57,19 @@ public class CompleteErrand extends HttpServlet {
 		// 지원자 관련(apply_member_id, money)
 		ApplyCheckDTO apply = new ApplyCheckDTO(errand_id, apply_member_id);
 		
+		MemberDTO applymember = new MemberDTO(apply_member_id,applyMembermoney);
 		
 		int completeErrandAppChk = erranddao.CompleteErrandApply(apply);
 		
 		if(completeErrandAppChk == 1) {
-			int result = memberdao.updateReduceMoney(apply_member_id);
+			int result = memberdao.updateReduceMoney(applymember);
 			System.out.println(result);
 			System.out.println("지원자한테 보상금액과 수수료 입금 성공");
 			System.out.println("지원자 매칭 상태 4로 변경");
 		} else {
 			System.out.println("지원자한테 보상금액과 수수료 입금 실패");
-			System.out.println("지원자 매칭 상태 4로 변경 실패");
+			System.out.println("지원자 매칭 상태 4로"
+					+ "l 변경 실패");
 		}
 		
 		response.sendRedirect("RequiredErrandService");

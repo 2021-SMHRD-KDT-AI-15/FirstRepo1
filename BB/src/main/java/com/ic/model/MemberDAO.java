@@ -116,11 +116,11 @@ public class MemberDAO {
 	}
 	
 	// 요청자 보유금액 심부름액수만큼 차감
-	public int updateMoney(int member_id) {
+	public int updateDeduceMoney(MemberDTO applymember) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		int result = sqlSession.update("updateMoney",member_id);
+		int result = sqlSession.update("updateDeduceMoney",applymember);
 		
 		sqlSession.close();
 		
@@ -128,11 +128,11 @@ public class MemberDAO {
 
 	}
 	// 지원자 보유금액 심부름액수와 수수료만큼 증가
-	public int updateReduceMoney(int member_id) {
+	public int updateReduceMoney(MemberDTO applymember) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		int result = sqlSession.update("updateReduceMoney",member_id);
+		int result = sqlSession.update("updateReduceMoney",applymember);
 		
 		sqlSession.close();
 		
