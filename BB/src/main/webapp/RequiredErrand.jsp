@@ -66,7 +66,7 @@
 	            		${clientErrand.title}
 	            	</td>
 	            	<td>
-	            		<a href="RequireCancelService?errand_id=${clientErrand.errand_id}"><button class="button--moema">요청취소</button></a>
+	            		<a href="RequireCancelService?errand_id=${clientErrand.errand_id}&apply_member_id=${applyMember.member_id}"><button class="button--moema">요청취소</button></a>
 	            	</td>
 	            </tr>
 	            <tr>

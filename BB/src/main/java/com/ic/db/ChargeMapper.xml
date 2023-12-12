@@ -9,6 +9,7 @@
 	<select id="ChargeHistory" resultType="com.ic.model.ChargeDTO">
 		SELECT * FROM CHARGE WHERE MEMBER_ID = #{member_id} ORDER BY charge_date DESC
 	</select>
+	
 	<update id="UpdateMoney" parameterType="com.ic.model.MemberDTO">
 		UPDATE MEMBER SET MONEY = MONEY + #{money} where MEMBER_ID = #{member_id}
 	</update>

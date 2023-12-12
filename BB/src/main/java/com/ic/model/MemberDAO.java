@@ -1,7 +1,7 @@
 package com.ic.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -79,6 +79,8 @@ public class MemberDAO {
 		return MyInfo;
 
 	}
+	
+	
 	// 아이디 중복 체크 메소드
 	public int check_id(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -100,4 +102,33 @@ public class MemberDAO {
 		sqlSession.close();
 		return cnt3;
 	}
+
+	// 지원자 회원번호 불러오기
+	public MemberDTO getMemberDetails(int member_id) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		MemberDTO result = sqlSession.selectOne("getMemberDetails", member_id);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
+	// 요청자 보유금액 심부름액수만큼 차감 
+	public int updateMoney(int member_id, int money) {
+				
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+	    Map<String, Object> parameters = new HashMap<>();
+	    parameters.put("member_id", member_id);
+	    parameters.put("money", money);
+				
+		int result = sqlSession.update("updateMoney",parameters);
+				
+		sqlSession.close();
+				
+		return result;
+
+	}
+	
 }

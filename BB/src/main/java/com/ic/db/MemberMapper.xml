@@ -29,12 +29,25 @@
 	<select id="check_id" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE id=#{id}
    </select>
+   
 	<select id="check_name" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE nickname=#{nickname}
    </select>
+   
 	<select id="check_mail" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE email=#{email}
    </select>
    
+   <select id="getMemberDetails" resultType="com.ic.model.MemberDTO">
+   		SELECT * FROM MEMBER WHERE MEMBER_ID=#{member_id}
+   </select>
+   
+   <!-- 회원 보유금액 업데이트 -->
+   <update id="updateMoney" parameterType="map">
+   		UPDATE MEMBER
+		SET MONEY = #{money}
+		WHERE MEMBER_ID = #{member_id}
+   </update>
+
 	
 </mapper>

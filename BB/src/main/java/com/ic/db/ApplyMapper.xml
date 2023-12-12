@@ -24,5 +24,19 @@
 	<delete id="ApplyCancel" parameterType="com.ic.model.ApplyCheckDTO">
 		DELETE FROM APPLY WHERE ERRAND_ID = #{errand_id} AND MEMBER_ID = #{client_member_id}
 	</delete>
+	
+	<!-- 지원한 심부름시 돈 차감 -->
+	<update id="deduceMoney" parameterType="com.ic.model.MemberDTO">
+		UPDATE MEMBER
+		SET MONEY = MONEY - 2000
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	
+	<!-- 지원취소될시 수수료 복구 -->
+	<update id="reduceMoney" parameterType="com.ic.model.MemberDTO">
+		UPDATE MEMBER
+		SET MONEY = MONEY + 2000
+		WHERE MEMBER_ID = #{member_id}
+	</update>
 
 </mapper>

@@ -26,7 +26,9 @@ public class ApplyErrandService extends HttpServlet {
 		
 		int apply_member_id = memberdto.getMember_id();  // 지원자 회원번호
 		int money = memberdto.getMoney();
-				
+		
+		MemberDTO applymember = new MemberDTO(apply_member_id,money);
+		
 		String msg = request.getParameter("message"); // 지원메시지
 		
 		ArrayList list = new ArrayList<>();
@@ -36,6 +38,18 @@ public class ApplyErrandService extends HttpServlet {
 	
 		ApplyDAO applydao = new ApplyDAO();
 		int result = applydao.ApplyErrand(list);
+		
+		if(money > 2000) {
+			int count = applydao.deduceMoney(applymember); // 지원자 회원번호, 보유금액 감소 메소드
+			if (count > 0) {
+				System.out.println("심부름 금액 차감 완료");
+			} else {
+				System.out.println("심부름 금액 차감 실패");
+			}
+		}
+		else {
+			System.out.println("심부름 금액 차감 실패 : 보유금액이 부족합니다.");
+		}
 		
 		response.sendRedirect("ShowApplyErrandService");
 		

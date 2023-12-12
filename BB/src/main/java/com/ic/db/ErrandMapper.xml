@@ -18,7 +18,7 @@
             0, 
             NULL, 
             TO_DATE(#{want_date}, 'YYYY-MM-DD"T"HH24:MI'))
-</insert>
+	</insert>
 	
 	<!--  심부름 목록 -->
 	<select id="errandList" resultType="com.ic.model.ErrandDTO">
@@ -107,6 +107,11 @@
 	<!-- 요청한 심부름번호로 등록된 채팅 모두 삭제 -->
 	<delete id="DeleteChat">
 		DELETE FROM CHAT WHERE ERRAND_ID = #{errand_id}
-	</delete>
+	</delete>	
 	
+	<!-- 지원자 목록 구별 -->
+	<select id="getErrandList" resultType="com.ic.model.ErrandDTO">
+		SELECT * FROM ERRAND WHERE ERRAND_ID=#{errand_id}
+	</select>
+
 </mapper>
