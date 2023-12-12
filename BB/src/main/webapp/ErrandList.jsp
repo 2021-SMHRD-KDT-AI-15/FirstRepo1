@@ -194,7 +194,7 @@
 																					<td id="nickname" style="text-align: center">닉네임
 																						: ${nicknameList[status.index]}</td>
 																					<td id="location2" style="text-align: center">${errand.req_location}</td>
-																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}~${errand.want_date}</td>
+																					<td id="date" colspan="2" style="text-align: center">${errand.req_date}  ~  ${errand.want_date}</td>
 																				</tr>
 																			</table>
 																		</c:forEach>

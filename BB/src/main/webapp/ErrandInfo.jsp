@@ -79,23 +79,26 @@
 		<div id="main">
 			<br>
 			<table>
-				<tr class="first-tr" style="font-weight:bold; font-size:18px; color: #175B74E0;">
-					<td class="nth1-td"><span><i
-							class="fa-regular fa-circle-user"
-							style="font-size: 48px; text-align: center;"></i></span></td>
-					<td class="nth2-td" colspan="2"><span class="title_h1">
-							${ErrandInfo.title}</span></td>
-					<td class="nth4-td"><span class="span-3">${ErrandInfo.errand_ctgr}</span>
+				<tr>
+					<td>
+						<span><i class="fa-regular fa-circle-user" style="font-size: 48px; text-align: center;"></i></span>
 					</td>
-					<td class="nth5-td"><span class="span-3">${ErrandInfo.price}원</span>
+					<td colspan="2">
+						${ErrandInfo.title}
+					</td>
+					<td>
+						${ErrandInfo.errand_ctgr}
+					</td>
+					<td>
+						${ErrandInfo.price}원
 					</td>
 				</tr>
-				<tr style="font-weight:bold; font-size:18px; color: #175B74E0;">
-					<td class="nth6-td"><span class="span-3">${nickname}</span></td>
-					<td class="nth7-td"><span class="span-3">${ErrandInfo.location_ctgr}</span></td>
-					<td class="nth8-td"><span>${ErrandInfo.req_location}</span></td>
-					<td class="nth9-td"><span>${ErrandInfo.req_date}</span></td>
-					<td class="nth10-td"><span>${ErrandInfo.want_date}</span></td>
+				<tr>
+					<td>${nickname}</td>
+					<td><span class="span-3">${ErrandInfo.location_ctgr}</span></td>
+					<td><span>${ErrandInfo.req_location}</span></td>
+					<td><span>${ErrandInfo.req_date}</span></td>
+					<td><span>${ErrandInfo.want_date}</span></td>
 				</tr>
 				<tr style="font-weight:bold; font-size:18px; color: #175B74E0;">
 					<td class=nth11-td>
