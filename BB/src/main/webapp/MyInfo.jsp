@@ -175,7 +175,7 @@
 					<th style="text-align: center;" width="1000" height="50"><b
 						style="font-size: 20px">후기내용</b></th>
 					<th style="text-align: center;" width="300" height="50"><b
-						style="font-size: 20px">from 닉네임</b></th>
+						style="font-size: 20px">to 닉네임</b></th>
 				</tr>
 				<c:if test="${empty getreview0}">
 					<tr>
