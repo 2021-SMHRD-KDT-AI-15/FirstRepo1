@@ -77,79 +77,82 @@
 	</section>
 	<section class="u-align-center u-clearfix u-section-1" id="sec-d22e">
 		<div id="main">
-			<br>
-			<table>
-				<tr>
-					<td>
-						<span><i class="fa-regular fa-circle-user" style="font-size: 48px; text-align: center;"></i></span>
-					</td>
-					<td colspan="2">
-						${ErrandInfo.title}
-					</td>
-					<td>
-						${ErrandInfo.errand_ctgr}
-					</td>
-					<td>
-						${ErrandInfo.price}원
-					</td>
-				</tr>
-				<tr>
-					<td>${nickname}</td>
-					<td><span class="span-3">${ErrandInfo.location_ctgr}</span></td>
-					<td><span>${ErrandInfo.req_location}</span></td>
-					<td><span>${ErrandInfo.req_date}</span></td>
-					<td><span>${ErrandInfo.want_date}</span></td>
-				</tr>
-				<tr style="font-weight:bold; font-size:18px; color: #175B74E0;">
-					<td class=nth11-td>
+			<div>
+				${ErrandInfo.title}
+			</div>
+			<div>
+				<table class="rwd-table">
+					<tr>
+						<td>
+							<i class="fa-regular fa-circle-user" style="font-size: 48px; text-align: center;"></i>
+							<span>${nickname}</span>
+						</td>
+						<td>
+							${ErrandInfo.errand_ctgr}
+						</td>
+						<td id="td3">
+							${ErrandInfo.price} 원
+						</td>
+					</tr>
+					<tr>
+						<td>
+							${ErrandInfo.location_ctgr}
+						</td>
+						<td colspan="2" id="row2">
+							${ErrandInfo.req_location}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" id="row3">
+							요청 기간　:　${ErrandInfo.req_date}　　~　　${ErrandInfo.want_date}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" id="row4">
+							${ErrandInfo.content}
+						</td>
+					<tr>
+						<td>
+							<c:choose>
+								<c:when	test="${fn:contains(clientInfo.member_id, ErrandInfo.member_id)}">
+								본인이 요청한 심부름입니다.
+								</c:when>
+								<c:when test="${not empty applyCheck}">
+								이미 지원한 심부름입니다.
+								</c:when>
+								<c:otherwise>
+									<form action="ApplyErrandService">
+										<input type="hidden" name="message" id="message">
+										<!-- 스크립트 연결 -->
+									<input type="hidden" name="errand_id" value="${ErrandInfo.errand_id}"> 
+									<input type="submit" value="지원하기" id="applyButton" class="button--moema">
+									</form>
+								</c:otherwise>
+							</c:choose>
+						</td>
+						<td id="row5" colspan="2">
 						<c:choose>
 							<c:when test='${fn:contains(ErrandInfo.status, "0")}'>
-								<span class="status">매칭 대기중</span>
+								<span class="status" id="stt1">매칭 대기중</span>
 							</c:when>
 							<c:when test='${fn:contains(ErrandInfo.status, "1")}'>
-								<span class="status">매칭 완료</span>
+								<span class="status" id="stt2">매칭 완료</span>
 							</c:when>
 							<c:when test='${fn:contains(ErrandInfo.status, "2")}'>
-								<span class="status">매칭 종료</span>
+								<span class="status" id="stt3">매칭 종료</span>
 							</c:when>
 							<c:when test='${fn:contains(ErrandInfo.status, "3")}'>
-								<span class="status">종료</span>
+								<span class="status" id="stt4">종료</span>
 							</c:when>
 						</c:choose>
-					</td>
-					<td class=nth12-td colspan="2"><span>${ErrandInfo.content}</span></td>
-					<td class=nth13-td colspan="2">
-					<c:choose>
-						<c:when	test="${fn:contains(clientInfo.member_id, ErrandInfo.member_id)}">
-						본인이 요청한 심부름입니다.
-						</c:when>
-						<c:when test="${not empty applyCheck}">
-						이미 지원한 심부름입니다.
-						</c:when>
-							<c:otherwise>
-								<form action="ApplyErrandService">
-									<input type="hidden" name="message" id="message">
-									<!-- 스크립트 연결 -->
-								<input type="hidden" name="errand_id" value="${ErrandInfo.errand_id}"> 
-								<input type="submit" value="지원하기" id="applyButton">
-								</form>
-							</c:otherwise>
-					</c:choose>
-					</td>
-
-				</tr>
-			</table>
-
-
-
-
-
-			
-			
-		</div>
+						</td>
+					</tr>
+						
+					</table>
+				</div>
+			</div>
 		</section>
 	
-
 	<script src="assets/js/ApplyErrand.js"></script>
 </body>
 
