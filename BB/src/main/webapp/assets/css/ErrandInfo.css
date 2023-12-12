@@ -1,8 +1,194 @@
+.u-section-2{
+	background-image: linear-gradient(white, #ff9962);
+	min-height: 50px;
+	height: 160px;
+	margin-top: 50px;
+}
+
+
 .u-section-1 .u-sheet-1 {
   min-height: 488px;
-}@font-face {
+}
+
+@font-face {
   font-family: 'JalnanGothicTTF';
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/JalnanGothicTTF.ttf");
+}
+
+#main{
+	background-color: white;
+	width: 1200px;
+	height: 300px;
+	margin: 0 auto;
+}
+	
+.status{
+		font-size: 22px;
+		height: 30px;
+		animation-name: top;
+		animation-iteration-count: infinite;
+		animation-duration: 3s;		
+	}
+
+
+i{
+	animation-name: move;
+	animation-duration: 2s;
+	transition-duration: 5s;
+	transition: ease-in-out;
+	
+}
+
+.first-tr{
+	padding:50px !important;
+	border-top: 1px solid rgb(192, 192, 192);
+	background-color: #d8e7f3;
+}
+
+span{
+	margin:0px;
+	text-align: center;
+}
+
+table{
+	font-family: SUITE-Regular;
+	width: 1200px;
+	border-top:1px solid #444444;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td{
+	padding:20px !important;
+	border-bottom: 1px solid  #444444;
+	margin: 0;
+}
+
+footer{
+	margin-top: 50px;
+}
+
+
+.nth1-td{
+	width: 80px;
+	
+}
+/*유저 이미지 태그*/
+.nth1-td{
+	width:150px;
+	text-align: center;
+}
+/*유저 이미지 태그 하단 닉네임*/
+.nth2-td{
+	width:400px;
+	font-size: 28px;
+	text-align: center;
+}
+.nth3-td{
+	width:200px;
+	text-align: center;
+}
+.nth4-td{
+	width:200px;
+	text-align: center;
+}
+.nth5-td{
+	width:200px;
+	text-align: center;
+}
+.nth6-td{
+	width:150px;
+	text-align: center;
+}
+.nth7-td{
+	width:400px;
+	text-align: center;
+}
+
+.nth8-td{
+	text-align: center;
+	margin-left:0px;
+}
+.nth9-td{
+	text-align: center;
+	margin-left:0px;
+}
+.nth10-td{
+	text-align: center;
+	margin-left:0px;
+}
+.nth11-td{
+	text-align: center;
+	margin-left:0px;
+	padding:0 !important;
+}
+
+.nth12-td{
+	text-align: center;
+	margin-left:0px;
+}
+
+.nth13-td{
+	text-align: center;
+	margin-left:0px;
+}
+
+
+.first-tr :nth-child(2){
+	width: 200px;
+} 
+
+@keyframes move{
+	0%{
+		color: black;
+		transform: translate(0, 0);
+	}
+	
+	50%{
+		color: blue;
+		transform: translate(-50px,0);
+	}
+	
+	100%{
+		color: black;
+		transform: translate(0, 0);
+	}
+}
+
+
+@keyframes top{
+	
+	0%{
+		color: black;
+		transform: translateY(0)
+	}
+	25%{
+		
+	}
+	50%{
+		color: orangered;	
+		transform: translateY(20px)
+	}
+	
+	75%{
+	
+	}
+	100%{
+		color: black;
+		transform: translateY(0)
+	}
+	
+	
+}
+
+
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+	
 }
