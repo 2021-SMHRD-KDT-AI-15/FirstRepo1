@@ -170,13 +170,13 @@
 																					<th class="th" colspan="2">
 																					<c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
+																								<span>매칭 대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
+																								<span>매칭 완료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "2")}'>
-																								<span>매칭종료</span>
+																								<span>매칭 종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
