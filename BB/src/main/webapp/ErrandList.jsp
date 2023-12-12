@@ -50,11 +50,11 @@
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
-				href="RankingService"
+				href="Ranking.jsp"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
-			<a href="ChatService"
+			<a href="ChatListService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">채팅</a> <a
@@ -170,13 +170,13 @@
 																					<th class="th" colspan="2">
 																					<c:choose>
 																							<c:when test='${fn:contains(errand.status, "0")}'>
-																								<span>매칭대기중</span>
+																								<span>매칭 대기중</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "1")}'>
-																								<span>매칭완료</span>
+																								<span>매칭 완료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "2")}'>
-																								<span>매칭종료</span>
+																								<span>매칭 종료</span>
 																							</c:when>
 																							<c:when test='${fn:contains(errand.status, "3")}'>
 																								<span>종료</span>
