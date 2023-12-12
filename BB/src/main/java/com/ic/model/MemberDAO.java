@@ -79,6 +79,8 @@ public class MemberDAO {
 		return MyInfo;
 
 	}
+	
+	
 	// 아이디 중복 체크 메소드
 	public int check_id(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -100,4 +102,42 @@ public class MemberDAO {
 		sqlSession.close();
 		return cnt3;
 	}
+
+	// 지원자 회원번호 불러오기
+	public MemberDTO getMemberDetails(int member_id) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		MemberDTO result = sqlSession.selectOne("getMemberDetails", member_id);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
+	// 요청자 보유금액 심부름액수만큼 차감
+	public int updateMoney(int member_id) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.update("updateMoney",member_id);
+		
+		sqlSession.close();
+		
+		return result;
+
+	}
+	// 지원자 보유금액 심부름액수와 수수료만큼 증가
+	public int updateReduceMoney(int member_id) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int result = sqlSession.update("updateReduceMoney",member_id);
+		
+		sqlSession.close();
+		
+		return result;
+
+	}
+
 }

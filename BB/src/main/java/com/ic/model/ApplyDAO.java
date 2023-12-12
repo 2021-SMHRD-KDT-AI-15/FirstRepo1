@@ -73,7 +73,31 @@ public class ApplyDAO {
 		return result;
 		
 	}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
-
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원하기 누를시 돈 차감 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	public int deduceMoney(MemberDTO applymember) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
+		int count = sqlSession.update("deduceMoney", applymember);
+		
+		sqlSession.close();
+		
+		return count;
+	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 지원하기 누를시 돈 차감 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+		public int reduceMoney(int applyMembermoney) {
+			
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			
+			int count = sqlSession.update("reduceMoney", applyMembermoney);
+			
+			sqlSession.close();
+			
+			return count;
+		}
+	
 }

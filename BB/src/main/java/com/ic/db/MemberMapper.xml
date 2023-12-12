@@ -29,12 +29,29 @@
 	<select id="check_id" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE id=#{id}
    </select>
+   
 	<select id="check_name" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE nickname=#{nickname}
    </select>
+   
 	<select id="check_mail" parameterType="com.ic.model.MemberDTO" resultType="int">
       SELECT COUNT(*) FROM MEMBER WHERE email=#{email}
    </select>
    
+   <select id="getMemberDetails" resultType="com.ic.model.MemberDTO">
+   		SELECT * FROM MEMBER WHERE MEMBER_ID=#{member_id}
+   </select>
+   
+   <update id="updateMoney" parameterType="com.ic.model.MemberDTO">
+   		UPDATE MEMBER
+		SET MONEY = MONEY - (SELECT PRICE FROM ERRAND WHERE ERRAND_ID = #{errand_id})
+		WHERE MEMBER_ID = ${member_id};
+   </update>
+   
+      <update id="updateReduceMoney" parameterType="com.ic.model.MemberDTO">
+   		UPDATE MEMBER
+		SET MONEY = MONEY + (SELECT PRICE FROM ERRAND WHERE ERRAND_ID = #{errand_id}) + 2000
+		WHERE MEMBER_ID = ${member_id};
+   </update>
 	
 </mapper>

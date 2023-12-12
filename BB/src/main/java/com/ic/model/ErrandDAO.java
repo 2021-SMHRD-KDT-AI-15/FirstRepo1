@@ -294,8 +294,20 @@ public class ErrandDAO {
 			return result;
 			
 		}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 목록 아이디 구별 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+		public ErrandDTO getErrandList(int errand_id) {
+			
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			
+			ErrandDTO result = sqlSession.selectOne("getErrandList",errand_id);
+			
+			sqlSession.close();
+			
+			return result;
+		}
+		
 }
 
 
