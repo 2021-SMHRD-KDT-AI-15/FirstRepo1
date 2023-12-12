@@ -39,7 +39,7 @@
 
 
 
-<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en" >
 	<header class="u-clearfix u-header" id="sec-9269" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
 		<div class="u-clearfix u-sheet u-sheet-1">
 			<a href="RequireErrand.jsp"
@@ -48,14 +48,14 @@
 				data-animation-delay="0" data-animation-direction="">심부름 요청</a> 
 				<img class="u-image u-image-contain u-image-default u-image-1" src="images/222.png" alt="" data-image-width="464" data-image-height="390" data-href="Main.jsp"> 
 				<a href="ErrandListService"	class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">심부름 목록</a> 
-				<a href="RankingService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
-				<a href="ChatService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4" data-animation-name="" data-animation-duration="0"	data-animation-delay="0" data-animation-direction="">채팅</a> 
+				<a href="Ranking.jsp" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
+				<a href="ChatListService" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4" data-animation-name="" data-animation-duration="0"	data-animation-delay="0" data-animation-direction="">채팅</a> 
 				<a href="Charge.jsp" class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-5"	data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">충전</a> 
 				<a href="MyInfoService"	class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">마이 페이지</a>
 		</div>
 	</header>
 	<div class="container">
-      <div class="card-body" style="overflow-y: scroll; height: 500px" id="chatBody">
+      <div class="card-body" id="chatBody">
 		<table>
 		<tr>
 		<td>
@@ -64,12 +64,13 @@
 		</table>
          	<c:choose>
          		<c:when test="${not empty param.emptyCheck}">
-         			<p>채팅 가능한 상대가 없습니다.<p>
+         		<img class="imges" src="assets/img/question-2-removebg-preview.png" >
+         		<p class="name" align="center" style="font-size:50px">채팅 가능한 상대가 없어요...<p>
          		</c:when>
          		<c:otherwise>
          			<c:forEach var="c" items="${chatList}" varStatus="status">
          				<div id="chatBox" class="card bg-success text-white" onclick="window.location.href='ChatProgress.jsp?room=${c.errand_id}&client_no=${clientInfo.member_id}&subject_no=${nicknameList[status.index].member_id}'">
-               				<div class="card-body">${nicknameList[status.index].nickname} 님과의 대화</div>
+               				<div class="card-body"><p class="nickname" style="font-size: 25px">${nicknameList[status.index].nickname} 님과의 대화<p></div>
             			</div>
             			<br>
          			</c:forEach>
@@ -78,15 +79,10 @@
 
       </div>
    </div>
-   	<section class="u-clearfix u-section-2" id="sec-43e7">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="ChatList.html" class="u-btn u-button-style u-btn-1">뒤로가기</a>
-      </div>
-    </section>
 	<!-- 바디 태그 끝 -->
 	<!-- 푸터 태그 시작 -->
 	<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
-		id="sec-755f">
+		id="sec-755f" style="magin-top: 200px">
 		<div class="u-clearfix u-sheet u-sheet-1">
 			<p class="u-small-text u-text u-text-variant u-text-1">
 				&nbsp;

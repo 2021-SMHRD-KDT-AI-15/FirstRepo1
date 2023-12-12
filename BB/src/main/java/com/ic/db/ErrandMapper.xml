@@ -59,7 +59,7 @@
 		SELECT * FROM APPLY WHERE ERRAND_ID = #{errand_id}
 	</select>
 
-	<!-- 위에서 얻어온 지원자들 닉네임 리스트화 -->
+	<!-- 위에서 얻어온 지원자들 닉네임 리스트화 --> 
 	<select id="GetApplyMembersNickname" resultType="String">
 		SELECT NICKNAME FROM MEMBER WHERE MEMBER_ID = #{appMemberId}
 	</select>
