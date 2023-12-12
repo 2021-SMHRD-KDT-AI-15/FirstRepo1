@@ -178,7 +178,7 @@
                         class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-4">
                         <label for="text-76e2"
                            class="u-custom-font u-label u-text-custom-color-1 u-label-4">이메일</label>
-                        <input type="email" placeholder="이메일은 중복불가입니다." id="text-76e2"
+                        <input type="text" placeholder="이메일은 중복불가입니다." id="text-76e2"
                            name="email"
                            class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-4">
                      </div>
@@ -189,9 +189,9 @@
                         <div class="u-form-select-wrapper">
                            <select id="select-810a" name="select"
                               class="u-border-2 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-custom-font u-input u-input-rectangle u-text-palette-5-dark-2 u-input-5">
-                              <option value="naver.com" data-calc="">naver.com</option>
-                              <option value="daum.net" data-calc="">daum.net</option>
-                              <option value="google.com" data-calc="">google.com</option>
+                              <option value="@naver.com">naver.com</option>
+                              <option value="@daum.net">daum.net</option>
+                              <option value="@google.com">google.com</option>
                            </select>
                            <svg class="u-caret u-caret-svg u-text-palette-5-dark-2"
                               version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"

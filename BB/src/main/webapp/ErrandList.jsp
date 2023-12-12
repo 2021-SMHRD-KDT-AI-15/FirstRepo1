@@ -50,11 +50,11 @@
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
-				href="RankingService"
+				href="Ranking.jsp"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
-			<a href="ChatService"
+			<a href="ChatListService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">채팅</a> <a

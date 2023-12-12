@@ -22,7 +22,7 @@
 	
 	<!--  심부름 목록 -->
 	<select id="errandList" resultType="com.ic.model.ErrandDTO">
-		SELECT * FROM ERRAND
+		SELECT * FROM ERRAND ORDER BY ERRAND_ID DESC
 	</select>
 	
 	<!-- 심부름 상세정보 -->

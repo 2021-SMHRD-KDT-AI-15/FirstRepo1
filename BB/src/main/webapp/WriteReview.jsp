@@ -136,11 +136,11 @@
                     <nav id="gnb">
                         <ul class="dot">
                             <li><a href="ErrandList.jsp" id="gnb_li">심부름 요청</a></li>
-                            <li><a href="RequireErrand.jsp" id="gnb_li">심부름 목록</a></li>
+                            <li><a href="RequireErrandService" id="gnb_li">심부름 목록</a></li>
                             <li><a href="Ranking.jsp" id="gnb_li">랭킹</a></li>
                             <li><a href="Charge.jsp" id="gnb_li">충전</a></li>
-                            <li><a href="ChatList.jsp" id="gnb_li">채팅</a></li>
-                            <li><a href="Myinfo.jsp" id="gnb_li">마이페이지</a></li>
+                            <li><a href="ChatList.Service" id="gnb_li">채팅</a></li>
+                            <li><a href="Myinfo.Service" id="gnb_li">마이페이지</a></li>
                         </ul>
                     </nav>
 

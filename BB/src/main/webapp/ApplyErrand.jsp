@@ -51,11 +51,11 @@
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
-				href="RankingService"
+				href="Ranking.jsp"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
-			<a href="ChatService"
+			<a href="ChatListService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4"
 				data-animation-name="" data-animation-duration="0"
 				data-animation-delay="0" data-animation-direction="">채팅</a> <a
@@ -102,7 +102,7 @@
 	<c:choose>
 		<c:when test="${fn:contains(param.applyCheck, 0)}">
 			<img src="https://www.dailypop.kr/news/photo/202003/44171_85308_5241.jpg" id="defaultImg">
-			<p id="noReqText">지원한 심부름이 없어요~ 지원 먼저 해주세요!</p>
+			<p id="noAppText">지원한 심부름이 없어요~ 지원 먼저 해주세요!</p>
 		</c:when>
 		<c:otherwise>
 			<c:forEach var="ErrandTitle" items="${ErrandTitleList}"

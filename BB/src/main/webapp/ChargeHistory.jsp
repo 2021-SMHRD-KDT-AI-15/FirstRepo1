@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <title>PaymentHistory</title>
     <link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="assets/css/PaymentHistory.css" media="screen">
+<link rel="stylesheet" href="assets/css/ChargeHistory.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
@@ -95,18 +95,18 @@
 		</div>
 	</section>
 <body >
-	<table border=1 style="margin: auto; border-collapse: collapse; padding-top: 30px; margin-top:30px; border-radius:15px; margin-bottom:30px">
+	<table class="rwd-table">
 		<tr bgcolor="ff9962" style="border=1; font-famaily:sans-serif">
-			<th width="100" style="color: white; font-size: 2em; border-left:none;"><b>NO</b></th>
-			<th width="550" style="color: white; font-size: 2em;"><b>충전일시</b></th>
-			<th width="320" style="color: white; font-size: 2em; border-right:none;"><b>충전금액</b></th>
+			<th width="100" style="color: white; font-size: 2em; border-left:none; text-align: center;"><b>NO</b></th>
+			<th width="550" style="color: white; font-size: 2em; text-align: center;"><b>충전일시</b></th>
+			<th width="320" style="color: white; font-size: 2em; border-right:none; text-align: center;"><b>충전금액</b></th>
 		</tr>
-		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="1"
+		<c:forEach var="chargeHistory" items="${chargeHistory}" begin="0"
 			end="9999" step="1" varStatus="status">
-			<tr style="font-famaily:sans-serif">
-				<td align="center" style="border-left:none;">${status.index}</td>
-				<td align="center" height="50">${chargeHistory.charge_date}</td>
-				<td align="center" height="50" style="border:1; border-right:none;">${chargeHistory.charge_money}원</td>
+			<tr>
+				<td style="text-align: center;">${status.index}</td>
+				<td style="text-align: center;">${chargeHistory.charge_date}</td>
+				<td style="text-align: center;">${chargeHistory.charge_money}원</td>
 			</tr>
 		</c:forEach>
 
