@@ -1,7 +1,8 @@
 # BB
 Errand_Service_Project
 <p align="center">
-<img class="u-image u-image-contain u-image-default u-image-1" src="images/222.png" alt="" data-image-width="464" data-image-height="390">
+![부릉부름로고](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/bada2312-9642-44fe-b206-de7d34d4beea)
+
 ## 프로젝트 소개글
 ### 프로젝트 소개글
 
