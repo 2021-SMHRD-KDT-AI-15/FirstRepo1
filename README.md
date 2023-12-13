@@ -21,7 +21,7 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/c4675720-562d-4eb7-a
 ___
 
 ## 1. 제안 배경
-<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/d8b63b6c-260d-495b-9058-2bcab1c57623">
+<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/714ca265-348b-43a7-8c10-d7df89ee68d6">
 
 - 간편함과 시간을 돈으로 사는 소비 형태안 '레이지 이코노미(lazy economy)'현상 증가
 - 해마다 증가하던 1인가구가 코로나 이후 더 빠르게 증가
