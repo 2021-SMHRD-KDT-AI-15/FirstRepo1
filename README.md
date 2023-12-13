@@ -1,7 +1,8 @@
 # BB
 Errand_Service_Project
 <p align="center">
-(https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/bada2312-9642-44fe-b206-de7d34d4beea)
+![부릉부름](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/c6a8c41d-1280-44cd-9dd3-8ab2f5054454)
+
 
 ## 프로젝트 소개글
 ### 프로젝트 소개글
