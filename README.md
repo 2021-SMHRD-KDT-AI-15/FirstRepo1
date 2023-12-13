@@ -7,6 +7,7 @@
 # 팀명 : IC(Innovation and Cooperation)
 # 팀장 : 윤수민
 # 팀원 : 윤강석, 임지후, 손병권, 이동훈
+# 프로젝트 기간 : 2023.11.28 ~ 2023.12.13
 
 ## 프로젝트 시현영상
 https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/c4675720-562d-4eb7-a5cc-a86f70c02e69
