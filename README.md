@@ -31,14 +31,16 @@ ___
 
 <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/d8b63b6c-260d-495b-9058-2bcab1c57623">
 
-1인 가구, 거동이 불편한 이용자, 주부 및 취업준비생
+- 1인 가구
+- 거동이 불편한 이용자
+- 주부 및 취업준비생
 
 <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/e96961ed-7d3a-42f5-9fc3-cdb86557876c">
 
 - 규칙적인 시간에 아르바이트를 하기 힘든 대학생, 금전적
 - 금전적 부분을 감내하더라도 노동력이 필요한 이용자
 
-<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/e96961ed-7d3a-42f5-9fc3-cdb86557876c">
+<img src="[https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/e96961ed-7d3a-42f5-9fc3-cdb86557876c](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/3469b8d9-5143-42da-beb8-174af4f1364c)https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/3469b8d9-5143-42da-beb8-174af4f1364c">
 
 - 누구나 이용할 수 있는 편안함
 - 원할 때 가능한 자유로움
