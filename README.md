@@ -1,11 +1,13 @@
-# BB
-## Errand_Service_Project
+# 부릉부름(Boorng Boorm)
+## 지역 기반 심부름 서비스 
 <p align="center">
   <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/c6a8c41d-1280-44cd-9dd3-8ab2f5054454">
 </p>
 
+# 팀명 : IC(Innovation and Cooperation)
+# 팀장 : 윤수민
+# 팀원 : 윤강석, 임지후, 손병권, 이동훈
 
 ## 프로젝트 소개글
-### 프로젝트 소개글
+### 목차
 
-![image](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/4b3cd6e6-fc46-491b-beeb-6c43b248755b)
