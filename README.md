@@ -1,5 +1,7 @@
 # BB
 Errand_Service_Project
+<p align="center">
+<img class="u-image u-image-contain u-image-default u-image-1" src="images/222.png" alt="" data-image-width="464" data-image-height="390">
 ## 프로젝트 소개글
 ### 프로젝트 소개글
 
