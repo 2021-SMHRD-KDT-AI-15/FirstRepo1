@@ -29,7 +29,7 @@ ___
 
 ## 2. 프로젝트 소개
 
-https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/d8b63b6c-260d-495b-9058-2bcab1c57623
+<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/118248807/d8b63b6c-260d-495b-9058-2bcab1c57623">
 -> 1인 가구, 거동이 불편한 이용자, 주부 및 취업준비생
 - 표적시장
 -> 규칙적인 시간에 아르바이트를 하기 힘든 대학생, 금전적
