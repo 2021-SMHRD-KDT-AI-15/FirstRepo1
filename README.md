@@ -95,6 +95,17 @@
 <br>
 <br>
 
+## ✒ 구현 전 화면설계
+<details>
+<summary><b>화면설계 펼치기</b></summary>
+<div markdown="1">
+    ![image](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/de03d730-1fea-4b53-8c6b-7b69429c70e2)
+
+</div>
+</details>
+
+
+
 ## 📽 시연 영상
 https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9780-fb98c2f400f4
 
