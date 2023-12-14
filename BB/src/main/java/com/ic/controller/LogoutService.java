@@ -18,8 +18,6 @@ public class LogoutService extends HttpServlet {
 		session.invalidate();
 		
 		response.sendRedirect("Main.jsp");
-
-	
 	}
 
 }

@@ -32,7 +32,6 @@ public class LoadChatService extends HttpServlet {
 		
 		ArrayList<ChatDTO> chatdto = (ArrayList)sqlSession.selectList("LoadChat", room);
 		
-		
 		JSONArray array = new JSONArray();
 		
 		for(ChatDTO n : chatdto){

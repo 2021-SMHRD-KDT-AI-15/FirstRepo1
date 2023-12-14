@@ -23,8 +23,6 @@ public class ChargeService extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-
-		
 		
 		// 충전한 금액 가져오기
 		int charge_money = Integer.parseInt(request.getParameter("charge_money"));

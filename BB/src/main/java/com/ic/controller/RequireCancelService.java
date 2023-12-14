@@ -31,7 +31,6 @@ public class RequireCancelService extends HttpServlet {
 		
 		int deleteChat = erranddao.DeleteChat(errand_id); // 채팅 삭제
 		
-		
 		response.sendRedirect("RequiredErrandService");
 		
 	}
