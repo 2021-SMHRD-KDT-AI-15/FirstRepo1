@@ -2,18 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ic.db.ChargeMapper">
 
+	<!-- 충전 금액과 현재날짜를 넣는 메퍼 -->
 	<insert id="charge" parameterType="com.ic.model.ChargeDTO">
 		insert into CHARGE values(CHARGE_SEQ.NEXTVAL, #{member_id}, sysdate, #{charge_money})
 	</insert>
-    
-	<select id="ChargeHistory" resultType="com.ic.model.ChargeDTO">
-		SELECT * FROM CHARGE WHERE MEMBER_ID = #{member_id} ORDER BY charge_date DESC
-	</select>
 	
+	<!-- 충전한 금액을 자신의 MONEY에 UPDATE하는 메퍼 -->
 	<update id="UpdateMoney" parameterType="com.ic.model.MemberDTO">
 		UPDATE MEMBER SET MONEY = MONEY + #{money} where MEMBER_ID = #{member_id}
 	</update>
-
+	
+    <!-- 자신의 충전내역을 날짜순대로 가져오는 메퍼 -->
+	<select id="ChargeHistory" resultType="com.ic.model.ChargeDTO">
+		SELECT * FROM CHARGE WHERE MEMBER_ID = #{member_id} ORDER BY charge_date DESC
+	</select>
 </mapper>
 
 

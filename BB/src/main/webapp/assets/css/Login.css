@@ -1,130 +1,133 @@
  .u-section-1 {
-  background-image: linear-gradient(white, #ff9962);
-}
+ 	background-image: linear-gradient(white, #ff9962);
+ }
 
-.u-section-1 .u-sheet-1 {
-  min-height: 910px;
-}
+ .u-section-1 .u-sheet-1 {
+ 	min-height: 910px;
+ }
 
-.u-section-1 .u-text-1 {
-  font-size: 4.5rem;
-  font-family: JalnanGothicTTF;
-  width: 294px;
-  margin: 161px auto 0;
-}
+ .u-section-1 .u-text-1 {
+ 	font-size: 4.5rem;
+ 	font-family: JalnanGothicTTF;
+ 	width: 294px;
+ 	margin: 161px auto 0;
+ }
 
-.u-section-1 .u-group-1 {
-  width: 569px;
-  min-height: 479px;
-  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
-  height: auto;
-  --radius: 50px;
-  margin: 94px 284px 60px auto;
-}
+ .u-section-1 .u-group-1 {
+ 	width: 569px;
+ 	min-height: 479px;
+ 	box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
+ 	height: auto;
+ 	--radius: 50px;
+ 	margin: 94px 284px 60px auto;
+ }
 
-.u-section-1 .u-container-layout-1 {
-  padding: 30px 0 0;
-}
+ .u-section-1 .u-container-layout-1 {
+ 	padding: 30px 0 0;
+ }
 
-.u-section-1 .u-form-1 {
-  height: 312px;
-  width: 500px;
-  margin: 0 auto;
-}
+ .u-section-1 .u-form-1 {
+ 	height: 312px;
+ 	width: 500px;
+ 	margin: 0 auto;
+ }
 
-.u-section-1 .u-label-1 {
-  font-size: 1rem;
-  letter-spacing: normal;
-  text-transform: none;
-  font-family: JalnanGothicTTF;
-}
+ .u-section-1 .u-label-1 {
+ 	font-size: 1rem;
+ 	letter-spacing: normal;
+ 	text-transform: none;
+ 	font-family: JalnanGothicTTF;
+ }
 
-.u-section-1 .u-input-1 {
-  font-weight: normal;
-  font-family: JalnanGothicTTF;
-}
+ .u-section-1 .u-input-1 {
+ 	font-weight: normal;
+ 	font-family: JalnanGothicTTF;
+ }
 
-.u-section-1 .u-label-2 {
-  font-size: 1rem;
-  letter-spacing: normal;
-  text-transform: none;
-  font-family: JalnanGothicTTF;
-}
+ .u-section-1 .u-label-2 {
+ 	font-size: 1rem;
+ 	letter-spacing: normal;
+ 	text-transform: none;
+ 	font-family: JalnanGothicTTF;
+ }
 
-.u-section-1 .u-input-2 {
-  font-weight: normal;
-  font-family: JalnanGothicTTF;
-}
+ .u-section-1 .u-input-2 {
+ 	font-weight: normal;
+ 	font-family: JalnanGothicTTF;
+ }
 
-.u-section-1 .u-btn-1 {
-  border-style: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background-image: none;
-  width: 100%;
-  font-weight: 400;
-  font-family: JalnanGothicTTF;
-  padding: 19px 0 20px;
-}
+ .u-section-1 .u-btn-1 {
+ 	border-style: none;
+ 	text-transform: uppercase;
+ 	letter-spacing: 1px;
+ 	background-image: none;
+ 	width: 100%;
+ 	font-weight: 400;
+ 	font-family: JalnanGothicTTF;
+ 	padding: 19px 0 20px;
+ }
 
-.u-section-1 .u-btn-2 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 400;
-  font-family: JalnanGothicTTF;
-  margin: 12px auto 0;
-  padding: 23px 189px 23px 188px;
-}
+ .u-section-1 .u-btn-2 {
+ 	text-transform: uppercase;
+ 	letter-spacing: 1px;
+ 	font-weight: 400;
+ 	font-family: JalnanGothicTTF;
+ 	margin: 12px auto 0;
+ 	padding: 23px 189px 23px 188px;
+ }
 
-@media (max-width: 1199px) {
-  .u-section-1 .u-group-1 {
-    height: auto;
-  }
-}
+ @media (max-width: 1199px) {
+ 	.u-section-1 .u-group-1 {
+ 		height: auto;
+ 	}
+ }
 
-@media (max-width: 991px) {
-  .u-section-1 .u-group-1 {
-    margin-right: 151px;
-  }
-}
+ @media (max-width: 991px) {
+ 	.u-section-1 .u-group-1 {
+ 		margin-right: 151px;
+ 	}
+ }
 
-@media (max-width: 767px) {
-  .u-section-1 .u-text-1 {
-    font-size: 2.25rem;
-  }
+ @media (max-width: 767px) {
+ 	.u-section-1 .u-text-1 {
+ 		font-size: 2.25rem;
+ 	}
 
-  .u-section-1 .u-group-1 {
-    width: 540px;
-    margin-right: 0;
-  }
-}
+ 	.u-section-1 .u-group-1 {
+ 		width: 540px;
+ 		margin-right: 0;
+ 	}
+ }
 
-@media (max-width: 575px) {
-  .u-section-1 .u-text-1 {
-    font-size: 1.875rem;
-  }
+ @media (max-width: 575px) {
+ 	.u-section-1 .u-text-1 {
+ 		font-size: 1.875rem;
+ 	}
 
-  .u-section-1 .u-group-1 {
-    width: 340px;
-  }
+ 	.u-section-1 .u-group-1 {
+ 		width: 340px;
+ 	}
 
-  .u-section-1 .u-form-1 {
-    width: 340px;
-  }
-}@font-face {
-  font-family: 'JalnanGothicTTF';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/JalnanGothicTTF.ttf");
-}
+ 	.u-section-1 .u-form-1 {
+ 		width: 340px;
+ 	}
+ }
 
-@font-face {
-    font-family: 'SUITE-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}
+ @font-face {
+ 	font-family: 'JalnanGothicTTF';
+ 	font-style: normal;
+ 	font-weight: 400;
+ 	src: url("../fonts/JalnanGothicTTF.ttf");
+ }
 
-#username-a30d, #password-a30d{
-	font-family: SUITE-Regular;
-}
+ @font-face {
+ 	font-family: 'SUITE-Regular';
+ 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+ 	font-weight: 400;
+ 	font-style: normal;
+ }
+
+ #username-a30d,
+ #password-a30d {
+ 	font-family: SUITE-Regular;
+ }

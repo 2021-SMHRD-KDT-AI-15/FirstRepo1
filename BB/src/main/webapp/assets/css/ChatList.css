@@ -114,28 +114,37 @@
 	font-weight: 400;
 	font-style: normal;
 }
+
 @font-face {
- 	font-family: 'DNFBitBitv2';
- 	font-style: normal;
- 	font-weight: 400;
- 	src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
- }
+	font-family: 'DNFBitBitv2';
+	font-style: normal;
+	font-weight: 400;
+	src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
+}
 
 .card-body {
 	font-family: YEONGJUPunggiGinsengTTF;
 	color: #444;
 }
-.nickname{
+
+.nickname {
 	font-weight: bold;
 	font-family: 'SUITE-Regular';
 }
+
 .imges {
 	width: 800px;
 	height: 310px;
 }
-.name{
+
+.name {
 	margin-bottom: 200px;
 	font-weight: bold;
 	font-family: 'DNFBitBitv2';
 	color: #444;
+
 }
+
+
+
+
