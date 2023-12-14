@@ -34,8 +34,8 @@ public class PoliceInquiryService extends HttpServlet {
 		
 		//PoliceStaions.jsp로 전달
 		RequestDispatcher rd = request.getRequestDispatcher("PoliceStaions.jsp");
-		rd.forward(request, response);
 		
+		rd.forward(request, response);
 		
 	}
 

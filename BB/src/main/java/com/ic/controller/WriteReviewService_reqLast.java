@@ -59,20 +59,10 @@ public class WriteReviewService_reqLast extends HttpServlet {
 			appResult = reviewdao.WriteDislikeReview_s(appDto);
 		}
 		
-		if(reqResult == 1 && appResult == 1) {
-			System.out.println("후기작성 성공");
-		} else {
-			System.out.println("후기작성 실패");
-		}
-		
 		ErrandDAO erranddao = new ErrandDAO();
 		
+		// 심부름 상태 3으로 변경하는 메소드 반환값 담는 변수(확인용)
 		int ChgErrStatusChk = erranddao.ChgErrStatus(errand_id);
-		if(ChgErrStatusChk == 1) {
-			System.out.println("심부름 상태 3으로 변경");
-		}else {
-			System.out.println("심부름 상태 3으로 변경 실패");
-		}
 		
 		ApplyCheckDTO apply = new ApplyCheckDTO(errand_id, applyMemberId);
 		

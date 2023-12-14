@@ -30,7 +30,7 @@ public class PaymentHistoryService extends HttpServlet {
 
 		MemberDTO memberdto = (MemberDTO)session.getAttribute("clientInfo");
 		
-		int member_id = memberdto.getMember_id();
+		int member_id = memberdto.getMember_id(); // 자신의 member_id 가져오기
 		PaymentDAO paymentdao = new PaymentDAO();
 		
 		ArrayList<PaymentDTO>paymentHistory = new ArrayList<>();

@@ -37,11 +37,9 @@ public class ErrandInfoService extends HttpServlet {
 		
 		ApplyCheckDTO checkdto = new ApplyCheckDTO(errand_id, client_member_id);
 		
-		
 		// 지원했는지 안했는지 판단하기 위한 dto생성
 		ApplyDTO applydto = new ApplyDTO();
 		applydto = erranddao.checkApply(checkdto);
-		
 		
 		if(erranddto != null) {
 			request.setAttribute("ErrandInfo", erranddto);
