@@ -22,27 +22,16 @@ public class SelectApply extends HttpServlet {
 		
 		ErrandDAO erranddao = new ErrandDAO();
 		
+		// 심부름 상태 1로 변경
 		int changeErrCheck = erranddao.ChangeErrStatus(errand_id);
-		if(changeErrCheck == 1) {
-			System.out.println("status 1로 변경");
-		}else{
-			System.out.println("status 변경 실패");
-		}
 		
 		ApplyCheckDTO apply = new ApplyCheckDTO(errand_id, apply_member_id);
-		int changeAppCheck = erranddao.ChangeAppStatus(apply);
-		if(changeAppCheck == 1) {
-			System.out.println("match_status 1로 변경");
-		}else {
-			System.out.println("match_status 변경 실패");
-		}
 		
+		// 지원 매칭 상태 1로 변경
+		int changeAppCheck = erranddao.ChangeAppStatus(apply);
+
+		// 다른 지원자들 매칭 상태 2로 변경
 		int deleteOtherAppCheck = erranddao.DeleteOtherApply(apply);
-		if(deleteOtherAppCheck == 1) {
-			System.out.println("다른 지원자들 match_status 2로 변경 완료");
-		}else {
-			System.out.println("다른 지원자들 match_status 변경 실패");
-		}
 		
 		response.sendRedirect("RequiredErrandService");
 	}

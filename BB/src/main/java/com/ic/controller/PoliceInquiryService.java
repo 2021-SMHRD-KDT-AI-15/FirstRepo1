@@ -23,13 +23,14 @@ public class PoliceInquiryService extends HttpServlet {
 		PoliceDAO policedao = new PoliceDAO();
 		
 		ArrayList<PoliceDTO> policeList = new ArrayList<>();
+		
 		policeList = policedao.PoliceStations();
 		
 		request.setAttribute("policeList", policeList);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("PoliceStaions.jsp");
-		rd.forward(request, response);
 		
+		rd.forward(request, response);
 		
 	}
 

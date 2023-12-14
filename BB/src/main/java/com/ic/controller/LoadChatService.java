@@ -47,10 +47,6 @@ public class LoadChatService extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		
-		PrintWriter out = response.getWriter();
-		
-		out.print(array.toJSONString());
-		
 	}
 
 }

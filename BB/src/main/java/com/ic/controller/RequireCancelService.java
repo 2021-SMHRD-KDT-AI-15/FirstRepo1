@@ -25,31 +25,12 @@ public class RequireCancelService extends HttpServlet {
 		
 		ErrandDAO erranddao = new ErrandDAO();
 		
-		int deleteApply = erranddao.ApplyCancelService(errand_id);
+		int deleteApply = erranddao.ApplyCancelService(errand_id); // 지원자 삭제
 		
-		int deleteResult = erranddao.RequireCancelService(errand_id);
+		int deleteResult = erranddao.RequireCancelService(errand_id); // 요청 삭제
 		
-		int deleteChat = erranddao.DeleteChat(errand_id);
+		int deleteChat = erranddao.DeleteChat(errand_id); // 채팅 삭제
 		
-		if(deleteApply == 1) {
-			System.out.println("지원자 삭제 성공");
-		} else {
-			System.out.println("지원자 삭제 실패");
-		}
-		
-		// 요청 취소 버튼 클릭 시
-		if(deleteResult == 1) {
-			System.out.println("지원자 삭제 성공");
-			System.out.println("요청취소 성공");
-		} else {
-			System.out.println("요청취소 실패");
-		}
-		
-		if(deleteChat == 1) {
-			System.out.println("채팅 삭제 성공");
-		} else {
-			System.out.println("채팅 삭제 실패");
-		}
 		
 		response.sendRedirect("RequiredErrandService");
 		

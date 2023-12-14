@@ -56,6 +56,7 @@ public class WriteReviewService extends HttpServlet {
 			// 후기유형이 나에 대한 리뷰(char = 1)인 좋은 리뷰 작성
 			reviewdto = new ReviewDTO(subject_id, content, likeCheck, errand_ctgr, client_nickname);
 			subject_result = reviewdao.WriteLikeReview_s(reviewdto);
+			
 			// 후기유형이 내가 작성한 리뷰(char = 0) 좋은 리뷰 작성
 			reviewdto_c = new ReviewDTO(client_id, content, errand_ctgr, subject_nickname);
 			client_result = reviewdao.WriteLikeReview_c(reviewdto_c);
@@ -65,6 +66,7 @@ public class WriteReviewService extends HttpServlet {
 			// 후기유형이 나에 대한 리뷰(char = 1)인 안좋은 리뷰 작성
 			reviewdto = new ReviewDTO(subject_id, content, errand_ctgr, likeCheck, client_nickname);
 			subject_result = reviewdao.WriteDislikeReview_s(reviewdto);
+			
 			// 후기유형이 내가 작성한 리뷰(char = 0)인 안좋은 리뷰 작성
 			reviewdto_c = new ReviewDTO(client_id, content, errand_ctgr, subject_nickname);
 			reviewdao.WriteDislikeReview_c(reviewdto_c);
@@ -72,26 +74,8 @@ public class WriteReviewService extends HttpServlet {
 			apply_delete_check = reviewdao.DeleteApply(applycheck);
 		}
 		
+		// 매칭상태 5로 변경하는 메소드의 반환값 담은 변수(확인용)
 		int ChgAppMatchStatusChk = reviewdao.ChgAppMatchStatus(applycheck);
-		if(ChgAppMatchStatusChk == 1) {
-			System.out.println("지원자 매칭상태 5로 변경");
-		} else {
-			System.out.println("매칭상태 5로 변경 실패");
-		}
-		
-		
-		
-		if(subject_result == 1 && client_result == 1) {
-			System.out.println("후기 작성 성공");
-		}else {
-			System.out.println("후기 작성 실패");
-		}
-		
-		if(apply_delete_check == 1) {
-			System.out.println("지원 상태 변경 성공");
-		}else {
-			System.out.println("지원 상태 변경 실패");
-		}
 		
 		response.sendRedirect("MyInfoService");
 	}

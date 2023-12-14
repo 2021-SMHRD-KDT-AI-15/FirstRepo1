@@ -31,6 +31,7 @@ public class PaymentHistoryService extends HttpServlet {
 		MemberDTO memberdto = (MemberDTO)session.getAttribute("clientInfo");
 		
 		int member_id = memberdto.getMember_id();
+		
 		PaymentDAO paymentdao = new PaymentDAO();
 		
 		ArrayList<PaymentDTO>paymentHistory = new ArrayList<>();
@@ -40,6 +41,7 @@ public class PaymentHistoryService extends HttpServlet {
 		request.setAttribute("paymentHistory", paymentHistory);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("PaymentHistory.jsp");
+		
 		dispatcher.forward(request, response);
 		
 	}
