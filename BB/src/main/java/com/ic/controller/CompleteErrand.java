@@ -28,7 +28,7 @@ public class CompleteErrand extends HttpServlet {
 		MemberDAO memberdao = new MemberDAO();
 		ErrandDAO erranddao = new ErrandDAO();
 		
-		// 요청자 번호, 지원자 번호, 심부름 보상금액 번호 불러오기
+		// 요청자 번호, 지원자 번호, 심부름 보상금액 불러오기
 		MemberDTO requestMember = memberdao.getMemberDetails(member_id);
 		MemberDTO applyMember = memberdao.getMemberDetails(apply_member_id);
 		ErrandDTO errandList = erranddao.getErrandList(errand_id);

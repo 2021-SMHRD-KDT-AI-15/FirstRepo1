@@ -33,7 +33,6 @@ public class ShowApplyErrandService extends HttpServlet {
 		ArrayList <ApplyDTO> applyList = new ArrayList<>();
 		
 		applyList = applydao.ShowApplyErrand(member_id);   // 지원한 목록 리스트화
-
 		
 		if(applyList.isEmpty()) { // applyList에 암것도 없을 때
 			
