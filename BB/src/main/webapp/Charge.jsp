@@ -94,8 +94,10 @@
                             	충전하기
                             </a>
                         </div>
+                        
                         <div id="chargeButton" style="width:50px; height:50px;"></div> 
                         <!-- 결제 api 띄우는 div -->
+                        
                         <input type="hidden" value="" name="recaptchaResponse">
                     </form>
                 </div>
