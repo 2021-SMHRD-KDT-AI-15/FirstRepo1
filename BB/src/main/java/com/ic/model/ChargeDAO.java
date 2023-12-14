@@ -37,8 +37,7 @@ public class ChargeDAO {
 
 	}
 
-	
-	// 금액 충전 메소드
+	// 자신의 금액에 충전한 금액을 업데이트하는 메소드
 	public int UpdateMoney(MemberDTO user) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);

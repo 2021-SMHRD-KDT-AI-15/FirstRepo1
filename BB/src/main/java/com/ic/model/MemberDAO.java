@@ -119,11 +119,13 @@ public class MemberDAO {
 	public int updateMoney(int member_id, int money) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		
 	    Map<String, Object> parameters = new HashMap<>();
+	    
 	    parameters.put("member_id", member_id);
 	    parameters.put("money", money);
 				
-		int result = sqlSession.update("updateMoney",parameters);
+		int result = sqlSession.update("updateMoney", parameters);
 				
 		sqlSession.close();
 				

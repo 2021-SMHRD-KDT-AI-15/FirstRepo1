@@ -80,7 +80,7 @@ function loadChat(){
 	// 채팅 div 초기화
 	$("#msgArea").html("");
 	
-	// 비동기 통신을 이용해서 채팅 내용 가져와 출력하기(직접해보기)
+	// 비동기 통신을 이용해서 채팅 내용 가져와 출력하기
 	 $.ajax({
     url: "LoadChatService",
     data: {
