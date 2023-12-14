@@ -5,17 +5,19 @@
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 <meta name="keywords" content="">
 <meta name="description" content="">
 <title>ApplyErrand</title>
+
 <link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
 <link rel="stylesheet" href="assets/css/ApplyErrand.css" media="screen">
+
 <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-<script class="u-script" type="text/javascript" src="nicepage.js"
-	defer=""></script>
+<script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+
 <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
 
 <link id="u-theme-google-font" rel="stylesheet"
@@ -41,11 +43,13 @@
 		data-animation-delay="0" data-animation-direction="">
 		<div class="u-clearfix u-sheet u-sheet-1">
 			<a href="RequireErrand.jsp"
-				class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1"
-				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">심부름 요청</a> <img
-				class="u-image u-image-contain u-image-default u-image-1"
-				src="images/222.png" alt="" data-image-width="464"
+			    class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1"
+			    data-animation-name="" data-animation-duration="0"
+			   data-animation-delay="0" data-animation-direction="">
+			   심부름 요청 
+			</a>
+			 <img class="u-image u-image-contain u-image-default u-image-1"
+					src="images/222.png" alt="" data-image-width="464"
 				data-image-height="390" data-href="Main.jsp"> <a
 				href="ErrandListService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
