@@ -87,31 +87,4 @@ public class ApplyDAO {
 		return count;
 	}
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-	
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 심부름 요청 취소 선택 누를시 수수료 복구 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		public int updateReduceMoney(List<Object> applymembermoney) {
-			
-			SqlSession sqlSession = sqlSessionFactory.openSession(true);
-			
-			int count = sqlSession.update("updateReduceMoney", applymembermoney);
-			
-			sqlSession.close();
-			
-			return count;
-		}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 해당 심부름에 대한 지원자 보유금액 불러오기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-		public List<Object> applywallet(int errand_id) {
-			
-			SqlSession sqlSession = sqlSessionFactory.openSession(true);
-			
-			List<Object> count = sqlSession.selectList("applywallet", errand_id);
-			
-			sqlSession.close();
-			
-			return count;
-			
-		}
-//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 }

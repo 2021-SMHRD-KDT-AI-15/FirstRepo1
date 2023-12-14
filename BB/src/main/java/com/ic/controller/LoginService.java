@@ -29,6 +29,7 @@ public class LoginService extends HttpServlet {
 		dto.setId(id);
 		dto.setPw(pw);
 
+		// DAO에서 login메소드 사용
 		MemberDTO result = dao.login(dto);
 
 		if (result != null) {
