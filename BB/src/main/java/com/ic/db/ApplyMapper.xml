@@ -6,8 +6,7 @@
 	<!-- 심부름 지원 -->
 	<insert id="ApplyErrand" parameterType="java.util.List">
 		INSERT INTO APPLY VALUES(APPLY_SEQ.NEXTVAL,
-								<foreach item="list" collection="list" separator=","> #{list} </foreach>,
-								 0)
+								<foreach item="list" collection="list" separator=","> #{list} </foreach>, 0)
 	</insert>
 	
 	<!-- 지원한 심부름 불러오기 -->
@@ -32,11 +31,21 @@
 		WHERE MEMBER_ID = #{member_id}
 	</update>
 	
-	<!-- 지원취소될시 수수료 복구 -->
-	<update id="reduceMoney" parameterType="com.ic.model.MemberDTO">
-		UPDATE MEMBER
-		SET MONEY = MONEY + 2000
-		WHERE MEMBER_ID = #{member_id}
-	</update>
+	<!-- 해당 지원자의 보유금액에 접근 -->
+	<select id="applywallet" resultType="com.ic.model.MemberDTO">
+		SELECT MONEY
+		FROM MEMBER A, APPLY B
+		WHERE A.MEMBER_ID = B.MEMBER_ID
+		AND B.ERRAND_ID = #{errand_id}
+	</select>
 
+	<!-- 해당 심부름 지원자들에게 수수료 복구 -->
+	<update id="updateReduceMoney" parameterType="com.ic.model.MemberDTO">
+    	UPDATE MEMBER
+    	SET MONEY = MONEY + 2000
+    	WHERE MEMBER_ID IN
+        <foreach item="errand" collection="list" open="(" separator="," close=")">
+        	#{errand_id}
+    	</foreach>
+	</update>
 </mapper>

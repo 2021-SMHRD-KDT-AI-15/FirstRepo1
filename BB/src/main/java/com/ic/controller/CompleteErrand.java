@@ -21,7 +21,7 @@ public class CompleteErrand extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int errand_id = Integer.parseInt(request.getParameter("errand_id")); 
+		int errand_id = Integer.parseInt(request.getParameter("errand_id"));
 		int apply_member_id = Integer.parseInt(request.getParameter("apply_member_id")); 
 		int member_id = Integer.parseInt(request.getParameter("member_id"));
 		
@@ -61,7 +61,7 @@ public class CompleteErrand extends HttpServlet {
 		
 		if(completeErrandAppChk == 1) { // 지원자 보유금액에 심부름 보상금액 증감과 수수료 반환
 			int updatemoney = applyMembermoney + errandPrice + 2000;
-			int result = memberdao.updateMoney(apply_member_id, updatemoney); 
+			int result = memberdao.updateMoney(apply_member_id, updatemoney);
 			System.out.println(result);
 			System.out.println("지원자한테 보상금액과 수수료 입금 성공");
 			System.out.println("지원자 매칭 상태 4로 변경");

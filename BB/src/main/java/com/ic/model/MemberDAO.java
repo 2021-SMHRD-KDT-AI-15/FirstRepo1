@@ -115,9 +115,9 @@ public class MemberDAO {
 		return result;
 	}
 	
-	// 요청자 보유금액 심부름액수만큼 차감 
+	// 요청자 보유금액 심부름 보상금액수만큼 차감 
 	public int updateMoney(int member_id, int money) {
-				
+		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 	    Map<String, Object> parameters = new HashMap<>();
 	    parameters.put("member_id", member_id);

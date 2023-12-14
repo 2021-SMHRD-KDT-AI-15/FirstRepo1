@@ -35,7 +35,7 @@ public class ApplyErrandService extends HttpServlet {
 		list.add(errand_id);
 		list.add(apply_member_id);
 		list.add(msg);
-	
+		
 		ApplyDAO applydao = new ApplyDAO();
 		int result = applydao.ApplyErrand(list);
 		

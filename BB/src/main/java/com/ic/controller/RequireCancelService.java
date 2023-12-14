@@ -1,6 +1,8 @@
 package com.ic.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.ic.model.ApplyDAO;
 import com.ic.model.ApplyDTO;
 import com.ic.model.ErrandDAO;
-import com.ic.model.MemberDAO;
 import com.ic.model.MemberDTO;
 
 @WebServlet("/RequireCancelService")
@@ -36,6 +37,7 @@ public class RequireCancelService extends HttpServlet {
 			System.out.println("지원자 삭제 실패");
 		}
 		
+		// 요청 취소 버튼 클릭 시
 		if(deleteResult == 1) {
 			System.out.println("지원자 삭제 성공");
 			System.out.println("요청취소 성공");
@@ -48,7 +50,6 @@ public class RequireCancelService extends HttpServlet {
 		} else {
 			System.out.println("채팅 삭제 실패");
 		}
-		
 		
 		response.sendRedirect("RequiredErrandService");
 		
