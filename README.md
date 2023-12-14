@@ -20,26 +20,84 @@
 - ２３. １１. ２８ 　~ 　２３. １２. １３
 <br>
 
-## 2. 사용 기술
-#### `Back-end`
-  - Java 8
-  - Spring Boot 2.3
-  - Gradle
-  - Spring Data JPA
-  - QueryDSL
-  - H2
-  - MySQL 5.7
-  - Spring Security
-  - Jsoup
-#### `Front-end`
-  - Vue.js 3.0
-  - Element UI
+## 🛠 사용 기술
 
-</br>
+<table>
+    <tr>
+        <th>구분</th>
+        <th>내용</th>
+    </tr>
+    <tr>
+        <td>Back-end</td>
+        <td>
+            <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/> 
+            <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"/>
+            <img src="https://img.shields.io/badge/MyBatis-111111?style=for-the-badge&logo=MyBatis&logoColor=white">
+        </td>
+    </tr>
+    <tr>
+        <td>Front-end</td>
+        <td>
+            <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+            <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+            <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+        </td>
+    </tr>
+    <tr>
+        <td>Data & Server</td>
+        <td>
+            <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white">
+            <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
+        </td>
+    </tr>
+    <tr>
+        <td>Library & API</td>
+        <td>
+            <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
+            <img src="https://img.shields.io/badge/Kakao Map API-007CE2?style=for-the-badge&logo=KaKao Map Api&logoColor=white">
+            <img src="https://img.shields.io/badge/I'mport API-dddddd?style=for-the-badge&logo=&logoColor=white">
+        </td>
+    </tr>
+    <tr>
+        <td>IDT</td>
+        <td>
+            <img src="https://img.shields.io/badge/eclipse-2C2255?style=for-the-badge&logo=eclipseide&logoColor=white">
+            <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white"/>
+            <img src="https://img.shields.io/badge/SQL Developer-777777?style=for-the-badge&logo=&logoColor=white"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Etc.</td>
+        <td>
+            <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+            <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+        </td>
+    </tr>
+    
+</table>
+<br>
 
-## 3. ERD 설계
-![](https://zuminternet.github.io/images/portal/post/2019-04-22-ZUM-Pilot-integer/final_erd.png)
-![](https://github.com/JungHyung2/gitio.io/blob/master/assets/images/portfolio/p1.jpg)
+## 🕸 유스케이스 다이어그램
+<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/cd302cc5-b708-4209-a9bd-2ec798b0d13c" width="800px"/>
+<br>
+<br>
+
+## 🗃 ERD
+![부릉부름 테이블](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/034f07aa-ad79-47de-9b59-27b30634d601)
+<br>
+<br>
+<br>
+<br>
+
+## 🔌 메뉴 구성 및 흐름도
+![메뉴 구성 및 흐름도](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/748cc901-7447-4c54-a11e-e271d6bc7364)
+<br>
+<br>
+
+## 📽 시연 영상
+https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9780-fb98c2f400f4
+
 
 
 ## 4. 핵심 기능
