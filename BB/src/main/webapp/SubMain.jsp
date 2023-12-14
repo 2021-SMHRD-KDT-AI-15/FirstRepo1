@@ -303,7 +303,7 @@
       <p class="u-small-text u-text u-text-variant u-text-1">&nbsp;
          <a href="https://pleasehelp.co.kr/O010101.html"
             class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">
-            개인정보처리방침
+            개인정보처리방침	
          </a><br>
          
          <a href="https://pleasehelp.co.kr/O010102.html"
