@@ -96,25 +96,44 @@
 <br>
 
 ## ✒ 구현 전 화면설계
+<br>
 <details>
 <summary><b>화면설계 펼치기</b></summary>
 <div markdown="1">
-    ![image](https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/de03d730-1fea-4b53-8c6b-7b69429c70e2)
-
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/de03d730-1fea-4b53-8c6b-7b69429c70e2">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/1494f6f7-c471-4c86-a66f-b6999cf995ce">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/6bbcef91-ae71-4e04-9d81-704c7259ebbf">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/605e1e9b-7ab3-42f9-bbd1-07e022531848">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/69503c4b-ea70-42d1-9c9e-da31a9a1ca14">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/324d3ee9-4df2-4684-a713-a4a15eecd3d1">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/60e936c0-780c-4349-9782-67248a4aa422">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/fbda0e5e-3829-47a0-adf3-b13df99365c5">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/219b8770-f94d-4fbf-a423-13ec412fedfd">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/56e1a0bf-4cf6-4702-817b-f5df2a1edf48">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/f3a641f5-6e00-43bc-b8cd-1e27af97d059">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/5524c49f-d543-4b17-a0fa-de9d1e315713">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/8d3d9017-c002-42ba-81b6-5c82cad4a16f">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/e4a2b01b-6ed3-49ec-9528-f8def378dffa">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/9f4a2279-6265-499f-ad8f-5eaae0a6b230">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/2ecff5ea-66ec-4908-b4aa-1ca5d3ff3ea9">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/3b500dcb-92ca-4aca-8e37-b5c84487834f">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/f0e9b695-d406-40ec-a2e8-c6a99cceb15b">
+    <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/08174598-9c50-4013-9122-e179ddff46d2">
 </div>
 </details>
+<br>
 
+## 📌 주요 기능
 
+- 본 프로젝트에서 가장 우선적으로 생각했던 요소는 사용자로부터 데이터를 입력받고, 입력받은 데이터를 가공해서 사용자들에게 출력해주는 것입니다.
+    - 사용자의 심부름 요청
+    - 사용자의 심부름 지원
+    - 심부름 목록 출력
+    - 조건 만족시 요청자와 지원자 연결
+    - 조건 만족시 후기 작성
 
-## 📽 시연 영상
-https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9780-fb98c2f400f4
-
-
-
-## 4. 핵심 기능
-이 서비스의 핵심 기능은 컨텐츠 등록 기능입니다.  
-사용자는 단지 컨텐츠의 카테고리를 선택하고, URL만 입력하면 끝입니다.  
-이 단순한 기능의 흐름을 보면, 서비스가 어떻게 동작하는지 알 수 있습니다.  
+   
+- 또한 사용자들이 서로 소통이 가능한 환경을 제공하기 위해 일대일 채팅을 제공합니다.
 
 <details>
 <summary><b>핵심 기능 설명 펼치기</b></summary>
@@ -176,6 +195,10 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
 </details>
 
 </br>
+
+## 📽 시연 영상
+https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9780-fb98c2f400f4
+
 
 ## 5. 핵심 트러블 슈팅
 ### 5.1. 컨텐츠 필터와 페이징 처리 문제
