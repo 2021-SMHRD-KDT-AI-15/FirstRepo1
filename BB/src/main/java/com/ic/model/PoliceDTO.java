@@ -33,6 +33,7 @@ public class PoliceDTO {
 		
 	}
 	
+	// 경찰서 목록 조회 생성자
 	public PoliceDTO(String police_name, String police_location, String police_number) {
 		super();
 		this.police_name = police_name;
