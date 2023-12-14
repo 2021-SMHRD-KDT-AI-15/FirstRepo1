@@ -37,30 +37,36 @@
 			<a href="RequireErrand.jsp"
 				class="u-border-none u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-1"
 				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">심부름 요청</a> <img
-				class="u-image u-image-contain u-image-default u-image-1"
-				src="images/222.png" alt="" data-image-width="464"
-				data-image-height="390" data-href="Main.jsp"> <a
-				href="ErrandListService"
+				data-animation-delay="0" data-animation-direction="">
+				심부름 요청
+			</a>
+			<img class="u-image u-image-contain u-image-default u-image-1"
+				src="images/222.png" alt="" data-image-width="464" data-image-height="390" data-href="Main.jsp"> 
+			<a href="ErrandListService"	
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-2"
-				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">심부름 목록</a> <a
-				href="Ranking.jsp"
+				data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+				심부름 목록
+			</a>
+			<a href="Ranking.jsp" 
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-3"
-				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">&nbsp;랭킹&nbsp;</a>
+				data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+				&nbsp;랭킹&nbsp;
+			</a>
 			<a href="ChatListService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-4"
-				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">채팅</a> <a
-				href="Charge.jsp"
+				data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+				채팅
+			</a>
+			<a href="Charge.jsp"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-5"
-				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">충전</a> <a
-				href="MyInfoService"
+				data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+				충전
+			</a>
+			<a href="MyInfoService"
 				class="u-btn u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-2 u-btn-6"
-				data-animation-name="" data-animation-duration="0"
-				data-animation-delay="0" data-animation-direction="">마이 페이지</a>
+				data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+				마이 페이지
+			</a>
 		</div>
 	</header>
         <section class="u-clearfix u-section-1" id="sec-106b">
