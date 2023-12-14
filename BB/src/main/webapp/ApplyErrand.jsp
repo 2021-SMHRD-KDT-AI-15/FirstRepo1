@@ -181,7 +181,7 @@
          대표 메일: vroong@naver.com<br>
          사업자등록번호:123-456-789<br>
          통신판매번호: 2023-4777<br>
-         서울특별시 강남구 강남대로 364<br>Copyright ⓒ 2023 부릉부름.   All rights reserved.
+         서울특별시 강남구 강남대로 364<br>Copyright ⓒ 2023 부릉부름. All rights reserved.
       </p>
    </div>
 </footer>
