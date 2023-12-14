@@ -17,7 +17,10 @@ public class ReviewDAO {
 	ArrayList<ReviewDTO> getReview1 = new ArrayList<>();
 	ArrayList<ReviewDTO> getReview0 = new ArrayList<>();
 
-	// 좋아요 갯수를 가져오는 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 좋아요 갯수를 가져오는 메소드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
 	public ArrayList<ReviewDTO> getLike(int member_id) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -28,7 +31,10 @@ public class ReviewDAO {
 
 		return getLike;
 	}
-	// 싫어요 갯수를 가져오는 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 싫어요 갯수를 가져오는 메소드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
 	public ArrayList<ReviewDTO> getDisLike(int member_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -39,7 +45,9 @@ public class ReviewDAO {
 		
 		return getDisLike;
 	}
-	// 나에게 작성한 후기를 가져오는 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 나에게 작성한 후기를 가져오는 메소드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<ReviewDTO> getReview1(int member_id) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -50,7 +58,9 @@ public class ReviewDAO {
 
 		return getReview1;
 	}
-	// 내가 작성한 후기를 가져오는 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 내가 작성한 후기를 가져오는 메소드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<ReviewDTO> getReview0(int member_id) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -61,7 +71,7 @@ public class ReviewDAO {
 
 		return getReview0;
 	}
-	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 후기 작성시 대상자 닉네임 호출 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public String getNickname_r(int subject_id) {
@@ -167,5 +177,5 @@ public class ReviewDAO {
 		
 		return result;
 	}
-	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 }

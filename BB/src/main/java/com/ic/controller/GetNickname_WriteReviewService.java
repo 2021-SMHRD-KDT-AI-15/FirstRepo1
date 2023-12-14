@@ -32,7 +32,6 @@ public class GetNickname_WriteReviewService extends HttpServlet {
 		request.setAttribute("errand_ctgr", errand_ctgr);
 		request.setAttribute("errand_id", errand_id);
 		
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WriteReview.jsp");
 		dispatcher.forward(request, response);
 	}

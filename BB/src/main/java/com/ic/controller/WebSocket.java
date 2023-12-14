@@ -38,7 +38,7 @@ public class WebSocket {
 		
 		// ex) url : ws://localhost:8081/chat/cat
 		// @PathParam("room") String room --> "cat"이 담김
-		System.out.println(room + "방에 연결");
+		// System.out.println(room + "방에 연결");
 
 		// hashMap.get(Key값)을 이용해 키 값에 해당하는 Value를 가져올 수 있음		
 		if(userMap.get(room) == null) {
@@ -51,7 +51,7 @@ public class WebSocket {
 			userMap.get(room).add(session);
 		}
 		
-		System.out.println("현 인원 : " + userMap.get(room).size());
+		// System.out.println("현 인원 : " + userMap.get(room).size());
 	}
 	
 	// 사용자가 접속을 종료 했을 때
@@ -61,7 +61,7 @@ public class WebSocket {
 		// 사용자 정보를 해당 방 목록에서 삭제
 		userMap.get(room).remove(session);
 		
-		System.out.println("사용자 접속 종료됨");
+		// System.out.println("사용자 접속 종료됨");
 		
 	}
 	
@@ -70,13 +70,13 @@ public class WebSocket {
 	public void onMessage(Session session, String payload, @PathParam("room")String room) {
 		
 		// String payload 변수에 자동으로 사용자가 보낸 메세지가 담긴다.
-		System.out.println(payload);
+		// System.out.println(payload);
 		
 		// Gson 객체를 이용해 받아온 json 데이터를 Java 객체로 변환
 		Gson gson = new Gson();
 		ChatDTO chat = gson.fromJson(payload, ChatDTO.class);
 
-		// DB 저장(직접해보기)
+		// DB 저장
 		int errand_id =chat.getErrand_id();
 		int member_id = chat.getMember_id();
 		String chatting = chat.getChat();

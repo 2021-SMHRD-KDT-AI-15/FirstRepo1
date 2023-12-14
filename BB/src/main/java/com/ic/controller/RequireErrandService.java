@@ -34,9 +34,7 @@ public class RequireErrandService extends HttpServlet {
 		int price = Integer.parseInt(request.getParameter("price"));	// 금액
 		String req_location = request.getParameter("req_location");		// 요청위치
 		String content = request.getParameter("content");				// 내용
-		System.out.println(want_date);
-		
-		System.out.println(req_date);
+
 		int member_id = memberdto.getMember_id();						// 회원번호
 		
 		ErrandDTO erranddto = new ErrandDTO(member_id, title, location_ctgr, errand_ctgr, req_date, want_date, price, req_location, content);

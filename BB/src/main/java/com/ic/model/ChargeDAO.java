@@ -12,7 +12,9 @@ public class ChargeDAO {
 
 	ArrayList<ChargeDTO> ChargeHistory = new ArrayList<>();
 
-	// 충전을 위한 차지 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 충전을 위한 차지 메소드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public int charge(ChargeDTO dto) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -23,8 +25,10 @@ public class ChargeDAO {
 
 		return result;
 	}
-
-	// 충전내역 조회를 위한 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 충전내역 조회를 위한 메소드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
 	public ArrayList<ChargeDTO> ChargeHistory(int member_id) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -36,8 +40,10 @@ public class ChargeDAO {
 		return ChargeHistory;
 
 	}
-
-	// 자신의 금액에 충전한 금액을 업데이트하는 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■ 자신의 금액에 충전한 금액을 업데이트하는 메소드 ■■■■■■■■■■■■■■■■■■■■
+	
 	public int UpdateMoney(MemberDTO user) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -48,4 +54,5 @@ public class ChargeDAO {
 		
 		return result;
 	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 }

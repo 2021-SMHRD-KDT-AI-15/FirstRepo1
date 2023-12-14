@@ -16,7 +16,9 @@ public class PaymentDAO {
 	ArrayList<PaymentDTO> getPaymentMoney = new ArrayList<>();
 	ArrayList<PaymentDTO> paymentHistory = new ArrayList<>();
 
-	// 결제 내역 가져오는 메소드
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 결제 내역 가져오는 메소드  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<PaymentDTO> getPaymentMoney(int payment_money) {
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -27,6 +29,9 @@ public class PaymentDAO {
 
 		return getPaymentMoney;
 	}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 가져온 결제 내역을 회원별로 출력  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<PaymentDTO> PaymentHistory(int member_id) {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -37,5 +42,5 @@ public class PaymentDAO {
 		
 		return paymentHistory;
 	}
-	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 }

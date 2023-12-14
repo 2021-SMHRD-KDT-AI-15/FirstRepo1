@@ -12,8 +12,9 @@ public class PoliceDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getFactory();
 	
 	ArrayList<PoliceDTO> policeList = new ArrayList<>();
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
-	// 경찰서 목록 조회
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 경찰서 목록 조회  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	public ArrayList<PoliceDTO> PoliceStations() {
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -24,5 +25,5 @@ public class PoliceDAO {
 	    
 	    return policeList;
 	}
-	
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 }
