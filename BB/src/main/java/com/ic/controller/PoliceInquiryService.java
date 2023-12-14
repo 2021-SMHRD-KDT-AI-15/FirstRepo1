@@ -20,13 +20,19 @@ public class PoliceInquiryService extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
+		// DAO 객체 생성
 		PoliceDAO policedao = new PoliceDAO();
 		
+		// policeList 배열 선언
 		ArrayList<PoliceDTO> policeList = new ArrayList<>();
+		
+		// DAO 메소드로 목록값 불러오기
 		policeList = policedao.PoliceStations();
 		
+		// 불러온 값들을 policList 배열로 전달
 		request.setAttribute("policeList", policeList);
 		
+		//PoliceStaions.jsp로 전달
 		RequestDispatcher rd = request.getRequestDispatcher("PoliceStaions.jsp");
 		rd.forward(request, response);
 		

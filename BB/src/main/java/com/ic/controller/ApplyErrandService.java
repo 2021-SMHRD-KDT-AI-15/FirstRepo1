@@ -41,14 +41,6 @@ public class ApplyErrandService extends HttpServlet {
 		
 		if(money > 2000) {
 			int count = applydao.deduceMoney(applymember); // 지원자 회원번호, 보유금액 감소 메소드
-			if (count > 0) {
-				System.out.println("심부름 금액 차감 완료");
-			} else {
-				System.out.println("심부름 금액 차감 실패");
-			}
-		}
-		else {
-			System.out.println("심부름 금액 차감 실패 : 보유금액이 부족합니다.");
 		}
 		
 		response.sendRedirect("ShowApplyErrandService");

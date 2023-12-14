@@ -28,7 +28,7 @@ public class CompleteErrand extends HttpServlet {
 		MemberDAO memberdao = new MemberDAO();
 		ErrandDAO erranddao = new ErrandDAO();
 		
-		// 보유금액(MEMBER 테이블의 MONEY 값) - 심부름 가격(ERRAND 테이블의 PRICE 값)
+		// 요청자 번호, 지원자 번호, 심부름 보상금액 번호 불러오기
 		MemberDTO requestMember = memberdao.getMemberDetails(member_id);
 		MemberDTO applyMember = memberdao.getMemberDetails(apply_member_id);
 		ErrandDTO errandList = erranddao.getErrandList(errand_id);
@@ -45,13 +45,7 @@ public class CompleteErrand extends HttpServlet {
 			if(requestMembermoney > errandPrice) { // 요청자 보유금액이 심부름 보상금액보다 클수 요청자 보유금액 차감
 				int updatemoney = requestMembermoney - errandPrice;
 				int result = memberdao.updateMoney(member_id, updatemoney);
-				System.out.println(result);
-				System.out.println("요청자 보유금액 차감 성공");
-				System.out.println("심부름 상태 2로 변경");
 			}
-		} else {  
-			System.out.println("심부름 상태 2로 변경 실패");
-			System.out.println("요청자 보유금액 차감 실패 : 요청자 보유금액 부족");
 		}
 		
 		// 지원자 관련(apply_member_id, money)
@@ -62,13 +56,7 @@ public class CompleteErrand extends HttpServlet {
 		if(completeErrandAppChk == 1) { // 지원자 보유금액에 심부름 보상금액 증감과 수수료 반환
 			int updatemoney = applyMembermoney + errandPrice + 2000;
 			int result = memberdao.updateMoney(apply_member_id, updatemoney);
-			System.out.println(result);
-			System.out.println("지원자한테 보상금액과 수수료 입금 성공");
-			System.out.println("지원자 매칭 상태 4로 변경");
-		} else {
-			System.out.println("지원자한테 보상금액과 수수료 입금 실패");
-			System.out.println("지원자 매칭 상태 4로" + "l 변경 실패");
-		}
+		} 
 		
 		response.sendRedirect("RequiredErrandService");
 	}
