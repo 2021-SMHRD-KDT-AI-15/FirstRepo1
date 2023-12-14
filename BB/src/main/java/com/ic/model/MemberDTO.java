@@ -97,9 +97,9 @@ public class MemberDTO {
 	public MemberDTO(String id) {
 		this.id = id;
 	}
-	
-	
-	public MemberDTO(String id, String pw, String nickname, String email, String phone, String address, int age, char gender) {
+
+	public MemberDTO(String id, String pw, String nickname, String email, String phone, String address, int age,
+			char gender) {
 		this.id = id;
 		this.pw = pw;
 		this.nickname = nickname;
@@ -108,29 +108,31 @@ public class MemberDTO {
 		this.address = address;
 		this.age = age;
 		this.gender = gender;
-		
+
 	}
 
 	public MemberDTO(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
 	}
+
 	public MemberDTO(int member_id, int money) {
 		this.member_id = member_id;
 		this.money = money;
 	}
+
 	public MemberDTO() {
-		
+
 	}
+
 	private int charge_money;
 
-	
-    public int getCharge_money() {
-        return charge_money;
-    }
+	public int getCharge_money() {
+		return charge_money;
+	}
 
-    public void setCharge_money(int charge_money) {
-        this.charge_money = charge_money;
-    }
-	
+	public void setCharge_money(int charge_money) {
+		this.charge_money = charge_money;
+	}
+
 }

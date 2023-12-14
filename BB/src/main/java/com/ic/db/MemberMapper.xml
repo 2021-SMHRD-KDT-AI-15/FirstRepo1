@@ -2,52 +2,62 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.db.MemberMaper">
 
-	<insert id="join" parameterType="com.ic.model.MemberDTO" >
-		insert into MEMBER values(MEMBER_SEQ.NEXTVAL ,#{id}, #{email}, #{phone}, #{nickname}, #{pw}, #{address}, #{age}, #{gender}, 0)	
+	<insert id="join" parameterType="com.ic.model.MemberDTO">
+		insert
+		into MEMBER values(MEMBER_SEQ.NEXTVAL ,#{id}, #{email}, #{phone},
+		#{nickname}, #{pw}, #{address}, #{age}, #{gender}, 0)
 	</insert>
-	
-	<select id="login" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
+
+	<select id="login" parameterType="com.ic.model.MemberDTO"
+		resultType="com.ic.model.MemberDTO">
 		select * from MEMBER where id=#{id} and pw=#{pw}
 	</select>
-	
-	<select id="check" parameterType="com.ic.model.MemberDTO" resultType="com.ic.model.MemberDTO">
+
+	<select id="check" parameterType="com.ic.model.MemberDTO"
+		resultType="com.ic.model.MemberDTO">
 		select * from Member where id=#{id} and pw=#{pw}
 	</select>
-	
+
 	<select id="change" parameterType="com.ic.model.MemberDTO">
-		update MEMBER set nickname=#{nickname},	
-				   		  phone=#{phone},
-				   		  pw=#{pw},
-				   		  address=#{address} 
-		where id=#{id}  
+		update MEMBER set
+		nickname=#{nickname},
+		phone=#{phone},
+		pw=#{pw},
+		address=#{address}
+		where id=#{id}
 	</select>
-	
+
 	<select id="MyInfo" resultType="com.ic.model.MemberDTO">
-		select * from MEMBER where member_id=#{member_id}
+		select * from MEMBER where
+		member_id=#{member_id}
 	</select>
-	
-	<select id="check_id" parameterType="com.ic.model.MemberDTO" resultType="int">
-      SELECT COUNT(*) FROM MEMBER WHERE id=#{id}
-   </select>
-   
-	<select id="check_name" parameterType="com.ic.model.MemberDTO" resultType="int">
-      SELECT COUNT(*) FROM MEMBER WHERE nickname=#{nickname}
-   </select>
-   
-	<select id="check_mail" parameterType="com.ic.model.MemberDTO" resultType="int">
-      SELECT COUNT(*) FROM MEMBER WHERE email=#{email}
-   </select>
-   
-   <select id="getMemberDetails" resultType="com.ic.model.MemberDTO">
-   		SELECT * FROM MEMBER WHERE MEMBER_ID=#{member_id}
-   </select>
-   
-   <!-- 회원 보유금액 업데이트 -->
-   <update id="updateMoney" parameterType="map">
-   		UPDATE MEMBER
+
+	<select id="check_id" parameterType="com.ic.model.MemberDTO"
+		resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE id=#{id}
+	</select>
+
+	<select id="check_name" parameterType="com.ic.model.MemberDTO"
+		resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE nickname=#{nickname}
+	</select>
+
+	<select id="check_mail" parameterType="com.ic.model.MemberDTO"
+		resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE email=#{email}
+	</select>
+
+	<select id="getMemberDetails"
+		resultType="com.ic.model.MemberDTO">
+		SELECT * FROM MEMBER WHERE MEMBER_ID=#{member_id}
+	</select>
+
+	<!-- 회원 보유금액 업데이트 -->
+	<update id="updateMoney" parameterType="map">
+		UPDATE MEMBER
 		SET MONEY = #{money}
 		WHERE MEMBER_ID = #{member_id}
-   </update>
+	</update>
 
-	
+
 </mapper>
