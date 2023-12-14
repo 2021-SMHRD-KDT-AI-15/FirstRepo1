@@ -65,8 +65,6 @@ public class MyInfoService extends HttpServlet {
 
 		dispatcher.forward(request, response);
 
-		// 쿼리 스트링으로 보내기(다른 방법)
-		// response.sendRedirect("MyInfo.jsp?myInfo="+MyInfo);
 	}
 
 }

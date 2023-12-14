@@ -26,11 +26,10 @@ public class ChargeHistoryService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
-
-		ChargeDTO dto = new ChargeDTO();
+		ChargeDTO dto = new ChargeDTO(); // chargedto 객체 생성
 
 		MemberDTO memberdto = (MemberDTO)session.getAttribute("clientInfo");
-		int member_id = memberdto.getMember_id();
+		int member_id = memberdto.getMember_id(); // 자신의 member_id 가져오기
 
 		ChargeDAO chargedao = new ChargeDAO();
 		
