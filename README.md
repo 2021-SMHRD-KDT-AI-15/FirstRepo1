@@ -150,22 +150,204 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
 ## 😨 트러블 슈팅
 <details>
 <summary><b>WebSocket을 활용한 실시간 채팅에서 클라이언트 구분이 없고 undefined 출력</b></summary>
-    <div markdown="1">
-        <br>
-        <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/340f61c3-5b7f-4f2a-8391-f50e29f8e10a"/>
-        
-        - 데이터를 전송할 때 데이터 타입을 JSON으로 명시를 하지 않아서 발생
+<div markdown="1">
+<br>
 
-        - 코드 추가
-        <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/6207f339-28bf-4c63-884e-5a1131ffd441"/>
-
-        <img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/7ee5a5e5-20a2-42fc-8349-9dec642c4075"/>
-    <br>
-
-    </div>
-</details>
+- 수정 전
     
-</br>
+<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/340f61c3-5b7f-4f2a-8391-f50e29f8e10a"/>
+<details>
+<summary><h6>기존 JS 코드 펼치기</h6></summary>
+<div markdown="1">
+    
+    function loadChat(){
+	
+	// 채팅 div 초기화
+	$("#msgArea").html("");
+	
+	// 비동기 통신을 이용해서 채팅 내용 가져와 출력
+	 $.ajax({
+    url: "LoadChatService",
+    data: {
+		room : room
+	},
+    type: "get",
+    success: function (data) {
+			// alert("성공");
+			
+			let resultJson = data;
+			
+			// alert(resultJson[0].memberId);
+			
+			for(let i = 0; i < resultJson.length; i++){
+				
+				let c_chat = data[i].chat;
+				let c_timestamp = data[i].timestamp;
+				let c_member_id = data[i].memberId;
+				
+				
+				var chatDiv_subject = `
+					<div class='row'>
+						<div class='col-6'>
+							<div class='alert alert-warning'>
+								<b>${c_chat}</b>
+							</div>
+							<span id="timestamp">${c_timestamp}</span>
+						</div>
+					</div>
+				`;
+				
+				var chatDiv_client = `
+					<div class='row'>
+						<div class='col-sm-6'></div>
+						<div class='col-sm-6'>
+							<span id="timestamp">${c_timestamp}</span>
+							<div class='alert alert-secondary'>
+								<b>${c_chat}</b>
+							</div>
+						</div>
+					</div>
+				`;
+				
+				if(c_member_id == chat.member_id){
+					$('#msgArea').append(chatDiv_client);
+				}else{
+					$('#msgArea').append(chatDiv_subject);
+				}
+				
+			}
+		},
+		error: function(){
+			alert("error");
+		}
+	})
+	
+}
+</div>
+</details>
+<br>
 
-## 6. 회고 / 느낀점 / 팀원소개 /
->프로젝트 개발 회고 글: https://zuminternet.github.io/ZUM-Pilot-integer/
+- 원인 : 자바스크립트에서 함수로 데이터를 전송할 때 데이터 타입을 JSON으로 명시를 하지 않아서 발생
+<br>
+
+- 수정 후
+
+<img src="https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/7ee5a5e5-20a2-42fc-8349-9dec642c4075"/>
+<details>
+<summary><h6>수정 JS 코드 펼치기</h6></summary>
+<div markdown="1">
+    
+    function loadChat(){
+	
+	// 채팅 div 초기화
+	$("#msgArea").html("");
+	
+	// 비동기 통신을 이용해서 채팅 내용 가져와 출력
+	 $.ajax({
+    url: "LoadChatService",
+    data: {
+		room : room
+	},
+    type: "get",
+    dataType: "json",
+    success: function (data) {
+			// alert("성공");
+			
+			let resultJson = data;
+			
+			// alert(resultJson[0].memberId);
+			
+			for(let i = 0; i < resultJson.length; i++){
+				
+				let c_chat = data[i].chat;
+				let c_timestamp = data[i].timestamp;
+				let c_member_id = data[i].memberId;
+				
+				
+				var chatDiv_subject = `
+					<div class='row'>
+						<div class='col-6'>
+							<div class='alert alert-warning'>
+								<b>${c_chat}</b>
+							</div>
+							<span id="timestamp">${c_timestamp}</span>
+						</div>
+					</div>
+				`;
+				
+				var chatDiv_client = `
+					<div class='row'>
+						<div class='col-sm-6'></div>
+						<div class='col-sm-6'>
+							<span id="timestamp">${c_timestamp}</span>
+							<div class='alert alert-secondary'>
+								<b>${c_chat}</b>
+							</div>
+						</div>
+					</div>
+				`;
+				
+				if(c_member_id == chat.member_id){
+					$('#msgArea').append(chatDiv_client);
+				}else{
+					$('#msgArea').append(chatDiv_subject);
+				}
+				
+			}
+		},
+		error: function(){
+			alert("error");
+		}
+	})
+
+}
+
+</div>
+</details>
+<br>
+
+</div>
+</details>
+<br>
+
+## 👨‍👦‍👦 팀원 역할
+<table>
+    <tr>
+        <td>사진1</td>
+        <td>사진2</td>
+        <td>사진3</td>
+        <td>사진4</td>
+        <td>사진5</td>
+    </tr>
+    <tr>
+        <td align="center" width="250px"><b>윤수민</b></td>
+        <td align="center" width="250px"><b>윤강석</b></td>
+        <td align="center" width="250px"><b>임지후</b></td>
+        <td align="center" width="250px"><b>손병권</b></td>
+        <td align="center" width="250px"><b>이동훈</b></td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5">Main</td>
+    </tr>
+    <tr>
+        <td align="center">팀장, PM, Back-end</td>
+        <td align="center">Front-end</td>
+        <td align="center">Back-end</td>
+        <td align="center">Front-end</td>
+        <td align="center">Back-end</td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5">Sub</td>
+    </tr>
+    <tr>
+        <td align="center">Front-end</td>
+        <td align="center">Back-end</td>
+        <td align="center">Front-end</td>
+        <td align="center">Back-end</td>
+        <td align="center">Web Crawling</td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5">업무 분장</td>
+    </tr>
+    
+</table>
