@@ -51,7 +51,7 @@ public class WebSocket {
 			userMap.get(room).add(session);
 		}
 		
-		// System.out.println("현 인원 : " + userMap.get(room).size());
+		// System.out.println("현인원 : " + userMap.get(room).size());
 	}
 	
 	// 사용자가 접속을 종료 했을 때
