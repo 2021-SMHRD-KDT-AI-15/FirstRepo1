@@ -413,7 +413,7 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
 		<td colspan="5" align="center">Github</td>
 	</tr>
     <tr>
-		<td align="center"><a href="https://github.com/explorersm11/Yoon-Sumin">윤수민</a></td>
+		<td align="center"><a href="https://github.com/explorersm11">윤수민</a></td>
 		<td align="center"><a href="https://github.com/johnwickwickwick/YoonGangSeok">윤강석</td>
 		<td align="center"><a href="">임지후</td>
 		<td align="center"><a href="">손병권</a></td>
