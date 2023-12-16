@@ -330,7 +330,7 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
         <td align="center" colspan="5">Main</td>
     </tr>
     <tr>
-        <td align="center">팀장, PM, Back-end</td>
+        <td align="center">PM, Back-end</td>
         <td align="center">Front-end</td>
         <td align="center">Back-end</td>
         <td align="center">Front-end</td>
@@ -349,5 +349,74 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
     <tr>
         <td align="center" colspan="5">업무 분장</td>
     </tr>
-    
+    <tr>
+		<td>
+			- 프로젝트 요구사항 정의<br>
+			- DB 설계 및 구현<br>
+			- 화면 설계<br>
+			- 심부름 요청 기능 구현<br>
+			- 심부름 목록 출력<br>
+			- 심부름 상세정보 출력<br>
+			- 심부름 지원 기능 구현<br>
+			- 요청한 심부름 목록 출력<br>
+			- 지원한 심부름 목록 출력<br>
+			- 지원자 선택 기능 구현<br>
+			- 요청, 지원 취소 기능 구현<br>
+			- 심부름 확정 기능 구현<br>
+			- 후기 작성 기능 구현<br>
+			- 채팅 가능한 목록 출력<br>
+			- 카카오맵 API 연동<br>
+			- 아임포트 결제 API 연동<br>
+			- 웹소켓을 이용한 일대일 채팅 구현<br><br>
+   			- 페이지 UI/UX 구현<br>
+	  		1. 요청한 심부름 페이지<br>
+	 		2. 지원한 심부름 페이지<br>
+			3. 후기 작성 페이지<br>
+			4. 채팅 페이지<br>
+   			5. 채팅 진행 페이지
+		</td>
+		<td>
+			- 페이지 UI/UX 구현<br>
+			1. 심부름 목록 페이지<br>
+			2. 충전 페이지<br>
+			3. 충전 내역 페이지<br>
+			4. 심부름 정보 페이지<br><br>
+			- 페이지들의 버튼 및 애니메이션 효과 부여
+		</td>
+		<td>
+			- 충전 기능 구현<br>
+			- 충전 내역 출력<br>
+			- 거래 내역 출력<br>
+			- 내 정보 출력<br>
+			- 나에 대한 후기 출력<br>
+			- 내가 작성한 후기 출력<br><br>
+   			- 페이지 UI/UX 구현<br>
+			1. 충전 내역 페이지<br>
+   			2. 결제 내역 페이지
+		</td>
+		<td>
+			- 페이지 UI/UX 구현<br>
+			1. 메인 페이지<br>
+			2. 서브 메인 페이지<br><br>
+			- 프로젝트 전반적인 디자인 담당<br>
+			- PPT 작성
+		</td>
+		<td>
+			- 회원정보 변경 기능 구현<br>
+			- 서비스 이용시 보유금액 가감 구현<br>
+   			- 다음 지도 API 연동<br>
+			- 크롤링을 통해 광주광역시의 경찰서 위치정보 수집<br>
+			- 경찰서 위치 출력
+		</td>
+    </tr>
+	<tr>
+		<td colspan="5" align="center">Github</td>
+	</tr>
+    <tr>
+		<td><a href="https://github.com/explorersm11/Yoon-Sumin">test</a></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
 </table>
