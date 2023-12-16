@@ -350,7 +350,7 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
         <td align="center" colspan="5">업무 분장</td>
     </tr>
     <tr>
-		<td>
+		<td><h5>
 			- 프로젝트 요구사항 정의<br>
 			- DB 설계 및 구현<br>
 			- 화면 설계<br>
@@ -374,6 +374,7 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
 			3. 후기 작성 페이지<br>
 			4. 채팅 페이지<br>
    			5. 채팅 진행 페이지
+			</h5>
 		</td>
 		<td>
 			- 페이지 UI/UX 구현<br>
