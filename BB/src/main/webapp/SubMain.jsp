@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="​Get more out of your travel, ​Popular Travel Destinations&amp;amp; Types, ​Next-level travel powered by tech and the human touch, Active Tours, ​Designed for every type of traveler, ​Destinations near and far, we do it all, ​Connecting with nature as you travel">
     <meta name="description" content="">
-    <title>SubMain</title>
+    <title>SubMainPage</title>
     <link rel="stylesheet" href="assets/css/nicepage.css" media="screen">
 <link rel="stylesheet" href="assets/css/SubMain.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
