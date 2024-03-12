@@ -419,6 +419,6 @@ https://github.com/2021-SMHRD-KDT-AI-15/BB/assets/145624456/24c71ad8-3422-430f-9
 		<td align="center"><a href="https://github.com/johnwickwickwick/YoonGangSeok">윤강석</td>
 		<td align="center"><a href="">임지후</td>
 		<td align="center"><a href="">손병권</a></td>
-		<td align="center"><a href="https://github.com/opencv256/Lee-Dong-Hun">이동훈</td>
+		<td align="center"><a href="https://github.com/opencv256/opencv256">이동훈</td>
 	</tr>
 </table>
